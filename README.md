@@ -1,2 +1,0 @@
-# tunisiamall
-Pidev tunisia mall 
