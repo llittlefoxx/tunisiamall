@@ -28,6 +28,12 @@
 			<version>9.0.0.Alpha1</version>
 			<type>pom</type>
 		</dependency>
+		<dependency>
+			<groupId>edu.esprit.pidev</groupId>
+			<artifactId>tunisiamall-server</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
 	</dependencies>
 
 	<build>
