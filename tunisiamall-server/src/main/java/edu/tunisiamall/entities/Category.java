@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * The persistent class for the category database table.
+ * this is a new line added by Elyes
  * 
  */
 @Entity
