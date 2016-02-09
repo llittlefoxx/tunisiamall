@@ -5,10 +5,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-/**
- * The persistent class for the comment database tables.
- *
- */
 @Entity
 @NamedQuery(name="Comment.findAll", query="SELECT c FROM Comment c")
 public class Comment implements Serializable {
@@ -25,12 +21,10 @@ public class Comment implements Serializable {
 
 	private String text;
 
-	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name="idUser")
 	private User user;
 
-	//bi-directional many-to-one association to Post
 	@ManyToOne
 	@JoinColumn(name="IdPost")
 	private Post post;
@@ -86,4 +80,24 @@ public class Comment implements Serializable {
 		this.post = post;
 	}
 
+	@Override
+	public int hashCode() {
+		return idComment;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Comment))
+			return false;
+		Comment other = (Comment) obj;
+		if (idComment != other.idComment)
+			return false;
+		return true;
+	}
+
+	
 }
