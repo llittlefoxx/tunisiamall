@@ -2,5 +2,28 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="tunisiamall-server">
 		<jta-data-source>java:/tunisiamallDS</jta-data-source>
+		<class>edu.tunisiamall.entities.Category</class>
+		<class>edu.tunisiamall.entities.Comment</class>
+		<class>edu.tunisiamall.entities.Complaint</class>
+		<class>edu.tunisiamall.entities.Customer</class>
+		<class>edu.tunisiamall.entities.Event</class>
+		<class>edu.tunisiamall.entities.Gestbookentry</class>
+		<class>edu.tunisiamall.entities.Image</class>
+		<class>edu.tunisiamall.entities.Message</class>
+		<class>edu.tunisiamall.entities.Mvtstock</class>
+		<class>edu.tunisiamall.entities.Order</class>
+		<class>edu.tunisiamall.entities.Orerline</class>
+		<class>edu.tunisiamall.entities.OrerlinePK</class>
+		<class>edu.tunisiamall.entities.Post</class>
+		<class>edu.tunisiamall.entities.Product</class>
+		<class>edu.tunisiamall.entities.Request</class>
+		<class>edu.tunisiamall.entities.Shopowner</class>
+		<class>edu.tunisiamall.entities.Store</class>
+		<class>edu.tunisiamall.entities.Storeevent</class>
+		<class>edu.tunisiamall.entities.StoreeventPK</class>
+		<class>edu.tunisiamall.entities.Subcategory</class>
+		<class>edu.tunisiamall.entities.Subscription</class>
+		<class>edu.tunisiamall.entities.SubscriptionPK</class>
+		<class>edu.tunisiamall.entities.User</class>
 	</persistence-unit>
 </persistence>
