@@ -10,6 +10,7 @@ public class ShopperReports implements ShopperReportsRemote, ShopperReportsLocal
 
     /**
      * Default constructor. 
+     *testtttt
      */
     public ShopperReports() {
        
