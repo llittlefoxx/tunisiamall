@@ -6,7 +6,7 @@ import java.util.Date;
 
 
 /**
- * The persistent class for the comment database table.
+ * The persistent class for the comment database tables.
  *
  */
 @Entity
