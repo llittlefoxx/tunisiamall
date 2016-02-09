@@ -6,7 +6,7 @@ import java.util.Date;
 
 
 @Entity
-@NamedQuery(name="Comments.findAll", query="SELECT c FROM Comment c")
+@NamedQuery(name="Comment.findAll", query="SELECT c FROM Comment c")
 public class Comment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
