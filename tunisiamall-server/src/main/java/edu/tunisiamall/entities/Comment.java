@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * The persistent class for the comment database table.
- * 
+ * Elyes
  */
 @Entity
 @NamedQuery(name="Comment.findAll", query="SELECT c FROM Comment c")
