@@ -26,7 +26,7 @@ public class Comment implements Serializable {
 	private User user;
 
 	@ManyToOne
-	@JoinColumn(name="IdPost")
+	@JoinColumn(name="idPost")
 	private Post post;
 
 	public Comment() {
