@@ -6,10 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * The persistent class for the event database table.
- * 
- */
 @Entity
 @NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
 public class Event implements Serializable {
