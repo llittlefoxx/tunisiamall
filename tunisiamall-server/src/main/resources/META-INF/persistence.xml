@@ -25,5 +25,6 @@
 		<class>edu.tunisiamall.entities.Subscription</class>
 		<class>edu.tunisiamall.entities.SubscriptionPK</class>
 		<class>edu.tunisiamall.entities.User</class>
+		<class>edu.tunisiamall.entities.Administrator</class>
 	</persistence-unit>
 </persistence>

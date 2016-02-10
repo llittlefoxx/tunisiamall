@@ -10,22 +10,17 @@ import java.util.List;
  * 
  */
 @Entity
+@DiscriminatorValue("customer")
 @NamedQuery(name="Customer.findAll", query="SELECT c FROM Customer c")
-public class Customer implements Serializable {
+public class Customer extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idUser;
 
 	private String facturationAddr;
 
 	private String shipementAddr;
 
-	//bi-directional one-to-one association to User
-	@OneToOne
-	@JoinColumn(name="idUser")
-	private User user;
+	
 
 	//bi-directional many-to-one association to Order
 	@OneToMany(mappedBy="customer")
@@ -38,16 +33,8 @@ public class Customer implements Serializable {
 	public Customer() {
 	}
 
-	public int getIdUser() {
-		return this.idUser;
-	}
-
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
-	}
-
 	public String getFacturationAddr() {
-		return this.facturationAddr;
+		return facturationAddr;
 	}
 
 	public void setFacturationAddr(String facturationAddr) {
@@ -55,63 +42,33 @@ public class Customer implements Serializable {
 	}
 
 	public String getShipementAddr() {
-		return this.shipementAddr;
+		return shipementAddr;
 	}
 
 	public void setShipementAddr(String shipementAddr) {
 		this.shipementAddr = shipementAddr;
 	}
 
-	public User getUser() {
-		return this.user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public List<Order> getOrders() {
-		return this.orders;
+		return orders;
 	}
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
 
-	public Order addOrder(Order order) {
-		getOrders().add(order);
-		order.setCustomer(this);
-
-		return order;
-	}
-
-	public Order removeOrder(Order order) {
-		getOrders().remove(order);
-		order.setCustomer(null);
-
-		return order;
-	}
-
 	public List<Subscription> getSubscriptions() {
-		return this.subscriptions;
+		return subscriptions;
 	}
 
 	public void setSubscriptions(List<Subscription> subscriptions) {
 		this.subscriptions = subscriptions;
 	}
 
-	public Subscription addSubscription(Subscription subscription) {
-		getSubscriptions().add(subscription);
-		subscription.setCustomer(this);
-
-		return subscription;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
-	public Subscription removeSubscription(Subscription subscription) {
-		getSubscriptions().remove(subscription);
-		subscription.setCustomer(null);
-
-		return subscription;
-	}
+	
 
 }
