@@ -5,7 +5,6 @@ import javax.persistence.*;
 import java.util.List;
 
 
-
 @Entity
 @NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
 public class Category implements Serializable {
