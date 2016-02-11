@@ -35,6 +35,14 @@ public class Message implements Serializable {
 	
 	public Message() {
 	}
+	
+	public Message(User src, User dest, String text) {
+		this.user = src;
+		this.receiver = dest;
+		this.text = text;
+		this.date = new Date();
+		this.seen = 0;
+	}
 
 	public int getIdMessage() {
 		return this.idMessage;

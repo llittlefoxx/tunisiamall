@@ -16,7 +16,6 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 	EntityManager em;
 	
     public MessageService() {
-    	
     }
 
 	@Override
@@ -27,7 +26,8 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 
 	@Override
 	public void sendMessage(User src, User dest, String text) {
-		
+		Message m = new Message(src, dest, text);
+		em.persist(m);
 	}
 
 	@Override
