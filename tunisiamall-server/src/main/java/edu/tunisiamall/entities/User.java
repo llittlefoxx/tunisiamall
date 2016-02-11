@@ -70,10 +70,6 @@ public class User implements Serializable {
 	private List<User> users1;
 
 
-	//bi-directional many-to-one association to Gestbookentry
-	@OneToMany(mappedBy="user")
-	private List<Gestbookentry> gestbookentries;
-
 	//bi-directional many-to-one association to Message
 	@OneToMany(mappedBy="user")
 	private List<Message> messages;
@@ -211,14 +207,6 @@ public class User implements Serializable {
 
 	public void setUsers1(List<User> users1) {
 		this.users1 = users1;
-	}
-
-	public List<Gestbookentry> getGestbookentries() {
-		return gestbookentries;
-	}
-
-	public void setGestbookentries(List<Gestbookentry> gestbookentries) {
-		this.gestbookentries = gestbookentries;
 	}
 
 	public List<Message> getMessages() {
