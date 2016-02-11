@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 
+
 @Entity
 @NamedQuery(name="Request.findAll", query="SELECT r FROM Request r")
 public class Request implements Serializable {
