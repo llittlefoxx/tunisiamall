@@ -5,10 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-/**
- * The persistent class for the request database table.
- * 
- */
+
 @Entity
 @NamedQuery(name="Request.findAll", query="SELECT r FROM Request r")
 public class Request implements Serializable {

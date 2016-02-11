@@ -26,9 +26,7 @@ public class Gestbookentry implements Serializable {
 
 	private String text;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="idUser")
+	@OneToOne
 	private User user;
 
 	public Gestbookentry() {
