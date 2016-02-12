@@ -19,7 +19,7 @@ public class Subscription implements Serializable {
 
 	//bi-directional many-to-one association to Customer
 	@ManyToOne
-	@JoinColumn(name="idUser")
+	@JoinColumn(name="idUser_fk")
 	private Customer customer;
 
 	//bi-directional many-to-one association to Event
