@@ -36,7 +36,11 @@ public class Product implements Serializable {
 	private String tag;
 
 	private BigDecimal tax;
-
+	
+	@ManyToOne
+	@JoinColumn(name="IdPromotionSuggest_fk")
+	private PromotionSuggest PromotionSuggest;
+	
 	//bi-directional many-to-one association to Image
 	@OneToMany(mappedBy="product")
 	private List<Image> images;

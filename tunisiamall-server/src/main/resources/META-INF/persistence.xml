@@ -25,5 +25,9 @@
 		<class>edu.tunisiamall.entities.Subscription</class>
 		<class>edu.tunisiamall.entities.SubscriptionPK</class>
 		<class>edu.tunisiamall.entities.User</class>
+		<class>edu.tunisiamall.entities.PromotionSuggest</class>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+		</properties>
 	</persistence-unit>
 </persistence>

@@ -9,11 +9,11 @@ import javax.ejb.Stateful;
 public class ShopperReports implements ShopperReportsRemote, ShopperReportsLocal {
 
     /**
-     * Default constructor. 
-     *testttttSSSSSSSSSSSSSSSSSSSS
+     *
      */
     public ShopperReports() {
-       
+      
+    	
     }
 
 }
