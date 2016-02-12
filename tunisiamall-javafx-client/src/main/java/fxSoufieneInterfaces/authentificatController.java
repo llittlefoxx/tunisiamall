@@ -1,18 +1,27 @@
 package fxSoufieneInterfaces;
 
+import Delegates.UserDelagate;
+import edu.tunisiamall.entities.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class authentificatController {
 	@FXML
-	TextField hi;
+	TextField login;
 	@FXML
-	Button b1;
+	PasswordField password;
 	@FXML
 	public void hello (ActionEvent acEvent){
-		hi.setText("3aslema");
+		UserDelagate userdelg =new UserDelagate();
+		User user=new User();
+		user=userdelg.authentificate(login.getText(), password.getText());
+		login.setText("");
+		password.setText("");
+		System.out.println(user.getLogin());
+		
 	}
 
 }
