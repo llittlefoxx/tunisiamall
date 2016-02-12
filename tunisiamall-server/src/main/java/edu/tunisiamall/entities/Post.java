@@ -5,10 +5,6 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the post database table.
- * 
- */
 @Entity
 @NamedQuery(name="Post.findAll", query="SELECT p FROM Post p")
 public class Post implements Serializable {
@@ -22,11 +18,9 @@ public class Post implements Serializable {
 
 	private int rating;
 
-	//bi-directional many-to-one association to Comment
 	@OneToMany(mappedBy="post")
 	private List<Comment> comments;
 
-	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name="idUser")
 	private User user;
@@ -88,4 +82,24 @@ public class Post implements Serializable {
 		this.user = user;
 	}
 
+	@Override
+	public int hashCode() {
+		return idPost;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Post))
+			return false;
+		Post other = (Post) obj;
+		if (idPost != other.idPost)
+			return false;
+		return true;
+	}
+
+	
 }

@@ -2,15 +2,14 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import edu.tunisiamall.entities.ShopRequest;
+
 import java.util.List;
 
 
-/**
- * The persistent class for the category database table.
- * this is a new line added by ElyesAAAA
- * 
- */
 @Entity
+@Table(name="category")
 @NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +21,11 @@ public class Category implements Serializable {
 	private String description;
 
 	private String libelle;
-
+	
+	@OneToMany(mappedBy="category")
+	private List<ShopRequest> requests;
+	
+	
 	//bi-directional many-to-one association to Subcategory
 	@OneToMany(mappedBy="category")
 	private List<Subcategory> subcategories;
@@ -60,6 +63,15 @@ public class Category implements Serializable {
 
 	public void setSubcategories(List<Subcategory> subcategories) {
 		this.subcategories = subcategories;
+	}
+
+	
+	public List<ShopRequest> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(List<ShopRequest> requests) {
+		this.requests = requests;
 	}
 
 	public Subcategory addSubcategory(Subcategory subcategory) {

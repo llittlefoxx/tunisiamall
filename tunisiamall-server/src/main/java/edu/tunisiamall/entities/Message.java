@@ -5,10 +5,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 
-/**
- * The persistent class for the message database table.
- * 
- */
 @Entity
 @NamedQuery(name="Message.findAll", query="SELECT m FROM Message m")
 public class Message implements Serializable {
@@ -21,8 +17,6 @@ public class Message implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 
-	private int reciver;
-
 	private byte seen;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -30,12 +24,24 @@ public class Message implements Serializable {
 
 	private String text;
 
-	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name="idUser")
 	private User user;
 
+	@ManyToOne
+	@JoinColumn(name="idUser")
+	private User receiver;
+	
+	
 	public Message() {
+	}
+	
+	public Message(User src, User dest, String text) {
+		this.user = src;
+		this.receiver = dest;
+		this.text = text;
+		this.date = new Date();
+		this.seen = 0;
 	}
 
 	public int getIdMessage() {
@@ -54,12 +60,12 @@ public class Message implements Serializable {
 		this.date = date;
 	}
 
-	public int getReciver() {
-		return this.reciver;
+	public User getReceiver() {
+		return this.receiver;
 	}
 
-	public void setReciver(int reciver) {
-		this.reciver = reciver;
+	public void setReceiver(User reciver) {
+		this.receiver = reciver;
 	}
 
 	public byte getSeen() {
@@ -94,4 +100,24 @@ public class Message implements Serializable {
 		this.user = user;
 	}
 
+	@Override
+	public int hashCode() {
+		return idMessage;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Message))
+			return false;
+		Message other = (Message) obj;
+		if (idMessage != other.idMessage)
+			return false;
+		return true;
+	}
+
+	
 }

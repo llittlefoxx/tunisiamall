@@ -8,9 +8,6 @@ import javax.ejb.Stateful;
 @Stateful
 public class ShopperReports implements ShopperReportsRemote, ShopperReportsLocal {
 
-    /**
-     *
-     */
     public ShopperReports() {
       
     	
