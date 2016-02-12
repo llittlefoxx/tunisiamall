@@ -25,11 +25,11 @@ public class Message implements Serializable {
 	private String text;
 
 	@ManyToOne
-	@JoinColumn(name="idUser")
+	@JoinColumn(name="idUserSender_FK")
 	private User user;
 
 	@ManyToOne
-	@JoinColumn(name="idUser")
+	@JoinColumn(name="idUserReciver_fk")
 	private User receiver;
 	
 	
