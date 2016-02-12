@@ -2,6 +2,9 @@ package application;
 	
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
 import GUI.ShopRequestInterfaces.ViewShopRequestAdminPannel;
 import fxSoufieneInterfaces.authentificatController;
@@ -49,6 +52,14 @@ private void createAndSetSwingContent(final SwingNode swingNode) {
     SwingUtilities.invokeLater(new Runnable() {
         @Override
         public void run() {
+        	BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.frameBorderStyle.generalNoTranslucencyShadow;
+			 UIManager.put("RootPane.setupButtonVisible",false);
+	        try {
+				org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             JPanel panel = new ViewShopRequestAdminPannel();
          //   panel.add(new JButton("Click me!"));
             swingNode.setContent(panel);

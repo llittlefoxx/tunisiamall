@@ -136,7 +136,7 @@ public class ViewShopRequestAdminPannel extends JPanel {
 		
 		
 		JLabel lblNewLabel = new JLabel("Manage Shop Request");
-		lblNewLabel.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/gui/images/shop.png.-m1.png")));
+		lblNewLabel.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/GUI/ShopRequestInterfaces/images/shop.png.-m1.png")));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Brush Script MT", Font.BOLD, 26));
 		lblNewLabel.setBounds(184, 11, 375, 81);
@@ -149,14 +149,14 @@ public class ViewShopRequestAdminPannel extends JPanel {
 		JButton button = new JButton("");
 		button.setBounds(694, 69, 46, 33);
 		add(button);
-		button.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/gui/images/newsletter-icon.png")));
+		button.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/GUI/ShopRequestInterfaces/images/newsletter-icon.png")));
 		
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setBounds(84, 142, 155, 22);
 		add(dateChooser);
 		
 		JLabel lblDate = new JLabel("");
-		lblDate.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/gui/images/images (1).jpg")));
+		lblDate.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/GUI/ShopRequestInterfaces/images/images (1).jpg")));
 		lblDate.setBounds(26, 125, 62, 52);
 		add(lblDate);
 		
@@ -168,7 +168,7 @@ public class ViewShopRequestAdminPannel extends JPanel {
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setBounds(675, 142, 37, 33);
 		add(btnNewButton);
-		btnNewButton.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/gui/images/search (1).png")));
+		btnNewButton.setIcon(new ImageIcon(ViewShopRequestAdminPannel.class.getResource("/GUI/ShopRequestInterfaces/images/search (1).png")));
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setBounds(552, 399, 89, 23);

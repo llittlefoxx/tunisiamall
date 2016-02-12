@@ -13,7 +13,7 @@ public class CategoryDelegate {
 		private static CategoryServicesRemote remote;
 		
 		private static CategoryServicesRemote getProxy(){
-			return (CategoryServicesRemote) ServiceLocator.getInstance().getProxy("ejb-pidev-kenza/ManageCategoriesServices!edu.esprit.services.category.ManageCategoriesServicesRemote");
+			return (CategoryServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall-server/CategoryServices!edu.tunisiamall.categorieServices.CategoryServicesRemote");
 		}
 		public static void doAddCategory(Category c)
 		{
