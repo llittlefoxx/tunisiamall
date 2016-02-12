@@ -8,12 +8,9 @@ import javax.ejb.Stateful;
 @Stateful
 public class ShopperReports implements ShopperReportsRemote, ShopperReportsLocal {
 
-    /**
-     * Default constructor. 
-     *testttttSSSSSSSSSSSSSSSSSSSS
-     */
     public ShopperReports() {
-       
+      
+    	
     }
 
 }
