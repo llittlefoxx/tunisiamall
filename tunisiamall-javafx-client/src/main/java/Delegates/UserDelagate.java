@@ -9,7 +9,7 @@ import edu.tunisiamall.userServices.*;
 public class UserDelagate {
 	
 	private static userServicesRemote remote;
-	private final static String jndiName=""; 
+	private final static String jndiName="tunisiamall-server/userServices!edu.tunisiamall.userServices.userServicesRemote"; 
 	
 	private static userServicesRemote getProxy() {
 		return (userServicesRemote) Locator.ServiceLocator.getInstance().getProxy(
@@ -18,7 +18,7 @@ public class UserDelagate {
 	}
 
 	
-	void create(User user){
+	public void create(User user){
 		getProxy().create(user);
 	}
 	public User authentificate(String login, String password){
