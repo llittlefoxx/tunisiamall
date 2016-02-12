@@ -27,7 +27,15 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/calendar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/theme"/>
+=======
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+>>>>>>> refs/heads/master
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
