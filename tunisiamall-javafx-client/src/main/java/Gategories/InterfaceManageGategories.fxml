@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gategories.CategoriesController">
    <children>
       <TitledPane alignment="BOTTOM_LEFT" animated="false" collapsible="false" expanded="false" prefHeight="400.0" prefWidth="390.0" text="List of Categories" textAlignment="CENTER" textFill="#1a35ff">
          <opaqueInsets>
@@ -29,8 +29,8 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="207.0">
                <children>
-                  <Button fx:id="AddButton" layoutX="125.0" layoutY="22.0" mnemonicParsing="false" text="Add" textFill="#0715b5" />
-                  <TextField fx:id="textfieldAdd" layoutX="14.0" layoutY="22.0" prefHeight="25.0" prefWidth="103.0" />
+                  <Button fx:id="AddButton" layoutX="125.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#Addclicked" text="Add" textFill="#0715b5" />
+                  <TextField fx:id="textfieldAdd" layoutX="14.0" layoutY="22.0" onKeyPressed="#AddCategory" prefHeight="25.0" prefWidth="103.0" />
                   <Label layoutX="13.0" layoutY="57.0" prefHeight="30.0" prefWidth="181.0" text="       Add a new category" textAlignment="CENTER">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
@@ -56,8 +56,8 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="textfieldsearch" layoutX="14.0" layoutY="26.0" />
-                  <Button fx:id="buttonsearch" layoutX="126.0" layoutY="122.0" mnemonicParsing="false" text="Search" textFill="#0715b5" />
+                  <TextField fx:id="textfieldsearch" layoutX="14.0" layoutY="26.0" onKeyPressed="#searchcategory" />
+                  <Button fx:id="buttonsearch" layoutX="126.0" layoutY="122.0" mnemonicParsing="false" onMouseClicked="#searchclicked" text="Search" textFill="#0715b5" />
                </children></AnchorPane>
         </content>
          <graphic>
@@ -69,4 +69,4 @@
          </graphic>
       </TitledPane>
    </children>
-</AnchorPane>
+</fx:root>

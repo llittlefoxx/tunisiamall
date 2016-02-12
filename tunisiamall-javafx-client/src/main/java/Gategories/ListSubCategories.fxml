@@ -7,14 +7,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TitledPane animated="false" collapsible="false" text="List of SubCategories" textFill="#3a09eb">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
                <children>
-                  <Button layoutX="387.0" layoutY="329.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="165.0" text="Retrun" textAlignment="RIGHT" textFill="#2c08dd">
+                  <Button fx:id="buttonReturn" layoutX="387.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#ReturnClicked" prefHeight="43.0" prefWidth="165.0" text="Retrun" textAlignment="RIGHT" textFill="#2c08dd">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -24,7 +23,7 @@
                         <Image url="@Images/return.png" />
                      </image>
                   </ImageView>
-                  <ListView layoutX="14.0" layoutY="14.0" prefHeight="296.0" prefWidth="569.0" />
+                  <ListView fx:id="ListSubCategories" layoutX="14.0" layoutY="14.0" prefHeight="296.0" prefWidth="569.0" />
                </children>
             </AnchorPane>
         </content>
