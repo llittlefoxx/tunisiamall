@@ -20,12 +20,12 @@ public class Orerline implements Serializable {
 
 	//bi-directional many-to-one association to Order
 	@ManyToOne
-	@JoinColumn(name="idOrder")
+	@JoinColumn(name="idOrder_FK")
 	private Order order;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
-	@JoinColumn(name="idProduct")
+	@JoinColumn(name="idProduct_fk")
 	private Product product;
 
 	public Orerline() {
@@ -62,5 +62,4 @@ public class Orerline implements Serializable {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-
 }
