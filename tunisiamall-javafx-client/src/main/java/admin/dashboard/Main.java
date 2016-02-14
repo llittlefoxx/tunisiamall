@@ -12,7 +12,7 @@ public class Main extends Application {
 		try {
 			 primaryStage.setTitle("FXML TableView Example");
 			 TitledPane myPane = (TitledPane)FXMLLoader.load(getClass().getResource
-		    ("Test.fxml"));
+		    ("DashBoard.fxml"));
 		       Scene myScene = new Scene(myPane);
 		       primaryStage.setScene(myScene);
 		       primaryStage.show();

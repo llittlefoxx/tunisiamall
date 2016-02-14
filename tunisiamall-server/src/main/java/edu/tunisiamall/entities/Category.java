@@ -3,7 +3,6 @@ package edu.tunisiamall.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import edu.tunisiamall.entities.ShopRequest;
 
 import java.util.List;
 
@@ -21,10 +20,6 @@ public class Category implements Serializable {
 	private String description;
 
 	private String libelle;
-	
-	@OneToMany(mappedBy="category")
-	private List<ShopRequest> requests;
-	
 	
 	//bi-directional many-to-one association to Subcategory
 	@OneToMany(mappedBy="category")
@@ -65,14 +60,6 @@ public class Category implements Serializable {
 		this.subcategories = subcategories;
 	}
 
-	
-	public List<ShopRequest> getRequests() {
-		return requests;
-	}
-
-	public void setRequests(List<ShopRequest> requests) {
-		this.requests = requests;
-	}
 
 	public Subcategory addSubcategory(Subcategory subcategory) {
 		getSubcategories().add(subcategory);

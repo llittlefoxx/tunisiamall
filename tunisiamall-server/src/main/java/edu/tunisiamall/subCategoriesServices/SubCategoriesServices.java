@@ -45,4 +45,10 @@ public class SubCategoriesServices implements SubCategoriesServicesRemote, SubCa
 		return em.find(Subcategory.class,idSubCategory);
 	}
 
+	@Override
+	public void addSubCategory(Subcategory subcategory) {
+		em.persist(subcategory);
+		
+	}
+
 }

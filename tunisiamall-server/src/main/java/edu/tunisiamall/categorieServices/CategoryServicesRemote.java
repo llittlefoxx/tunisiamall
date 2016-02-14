@@ -5,13 +5,32 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import edu.tunisiamall.entities.Category;
+import edu.tunisiamall.entities.Product;
+import edu.tunisiamall.entities.Subcategory;
 
 @Remote
 public interface CategoryServicesRemote {
-	public void addCategory(Category c);
+	// methodes creer par dali
+	public void addCategory(Category category);
+
+	public Product findProductById(int id);
+	public void addProduct(Product product);
+
+	public void updateProduct(Product product);
+	public void addSubCategory(Subcategory subcategory);
+
+	public Category findCategoryByName(String name);
+
+	public Subcategory findSubCatByName(String name);
+
+	// fin
 	public void updateCategroy(Category c);
+
 	public void deleteCategory(int idCategory);
+
 	public Category findCategoryById(int idCategory);
+
 	public List<Category> findAll();
+
 	public List<Category> SearchCategory(String L);
 }

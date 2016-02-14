@@ -9,25 +9,30 @@
 <?import admin.dashboard.Person ?>
 
 
-<TitledPane fx:controller="admin.dashboard.FXMLTableViewController"
+<TitledPane fx:controller="admin.dashboard.ProductController"
 	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
 	<content>
 		<TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
 			<columns>
 
-				<TableColumn fx:id="firstNameColumn" text="First Name">
+				<TableColumn text="libelle">
 					<cellValueFactory>
-						<PropertyValueFactory property="firstName" />
+						<PropertyValueFactory property="libelle" />
 					</cellValueFactory>
 				</TableColumn>
-				<TableColumn text="Last Name">
+				<TableColumn text="sellprice">
 					<cellValueFactory>
-						<PropertyValueFactory property="lastName" />
+						<PropertyValueFactory property="sellPrice" />
 					</cellValueFactory>
 				</TableColumn>
-				<TableColumn text="Email Address">
+				<TableColumn text="qte">
 					<cellValueFactory>
-						<PropertyValueFactory property="email" />
+						<PropertyValueFactory property="qte" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="critical zone">
+					<cellValueFactory>
+						<PropertyValueFactory property="critical" />
 					</cellValueFactory>
 				</TableColumn>
 			</columns>
@@ -36,12 +41,10 @@
 					
 				</FXCollections>
 			</items>
-			<sortOrder>
-					<fx:reference source="firstNameColumn" />
-				</sortOrder>
+
 		</TableView>
 	</content>
 	<graphic>
-		<Button mnemonicParsing="false" text="Add" onAction="#addPerson" />
+		<Button mnemonicParsing="false" text="Add"  />
 	</graphic>
 </TitledPane>
