@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane layoutX="1.0" layoutY="1.0" prefHeight="397.0" prefWidth="390.0" text="List Of Categories">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="378.0">
+               <children>
+                  <TableView fx:id="tableCat" layoutX="14.0" layoutY="57.0" prefHeight="200.0" prefWidth="372.0">
+                    <columns>
+                        <TableColumn fx:id="IdCategory" prefWidth="38.0" text="Id" />
+                        <TableColumn fx:id="Libelle" prefWidth="85.0" text="Libelle" />
+                        <TableColumn fx:id="Description" prefWidth="227.0" text="Description" />
+                    </columns>
+                  </TableView>
+                  <TextField layoutX="151.0" layoutY="22.0" />
+                  <Button layoutX="311.0" layoutY="22.0" mnemonicParsing="false" text="Search" />
+                  <Button fx:id="DeleteButton" layoutX="300.0" layoutY="295.0" mnemonicParsing="false" onAction="#DeleteCategory" text="Delete" />
+                  <Button fx:id="EditButton" layoutX="208.0" layoutY="295.0" mnemonicParsing="false" onAction="#UpdateCategory" text="Edit" />
+                  <Button fx:id="SubCategoriesListed" layoutX="3.0" layoutY="295.0" mnemonicParsing="false" onAction="#OnListOfSubCategoriesViwed" prefHeight="25.0" prefWidth="152.0" text="View list of subgategories" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane layoutX="393.0" layoutY="1.0" prefHeight="397.0" prefWidth="210.0" text="New Category">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="208.0">
+               <children>
+                  <Button fx:id="AddButton" layoutX="70.0" layoutY="309.0" mnemonicParsing="false" onAction="#AddCategory" text="Add" />
+                  <Label layoutX="6.0" layoutY="51.0" prefHeight="17.0" prefWidth="45.0" text="Libelle :" />
+                  <TextField fx:id="TextLibelle" layoutX="53.0" layoutY="47.0" />
+                  <Label layoutX="6.0" layoutY="89.0" prefHeight="24.0" prefWidth="64.0" text="Desciption :" />
+                  <TextArea fx:id="TextDescription" layoutX="14.0" layoutY="118.0" prefHeight="179.0" prefWidth="189.0" />
+                  <Button fx:id="CancelButton" layoutX="128.0" layoutY="309.0" mnemonicParsing="false" onAction="#CancelAdd" text="Cancel" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
