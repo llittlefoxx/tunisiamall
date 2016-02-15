@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import fxmltableview.*?> 
+<?import admin.dashboard.Person ?>
+
+
+<TitledPane fx:controller="admin.dashboard.ProductController"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+	<content>
+		<TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+			<columns>
+
+				<TableColumn text="libelle">
+					<cellValueFactory>
+						<PropertyValueFactory property="libelle" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="sellprice">
+					<cellValueFactory>
+						<PropertyValueFactory property="sellPrice" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="qte">
+					<cellValueFactory>
+						<PropertyValueFactory property="qte" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="critical zone">
+					<cellValueFactory>
+						<PropertyValueFactory property="critical" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					
+				</FXCollections>
+			</items>
+
+		</TableView>
+	</content>
+	<graphic>
+		<Button mnemonicParsing="false" text="Add"  />
+	</graphic>
+</TitledPane>
