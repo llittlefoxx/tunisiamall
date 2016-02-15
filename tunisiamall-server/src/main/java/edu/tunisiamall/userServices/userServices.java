@@ -66,7 +66,7 @@ public class userServices implements userServicesRemote, userServicesLocal {
 	}
 
 	@Override
-	public User find(Integer id) {
+	public User find(int id) {
 		return em.find(User.class, id);
 	}
 

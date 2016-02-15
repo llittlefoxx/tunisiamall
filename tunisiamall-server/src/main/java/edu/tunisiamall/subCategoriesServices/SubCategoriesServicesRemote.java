@@ -9,8 +9,12 @@ import edu.tunisiamall.entities.Subcategory;
 
 @Remote
 public interface SubCategoriesServicesRemote {
+	public void addSubCategory(Subcategory subcategory);
+
 	public void deleteSubCategories(int idSubCategory);
+
 	public Subcategory findSubCategoryById(int idSubCategory);
+
 	public List<Subcategory> findAll();
 
 }

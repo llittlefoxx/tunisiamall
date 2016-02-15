@@ -2,7 +2,6 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import edu.tunisiamall.entities.ShopRequest;
 
 import java.util.List;
@@ -25,6 +24,8 @@ public class Category implements Serializable {
 	@OneToMany(mappedBy="category")
 	private List<ShopRequest> requests;
 	
+	@OneToMany(mappedBy="category")
+	private List<Store> stores;
 	
 	//bi-directional many-to-one association to Subcategory
 	@OneToMany(mappedBy="category")
@@ -49,6 +50,14 @@ public class Category implements Serializable {
 		this.description = description;
 	}
 
+	public List<Store> getStores() {
+		return stores;
+	}
+
+	public void setStores(List<Store> stores) {
+		this.stores = stores;
+	}
+	
 	public String getLibelle() {
 		return this.libelle;
 	}
@@ -65,7 +74,6 @@ public class Category implements Serializable {
 		this.subcategories = subcategories;
 	}
 
-	
 	public List<ShopRequest> getRequests() {
 		return requests;
 	}
@@ -87,5 +95,10 @@ public class Category implements Serializable {
 
 		return subcategory;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Category [idCategory=" + idCategory + ", description=" + description + ", libelle=" + libelle
+				 + "]";
+	}
 }

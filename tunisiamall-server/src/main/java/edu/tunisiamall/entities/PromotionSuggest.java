@@ -11,7 +11,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@NamedQuery(name = "PromotionSuggest.findAll", query = "SELECT p FROM PromotionSuggest p")
 public class PromotionSuggest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -19,7 +19,7 @@ public class PromotionSuggest implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPromotionSuggest;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
 
@@ -28,10 +28,13 @@ public class PromotionSuggest implements Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date suggestionDate;
-	
-	@OneToMany(mappedBy="PromotionSuggest")
+
+	@OneToMany(mappedBy = "promotionSuggest")
 	private List<Product> products;
-	
+
+	private String desccription;
+	private double value;
+
 	public PromotionSuggest() {
 		super();
 	}
@@ -74,6 +77,22 @@ public class PromotionSuggest implements Serializable {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public String getDesccription() {
+		return desccription;
+	}
+
+	public void setDesccription(String desccription) {
+		this.desccription = desccription;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
 	}
 
 }

@@ -6,19 +6,18 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-
 /**
  * The persistent class for the orders database table.
  * 
  */
 @Entity
-@Table(name="orders")
-@NamedQuery(name="Order.findAll", query="SELECT o FROM Order o")
+@Table(name = "orders")
+@NamedQuery(name = "Order.findAll", query = "SELECT o FROM Order o")
 public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idOrder;
 
 	private BigDecimal amountPayed;
@@ -35,14 +34,14 @@ public class Order implements Serializable {
 
 	private String statusPayment;
 
-	//bi-directional many-to-one association to Customer
+	// bi-directional many-to-one association to Customer
 	@ManyToOne
-	@JoinColumn(name="idUser")
+	@JoinColumn(name = "idUser")
 	private Customer customer;
 
-	//bi-directional many-to-one association to Orerline
-	@OneToMany(mappedBy="order")
-	private List<Orerline> orerlines;
+
+	@OneToMany(mappedBy = "order")
+	private List<OrderLine> orderLines;
 
 	public Order() {
 	}
@@ -111,26 +110,14 @@ public class Order implements Serializable {
 		this.customer = customer;
 	}
 
-	public List<Orerline> getOrerlines() {
-		return this.orerlines;
+	public List<OrderLine> getOrderLines() {
+		return orderLines;
 	}
 
-	public void setOrerlines(List<Orerline> orerlines) {
-		this.orerlines = orerlines;
+	public void setOrderLines(List<OrderLine> orderLines) {
+		this.orderLines = orderLines;
 	}
 
-	public Orerline addOrerline(Orerline orerline) {
-		getOrerlines().add(orerline);
-		orerline.setOrder(this);
 
-		return orerline;
-	}
-
-	public Orerline removeOrerline(Orerline orerline) {
-		getOrerlines().remove(orerline);
-		orerline.setOrder(null);
-
-		return orerline;
-	}
 
 }

@@ -2,7 +2,6 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idProduct;
 
-	private BigDecimal buyPrice;
+	private double buyPrice;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date expDate;
@@ -29,17 +28,24 @@ public class Product implements Serializable {
 
 	private int qte;
 
-	private BigDecimal sellPrice;
+	private int criticalZone;
+	
+	private double sellPrice;
 
 	private String state;
 
 	private String tag;
 
-	private BigDecimal tax;
+	private double tax;
+	
+
+	
+	@ManyToOne
+	private Promotion Promotion;
 	
 	@ManyToOne
 	@JoinColumn(name="IdPromotionSuggest_fk")
-	private PromotionSuggest PromotionSuggest;
+	private PromotionSuggest promotionSuggest;
 	
 	//bi-directional many-to-one association to Image
 	@OneToMany(mappedBy="product")
@@ -50,8 +56,17 @@ public class Product implements Serializable {
 	private List<Mvtstock> mvtstocks;
 
 	//bi-directional many-to-one association to Orerline
+	
 	@OneToMany(mappedBy="product")
-	private List<Orerline> orerlines;
+	private List<OrderLine> orderline;
+	
+	public List<OrderLine> getOrderline() {
+		return orderline;
+	}
+
+	public void setOrderline(List<OrderLine> orderline) {
+		this.orderline = orderline;
+	}
 
 	//bi-directional many-to-one association to Subcategory
 	@ManyToOne
@@ -69,11 +84,11 @@ public class Product implements Serializable {
 		this.idProduct = idProduct;
 	}
 
-	public BigDecimal getBuyPrice() {
+	public double getBuyPrice() {
 		return this.buyPrice;
 	}
 
-	public void setBuyPrice(BigDecimal buyPrice) {
+	public void setBuyPrice(double buyPrice) {
 		this.buyPrice = buyPrice;
 	}
 
@@ -101,11 +116,11 @@ public class Product implements Serializable {
 		this.qte = qte;
 	}
 
-	public BigDecimal getSellPrice() {
+	public double getSellPrice() {
 		return this.sellPrice;
 	}
 
-	public void setSellPrice(BigDecimal sellPrice) {
+	public void setSellPrice(double sellPrice) {
 		this.sellPrice = sellPrice;
 	}
 
@@ -125,11 +140,11 @@ public class Product implements Serializable {
 		this.tag = tag;
 	}
 
-	public BigDecimal getTax() {
+	public double getTax() {
 		return this.tax;
 	}
 
-	public void setTax(BigDecimal tax) {
+	public void setTax(double tax) {
 		this.tax = tax;
 	}
 
@@ -177,27 +192,6 @@ public class Product implements Serializable {
 		return mvtstock;
 	}
 
-	public List<Orerline> getOrerlines() {
-		return this.orerlines;
-	}
-
-	public void setOrerlines(List<Orerline> orerlines) {
-		this.orerlines = orerlines;
-	}
-
-	public Orerline addOrerline(Orerline orerline) {
-		getOrerlines().add(orerline);
-		orerline.setProduct(this);
-
-		return orerline;
-	}
-
-	public Orerline removeOrerline(Orerline orerline) {
-		getOrerlines().remove(orerline);
-		orerline.setProduct(null);
-
-		return orerline;
-	}
 
 	public Subcategory getSubcategory() {
 		return this.subcategory;
@@ -205,6 +199,32 @@ public class Product implements Serializable {
 
 	public void setSubcategory(Subcategory subcategory) {
 		this.subcategory = subcategory;
+	}
+
+	public Promotion getPromotion() {
+		return Promotion;
+	}
+
+	public void setPromotion(Promotion promotion) {
+		Promotion = promotion;
+	}
+
+	
+	
+	public int getCriticalZone() {
+		return criticalZone;
+	}
+
+	public void setCriticalZone(int criticalZone) {
+		this.criticalZone = criticalZone;
+	}
+
+	public PromotionSuggest getPromotionSuggest() {
+		return promotionSuggest;
+	}
+
+	public void setPromotionSuggest(PromotionSuggest promotionSuggest) {
+		this.promotionSuggest = promotionSuggest;
 	}
 
 }
