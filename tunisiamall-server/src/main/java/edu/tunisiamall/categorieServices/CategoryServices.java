@@ -61,12 +61,12 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	}
 
 	@Override
-	public List<Category> SearchCategory(String L) {
+	public Category SearchCategory(String L) {
 		// TODO Auto-generated method stub
 		//String queryText = 
 		Query query = em.createQuery("select c.name from Category c where c.name like :Name")
 				.setParameter("Name",L);
-		return query.getResultList();
+		return (Category) query.getSingleResult();
 		
 	}
 

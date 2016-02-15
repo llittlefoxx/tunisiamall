@@ -23,7 +23,8 @@ public class ShopRequest implements Serializable {
 	private String description;
 	
 	private Date rcptDate;
-	private String status;
+	private boolean status;
+	
 	
 	
 	private Date plannedOpeningDate;
@@ -72,11 +73,11 @@ public class ShopRequest implements Serializable {
 	public void setRcptDate(Date rcptDate) {
 		this.rcptDate = rcptDate;
 	}   
-	public String getStatus() {
+	public boolean getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 	
@@ -100,7 +101,7 @@ public class ShopRequest implements Serializable {
 		result = prime * result + ((plannedOpeningDate == null) ? 0 : plannedOpeningDate.hashCode());
 		result = prime * result + ((rcptDate == null) ? 0 : rcptDate.hashCode());
 		result = prime * result + ((rentPeriod == null) ? 0 : rentPeriod.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
+	
 		result = prime * result + (storeInMall ? 1231 : 1237);
 		return result;
 	}
@@ -179,11 +180,7 @@ public class ShopRequest implements Serializable {
 				return false;
 		} else if (!rentPeriod.equals(other.rentPeriod))
 			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
+		
 		if (storeInMall != other.storeInMall)
 			return false;
 		return true;

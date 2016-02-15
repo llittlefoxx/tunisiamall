@@ -36,6 +36,10 @@ public class CategoryDelegate {
 		{
 			 return getProxy().findAll();
 		}
+		public static Category doFindAllCategoryByLibelle(String l)
+		{
+			 return getProxy().SearchCategory(l);
+		}
 		
 		
 

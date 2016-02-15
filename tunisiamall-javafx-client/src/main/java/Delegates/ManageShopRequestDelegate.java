@@ -1,5 +1,6 @@
 package Delegates;
 
+import java.util.Date;
 import java.util.List;
 
 import edu.tunisiamall.shopRequestServices.ManageShopRequestServicesRemote;
@@ -34,8 +35,18 @@ public class ManageShopRequestDelegate {
 	{
 		 return getProxy().findAllShopRequest();
 	}
-	
-	
+	public static List<ShopRequest> doFindAllShopRequestByCategory(String caegory){
+		return getProxy().findAllShopRequestByCategory(caegory);
+	}
+	public static List<ShopRequest> doFindAllShopRequestUnchecked(){
+		return getProxy().findAllShopRequestUnchecked();
+	}
+	public static List<ShopRequest> doFindAllShopRequestSearchTools(String email, boolean storeimall){
+		return getProxy().findAllShopRequestSearchTools(email, storeimall);
+	}
+	public static List<ShopRequest> doFindAllShopRequestByWord(String word) {
+		return getProxy().findAllShopRequestByWord(word);
+	}
 
 }
 

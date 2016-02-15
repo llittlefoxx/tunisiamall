@@ -13,5 +13,5 @@ public interface CategoryServicesRemote {
 	public void deleteCategory(int idCategory);
 	public Category findCategoryById(int idCategory);
 	public List<Category> findAll();
-	public List<Category> SearchCategory(String L);
+	public Category SearchCategory(String L);
 }
