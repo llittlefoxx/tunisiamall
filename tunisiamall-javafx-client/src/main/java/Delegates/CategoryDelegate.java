@@ -38,7 +38,7 @@ public class CategoryDelegate {
 		}
 		public static Category doFindAllCategoryByLibelle(String l)
 		{
-			 return getProxy().SearchCategory(l);
+			 return getProxy().SearchCategory2(l);
 		}
 		
 		
