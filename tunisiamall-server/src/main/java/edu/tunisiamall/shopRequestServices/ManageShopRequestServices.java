@@ -1,6 +1,7 @@
 package edu.tunisiamall.shopRequestServices;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -70,35 +71,47 @@ public class ManageShopRequestServices implements ManageShopRequestServicesRemot
 	}
 
 	@Override
-	public List<ShopRequest> findAllShopRequestByRcptDate(Date date) {
-		Query query = em.createQuery("select s from ShopRequest s where s.rcptDate:= rcptDate");
-		query.setParameter("rcptDate", date);
+	public List<ShopRequest> findAllShopRequestUnchecked(){
+		
+		Query query = em.createQuery("select s from ShopRequest s where s.status is false");
+		//query.setParameter("rcptDate", date);
 		return query.getResultList();
 		
 	}
 
 	@Override
-	public List<ShopRequest> findAllShopRequestSearchTools(String category, String status, Date rcptDate) {
+	public List<ShopRequest> findAllShopRequestSearchTools(String email, boolean storeimall) {
+		System.out.println("ggggggg "+ email);
+		Query query = null;
+		if (email != null && storeimall==false)
+		{  query = em.createQuery("select s from ShopRequest s where s.email like '%"+email+"%' and storeinmall is false");}
 		
-		List<ShopRequest> lists = new ArrayList<ShopRequest>();
-
-        String sql = "select s from ShopRequest ";
-        if (category != null || rcptDate != null || status != null ) {
-            sql += "where ";
-            if (category != null && !category.equals("")) {
-                sql += "s.category:='" + category + "' and ";
-            }
-            if (status != null) {
-                sql += "s.status:='" + status + "' and ";
-            }
-            if (rcptDate != null) {
-                sql += "s.rcptDate:='" + rcptDate + "' and ";
-            }
-            sql = sql.substring(0, sql.length() - 4);
-        }
-        Query query = em.createQuery(sql);
-		query.setParameter("rcptDate", rcptDate).setParameter("status", status).setParameter("category", category);
+		else if(email != null && storeimall==true)
+			{
+			 query = em.createQuery("select s from ShopRequest s where s.email like'%"+email+"%' and storeinmall is true");
+			}
+		else if(email != null)
+		{
+			 query = em.createQuery("select s from ShopRequest s where s.email like '%"+email+"'% ");
+		}
+		else if(storeimall==false && email.equals(""))
+		 { query = em.createQuery("select s from ShopRequest s where storeinmall is false");}
+		if (storeimall==true && email==null)
+		{  query = em.createQuery("select s from ShopRequest s where storeinmall is true");}
+		
+		
+	
 		return query.getResultList();
 	}
+
+	@Override
+	public List<ShopRequest> findAllShopRequestByWord(String word) {
+		System.out.println("houniiii  ");
+		Query query = em.createQuery("select s from ShopRequest s where s.description like '%"+word+"%'");
+		//query.setParameter("rcptDate", date);
+		return query.getResultList();
+	}
+
+
 
 }

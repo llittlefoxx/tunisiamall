@@ -11,8 +11,13 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			 primaryStage.setTitle("FXML TableView Example");
+			 // Test Dali
+			 /*
 			 TitledPane myPane = (TitledPane)FXMLLoader.load(getClass().getResource
 		    ("DashBoard.fxml"));
+			 */
+			 // Test Kenza
+			 Pane myPane = FXMLLoader.load(getClass().getResource("/Gui/ShopRequestInterfaces/ViewShopRequestAdmin.fxml"));
 		       Scene myScene = new Scene(myPane);
 		       primaryStage.setScene(myScene);
 		       primaryStage.show();

@@ -15,8 +15,9 @@ public interface ManageShopRequestServicesRemote {
 	public void updateShopRequest(ShopRequest srequest);
 	public ShopRequest findShopRequestById(Integer id);
 	public List<ShopRequest> findAllShopRequest();
-	public List<ShopRequest> findAllShopRequestByCategory(String caegory);
-	public List<ShopRequest> findAllShopRequestByRcptDate(Date date);
-	public List<ShopRequest> findAllShopRequestSearchTools(String category, String status, Date rcptDate);
+	public List<ShopRequest> findAllShopRequestByCategory(String category);
+	public List<ShopRequest> findAllShopRequestByWord(String word);
+	public List<ShopRequest> findAllShopRequestUnchecked();
+	public List<ShopRequest> findAllShopRequestSearchTools(String email, boolean storeimall);
 	
 }
