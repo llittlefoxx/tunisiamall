@@ -4,23 +4,31 @@ package GUI.ShopRequestInterfaces;
 
 import java.io.IOException;
 import java.net.URL;
-
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import Delegates.ManageShopRequestDelegate;
 import edu.tunisiamall.entities.ShopRequest;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import GUI.ShopRequestInterfaces.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 public class ficheRequestController implements Initializable{
 
@@ -156,14 +164,30 @@ void cancelAction(ActionEvent event) {
 
 @FXML
 void deleteAction(ActionEvent event) {
+	Alert alert = new Alert(AlertType.CONFIRMATION);
+	alert.setTitle("Confirmation Dialog");
+	alert.setHeaderText("Do you want delete this Shop Request?");
+	//alert.setContentText("Are you ok with this?");
+
+	Optional<ButtonType> result = alert.showAndWait();
+	if (result.get() == ButtonType.OK){
+	    // ... user chose OK
+		ManageShopRequestDelegate.doDeleteShopRequest(sr);
+	} else {
+	    // ... user chose CANCEL or closed the dialog
+		
+	}
+
 	
-	ManageShopRequestDelegate.doDeleteShopRequest(sr);
 
 }
 
-
 @Override
 public void initialize(URL location, ResourceBundle resources) {
+
+
+	
+	
 	// TODO Auto-generated method stub
 	
 }

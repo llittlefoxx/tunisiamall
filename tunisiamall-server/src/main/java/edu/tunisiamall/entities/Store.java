@@ -18,7 +18,7 @@ public class Store implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idStroe;
-	static int nbStore=50;
+
 	private String description;
 	
 	
@@ -157,9 +157,6 @@ public class Store implements Serializable {
 		return storeevent;
 	}
 
-	public int getNbStore() {
-		return nbStore;
-	}
 	
 	
 

@@ -3,14 +3,19 @@ package GUI.ShopRequestInterfaces;
 
 import java.io.IOException;
 import java.net.URL;
-
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import Delegates.ManageShopRequestDelegate;
 
 import edu.tunisiamall.entities.ShopRequest;
-
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,11 +23,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Side;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
-
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 
 import javafx.scene.control.TabPane;
@@ -30,10 +37,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
-
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 
 public class ViewShopRequestAdminController implements Initializable{
@@ -61,7 +69,16 @@ public class ViewShopRequestAdminController implements Initializable{
 	private TableView<ShopRequest> tableView2;
 	@FXML
 	private TableView<ShopRequest> tab3;
-	
+	@FXML
+	private TableView<ShopRequest> tab4;
+    @FXML
+    private DatePicker datepickerid;
+    @FXML
+    private TextField checkedsrid;
+    @FXML
+    private TextField uncheckedsrid;
+    @FXML
+    private TextField totalshoprid;
 	@FXML
 	private TextField firstNameField;
 	@FXML
@@ -161,26 +178,28 @@ public class ViewShopRequestAdminController implements Initializable{
     }
     
     
-    public boolean verifSelectedItem()
+    public int verifSelectedItem()
     {
     	if(isclickyes.isSelected())
     	{
     		
-    		return true;
+    		return 1;
     	}
-    	else 
+    	else if(isclickno.isSelected())
     	{
     	
-    		return false;
+    		return 0;
     	}
-    		
+    	else return 2;
     }
     @FXML
     void seachtoolsAction(ActionEvent event) {
     	tabpansearch.setVisible(true);
-    	boolean var=verifSelectedItem();
+    	
+    	System.out.println("kkkeenne " + emailField1.getText());
+    	int var=verifSelectedItem();
     	List<ShopRequest> l= ManageShopRequestDelegate.doFindAllShopRequestSearchTools(emailField1.getText(), var); 
-    			System.out.println("kkkeenne");
+    			System.out.println("kkkeenne " + emailField1.getText()+ "varrr "+ var);
     			for(ShopRequest sr:l)
     			{
     				System.out.println(sr.toString());
@@ -194,14 +213,92 @@ public class ViewShopRequestAdminController implements Initializable{
     			
     }
 	
+    public void pieChart(){
+    	
+    }
+    
+    @FXML
+    private PieChart piechartid;
+    @FXML
+    private TitledPane pietitledpanid;
+    @FXML
+    void datepickerAction(ActionEvent event) {
+    	LocalDate localDate = datepickerid.getValue();
+		Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
+		Date date = Date.from(instant);
+		System.out.println(localDate + "\n" + instant + "\n" + date);
+		List<ShopRequest> datelist=ManageShopRequestDelegate.findAllShopRequestByRcptDate(date);
+		
+		for(ShopRequest s1:datelist)
+		{
+			System.out.println("testt111 "+ s1.toString());
+		}
+		final ObservableList<ShopRequest> data3=
+		        FXCollections.observableArrayList(datelist);
 
+			tab4.setItems(data3);
+			setTab4(tab4);
+			
+			totalshoprid.setText(String.valueOf(datelist.size()));
+			int check=0;
+			int uncheck=0;
+			for(ShopRequest s1:datelist)
+			{
+				System.out.println("testt111 "+ s1.toString());
+				if(s1.getStatus()==true)
+					check++;
+				else uncheck++;
+				
+			}
+			uncheckedsrid.setText(String.valueOf(uncheck));
+			checkedsrid.setText(String.valueOf(check));
+			 ObservableList<PieChart.Data> x = FXCollections.observableArrayList(	
+		                new PieChart.Data("Unchecked Shop Request", uncheck),
+			 			new PieChart.Data("Approved Shop Request", check));
+		      
+		        piechartid.setTitle("Shop Request treatment");
+		        piechartid.setData(x);
+			
+		
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+
+		Calendar c = Calendar.getInstance();
+		Date date =  c.getTime();	
+		List<ShopRequest> datelist2=ManageShopRequestDelegate.findAllShopRequestByRcptDate(date);
+		
+		int checki=0;
+		int unchecki=0;
+		for(ShopRequest s1:datelist2)
+		{
+			System.out.println("testt111 "+ s1.toString());
+			if(s1.getStatus()==true)
+				checki++;
+			else unchecki++;
+			
+		}
+		totalshoprid.setText(String.valueOf(datelist2.size()));
+		uncheckedsrid.setText(String.valueOf(unchecki));
+		checkedsrid.setText(String.valueOf(checki));
+		
+		 ObservableList<PieChart.Data> x = FXCollections.observableArrayList(	
+	                new PieChart.Data("Unchecked Shop Request", unchecki),
+		 			new PieChart.Data("Approved Shop Request", checki));
+	      
+	        piechartid.setTitle("Shop Request treatment");
+	        piechartid.setData(x);
+	        piechartid.setLegendSide(Side.BOTTOM);
+	        piechartid.setClockwise(false);
+		
 		tabpansearch.setVisible(false);
 		searchPane.setVisible(false);
 		System.out.println("kkkkk");
+
 		List<ShopRequest> lists = ManageShopRequestDelegate.doFindAllShopRequest();
+	
+		
 		final ObservableList<ShopRequest> data=
 		        FXCollections.observableArrayList(lists);
 
@@ -239,7 +336,13 @@ public class ViewShopRequestAdminController implements Initializable{
 	}
 	
 
-	 @FXML
+	 public TableView<ShopRequest> getTab4() {
+		return tab4;
+	}
+	public void setTab4(TableView<ShopRequest> tab4) {
+		this.tab4 = tab4;
+	}
+	@FXML
 	    void tbFunction() {
 		 tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 		        @Override
@@ -266,6 +369,16 @@ public class ViewShopRequestAdminController implements Initializable{
 		        public void handle(MouseEvent event) {
 		        	System.out.println("888888");
 			    	ShopRequest sr = getTableView().getSelectionModel().getSelectedItem();
+			    	System.out.println("fffff" + sr.toString());
+		            System.out.println("mouse click detected! "+event.getSource());
+		            setSr(sr);
+		        }
+		    });
+		 tab4.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		        @Override
+		        public void handle(MouseEvent event) {
+		        	System.out.println("888888");
+			    	ShopRequest sr = getTab4().getSelectionModel().getSelectedItem();
 			    	System.out.println("fffff" + sr.toString());
 		            System.out.println("mouse click detected! "+event.getSource());
 		            setSr(sr);
