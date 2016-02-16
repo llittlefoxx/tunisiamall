@@ -16,6 +16,7 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder.In;
 
 import edu.tunisiamall.categorieServices.CategoryServicesLocal;
+import edu.tunisiamall.entities.Order;
 import edu.tunisiamall.entities.Product;
 import edu.tunisiamall.entities.Promotion;
 import edu.tunisiamall.entities.PromotionSuggest;
@@ -72,15 +73,13 @@ public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsSer
 		return result;
 	}
 
-	@Override
-	public List<Store> getTopSellingStores() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
-	public Map<String, Double> getIncomeByPeriod(Date startDate, Date endDate) {
-		// TODO Auto-generated method stub
+	public Map<String, Double> getMonthlyIncome() {
+
+		// Query query=em.createQuery("select ")
+		// http://stackoverflow.com/questions/3012895/group-by-date-range-on-weeks-months-interval
 		return null;
 	}
 
@@ -139,17 +138,185 @@ public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsSer
 		Product p = new Product();
 		p = categoryServicesLocal.findProductById(idpr);
 		PromotionSuggest prs = new PromotionSuggest();
+
 		prs = findPromotionSuggestById(idsugg);
+		// prs.getProducts().add(p);
 		p.setPromotionSuggest(prs);
 		categoryServicesLocal.updateProduct(p);
 	}
 
 	@Override
 	public List<Product> getProductsByPromotionSugg(int idSugP) {
-		Query query = em.createQuery("select p from Product p where p.promotionSuggest.idPromotionSuggest = :idSugP")
-				.setParameter("idSugP", idSugP);
+		// Query query = em.createQuery("select p from Product p where
+		// p.promotionSuggest.idPromotionSuggest = :idSugP")
+		// .setParameter("idSugP", idSugP);
+
+		// query.getResultList();
+		return findPromotionSuggestById(idSugP).getProducts();
+	}
+
+	@Override
+	public void removePromotionSuggestFromProduct(int idproduct) {
+		Product product = new Product();
+		product = categoryServicesLocal.findProductById(idproduct);
+		product.setPromotionSuggest(null);
+		categoryServicesLocal.updateProduct(product);
+
+	}
+
+	@Override
+	public List<Product> findProductByLib(String lib) {
+
+		Query query = em.createQuery("Select p from Product p where p.libelle like :lib");
+		query.setParameter("lib", "%" + lib + "%");
 
 		return query.getResultList();
+	}
+
+	@Override
+	public List<PromotionSuggest> findPromotionSuggestByName(String name) {
+		Query query = em.createQuery("select p from PromotionSuggest p where p.name like :name");
+		query.setParameter("name", "%" + name + "%");
+
+		return query.getResultList();
+	}
+
+	@Override
+	public Product findProductById(int id) {
+
+		return categoryServicesLocal.findProductById(id);
+	}
+
+	@Override
+	public PromotionSuggest findPromotionSuggestByIdProd(int idProd) {
+
+		Product p = new Product();
+		p = findProductById(idProd);
+		Query query = em.createQuery("select promotionSuggest from Product p where p.idProduct =:id");
+		query.setParameter("id", idProd);
+		PromotionSuggest pros = new PromotionSuggest();
+
+		try {
+			pros = (PromotionSuggest) query.getSingleResult();
+		} catch (Exception e) {
+			System.out.println("vide");
+		}
+
+		return pros;
+	}
+
+	@Override
+	public Promotion findPromotionById(Long idprom) {
+
+		return em.find(Promotion.class, idprom);
+	}
+
+	@Override
+	public Store findStoreById(int idStore) {
+
+		return em.find(Store.class, idStore);
+	}
+
+	@Override
+	public HashMap<Store, Promotion> getPromotionByStore() {
+		HashMap<Store, Promotion> res = new HashMap<Store, Promotion>();
+		Query query = em.createNativeQuery(
+				"select promotion.idPromotion , store.idStroe from store, promotion where store.idStroe in (select product.Promotion_idPromotion from product) group by store.idStroe");
+		List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
+		Promotion p = new Promotion();
+		Store s = new Store();
+		for (Object[] objects : itemsList) {
+			Long idProm = Long.parseLong((objects[0]).toString());
+			System.out.println("id promo " + idProm);
+			p = findPromotionById(idProm);
+			System.out.println(p.getName());
+			int idStor = Integer.parseInt((objects[1]).toString());
+			s = findStoreById(idStor);
+			System.out.println("id store " + idStor);
+			res.put(s, p);
+		}
+
+		return res;
+	}
+	
+	@Override
+	public HashMap<Store,Double> getTopSellingStores() {
+
+		HashMap<Store, Double> res=new HashMap<Store,Double>();
+		Query query=em.createNativeQuery("select product.idProduct ,product."
+				+ "Promotion_idPromotion, sum(product.sellPrice), "
+				+ "sum(product.buyPrice), sum(orderline.qte) , product.tax "
+				+ ",product.store_idStroe from product ,orderline where product.idProduct="
+				+ "orderline.idProduct_fk group by product.store_idStroe");
+		
+				List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
+
+				Store store=new Store();
+				
+				double totalbenefProdActuel;
+				
+				for (Object[] objects : itemsList) {
+					store=findStoreById(Integer.parseInt(objects[6].toString()));
+					totalbenefProdActuel = getNetGainPercentage(Double.parseDouble(objects[3].toString()),
+							Double.parseDouble(objects[2].toString()), Double.parseDouble(objects[5].toString()))
+							* Integer.parseInt(objects[4].toString());
+					if (objects[1] != null) {
+						totalbenefProdActuel = totalbenefProdActuel - (totalbenefProdActuel
+								* (findPromotionById(Long.parseLong(objects[1].toString())).getValue()) / 100);
+
+						
+					}
+					res.put(store, totalbenefProdActuel);
+
+				}
+
+				System.out.println("step final: "+res.size() );
+				return res;
+	}
+	
+	
+	@Override
+	public double getTotalIncome() {
+		Query query = em.createNativeQuery("select product.idProduct ,product.Promotion_idPromotion, "
+				+ "sum(product.sellPrice), sum(product.buyPrice), sum(orderline.qte) , product."
+				+ "tax from product ,orderline " + "where product.idProduct=orderline."
+				+ "idProduct_fk group by orderline.idProduct_fk");
+		System.out.println("step0");
+		List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
+		System.out.println("stap 1 sizeee : " + itemsList.size());
+		double totalBenefAllProducts = 0;
+		double totalbenefProdActuel;
+		System.out.println("step2");
+		for (Object[] objects : itemsList) {
+			totalbenefProdActuel = getNetGainPercentage(Double.parseDouble(objects[3].toString()),
+					Double.parseDouble(objects[2].toString()), Double.parseDouble(objects[5].toString()))
+					* Integer.parseInt(objects[4].toString());
+			if (objects[1] != null) {
+				System.out.println("totalbenefProdActuel *" + totalbenefProdActuel);
+				totalbenefProdActuel = totalbenefProdActuel - (totalbenefProdActuel
+						* (findPromotionById(Long.parseLong(objects[1].toString())).getValue()) / 100);
+				System.out.println("totalbenefProdActuel " + totalbenefProdActuel);
+			}
+			totalBenefAllProducts = totalBenefAllProducts + totalbenefProdActuel;
+
+		}
+
+		System.out.println("step 3 : " + totalBenefAllProducts);
+		return totalBenefAllProducts;
+	}
+	
+	
+	
+
+	@Override
+	public double getNetGainPercentage(double buyPrice, double sellPrice, double tax) {
+		double brut = (sellPrice - buyPrice) / buyPrice * 100;
+		double net = 0;
+		if (tax != 0)
+			net = brut * tax / 100;
+		else
+			net = brut;
+		return net;
 	}
 
 }

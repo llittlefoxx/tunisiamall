@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuestBookEntries.ManageGuestBookEntryController">
+   <children>
+      <TitledPane animated="false" collapsible="false" layoutX="-3.0" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0" text="                             GuestBook" textAlignment="CENTER" textFill="#4d0cf2">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="TableGuestbook" prefHeight="242.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="IdEntry" maxWidth="109.0" prefWidth="109.0" text="IdEntry">
+                        </TableColumn>
+                        <TableColumn fx:id="Comment" prefWidth="166.0" text="Comment" />
+                        <TableColumn fx:id="Rate" maxWidth="220.0" prefWidth="157.0" text="Rate">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/rating.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></TableColumn>
+                        <TableColumn fx:id="Date" maxWidth="241.0" prefWidth="167.0">
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/calendar2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></TableColumn>
+                    </columns>
+                     <effect>
+                        <InnerShadow color="#0808d7" />
+                     </effect>
+                  </TableView>
+                  <Button fx:id="buttonDelete" layoutX="446.0" layoutY="261.0" mnemonicParsing="false" onAction="#DeleteEntries">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/supprimer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </AnchorPane>
+        </content>
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Guestbook.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </TitledPane>
+   </children>
+</AnchorPane>

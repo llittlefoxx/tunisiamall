@@ -16,5 +16,7 @@ public interface SubCategoriesServicesRemote {
 	public Subcategory findSubCategoryById(int idSubCategory);
 
 	public List<Subcategory> findAll();
+	
+	public List<Subcategory> findSubCategoryByIdCategory(int idCategory);
 
 }

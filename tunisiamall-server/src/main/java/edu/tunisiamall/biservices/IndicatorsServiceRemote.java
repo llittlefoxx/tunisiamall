@@ -16,15 +16,29 @@ import edu.tunisiamall.entities.Store;
 public interface IndicatorsServiceRemote {
 
 	// indicators
+	public double getNetGainPercentage(double buyPrice, double sellPrice, double tax);
+	
 	public List<Product> getAllProducts();
 
 	public List<Product> getAllPromotionProducts();
 
-	public HashMap<Product,Integer> getHotProducts();
+	public HashMap<Product, Integer> getHotProducts();
 
-	public List<Store> getTopSellingStores();
+	public HashMap<Store,Double> getTopSellingStores();
+	
+	public double getTotalIncome();
+	
+	public Map<String, Double> getMonthlyIncome();
 
-	public Map<String, Double> getIncomeByPeriod(Date startDate, Date endDate);
+	public List<Product> findProductByLib(String lib);
+
+	public Product findProductById(int id);
+
+	public HashMap<Store, Promotion> getPromotionByStore();
+
+	public Promotion findPromotionById(Long idprom);
+
+	public Store findStoreById(int idStore);
 
 	// report
 
@@ -44,7 +58,13 @@ public interface IndicatorsServiceRemote {
 
 	public PromotionSuggest findPromotionSuggestById(int id);
 
-	public void affectPromotionSuggestToProduct(int p, int pr);
-	
+	public List<PromotionSuggest> findPromotionSuggestByName(String name);
+
+	public void affectPromotionSuggestToProduct(int prod, int prom);
+
+	public void removePromotionSuggestFromProduct(int idproduct);
+
 	public List<Product> getProductsByPromotionSugg(int idSugP);
+
+	public PromotionSuggest findPromotionSuggestByIdProd(int idProd);
 }

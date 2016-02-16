@@ -14,10 +14,10 @@
 			<version>4.3.10.Final</version>
 		</dependency>
 		<dependency>
-		<groupId>edu.esprit.pidev</groupId>
-  	<artifactId>tunisiamall-server</artifactId>
-  	<version>0.0.1-SNAPSHOT</version>
-  	<type>ejb</type>
+			<groupId>edu.esprit.pidev</groupId>
+  			<artifactId>tunisiamall-server</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

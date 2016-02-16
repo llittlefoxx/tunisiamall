@@ -1,5 +1,6 @@
 package admin.dashboard;
 
+import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ public class Main extends Application {
 		    ("DashBoard.fxml"));
 			 */
 			 // Test Kenza
-			 Pane myPane = FXMLLoader.load(getClass().getResource("/Gui/ShopRequestInterfaces/ViewShopRequestAdmin.fxml"));
+			 Pane myPane = FXMLLoader.load(ViewShopRequestAdminController.class.getResource("ViewShopRequestAdmin.fxml"));
 		       Scene myScene = new Scene(myPane);
 		       primaryStage.setScene(myScene);
 		       primaryStage.show();

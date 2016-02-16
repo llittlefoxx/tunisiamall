@@ -17,6 +17,7 @@ public class Promotion implements Serializable {
 
 	@Id
 	private Long idPromotion;
+	private String name;
 	private double value;
 	private boolean state;
 	private Date startDate;
@@ -45,6 +46,15 @@ public class Promotion implements Serializable {
 
 	public void setValue(double value) {
 		this.value = value;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public boolean isState() {

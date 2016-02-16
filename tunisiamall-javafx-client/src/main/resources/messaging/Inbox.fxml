@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="InboxRootHBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="messaging.InboxControler">
+   <children>
+      <VBox fx:id="SideVBox" minWidth="-Infinity" prefHeight="480.0" prefWidth="150.0">
+         <children>
+            <HBox fx:id="SideHBox">
+               <children>
+                  <TextField fx:id="SearchField" promptText="Search" />
+                  <Button fx:id="SearchButton" mnemonicParsing="false" />
+               </children>
+            </HBox>
+            <ListView fx:id="InboxOptionsList" onMouseClicked="#selectMessagesFilter" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <AnchorPane fx:id="firstAnchorPane" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+         <children>
+            <VBox fx:id="FixedVBox" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="16.0" prefWidth="490.0">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-base: orange;" text="Button" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="1.0" />
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane fx:id="MessagesScrollPane" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="MessagesVBox" prefHeight="200.0" prefWidth="100.0" />
+                     </content>
+                  </ScrollPane>
+                  <Pagination fx:id="pagination" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
