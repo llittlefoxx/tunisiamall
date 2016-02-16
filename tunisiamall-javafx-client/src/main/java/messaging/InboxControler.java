@@ -1,13 +1,17 @@
 package messaging;
 
-import java.net.URL;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import Delegates.MessageDelegate;
 import Delegates.UserDelagate;
+import application.MainControler;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -22,6 +26,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -31,12 +36,9 @@ import edu.tunisiamall.entities.Message;
 import edu.tunisiamall.entities.User;
 
 public class InboxControler {
-
+	
 	@FXML
-	private ResourceBundle resources;
-
-	@FXML
-	private URL location;
+    private ResourceBundle resources;
 
 	@FXML
 	private ScrollPane MessagesScrollPane;
@@ -157,6 +159,21 @@ public class InboxControler {
 		Label text = new Label(m.getText());
 		text.setWrapText(true);
 		text.setCursor(Cursor.HAND);
+		username.setOnMouseClicked(new EventHandler<Event>() {
+			@Override
+			public void handle(Event event) {
+				try {
+					MainControler.cadre.getChildren().clear();
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(ConversationControler.class.getResource("Conversation.fxml"));
+					ConversationControler c = (ConversationControler) loader.getController();
+					c.u = UserDelagate.find(3);
+					MainControler.cadre.getChildren().add(loader.load());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
 		Label date = new Label(m.getDate().toString());
 		container.getChildren().addAll(username, text, date);
 		container.setVgrow(text, Priority.ALWAYS);

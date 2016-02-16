@@ -3,6 +3,8 @@ package messaging;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.javafx.application.LauncherImpl;
+
 import Delegates.MessageDelegate;
 import Delegates.UserDelagate;
 import edu.tunisiamall.entities.Message;
@@ -15,6 +17,7 @@ import javafx.geometry.NodeOrientation;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -64,8 +67,8 @@ public class ConversationControler {
     @FXML
     private VBox conversationVBox;
     
-    private static User u = UserDelagate.find(2);
-    private static User u2 = UserDelagate.find(1);
+    public static User u = UserDelagate.find(2);
+    public static User u2 = UserDelagate.find(1);
 
     @FXML
     void initialize() {
@@ -136,5 +139,10 @@ public class ConversationControler {
     	StackPane container = new StackPane(box);
     	container.setAlignment(Pos.CENTER_LEFT);
     	return container;
+    }
+    
+    public static void start(Parent parent, int x){
+    	parent.getChildrenUnmodifiable().clear();
+    	System.out.println("integer: " + x);
     }
 }

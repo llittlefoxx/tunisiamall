@@ -1,13 +1,27 @@
 package application;
 
+import java.io.IOException;
+import java.util.ListResourceBundle;
+import java.util.ResourceBundle;
+
+import javax.ejb.HomeHandle;
+
+import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import messaging.InboxControler;
 
 public class MainControler {
 
+	@FXML
+    private ResourceBundle resources;
+	
     @FXML
     private Button biButton;
 
@@ -33,18 +47,25 @@ public class MainControler {
     private Button categoriesButton;
     
     // Panes
+    public static Pane cadre;
     public static Pane shopPane;
     public static Pane usersPane;
     public static Pane biPane;
     public static Pane eventsPane;
     public static Pane categoriesPane;
-    public static Pane messagingPane;
+    public static HBox messagingPane;
     public static Pane guestbookPane;
 
 
     @FXML
     void initialize() {
-    	
+		try {
+			cadre = homePane;
+			shopPane = FXMLLoader.load(ViewShopRequestAdminController.class.getResource("ViewShopRequestAdmin.fxml"));
+			messagingPane = FXMLLoader.load(InboxControler.class.getResource("Inbox.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
     
     @FXML
@@ -80,7 +101,7 @@ public class MainControler {
     @FXML
     void messagingTab(MouseEvent event) {
     	homePane.getChildren().clear();
-    	homePane.getChildren().add(shopPane);
+    	homePane.getChildren().add(messagingPane);
     }
 
     @FXML
