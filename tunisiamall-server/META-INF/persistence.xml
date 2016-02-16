@@ -13,10 +13,12 @@
 		<class>edu.tunisiamall.entities.Message</class>
 		<class>edu.tunisiamall.entities.Mvtstock</class>
 		<class>edu.tunisiamall.entities.Order</class>
-		<class>edu.tunisiamall.entities.Orerline</class>
+		<class>edu.tunisiamall.entities.OrderLine</class>
 		<class>edu.tunisiamall.entities.OrerlinePK</class>
 		<class>edu.tunisiamall.entities.Post</class>
 		<class>edu.tunisiamall.entities.Product</class>
+		<class>edu.tunisiamall.entities.Promotion</class>
+		<class>edu.tunisiamall.entities.PromotionSuggest</class>
 		<class>edu.tunisiamall.entities.ShopRequest</class>
 		<class>edu.tunisiamall.entities.Shopowner</class>
 		<class>edu.tunisiamall.entities.Store</class>
@@ -26,9 +28,8 @@
 		<class>edu.tunisiamall.entities.Subscription</class>
 		<class>edu.tunisiamall.entities.SubscriptionPK</class>
 		<class>edu.tunisiamall.entities.User</class>
-		<class>edu.tunisiamall.entities.PromotionSuggest</class>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action" value="none"/>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 		</properties>
 	</persistence-unit>
 </persistence>

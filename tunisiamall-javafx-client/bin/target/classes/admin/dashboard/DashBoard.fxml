@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import fxmltableview.*?> 
+<?import javafx.scene.control.Button?>
+
+<TitledPane fx:controller="admin.dashboard.DashboardController"
+	animated="false" text="DashBoard" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<content>
+		<AnchorPane prefHeight="697.0">
+			<children>
+				<TabPane layoutX="27.6" layoutY="39.6" tabClosingPolicy="UNAVAILABLE"
+					AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+					<tabs>
+						<Tab text="Indicators">
+							<content>
+								<AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+									<children>
+										<GridPane layoutX="103.0" layoutY="151.0"
+											AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+											AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES"
+													maxWidth="458.0" minWidth="10.0" prefWidth="378.0" />
+												<ColumnConstraints hgrow="SOMETIMES"
+													maxWidth="422.0" minWidth="10.0" prefWidth="379.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<StackedBarChart prefHeight="207.0"
+													prefWidth="393.0">
+													<xAxis>
+														<CategoryAxis side="BOTTOM" />
+													</xAxis>
+													<yAxis>
+														<NumberAxis side="LEFT" />
+													</yAxis>
+												</StackedBarChart>
+												<TitledPane animated="false" text="Hot products"
+													GridPane.columnIndex="1" GridPane.rowIndex="1">
+													<content>
+														<AnchorPane minHeight="0.0" minWidth="0.0"
+															prefHeight="180.0" prefWidth="200.0">
+															<children>
+																<TableView fx:id="tableviewHotProduct" layoutX="117.0" layoutY="-34.0"
+																	prefHeight="180.0" prefWidth="377.0"
+																	AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+																	AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+																	<columns>
+																		<TableColumn prefWidth="135.9999634027481"
+																			text="Product" >
+																			<cellValueFactory>
+																				<PropertyValueFactory property="libelle" />
+																			</cellValueFactory>
+																		</TableColumn>
+																		
+																		<TableColumn prefWidth="119.0" text="Sales evolution" >
+																		<cellValueFactory>
+																				<PropertyValueFactory property="evolution" />
+																			</cellValueFactory>
+																		</TableColumn>
+																		<TableColumn prefWidth="131.0" text="Promotion" >
+																		<cellValueFactory>
+																				<PropertyValueFactory property="value" />
+																			</cellValueFactory>
+																			</TableColumn>
+																	</columns>
+																</TableView>
+															</children>
+														</AnchorPane>
+													</content>
+												</TitledPane>
+												<TitledPane animated="false" text="Stock status"
+													GridPane.rowIndex="1">
+													<content>
+														<AnchorPane minHeight="0.0" minWidth="0.0"
+															prefHeight="180.0" prefWidth="200.0">
+															<children>
+																<TableView fx:id="stockStatusTableView"
+																	layoutX="108.0" layoutY="-10.0" prefHeight="180.0"
+																	prefWidth="376.0" AnchorPane.bottomAnchor="0.0"
+																	AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+																	AnchorPane.topAnchor="0.0">
+																	<columns>
+
+																		<TableColumn prefWidth="130.99998819828033"
+																			text="Product">
+
+																			<cellValueFactory>
+																				<PropertyValueFactory property="libelle" />
+																			</cellValueFactory>
+
+																		</TableColumn>
+
+
+																		<TableColumn prefWidth="116.0" text="Items left">
+
+																			<cellValueFactory>
+																				<PropertyValueFactory property="qte" />
+																			</cellValueFactory>
+																		</TableColumn>
+
+
+																		<TableColumn prefWidth="109.0" text="Critical zone">
+																			<cellValueFactory>
+																				<PropertyValueFactory property="criticalZone" />
+																			</cellValueFactory>
+																		</TableColumn>
+																	</columns>
+																	<items>
+																		<FXCollections fx:factory="observableArrayList">
+
+																		</FXCollections>
+																	</items>
+																</TableView>
+															</children>
+														</AnchorPane>
+													</content>
+												</TitledPane>
+												<TitledPane animated="false" text="Sales and income"
+													GridPane.columnIndex="1" GridPane.rowIndex="2">
+													<content>
+														<AnchorPane minHeight="0.0" minWidth="0.0"
+															prefHeight="180.0" prefWidth="200.0">
+															<children>
+																<TableView layoutX="14.0" layoutY="-34.0"
+																	prefHeight="180.0" prefWidth="377.0"
+																	AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+																	AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+																	<columns>
+																		<TableColumn prefWidth="151.00002443790436"
+																			text="Period" />
+																		<TableColumn minWidth="2.99993896484375"
+																			prefWidth="182.0" text="Income" />
+																	</columns>
+																</TableView>
+															</children>
+														</AnchorPane>
+													</content>
+												</TitledPane>
+												<TitledPane animated="false" text="Top Selling Stores"
+													GridPane.rowIndex="2">
+													<content>
+														<AnchorPane minHeight="0.0" minWidth="0.0"
+															prefHeight="180.0" prefWidth="200.0">
+															<children>
+																<TableView layoutX="88.0" layoutY="-27.0"
+																	prefHeight="180.0" prefWidth="376.0"
+																	AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+																	AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+																	<columns>
+																		<TableColumn prefWidth="83.0000034570694"
+																			text="Shop" />
+																		<TableColumn prefWidth="66.99998474121094"
+																			text="Income" />
+																		<TableColumn prefWidth="117.0"
+																			text="\% from Mall income" />
+																		<TableColumn prefWidth="139.0" text="Owner" />
+																	</columns>
+																</TableView>
+															</children>
+														</AnchorPane>
+													</content>
+												</TitledPane>
+												<TitledPane animated="false" text="Promotions"
+													GridPane.columnIndex="1">
+													<content>
+														<AnchorPane minHeight="0.0" minWidth="0.0"
+															prefHeight="180.0" prefWidth="200.0">
+															<children>
+																<TableView layoutX="44.0" layoutY="-20.0"
+																	prefHeight="180.0" prefWidth="377.0"
+																	AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+																	AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+																	<columns>
+																		<TableColumn prefWidth="85.00000154972076"
+																			text="Promotion" />
+																		<TableColumn prefWidth="82.99996185302734"
+																			text="Date of start" />
+																		<TableColumn prefWidth="94.0" text="Date of End" />
+																		<TableColumn prefWidth="92.0" text="Shop" />
+																	</columns>
+																</TableView>
+															</children>
+														</AnchorPane>
+													</content>
+												</TitledPane>
+											</children>
+										</GridPane>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Reporting">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0">
+									<children>
+										<SplitPane dividerPositions="0.34701986754966885"
+											layoutX="8.0" prefHeight="619.0" prefWidth="749.0"
+											AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0"
+											AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<items>
+												<AnchorPane minHeight="0.0" minWidth="0.0"
+													prefHeight="617.0" prefWidth="333.0">
+													<children>
+														<VBox layoutX="22.0" layoutY="56.0" prefHeight="561.0"
+															prefWidth="222.0" AnchorPane.bottomAnchor="0.0"
+															AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+															AnchorPane.topAnchor="56.0">
+															<children>
+																<Label />
+																<Label text="Report Name" />
+																<TextField />
+																<Label text="Date" />
+																<Label text="From" />
+																<DatePicker />
+																<Label text="Until" />
+																<DatePicker />
+																<Label text="Mesure" />
+																<Button  text="Button"></Button>
+																<TextField layoutX="200.0" layoutY="95.0"
+																	prefWidth="143.0" />
+																<SplitMenuButton mnemonicParsing="false"
+																	text="Report type">
+																	<items>
+																		<MenuItem mnemonicParsing="false" text="Shopper report" />
+																		<MenuItem mnemonicParsing="false" text="Merchant Report" />
+																		<MenuItem mnemonicParsing="false"
+																			text="Best sale merchant report" />
+																	</items>
+																</SplitMenuButton>
+																<Label text="Description" />
+																<TextArea prefHeight="200.0" prefWidth="200.0" />
+															</children>
+														</VBox>
+														<Label layoutX="97.0" layoutY="30.0" text="New Report" />
+													</children>
+												</AnchorPane>
+												<AnchorPane minHeight="0.0" minWidth="0.0"
+													prefHeight="160.0" prefWidth="100.0">
+													<children>
+														<TableView layoutX="-3.0" layoutY="88.0"
+															prefHeight="529.0" prefWidth="488.0"
+															AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0"
+															AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+															<columns>
+																<TableColumn prefWidth="125.0" text="Name" />
+																<TableColumn prefWidth="103.0" text="Date" />
+																<TableColumn prefWidth="134.00003051757812"
+																	text="Mesure" />
+																<TableColumn prefWidth="128.0" text="Action" />
+															</columns>
+														</TableView>
+														<Label layoutX="211.0" layoutY="30.0" text="Old Reports" />
+													</children>
+												</AnchorPane>
+											</items>
+										</SplitPane>
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+						<Tab text="Promotion suggest">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0" />
+							</content>
+						</Tab>
+						<Tab text="OLAP">
+							<content>
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="180.0" prefWidth="200.0">
+									<children>
+
+									</children>
+								</AnchorPane>
+							</content>
+						</Tab>
+					</tabs>
+				</TabPane>
+				<MenuBar layoutX="10.0" layoutY="8.0" prefHeight="25.0"
+					prefWidth="746.0">
+					<menus>
+						<Menu mnemonicParsing="false" text="Notification">
+							<items>
+								<MenuItem mnemonicParsing="false" text="Close" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Options">
+							<items>
+								<MenuItem mnemonicParsing="false" text="Delete" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Help me :'(">
+							<items>
+								<MenuItem mnemonicParsing="false" text="About" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+			</children>
+		</AnchorPane>
+	</content>
+</TitledPane>

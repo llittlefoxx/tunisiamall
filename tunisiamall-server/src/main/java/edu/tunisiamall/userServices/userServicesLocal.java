@@ -13,7 +13,7 @@ public interface userServicesLocal {
 	public User authentificate(String login, String password);
 	public void delete(int id);
 	public List<User> findAll();
-	public User find(Integer id);
+	public User find(int id);
 	public User findByLogin(String login);
 
 }

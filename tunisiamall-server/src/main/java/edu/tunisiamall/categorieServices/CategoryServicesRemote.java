@@ -33,4 +33,6 @@ public interface CategoryServicesRemote {
 	public List<Category> findAll();
 
 	public List<Category> SearchCategory(String L);
+	
+	public Category SearchCategory2(String L);
 }

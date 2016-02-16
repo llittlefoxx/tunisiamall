@@ -112,4 +112,13 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 		em.merge(product);
 	}
 
+	@Override
+	public Category SearchCategory2(String L) {
+		// TODO Auto-generated method stub
+		//String queryText = 
+		Query query = em.createQuery("select c.name from Category c where c.name like :Name")
+				.setParameter("Name",L);
+		return (Category) query.getSingleResult();
+		
+	}
 }

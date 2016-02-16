@@ -18,9 +18,13 @@ public class Store implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idStroe;
-
+	static int nbStore=50;
 	private String description;
-
+	
+	
+	@ManyToOne
+	@JoinColumn(name="category_fk")
+	private Category category;
 	private String name;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -67,6 +71,14 @@ public class Store implements Serializable {
 		this.idStroe = idStroe;
 	}
 
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public String getDescription() {
 		return this.description;
 	}
@@ -144,5 +156,11 @@ public class Store implements Serializable {
 
 		return storeevent;
 	}
+
+	public int getNbStore() {
+		return nbStore;
+	}
+	
+	
 
 }
