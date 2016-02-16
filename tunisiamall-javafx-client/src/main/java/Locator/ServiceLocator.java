@@ -11,7 +11,7 @@ public class ServiceLocator {
 	private Map<String, Object> cache;
 	private static ServiceLocator instance;
 
-	public ServiceLocator() {
+	private ServiceLocator() {
 		cache = new HashMap<>();
 		try {
 			context = new InitialContext();

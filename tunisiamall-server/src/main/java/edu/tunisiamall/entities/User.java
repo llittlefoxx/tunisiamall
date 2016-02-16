@@ -229,4 +229,26 @@ public class User implements Serializable {
 	}
 
 
+	@Override
+	public int hashCode() {
+		return idUser;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof User))
+			return false;
+		User other = (User) obj;
+		if (idUser != other.idUser)
+			return false;
+		return true;
+	}
+
+	
+
 }

@@ -9,7 +9,7 @@ import edu.tunisiamall.entities.Message;
 public interface MessageServiceRemote {
 	public List<Message> getMessagesFromTo(User src, User dest);
 	public List<Message> getMessagesFor(User u);
-	public boolean sendMessage(User src, User dest, String text);
+	public Message sendMessage(User src, User dest, String text);
 	public boolean deleteMessage(Message m);
 	public boolean setMessageSeen(Message m);
 }
