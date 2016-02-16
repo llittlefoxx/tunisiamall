@@ -41,7 +41,7 @@
                      <graphic>
                         <ImageView fitHeight="38.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../resources/main/logo.png" />
+                              <Image url="@../main/logo.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -62,7 +62,7 @@
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../resources/main/logout-512.png" />
+                              <Image url="@../main/logout-512.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -85,7 +85,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/shop-icon.png" />
+                                          <Image url="@../main/shop-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -98,7 +98,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/user-id-icon.png" />
+                                          <Image url="@../main/user-id-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -111,7 +111,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/file-excel-icon.png" />
+                                          <Image url="@../main/file-excel-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -124,7 +124,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/calendar-clock-icon.png" />
+                                          <Image url="@../main/calendar-clock-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -137,7 +137,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/tag-icon.png" />
+                                          <Image url="@../main/tag-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -150,7 +150,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/bubble-icon.png" />
+                                          <Image url="@../main/bubble-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -163,7 +163,7 @@
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/main/book-bookmark-icon.png" />
+                                          <Image url="@../main/book-bookmark-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>

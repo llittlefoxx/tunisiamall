@@ -13,7 +13,6 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader =new FXMLLoader();
-			System.out.println(MainControler.class.getResource(""));
 			loader.setLocation(MainControler.class.getResource("Main.fxml"));
 			BorderPane root = (BorderPane) loader.load();
 			Scene scene = new Scene(root);
