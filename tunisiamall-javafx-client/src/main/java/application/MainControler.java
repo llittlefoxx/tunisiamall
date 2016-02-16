@@ -8,6 +8,7 @@ import javax.ejb.HomeHandle;
 
 import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import Gategories.ManageCategoriesController;
+import GuestBookEntries.ManageGuestBookEntryController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -65,6 +66,7 @@ public class MainControler {
 			shopPane = FXMLLoader.load(ViewShopRequestAdminController.class.getResource("ViewShopRequestAdmin.fxml"));
 			messagingPane = FXMLLoader.load(InboxControler.class.getResource("Inbox.fxml"));
 			categoriesPane = FXMLLoader.load(ManageCategoriesController.class.getResource("ManageGategories.fxml"));
+			guestbookPane = FXMLLoader.load(ManageGuestBookEntryController.class.getResource("InterfaceManageEntries.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -109,7 +111,7 @@ public class MainControler {
     @FXML
     void guestbookTab(MouseEvent event) {
     	homePane.getChildren().clear();
-    	homePane.getChildren().add(shopPane);
+    	homePane.getChildren().add(guestbookPane);
     }
 }
 
