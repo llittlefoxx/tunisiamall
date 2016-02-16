@@ -13,6 +13,7 @@ public interface GestionEventRemote {
 	Boolean deleteEvent(Event event);
 	Event findEventById(Integer idEvent);
 	List<Event> findAllEvents();
+	public List<Event> SearchEvent(String E);
 	
 
 }

@@ -74,5 +74,13 @@ EntityManager entityManager;
 		return query.getResultList();
 		
 	}
+	
+	@Override
+	public List<Event> SearchEvent(String E) {
+
+		Query query = entityManager.createQuery("select e from Event e where e.titleEvent like :Name").setParameter("Name","%" + E + "%");
+		return query.getResultList();
+
+	}
 
 }
