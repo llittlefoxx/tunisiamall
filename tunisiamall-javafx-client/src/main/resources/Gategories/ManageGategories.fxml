@@ -113,6 +113,5 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </TitledPane>
-      <Label fx:id="labelSize" text="Label" />
    </children>
 </AnchorPane>

@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javax.ejb.HomeHandle;
 
 import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
+import Gategories.ManageCategoriesController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -53,16 +54,17 @@ public class MainControler {
     public static Pane biPane;
     public static Pane eventsPane;
     public static Pane categoriesPane;
-    public static HBox messagingPane;
+    public static Pane messagingPane;
     public static Pane guestbookPane;
 
-
+    
     @FXML
     void initialize() {
 		try {
 			cadre = homePane;
 			shopPane = FXMLLoader.load(ViewShopRequestAdminController.class.getResource("ViewShopRequestAdmin.fxml"));
 			messagingPane = FXMLLoader.load(InboxControler.class.getResource("Inbox.fxml"));
+			categoriesPane = FXMLLoader.load(ManageCategoriesController.class.getResource("ManageGategories.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -95,7 +97,7 @@ public class MainControler {
     @FXML
     void categoriesTab(MouseEvent event) {
     	homePane.getChildren().clear();
-    	homePane.getChildren().add(shopPane);
+    	homePane.getChildren().add(categoriesPane);
     }
 
     @FXML
