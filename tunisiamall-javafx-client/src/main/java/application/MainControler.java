@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import javax.ejb.HomeHandle;
 
+import EventFX.TunisiaMallEventController;
 import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import Gategories.ManageCategoriesController;
 import GuestBookEntries.ManageGuestBookEntryController;
@@ -67,6 +68,7 @@ public class MainControler {
 			messagingPane = FXMLLoader.load(InboxControler.class.getResource("Inbox.fxml"));
 			categoriesPane = FXMLLoader.load(ManageCategoriesController.class.getResource("ManageGategories.fxml"));
 			guestbookPane = FXMLLoader.load(ManageGuestBookEntryController.class.getResource("InterfaceManageEntries.fxml"));
+			eventsPane = FXMLLoader.load(TunisiaMallEventController.class.getResource("TunisiaMallEvents.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -93,7 +95,7 @@ public class MainControler {
     @FXML
     void eventsTab(MouseEvent event) {
     	homePane.getChildren().clear();
-    	homePane.getChildren().add(shopPane);
+    	homePane.getChildren().add(eventsPane);
     }
 
     @FXML
