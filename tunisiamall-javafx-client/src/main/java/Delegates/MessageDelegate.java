@@ -8,8 +8,6 @@ import edu.tunisiamall.entities.User;
 import edu.tunisiamall.communication.MessageServiceRemote;;
 
 public class MessageDelegate {
-	
-	private static MessageServiceRemote remote;
 	private final static String jndiName="tunisiamall-server/MessageService!edu.tunisiamall.communication.MessageServiceRemote"; 
 	
 	private static MessageServiceRemote getProxy() {

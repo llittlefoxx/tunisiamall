@@ -61,7 +61,7 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 
 	@Override
 	public List<Message> getMessagesFromTo(User src, User dest) {
-		Query query = em.createQuery("select m from Message m where (m.receiver = :src and m.user = :dest) or (m.receiver = :dest and m.user = :src) order by m.date asc")
+		Query query = em.createQuery("select m from Message m where (m.receiver = :src and m.user = :dest) or (m.receiver = :dest and m.user = :src) order by m.date desc")
 				.setParameter("src", src)
 				.setParameter("dest",dest);
 		List<Message> results = (List<Message>) query.getResultList();
@@ -73,7 +73,7 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 		List<Message> listOfMessages = new ArrayList<>();
 		Query query = em.createQuery("select distinct m.user from Message m where m.receiver = :user")
 				.setParameter("user", u);
-		Query query2 = em.createQuery("select m from Message m where m.user = :user and m.receiver = :receiver  order by m.date desc")
+		Query query2 = em.createQuery("select m from Message m where m.user = :user and m.receiver = :receiver order by m.date desc")
 						.setParameter("receiver", u)
 						.setMaxResults(1);
 		try{

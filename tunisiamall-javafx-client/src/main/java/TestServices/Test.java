@@ -29,7 +29,8 @@ public class Test {
 			System.out.println(message.getText());
 		}*/
 		
-		List<Message> listofMessages = MessageDelegate.getMessagesFromTo(u1, u2);
+		List<Message> listofMessages = MessageDelegate.getMessagesFromTo(u2, u3);
+		System.out.println("count: " + listofMessages.size());
 		for (Message message : listofMessages) {
 			System.out.println(message.getText());
 		}
