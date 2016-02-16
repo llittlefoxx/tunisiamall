@@ -80,23 +80,23 @@ public class ManageShopRequestServices implements ManageShopRequestServicesRemot
 	}
 
 	@Override
-	public List<ShopRequest> findAllShopRequestSearchTools(String email, boolean storeimall) {
+	public List<ShopRequest> findAllShopRequestSearchTools(String email, int storeimall) {
 		System.out.println("ggggggg "+ email);
 		Query query = null;
-		if (email != null && storeimall==false)
+		if (email != null && storeimall==0)
 		{  query = em.createQuery("select s from ShopRequest s where s.email like '%"+email+"%' and storeinmall is false");}
 		
-		else if(email != null && storeimall==true)
+		else if(email != null && storeimall==1)
 			{
 			 query = em.createQuery("select s from ShopRequest s where s.email like'%"+email+"%' and storeinmall is true");
 			}
-		else if(email != null)
+		else if(email != null && storeimall==2)
 		{
-			 query = em.createQuery("select s from ShopRequest s where s.email like '%"+email+"'% ");
+			 query = em.createQuery("select s from ShopRequest s where s.email like '%"+email+"%' ");
 		}
-		else if(storeimall==false && email.equals(""))
+		else if(storeimall==0 && email.equals(""))
 		 { query = em.createQuery("select s from ShopRequest s where storeinmall is false");}
-		if (storeimall==true && email==null)
+		else if (storeimall==1 && email==null)
 		{  query = em.createQuery("select s from ShopRequest s where storeinmall is true");}
 		
 		
@@ -108,6 +108,16 @@ public class ManageShopRequestServices implements ManageShopRequestServicesRemot
 	public List<ShopRequest> findAllShopRequestByWord(String word) {
 		System.out.println("houniiii  ");
 		Query query = em.createQuery("select s from ShopRequest s where s.description like '%"+word+"%'");
+		//query.setParameter("rcptDate", date);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<ShopRequest> findAllShopRequestByRcptDate(Date date) {
+		
+		System.out.println("houniiii  ");
+		Query query = em.createQuery("select s from ShopRequest s where s.rcptDate=:date")
+				.setParameter("date", date);
 		//query.setParameter("rcptDate", date);
 		return query.getResultList();
 	}

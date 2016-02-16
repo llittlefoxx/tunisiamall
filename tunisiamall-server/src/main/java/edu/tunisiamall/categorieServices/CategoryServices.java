@@ -116,8 +116,8 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	public Category SearchCategory2(String L) {
 		// TODO Auto-generated method stub
 		//String queryText = 
-		Query query = em.createQuery("select c.name from Category c where c.name like :Name")
-				.setParameter("Name",L);
+		Query query = em.createQuery("select c from Category c where c.libelle=:name")
+				.setParameter("name",L);
 		return (Category) query.getSingleResult();
 		
 	}

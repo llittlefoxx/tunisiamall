@@ -4,7 +4,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
 
 import fxSoufieneInterfaces.authentificatController;
