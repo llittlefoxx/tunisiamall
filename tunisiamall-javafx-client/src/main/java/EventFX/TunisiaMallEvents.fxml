@@ -123,11 +123,11 @@
                            <top>
                               <TabPane prefHeight="575.0" prefWidth="270.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                                 <tabs>
-                                  <Tab text="Create Event">
+                                  <Tab style="-fx-background-color: mediumslateblue; -fx-size: 30;" styleClass="-fx-size" text="Create Event">
                                        <content>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0">
-                                             <center>
-                                                <GridPane prefHeight="270.0" prefWidth="260.0" BorderPane.alignment="CENTER">
+                                             <left>
+                                                <GridPane prefHeight="300.0" prefWidth="260.0" BorderPane.alignment="CENTER">
                                                    <children>
                                                       <Label text="Date :" textFill="#0d065d" GridPane.rowIndex="1">
                                                          <font>
@@ -171,6 +171,12 @@
                                                          </font>
                                                       </Label>
                                                       <TextField fx:id="title" GridPane.columnIndex="1" />
+                                                      <ComboBox fx:id="store" onAction="#displayStore" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                      <Label text="Store Event" textFill="#0d065d" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
                                                    </children>
                                                    <columnConstraints>
                                                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="92.0" />
@@ -180,86 +186,16 @@
                                                       <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="86.0" minHeight="9.0" prefHeight="45.0" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="222.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="317.0" minHeight="0.0" prefHeight="91.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="396.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="317.0" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="396.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="31.0" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="7.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <BorderPane.margin>
                                                       <Insets bottom="300.0" />
                                                    </BorderPane.margin>
                                                 </GridPane>
-                                             </center>
-                                          </BorderPane>
-                                       </content>
-                                    </Tab>
-                                  <Tab text="Edit Event">
-                                       <content>
-                                          <BorderPane prefHeight="200.0" prefWidth="200.0">
-                                             <center>
-                                                <GridPane prefHeight="270.0" prefWidth="260.0" BorderPane.alignment="CENTER">
-                                                   <children>
-                                                      <Label text="Date :" textFill="#0d065d" GridPane.rowIndex="1">
-                                                         <font>
-                                                            <Font name="Times New Roman Bold" size="14.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label text="Period Event :" textFill="#0d065d" GridPane.rowIndex="2">
-                                                         <font>
-                                                            <Font name="Times New Roman Bold" size="14.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label text="Description :" textFill="#0d065d" GridPane.rowIndex="3">
-                                                         <font>
-                                                            <Font name="Times New Roman Bold" size="14.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label text="Event Type :" textFill="#0d065d" GridPane.rowIndex="4">
-                                                         <font>
-                                                            <Font name="Times New Roman Bold" size="14.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <DatePicker fx:id="date1" prefHeight="30.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                      <TextField fx:id="period1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                      <TextArea fx:id="description1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                                      <TextField onAction="#type1" prefHeight="28.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                                      <Button fx:id="editButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="edit" textFill="#210ce0" translateX="90.0" translateY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                                                         <font>
-                                                            <Font name="Times New Roman Bold" size="14.0" />
-                                                         </font>
-                                                         <graphic>
-                                                            <ImageView fitHeight="17.0" fitWidth="40.0" onMouseClicked="#editEvent" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@Image/edit.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                      <Label text="Event Title:" textFill="#0d065d">
-                                                         <font>
-                                                            <Font name="Times New Roman Bold" size="14.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <TextField fx:id="title1" GridPane.columnIndex="1" />
-                                                   </children>
-                                                   <columnConstraints>
-                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="90.0" />
-                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="180.0" />
-                                                   </columnConstraints>
-                                                   <rowConstraints>
-                                                      <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="86.0" minHeight="9.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="222.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="317.0" minHeight="0.0" prefHeight="91.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="396.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="7.0" vgrow="SOMETIMES" />
-                                                   </rowConstraints>
-                                                   <BorderPane.margin>
-                                                      <Insets bottom="300.0" />
-                                                   </BorderPane.margin>
-                                                </GridPane>
-                                             </center>
+                                             </left>
                                           </BorderPane>
                                        </content>
                                     </Tab>

@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
@@ -38,6 +39,10 @@ import java.lang.Integer;
 public class TunisiaMallEventController {
 	  @FXML
 	    private DatePicker date;
+	  
+	    @FXML
+	    private ComboBox<String> store;
+
 
 	    @FXML
 	    private ImageView searchButton;
@@ -111,6 +116,12 @@ public class TunisiaMallEventController {
 	        	tableEvent.getItems().clear();
 	        	tableEvent.setItems(FXCollections.observableArrayList(resultat));
 	        }
+	    
+	    @FXML
+	    void displayStore(ActionEvent event) {
+	    	
+
+	    }
 
 	    
 	    @FXML
@@ -158,6 +169,15 @@ public class TunisiaMallEventController {
 	    }
 	 @FXML
 	 void initialize(){
+		 ObservableList<String> options = FXCollections.observableArrayList(
+ 		        "Option 1",
+ 		        "Option 2",
+ 		        "Option 3"
+ 		    );
+ 		
+ 		store.setItems(options);
+ 		
+ 		
 		 tabldesc.setCellValueFactory(new PropertyValueFactory("description"));
 		 tabldesc.setCellFactory(TextFieldTableCell.forTableColumn());
 		 tabldesc.setOnEditCommit(new EventHandler<CellEditEvent<Event, String>>() {
@@ -220,10 +240,13 @@ public class TunisiaMallEventController {
 		 List<Event> findAllEvents = EventDelegate.findAllEvents();
 	    	ObservableList<Event> lesDonnees = FXCollections.observableArrayList(findAllEvents);
 	    	tableEvent.setItems(lesDonnees);
+	    	
+	    	
 		 
 		 
 		 
 	 }
+	 
 	 
 	 
 	 
