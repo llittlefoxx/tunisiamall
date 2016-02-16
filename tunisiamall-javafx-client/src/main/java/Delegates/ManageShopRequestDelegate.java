@@ -2,10 +2,9 @@ package Delegates;
 
 import java.util.Date;
 import java.util.List;
-
+import Locator.ServiceLocator;
 import edu.tunisiamall.shopRequestServices.ManageShopRequestServicesRemote;
 import edu.tunisiamall.entities.ShopRequest;
-import Locator.ServiceLocator;
 
 public class ManageShopRequestDelegate {
 	

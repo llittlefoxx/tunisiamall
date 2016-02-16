@@ -1,28 +1,29 @@
 package admin.dashboard;
 
-
+import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.TitledPane;
-import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
+import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			 primaryStage.setTitle("FXML TableView Example");
+			 // Test Dali
+			 /*
 			 TitledPane myPane = (TitledPane)FXMLLoader.load(getClass().getResource
 		    ("DashBoard.fxml"));
-			 
-		 
+			 */
+			 // Test Kenza
+			 Pane myPane = FXMLLoader.load(ViewShopRequestAdminController.class.getResource("ViewShopRequestAdmin.fxml"));
 		       Scene myScene = new Scene(myPane);
-		      primaryStage.setScene(myScene);
+		       primaryStage.setScene(myScene);
 		       primaryStage.show();
 		    
-		       
-		       
-		       
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

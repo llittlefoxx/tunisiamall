@@ -4,11 +4,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-<<<<<<< HEAD
-//import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-=======
->>>>>>> refs/heads/branche-kenza
-
 
 import fxSoufieneInterfaces.authentificatController;
 import javafx.application.Application;

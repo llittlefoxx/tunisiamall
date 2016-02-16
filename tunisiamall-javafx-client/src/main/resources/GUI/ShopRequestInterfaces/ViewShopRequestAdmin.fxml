@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory ?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections ?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ShopRequestInterfaces.ViewShopRequestAdminController">
+   <children>
+      <TabPane fx:id="shoptab" layoutX="33.0" layoutY="233.0" prefHeight="193.0" prefWidth="689.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="All Shop Requests">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                  
+              <TableView fx:id="tableView" onMouseClicked="#tbFunction" prefHeight="152.0" prefWidth="689.0">
+			<columns>
+
+                                                				<TableColumn prefWidth="98.0" text="First Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="firstName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="86.0" text="Last Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="lastName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="135.0" text="Email Address">
+					<cellValueFactory>
+						<PropertyValueFactory property="email" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="87.0" text="Job">
+					<cellValueFactory>
+						<PropertyValueFactory property="job" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="131.0" text="Description">
+					<cellValueFactory>
+						<PropertyValueFactory property="description" />
+					</cellValueFactory>
+				</TableColumn>
+				
+                                                				<TableColumn prefWidth="151.0" text="Reception Date">
+					<cellValueFactory>
+						<PropertyValueFactory property="rcptDate" />
+					</cellValueFactory>
+				</TableColumn>
+				
+                                                			
+			</columns>
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					
+				</FXCollections>
+			</items>
+			
+                                                		</TableView>
+                  
+                                                		
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Unchecked Shop Requests">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                       
+                                                                       
+           <TableView fx:id="tableView2" onMouseClicked="#tbFunction" prefHeight="152.0" prefWidth="689.0">
+			<columns>
+
+                                                				<TableColumn prefWidth="83.0" text="First Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="firstName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="104.0" text="Last Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="lastName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="123.0" text="Email Address">
+					<cellValueFactory>
+						<PropertyValueFactory property="email" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="110.0" text="Description">
+					<cellValueFactory>
+						<PropertyValueFactory property="description" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="141.0" text="Planned Opening day">
+					<cellValueFactory>
+						<PropertyValueFactory property="plannedOpeningDate" />
+					</cellValueFactory>
+				</TableColumn>
+				
+                                                				<TableColumn prefWidth="127.0" text="Reception Date">
+					<cellValueFactory>
+						<PropertyValueFactory property="rcptDate" />
+					</cellValueFactory>
+				</TableColumn>
+				
+                                                			
+			</columns>
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					
+				</FXCollections>
+			</items>
+			
+           </TableView>
+                                                     
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <TextField id="searchtextfield" fx:id="searchfield" layoutX="80.0" layoutY="84.0" prefHeight="25.0" prefWidth="174.0" promptText="Key Word" />
+      <Button fx:id="st" layoutX="80.0" layoutY="115.0" mnemonicParsing="false" onAction="#stdisplay" prefHeight="25.0" prefWidth="174.0" text="Search Tools" />
+      <Button id="verifbutton" fx:id="verifyButon" layoutX="675.0" layoutY="435.0" mnemonicParsing="false" onAction="#ficheFunction" text="Verify" />
+      <Button id="cancelbutton" layoutX="605.0" layoutY="435.0" mnemonicParsing="false" text="Cancel" />
+      <Label layoutX="15.0" layoutY="10.0" prefHeight="65.0" prefWidth="329.0" text="Manage Shop Request" textAlignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/GUI/ShopRequestInterfaces/images/shop.png.-m1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Button fx:id="searchbutton" layoutX="26.0" layoutY="84.0" mnemonicParsing="false" onAction="#searchFunction" prefHeight="56.0" prefWidth="46.0">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                  <Image url="/GUI/ShopRequestInterfaces/images/search.png" />
+               </image>
+               </ImageView>
+         </graphic>
+      </Button>
+      <Accordion fx:id="searchPane" layoutX="274.0" layoutY="81.0" prefHeight="126.0" prefWidth="450.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="336.0" prefWidth="202.0" text="Search tools">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="167.0">
+                     <children>
+                        <Label layoutX="6.0" layoutY="6.0" text="Email" />
+                        <TextField fx:id="emailField1" layoutX="43.0" layoutY="2.0" prefHeight="25.0" prefWidth="387.0" promptText="Email Address" />
+                        <Label layoutX="4.0" layoutY="43.0" text="Shop In Mall" />
+                        <RadioButton fx:id="isclickyes" layoutX="145.0" layoutY="42.0" mnemonicParsing="false" onAction="#isyesAction" text="Yes" />
+                        <RadioButton fx:id="isclickno" layoutX="330.0" layoutY="43.0" mnemonicParsing="false" onAction="#innoAction" text="NO" />
+                        <Button fx:id="search2button" layoutX="382.0" layoutY="67.0" mnemonicParsing="false" onAction="#seachtoolsAction" text="Search" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <TabPane fx:id="tabpansearch" layoutX="33.0" layoutY="472.0" prefHeight="185.0" prefWidth="689.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Search result">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="163.0" prefWidth="528.0">
+                     <children>
+                                 <TableView fx:id="tab3" onMouseClicked="#tbFunction" prefHeight="152.0" prefWidth="689.0">
+			<columns>
+
+				<TableColumn prefWidth="115.0" text="First Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="firstName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="118.0" text="Last Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="lastName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="163.0" text="Email Address">
+					<cellValueFactory>
+						<PropertyValueFactory property="email" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="141.0" text="Description">
+					<cellValueFactory>
+						<PropertyValueFactory property="description" />
+					</cellValueFactory>
+				</TableColumn>
+				
+				<TableColumn minWidth="0.0" prefWidth="151.0" text="Reception Date">
+					<cellValueFactory>
+						<PropertyValueFactory property="rcptDate" />
+					</cellValueFactory>
+				</TableColumn>
+				
+			
+			</columns>
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					
+				</FXCollections>
+			</items>
+			
+		</TableView>
+                        
+                        
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="33.0" layoutY="207.0" text="Shop Requests Global View" />
+      <DatePicker fx:id="datepickerid" layoutX="756.0" layoutY="83.0" onAction="#datepickerAction" />
+      <TitledPane animated="false" layoutX="756.0" layoutY="126.0" prefHeight="226.0" prefWidth="450.0" text="Shop Request By Date">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="457.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Result">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="439.0">
+                                 <children>
+                             <TableView fx:id="tab4" onMouseClicked="#tbFunction" prefHeight="170.0" prefWidth="444.0">
+			<columns>
+
+				<TableColumn prefWidth="72.0" text="First Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="firstName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="76.0" text="Last Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="lastName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="88.0" text="Email Address">
+					<cellValueFactory>
+						<PropertyValueFactory property="email" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="93.0" text="Description">
+					<cellValueFactory>
+						<PropertyValueFactory property="description" />
+					</cellValueFactory>
+				</TableColumn>
+				
+				<TableColumn minWidth="0.0" prefWidth="111.0" text="Reception Date">
+					<cellValueFactory>
+						<PropertyValueFactory property="rcptDate" />
+					</cellValueFactory>
+				</TableColumn>
+				
+			
+			</columns>
+			<items>
+				<FXCollections fx:factory="observableArrayList">
+					
+				</FXCollections>
+			</items>
+			
+		</TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="757.0" layoutY="367.0" prefHeight="288.0" prefWidth="201.0" text="Details">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="204.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="28.0" text="Total shop request" />
+                  <TextField fx:id="totalshoprid" layoutX="27.0" layoutY="54.0" />
+                  <TextField fx:id="checkedsrid" layoutX="27.0" layoutY="137.0" />
+                  <Label layoutX="21.0" layoutY="105.0" text="Total Checked shop request" />
+                  <Label layoutX="21.0" layoutY="195.0" text="Total unchecked shop request" />
+                  <TextField fx:id="uncheckedsrid" layoutX="27.0" layoutY="223.0" />
+               </children></AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane layoutX="975.0" layoutY="367.0" text="Statistics">
+         <content>
+            <PieChart fx:id="piechartid" layoutX="975.0" layoutY="367.0" prefHeight="270.0" prefWidth="231.0" />
+         </content>
+      </TitledPane>
+   </children>
+</Pane>

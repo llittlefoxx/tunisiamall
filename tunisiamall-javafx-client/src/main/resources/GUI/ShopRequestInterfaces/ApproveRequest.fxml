@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane animated="false" prefHeight="527.0" prefWidth="690.0" text="Verification " xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ShopRequestInterfaces.ApproveRequestController">
+   <content>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="470.0" layoutY="9.0" prefHeight="58.0" prefWidth="204.0" text="Verify Shop Request">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                        <Image url="/GUI/ShopRequestInterfaces/images/Check.png" />
+                     </image>
+                     </ImageView>
+               </graphic>
+            </Label>
+            <TitledPane animated="false" layoutX="345.0" layoutY="88.0" prefHeight="307.0" prefWidth="269.0" text="Disponibility">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="277.0" prefWidth="258.0">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <children>
+                        <Label layoutX="12.0" layoutY="24.0" text="Category" />
+                        <Label layoutX="63.0" layoutY="99.0" text=" Nb existing Store" />
+                        <TextField fx:id="catfield" layoutX="109.0" layoutY="20.0" prefHeight="25.0" prefWidth="150.0" />
+                        <TextField fx:id="nbStore" layoutX="212.0" layoutY="95.0" prefHeight="25.0" prefWidth="47.0" />
+                        <Label layoutX="12.0" layoutY="64.0" text="Category In Mall" />
+                        <ComboBox fx:id="selectCateg" layoutX="109.0" layoutY="60.0" onAction="#catAction" prefWidth="150.0">
+                        <items>
+      
+     </items>
+     </ComboBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="14.0" layoutY="88.0" prefHeight="352.0" prefWidth="319.0" text="Larger View">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane layoutY="-2.0" prefHeight="331.0" prefWidth="318.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab text="Visibility Chart">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <BarChart fx:id="barchart" layoutX="1.0" layoutY="14.0" prefHeight="302.0" prefWidth="318.0" title="Existing Stores By Category" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Button fx:id="approvebutton" layoutX="495.0" layoutY="408.0" mnemonicParsing="false" onAction="#okbuttonAction" prefHeight="29.0" prefWidth="119.0" text="OK" />
+            <Button fx:id="cancelbutton" layoutX="345.0" layoutY="408.0" mnemonicParsing="false" onAction="#CancelAction" prefHeight="30.0" prefWidth="110.0" text="Cancel" />
+            <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backAction" prefHeight="29.0" prefWidth="38.0">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                        <Image url="/GUI/ShopRequestInterfaces/images/arrow_left.png" />
+                     </image>
+                     </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </content>
+   <effect>
+      <Blend />
+   </effect>
+</TitledPane>

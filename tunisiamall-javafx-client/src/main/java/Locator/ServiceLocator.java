@@ -2,12 +2,9 @@ package Locator;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-
-
 
 public class ServiceLocator {
 	private Context context;
@@ -19,7 +16,7 @@ public class ServiceLocator {
 		try {
 			context = new InitialContext();
 		} catch (NamingException e) {
-			throw new ServiceLocatorException(e);
+			
 		}
 	}
 
@@ -39,7 +36,7 @@ public class ServiceLocator {
 				proxy = context.lookup(jndiName);
 
 			} catch (NamingException e) {
-				throw new ServiceLocatorException(e);
+				
 			}
 			cache.put(jndiName, proxy);
 		}
