@@ -81,7 +81,7 @@
                      <children>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="shopButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Shop Request(s)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="shopButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#shopTab" prefHeight="46.0" prefWidth="120.0" text="Shop Request(s)" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -94,7 +94,7 @@
                         </AnchorPane>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="usersButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Users" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="usersButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#usersTab" prefHeight="46.0" prefWidth="120.0" text="Users" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -107,7 +107,7 @@
                         </AnchorPane>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="biButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Business Intelligence" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="biButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#biTab" prefHeight="46.0" prefWidth="120.0" text="Business Intelligence" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -120,7 +120,7 @@
                         </AnchorPane>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="eventsButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Events" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="eventsButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventsTab" prefHeight="46.0" prefWidth="120.0" text="Events" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -133,7 +133,7 @@
                         </AnchorPane>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="categoriesButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Categories" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="categoriesButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#categoriesTab" prefHeight="46.0" prefWidth="120.0" text="Categories" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -146,7 +146,7 @@
                         </AnchorPane>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="messagingButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Messaging" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="messagingButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#messagingTab" prefHeight="46.0" prefWidth="120.0" text="Messaging" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -159,7 +159,7 @@
                         </AnchorPane>
                         <AnchorPane VBox.vgrow="ALWAYS">
                            <children>
-                              <Button fx:id="GuestbookButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="46.0" prefWidth="120.0" text="Guestbook" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <Button fx:id="GuestbookButton" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#guestbookTab" prefHeight="46.0" prefWidth="120.0" text="Guestbook" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <graphic>
                                     <ImageView fitHeight="44.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
