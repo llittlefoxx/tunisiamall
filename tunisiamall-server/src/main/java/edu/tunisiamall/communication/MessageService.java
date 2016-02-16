@@ -22,17 +22,17 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 	}
 
 	@Override
-	public boolean sendMessage(User src, User dest, String text) {
+	public Message sendMessage(User src, User dest, String text) {
 		try {
 			if (text.trim().length() == 0) {
 				throw new Exception("Empty message");
 			}
 			Message m = new Message(src, dest, text);
 			em.persist(m);
-			return true;
+			return m;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}
 	}
 

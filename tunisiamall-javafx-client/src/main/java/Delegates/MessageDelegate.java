@@ -22,7 +22,7 @@ public class MessageDelegate {
 		return getProxy().getMessagesFor(u);
 	}
 	
-	public static boolean sendMessage(User src, User dest, String text){
+	public static Message sendMessage(User src, User dest, String text){
 		return getProxy().sendMessage(src, dest, text);
 	}
 	
