@@ -20,9 +20,9 @@ public class CategoryDelegate {
 			getProxy().addCategory(c);;
 		}
 		
-		public static void doDeleteCategory(int idCategory)
+		public static void doDeleteCategory(Category c)
 		{
-			getProxy().deleteCategory(idCategory);
+			getProxy().deleteCategory (c);
 		}
 		public static void doUpdateCategory(Category c)
 		{
@@ -38,7 +38,7 @@ public class CategoryDelegate {
 		}
 		public static Category doFindAllCategoryByLibelle(String l)
 		{
-			 return getProxy().SearchCategory(l);
+			 return getProxy().SearchCategory2(l);
 		}
 		
 		

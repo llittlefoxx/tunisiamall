@@ -40,6 +40,7 @@ public class SubCategoriesServices implements SubCategoriesServicesRemote, SubCa
 		return query.getResultList();
 	}
 
+
 	@Override
 	public Subcategory findSubCategoryById(int idSubCategory) {
 		// TODO Auto-generated method stub
@@ -50,6 +51,15 @@ public class SubCategoriesServices implements SubCategoriesServicesRemote, SubCa
 	public void addSubCategory(Subcategory subcategory) {
 		em.persist(subcategory);
 
+	}
+
+	@Override
+	public List<Subcategory> findSubCategoryByIdCategory(int idCategory) {
+		
+		String queryText = "Select Sub from Subcategory where idCategory";
+		Query query = em.createQuery(queryText);
+		
+		return query.getResultList();
 	}
 
 }

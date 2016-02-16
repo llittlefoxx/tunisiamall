@@ -19,5 +19,6 @@ public interface ManageShopRequestServicesRemote {
 	public List<ShopRequest> findAllShopRequestByWord(String word);
 	public List<ShopRequest> findAllShopRequestUnchecked();
 	public List<ShopRequest> findAllShopRequestSearchTools(String email, boolean storeimall);
+
 	
 }

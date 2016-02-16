@@ -34,7 +34,7 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	public void addCategory(Category category) {
 
 		em.persist(category);
-
+		System.out.println(category.getIdCategory());
 	}
 
 	@Override
@@ -45,9 +45,8 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	}
 
 	@Override
-	public void deleteCategory(int idCategory) {
-		// TODO Auto-generated method stub
-		em.remove(findCategoryById(idCategory));
+	public void deleteCategory(Category c) {
+		em.remove(em.merge(c));
 	}
 
 	@Override
@@ -68,7 +67,7 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	@Override
 	public List<Category> SearchCategory(String L) {
 		// String queryText =
-		Query query = em.createQuery("select c.name from Category c where c.name like :Name").setParameter("Name", L);
+		Query query = em.createQuery("select c from Category c where c.libelle like :Name").setParameter("Name","%" + L + "%");
 		return query.getResultList();
 
 	}
@@ -121,4 +120,6 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 		return (Category) query.getSingleResult();
 		
 	}
+
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import edu.tunisiamall.entities.Gestbookentry;
 
@@ -24,15 +25,15 @@ public class GuestBookEntryServices implements GuestBookEntryServicesRemote, Gue
     }
 
 	@Override
-	public void deleteEntries(int idEntries) {
-		// TODO Auto-generated method stub
+	public void deleteEntries(Gestbookentry g) {
+		em.remove(em.merge(g));
 		
 	}
 
 	@Override
 	public List<Gestbookentry> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = em.createNamedQuery("Gestbookentry.findAll");
+		return query.getResultList();
 	}
 
 	@Override

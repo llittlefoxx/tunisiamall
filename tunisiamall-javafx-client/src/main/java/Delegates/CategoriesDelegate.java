@@ -15,19 +15,19 @@ public class CategoriesDelegate {
 				jndiName);
 	}
 
-	public void create(Category c){
+	public static void create(Category c){
 		getProxy().addCategory(c);
 	}
-	public void delete(int idCategory){
-		getProxy().deleteCategory(idCategory);
+	public static void delete(Category c){
+		getProxy().deleteCategory(c);
 	}
-	public void update(Category c){
+	public static void update(Category c){
 		getProxy().updateCategroy(c);
 	}
-	public List <Category> findAll(){
+	public static List<Category> findAll(){
 		return getProxy().findAll();
 	}
-	public List<Category> SearchCategory(String L){
+	public static List<Category> SearchCategory(String L){
 		return getProxy().SearchCategory(L);
 	}
 	}

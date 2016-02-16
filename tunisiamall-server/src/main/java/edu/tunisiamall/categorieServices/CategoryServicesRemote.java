@@ -26,7 +26,7 @@ public interface CategoryServicesRemote {
 	// fin
 	public void updateCategroy(Category c);
 
-	public void deleteCategory(int idCategory);
+	public void deleteCategory(Category c);
 
 	public Category findCategoryById(int idCategory);
 

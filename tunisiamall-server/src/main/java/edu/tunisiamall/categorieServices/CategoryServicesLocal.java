@@ -24,7 +24,7 @@ public interface CategoryServicesLocal {
 	public Product findProductById(int id);
 	public void updateCategroy(Category c);
 
-	public void deleteCategory(int idCategory);
+	public void deleteCategory(Category c);
 
 	public Category findCategoryById(int idCategory);
 
