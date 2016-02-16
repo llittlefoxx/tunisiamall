@@ -20,6 +20,8 @@ public class PromotionSuggest implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPromotionSuggest;
 	
+	private String name;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
 
@@ -29,7 +31,7 @@ public class PromotionSuggest implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date suggestionDate;
 	
-	@OneToMany(mappedBy="promotionSuggest")
+	@OneToMany(mappedBy="promotionSuggest",fetch=FetchType.EAGER)
 	private List<Product> products;
 	
 	private String desccription;
@@ -93,6 +95,14 @@ public class PromotionSuggest implements Serializable {
 
 	public void setValue(double value) {
 		this.value = value;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

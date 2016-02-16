@@ -1,10 +1,11 @@
 package admin.dashboard;
 
+
 import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TitledPane;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 
 public class Main extends Application {
 	@Override
@@ -13,10 +14,15 @@ public class Main extends Application {
 			 primaryStage.setTitle("FXML TableView Example");
 			 TitledPane myPane = (TitledPane)FXMLLoader.load(getClass().getResource
 		    ("DashBoard.fxml"));
+			 
+		 
 		       Scene myScene = new Scene(myPane);
-		       primaryStage.setScene(myScene);
+		      primaryStage.setScene(myScene);
 		       primaryStage.show();
 		    
+		       
+		       
+		       
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 
@@ -20,7 +21,7 @@ public class OrderLine implements Serializable {
 
 	@EmbeddedId
 	private OrerlinePK id;
-
+	
 	private int qte;
 
 	//bi-directional many-to-one association to Order

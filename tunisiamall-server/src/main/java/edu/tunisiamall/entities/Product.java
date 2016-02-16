@@ -60,6 +60,10 @@ public class Product implements Serializable {
 	@OneToMany(mappedBy="product")
 	private List<OrderLine> orderline;
 	
+	//bideric manytoone with store
+	@ManyToOne(fetch=FetchType.LAZY)
+	private Store store;
+	
 	public List<OrderLine> getOrderline() {
 		return orderline;
 	}

@@ -29,7 +29,7 @@ public class TestPromotonSuggestCrud {
 		//	indicatorsServiceRemote.createPromotionSuggest(promotionSuggest);
 		//indicatorsServiceRemote.createPromotionSuggest(promotionSuggest);
 		//	indicatorsServiceRemote.affectPromotionSuggestToProduct(1, 1);
-			//indicatorsServiceRemote.affectPromotionSuggestToProduct(2, 1);
+			//indicatorsServiceRemote.affectPromotionSuggestToProduct(1, 1);
 			//indicatorsServiceRemote.affectPromotionSuggestToProduct(3, 2);
 			//indicatorsServiceRemote.deletePromotionSuggest(2);
 			System.out.println("aaaaaaaa");
@@ -37,8 +37,10 @@ public class TestPromotonSuggestCrud {
 		//	for (Product p: indicatorsServiceRemote.findPromotionSuggestById(1).getProducts()) {
 			//	System.out.println(p.getLibelle());
 		//	}
-			indicatorsServiceRemote.getHotProducts();
+		//	indicatorsServiceRemote.getHotProducts();
+			//indicatorsServiceRemote.removePromotionSuggestFromProduct(1);
 			
+			System.out.println(indicatorsServiceRemote.getProductsByPromotionSugg(1).size());
 			List<Product> lisp=new ArrayList<Product>();
 			lisp=indicatorsServiceRemote.getAllPromotionProducts();
 			System.out.println(lisp.size());

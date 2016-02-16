@@ -51,6 +51,10 @@ public class Store implements Serializable {
 	//bi-directional many-to-one association to Storeevent
 	@OneToMany(mappedBy="store")
 	private List<Storeevent> storeevents;
+	
+	//bi-derictional onetomany with product
+	@OneToMany(mappedBy="store",fetch=FetchType.EAGER)
+	private List<Product> products;
 
 	public Store() {
 	}
