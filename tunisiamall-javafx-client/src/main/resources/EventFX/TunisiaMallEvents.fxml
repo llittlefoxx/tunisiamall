@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EventFX.TunisiaMallEventController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.6578947368421053" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <BorderPane prefHeight="573.0" prefWidth="549.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="400.0" text="List events" textAlignment="CENTER" textFill="#210ce0" underline="true" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="Times New Roman Bold" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" translateX="-60.0">
+                                       <image>
+                                          <Image url="@Image/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Label>
+                           </top>
+                           <center>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <Label contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="22.0" prefWidth="496.0" text="   Search :" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <TextField fx:id="search" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                                       </graphic>
+                                       <BorderPane.margin>
+                                          <Insets bottom="10.0" left="20.0" top="10.0" />
+                                       </BorderPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
+                                 <left>
+                                    <ImageView fitHeight="15.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="-30.0" BorderPane.alignment="TOP_LEFT">
+                                       <image>
+                                          <Image url="@Image/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </left>
+                                 <right>
+                                    <TableView fx:id="tableEvent" prefHeight="479.0" prefWidth="509.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="tabtitle" prefWidth="75.0" text="Event Title" />
+                                        <TableColumn fx:id="tbldate" prefWidth="75.0" text="Date Event" />
+                                          <TableColumn fx:id="tabldesc" prefWidth="75.0" text="Description" />
+                                          <TableColumn fx:id="tablperiod" prefWidth="97.0" text="Period event" />
+                                          <TableColumn fx:id="tbltype" prefWidth="75.0" text="Type event" />
+                                      </columns>
+                                       <BorderPane.margin>
+                                          <Insets />
+                                       </BorderPane.margin>
+                                    </TableView>
+                                 </right>
+                              </BorderPane>
+                           </center>
+                           <bottom>
+                              <Button fx:id="deletteButton" mnemonicParsing="false" onAction="#deletEvent" prefHeight="23.0" prefWidth="43.0" translateX="60.0" translateY="-516.0" BorderPane.alignment="CENTER">
+                                 <graphic>
+                                    <ImageView fitHeight="19.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                           </bottom>
+                        </BorderPane>
+                        <Button fx:id="searchh" mnemonicParsing="false" onAction="#searchEvent" textFill="#210ce0" translateX="260.0" translateY="28.0" AnchorPane.rightAnchor="490.0">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="searchButton" fitHeight="21.0" fitWidth="150.0" onMouseClicked="#searchEvent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Image/ok.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                        <BorderPane maxWidth="450.0" minWidth="200.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <TabPane prefHeight="575.0" prefWidth="270.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                                <tabs>
+                                  <Tab style="-fx-background-color: mediumslateblue; -fx-size: 30;" styleClass="-fx-size" text="Create Event">
+                                       <content>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                             <left>
+                                                <GridPane prefHeight="300.0" prefWidth="260.0" BorderPane.alignment="CENTER">
+                                                   <children>
+                                                      <Label text="Date :" textFill="#0d065d" GridPane.rowIndex="1">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Period Event :" textFill="#0d065d" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Description :" textFill="#0d065d" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Event Type  :" textFill="#0d065d" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="date" prefHeight="30.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <TextField fx:id="period" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <TextField fx:id="type" prefHeight="28.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      <Button fx:id="createButton" mnemonicParsing="false" onMouseClicked="#addEvent" prefHeight="32.0" prefWidth="93.0" text="Create" textFill="#210ce0" translateX="180.0" translateY="50.0" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="150.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@Image/ajout.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Label text="Event Title:" textFill="#0d065d">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="title" GridPane.columnIndex="1" />
+                                                      <ComboBox fx:id="store" onAction="#displayStore" prefHeight="25.0" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                      <Label text="Store Event" textFill="#0d065d" GridPane.rowIndex="5">
+                                                         <font>
+                                                            <Font name="Times New Roman Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="92.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="178.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="86.0" minHeight="9.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="222.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="317.0" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="396.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="7.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="300.0" />
+                                                   </BorderPane.margin>
+                                                </GridPane>
+                                             </left>
+                                          </BorderPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
