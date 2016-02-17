@@ -11,6 +11,7 @@ import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import Gategories.ManageCategoriesController;
 import GuestBookEntries.ManageGuestBookEntryController;
 import admin.dashboard.DashboardController;
+import fxSoufieneInterfaces.manageController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -72,6 +73,7 @@ public class MainControler {
 			guestbookPane = FXMLLoader.load(ManageGuestBookEntryController.class.getResource("InterfaceManageEntries.fxml"));
 			eventsPane = FXMLLoader.load(TunisiaMallEventController.class.getResource("TunisiaMallEvents.fxml"));
 			biPane = FXMLLoader.load(DashboardController.class.getResource("DashBoard.fxml"));
+			usersPane = FXMLLoader.load(manageController.class.getResource("manage.fxml"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -86,7 +88,7 @@ public class MainControler {
     @FXML
     void usersTab(MouseEvent event) {
     	homePane.getChildren().clear();
-    	homePane.getChildren().add(shopPane);
+    	homePane.getChildren().add(usersPane);
     }
 
     @FXML
