@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -31,14 +32,16 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import edu.tunisiamall.entities.Message;
 import edu.tunisiamall.entities.User;
+import fxSoufieneInterfaces.authentificatController;
 
 public class InboxControler {
-	
+
 	@FXML
-    private ResourceBundle resources;
+	private ResourceBundle resources;
 
 	@FXML
 	private ScrollPane MessagesScrollPane;
@@ -62,9 +65,6 @@ public class InboxControler {
 	private VBox SideVBox;
 
 	@FXML
-	private Button SearchButton;
-
-	@FXML
 	private HBox SideHBox;
 
 	@FXML
@@ -73,22 +73,21 @@ public class InboxControler {
 	@FXML
 	private VBox FixedVBox;
 
+	@FXML
+	private Button sendButton;
+
 	// Constant
 	private static final Image delete_icon = new Image(
 			InboxControler.class.getResourceAsStream("/messaging/delete.png"));
-	private static final Image search_icon = new Image(
-			InboxControler.class.getResourceAsStream("/messaging/search.png"));
 	private static final int displayCount = 2;
 
 	// Vars
 	private static List<Message> AllMessagesList;
-	public static User u;
+	public static Stage newMessageStage = new Stage();
 
 	@FXML
 	void initialize() {
-		u = UserDelagate.find(1);
-		AllMessagesList = MessageDelegate.getMessagesFor(u);
-		SearchButton.setGraphic(new ImageView(search_icon));
+		AllMessagesList = MessageDelegate.getMessagesFor(authentificatController.connectedUser);
 		pagination.setPageFactory(new Callback<Integer, Node>() {
 
 			@Override
@@ -111,6 +110,13 @@ public class InboxControler {
 		InboxOptionsList.getItems().setAll("  All (" + AllMessagesList.size() + ")",
 				"  Unread (" + getUnreadMessagesList(0).size() + ")", "  Read (" + getReadMessagesList(0).size() + ")");
 		InboxOptionsList.getSelectionModel().clearAndSelect(0);
+		try {
+			Pane pop = FXMLLoader.load(SendMessageControler.class.getResource("SendMessage.fxml"));
+			Scene popup = new Scene(pop);
+			newMessageStage.setScene(popup);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -130,7 +136,7 @@ public class InboxControler {
 
 	@FXML
 	void selectPage(MouseEvent event) {
-		
+
 	}
 
 	private void displayMessages(List<HBox> messages) {
@@ -171,6 +177,12 @@ public class InboxControler {
 		container.setVgrow(text, Priority.ALWAYS);
 		ImageView imageView = new ImageView(delete_icon);
 		Button button = new Button("", imageView);
+		button.setOnMouseClicked(new EventHandler<Event>() {
+			@Override
+			public void handle(Event event) {
+				MessagesVBox.getChildren().remove(m);
+			}
+		});
 		HBox result = new HBox();
 		result.getChildren().addAll(idUser, container, button);
 		result.setHgrow(container, Priority.ALWAYS);
@@ -180,7 +192,7 @@ public class InboxControler {
 		result.setMargin(container, new Insets(5, 0, 0, 0));
 		result.setMargin(button, new Insets(30, 5, 0, 0));
 		result.setStyle("-fx-border-color:green;-fx-border-radius:5");
-		if(m.getSeen() == 0){
+		if (m.getSeen() == 0) {
 			result.setStyle("-fx-border-color:red;-fx-border-radius:5");
 		}
 		System.out.println("333");
@@ -236,19 +248,23 @@ public class InboxControler {
 			return result;
 		}
 	}
-	
-	private void jumpTo(Message m){
+
+	private void jumpTo(Message m) {
 		try {
 			MainControler.cadre.getChildren().clear();
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(ConversationControler.class.getResource("Conversation.fxml"));
 			ConversationControler c = (ConversationControler) loader.getController();
 			c.u = m.getUser();
-			c.u2 = m.getReceiver();
 			MainControler.cadre.getChildren().add(loader.load());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@FXML
+	void sendNewMessage() {
+		newMessageStage.show();
 	}
 
 }

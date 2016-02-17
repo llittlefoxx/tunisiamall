@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="340.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="messaging.SendMessageControler">
+   <children>
+      <HBox alignment="CENTER" prefHeight="65.0" prefWidth="494.0">
+         <children>
+            <Label text="To :">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="usersCombo" prefHeight="25.0" prefWidth="199.0" />
+         </children>
+      </HBox>
+      <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextArea fx:id="userInput" onKeyPressed="#sendMessage" prefHeight="224.0" prefWidth="494.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </StackPane>
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="494.0" spacing="10.0">
+         <children>
+            <Button fx:id="sendButton" mnemonicParsing="false" onMouseClicked="#sendMessage" prefWidth="60.0" text="Send" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancel" prefWidth="60.0" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

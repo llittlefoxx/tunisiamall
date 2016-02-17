@@ -10,6 +10,7 @@ import Delegates.UserDelagate;
 import application.MainControler;
 import edu.tunisiamall.entities.Message;
 import edu.tunisiamall.entities.User;
+import fxSoufieneInterfaces.authentificatController;
 import javafx.event.Event;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
@@ -70,11 +71,10 @@ public class ConversationControler {
     private VBox conversationVBox;
     
     public static User u;
-    public static User u2;
 
     @FXML
     void initialize() {
-    	List<Message> list = MessageDelegate.getMessagesFromTo(u, u2);
+    	List<Message> list = MessageDelegate.getMessagesFromTo(u, authentificatController.connectedUser);
     	conversationVBox.setPadding(new Insets(5, 5, 5, 5));
     	conversationVBox.setPrefHeight(conversationVBox.USE_COMPUTED_SIZE);
     	conversationVBox.setSpacing(5);
@@ -91,7 +91,7 @@ public class ConversationControler {
     		KeyEvent a = (KeyEvent) event;
     		if(a.getCode().toString() == "ENTER"){
     			if(userInput.getText().trim().length() > 0){
-    				Message m = MessageDelegate.sendMessage(u2, u, userInput.getText().trim());
+    				Message m = MessageDelegate.sendMessage(authentificatController.connectedUser, u, userInput.getText().trim());
     	    		StackPane container = createMessagePane(m);
     	    		conversationVBox.getChildren().add(container);
     	    		conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
@@ -100,7 +100,7 @@ public class ConversationControler {
     		}
     	}
     	else if(userInput.getText().trim().length() > 0){
-	    		Message m = MessageDelegate.sendMessage(u, u2, userInput.getText().trim());
+	    		Message m = MessageDelegate.sendMessage(authentificatController.connectedUser, u, userInput.getText().trim());
 	    		StackPane container = createMessagePane(m);
 	    		conversationVBox.getChildren().add(container);
 	    		conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
