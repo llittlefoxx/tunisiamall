@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import GUI.ShopRequestInterfaces.*;
+import application.MainControler;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -101,13 +102,8 @@ void verifAction(ActionEvent event) {
 	    	   ApproveRequestController controller = fxmlLoader.getController();
 	   		
 			  	controller.setSr(sr);
-	    	   Stage st=new Stage();
-	    	   Scene scene = new Scene(myPane);
-	    	   st.setScene(scene);
-	    	   stage.close();
-		       
-		       st.show();
-		       System.out.println("hiii");
+				MainControler.cadre.getChildren().clear();
+				MainControler.cadre.getChildren().add(myPane);
 }
 
 public void setSr(ShopRequest sr) {
@@ -139,7 +135,7 @@ public void setSr(ShopRequest sr) {
 }
 @FXML
 void cancelAction(ActionEvent event) {
-	 Stage stage = (Stage) verifButton.getScene().getWindow();
+	
 	Pane myPane = null;
 	    	   FXMLLoader fxmlLoader= new FXMLLoader();
 	    	   fxmlLoader.setLocation(getClass().getResource("/GUI/ShopRequestInterfaces/ViewShopRequestAdmin.fxml"));     
@@ -153,12 +149,8 @@ void cancelAction(ActionEvent event) {
 	    	   Parent p =fxmlLoader.getRoot();
 	    	   myPane = (Pane) p; 
 	    	   
-	    	   Stage st=new Stage();
-	    	   Scene scene = new Scene(myPane);
-	    	   st.setScene(scene);
-	    	   stage.close();
-		       
-		       st.show();
+	    		MainControler.cadre.getChildren().clear();
+				MainControler.cadre.getChildren().add(myPane);
 
 }
 

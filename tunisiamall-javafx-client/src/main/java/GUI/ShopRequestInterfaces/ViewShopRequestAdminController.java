@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Delegates.ManageShopRequestDelegate;
-
+import application.MainControler;
 import edu.tunisiamall.entities.ShopRequest;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -388,12 +388,12 @@ public class ViewShopRequestAdminController implements Initializable{
 	 @FXML
 	    void ficheFunction(ActionEvent event) {
 		 System.out.println("9999999  "+getSr().toString() );
-	
-		 Stage stage = (Stage) verifyButon.getScene().getWindow();
+		 TitledPane myPane = null;
+		/* Stage stage = (Stage) verifyButon.getScene().getWindow();
 		 setPrevStage(stage);
 		 Stage st=new Stage();
 		       stage.setTitle("ficheRequest");
-		       TitledPane myPane = null;
+		      
 		     
 		       
 		    	   FXMLLoader fxmlLoader= new FXMLLoader();
@@ -414,15 +414,28 @@ public class ViewShopRequestAdminController implements Initializable{
 			
 			
 		       Scene scene = new Scene(myPane);
-		       st.setScene(scene);
-		   	ficheRequestController controller = fxmlLoader.getController();
-		
+		       st.setScene(scene);*/
+		 FXMLLoader fxmlLoader= new FXMLLoader();
+		fxmlLoader.setLocation(ficheRequestController.class.getResource("ficheRequest.fxml"));     
+			
+		   
+		  	 try {
+		  		fxmlLoader.load();
+		  		
+		  	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 	ficheRequestController controller = fxmlLoader.getController();
+			
 		  	controller.setSr(getSr());
-		
+		  	 Parent p =fxmlLoader.getRoot();
+	    	   myPane = (TitledPane) p; 
+			MainControler.cadre.getChildren().clear();
+			MainControler.cadre.getChildren().add(myPane);
 			System.out.println("11111111");
-		       stage.close();
 		       
-		       st.show();
 		    }
 	 
 	 
