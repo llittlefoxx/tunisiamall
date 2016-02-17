@@ -24,7 +24,7 @@
                   <VBox fx:id="buttonsVBox" prefHeight="59.0" prefWidth="121.0" spacing="4.0">
                      <children>
                         <Button fx:id="sendButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#sendMessage" text="Send" />
-                        <Button fx:id="backButton" mnemonicParsing="false" text="Back" />
+                        <Button fx:id="backButton" mnemonicParsing="false" onMouseClicked="#backAction" text="Back" />
                      </children>
                   </VBox>
                </children>

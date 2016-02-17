@@ -82,10 +82,11 @@ public class InboxControler {
 
 	// Vars
 	private static List<Message> AllMessagesList;
+	public static User u;
 
 	@FXML
 	void initialize() {
-		User u = UserDelagate.find(1);
+		u = UserDelagate.find(1);
 		AllMessagesList = MessageDelegate.getMessagesFor(u);
 		SearchButton.setGraphic(new ImageView(search_icon));
 		pagination.setPageFactory(new Callback<Integer, Node>() {
@@ -162,16 +163,7 @@ public class InboxControler {
 		username.setOnMouseClicked(new EventHandler<Event>() {
 			@Override
 			public void handle(Event event) {
-				try {
-					MainControler.cadre.getChildren().clear();
-					FXMLLoader loader = new FXMLLoader();
-					loader.setLocation(ConversationControler.class.getResource("Conversation.fxml"));
-					ConversationControler c = (ConversationControler) loader.getController();
-					c.u = UserDelagate.find(3);
-					MainControler.cadre.getChildren().add(loader.load());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				jumpTo(m);
 			}
 		});
 		Label date = new Label(m.getDate().toString());
@@ -191,6 +183,7 @@ public class InboxControler {
 		if(m.getSeen() == 0){
 			result.setStyle("-fx-border-color:red;-fx-border-radius:5");
 		}
+		System.out.println("333");
 		return result;
 	}
 
@@ -241,6 +234,20 @@ public class InboxControler {
 				result.add(messagesList.get(i));
 			}
 			return result;
+		}
+	}
+	
+	private void jumpTo(Message m){
+		try {
+			MainControler.cadre.getChildren().clear();
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(ConversationControler.class.getResource("Conversation.fxml"));
+			ConversationControler c = (ConversationControler) loader.getController();
+			c.u = m.getUser();
+			c.u2 = m.getReceiver();
+			MainControler.cadre.getChildren().add(loader.load());
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

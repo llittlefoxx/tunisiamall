@@ -9,12 +9,6 @@
    <children>
       <VBox fx:id="SideVBox" minWidth="-Infinity" prefHeight="480.0" prefWidth="150.0">
          <children>
-            <HBox fx:id="SideHBox">
-               <children>
-                  <TextField fx:id="SearchField" promptText="Search" />
-                  <Button fx:id="SearchButton" mnemonicParsing="false" />
-               </children>
-            </HBox>
             <ListView fx:id="InboxOptionsList" onMouseClicked="#selectMessagesFilter" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>

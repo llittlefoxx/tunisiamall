@@ -13,5 +13,4 @@ public interface MessageServiceLocal {
 	public List<Message> getMessagesFor(User u);
 	public Message sendMessage(User src, User dest, String text);
 	public boolean deleteMessage(Message m);
-	public boolean setMessageSeen(Message m);
 }
