@@ -76,6 +76,7 @@ public class MainControler {
 			eventsPane = FXMLLoader.load(TunisiaMallEventController.class.getResource("TunisiaMallEvents.fxml"));
 			biPane = FXMLLoader.load(DashboardController.class.getResource("DashBoard.fxml"));
 			usersPane = FXMLLoader.load(manageController.class.getResource("manage.fxml"));
+			homePane.getChildren().add(shopPane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -85,6 +86,10 @@ public class MainControler {
     void shopTab(MouseEvent event) {
     	homePane.getChildren().clear();
     	homePane.getChildren().add(shopPane);
+    	homePane.setTopAnchor(shopPane, 0.0);
+    	homePane.setRightAnchor(shopPane, 0.0);
+    	homePane.setBottomAnchor(shopPane, 0.0);
+    	homePane.setLeftAnchor(shopPane, 0.0);
     }
 
     @FXML
@@ -114,7 +119,12 @@ public class MainControler {
     @FXML
     void messagingTab(MouseEvent event) {
     	homePane.getChildren().clear();
+    	InboxControler.refresh();
     	homePane.getChildren().add(messagingPane);
+    	homePane.setTopAnchor(messagingPane, 0.0);
+    	homePane.setRightAnchor(messagingPane, 0.0);
+    	homePane.setBottomAnchor(messagingPane, 0.0);
+    	homePane.setLeftAnchor(messagingPane, 0.0);
     }
 
     @FXML

@@ -79,7 +79,7 @@ public class InboxControler {
 	// Constant
 	private static final Image delete_icon = new Image(
 			InboxControler.class.getResourceAsStream("/messaging/delete.png"));
-	private static final int displayCount = 2;
+	private static final int displayCount = 10;
 
 	// Vars
 	private static List<Message> AllMessagesList;
@@ -267,4 +267,7 @@ public class InboxControler {
 		newMessageStage.show();
 	}
 
+	public static void refresh(){
+		AllMessagesList = MessageDelegate.getMessagesFor(authentificatController.connectedUser);
+	}
 }
