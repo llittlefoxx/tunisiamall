@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<?import fxmltableview.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxSoufieneInterfaces.manageController">
+   <children>
+      <TabPane fx:id="tabPaneUsers" layoutX="9.0" layoutY="77.0" prefHeight="200.0" prefWidth="679.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Customer">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tabCustomer" editable="true" prefHeight="194.0" prefWidth="679.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="ID">
+                              <cellValueFactory>
+									<PropertyValueFactory property="idUser" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cadresse" prefWidth="75.0" text="Adresse">
+                              <cellValueFactory>
+									<PropertyValueFactory property="adresse" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cbirthdate" prefWidth="75.0" text="Birthdate">
+                              <cellValueFactory>
+									<PropertyValueFactory property="birthdate" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cgender" prefWidth="75.0" text="Gender">
+                              <cellValueFactory>
+									<PropertyValueFactory property="gender" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cjob" prefWidth="75.0" text="Job">
+                              <cellValueFactory>
+									<PropertyValueFactory property="job" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="clastName" prefWidth="75.0" text="LastName">
+                              <cellValueFactory>
+									<PropertyValueFactory property="lastName" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="clogin" prefWidth="75.0" text="Login">
+                              <cellValueFactory>
+									<PropertyValueFactory property="login" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cemail" prefWidth="75.0" text="Email">
+                              <cellValueFactory>
+									<PropertyValueFactory property="mail" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cpassword" prefWidth="75.0" text="Password">
+                              <cellValueFactory>
+									<PropertyValueFactory property="password" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cphone" prefWidth="75.0" text="Phone">
+                              <cellValueFactory>
+									<PropertyValueFactory property="phone" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cpictureUrl" prefWidth="75.0" text="PictureUrl">
+                              <cellValueFactory>
+									<PropertyValueFactory property="pictureUrl" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cfacturationAddr" prefWidth="75.0" text="FacturationAddr">
+                              <cellValueFactory>
+									<PropertyValueFactory property="facturationAddr" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cshipmentAddr" prefWidth="75.0" text="ShipementAddr">
+                              <cellValueFactory>
+									<PropertyValueFactory property="shipementAddr" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="cfirstName" prefWidth="75.0" text="FirstName">
+                              <cellValueFactory>
+									<PropertyValueFactory property="firstName" />
+							</cellValueFactory>
+							</TableColumn>
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Shope Owner">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tabShopOwner" editable="true" prefHeight="171.0" prefWidth="679.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="ID">
+                              <cellValueFactory>
+									<PropertyValueFactory property="idUser" />
+							</cellValueFactory>
+							</TableColumn>
+                              <TableColumn fx:id="soadresse" prefWidth="75.0" text="Adresse">
+                              <cellValueFactory>
+									<PropertyValueFactory property="adresse" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sobirthdate" prefWidth="75.0" text="Birthdate">
+                              <cellValueFactory>
+									<PropertyValueFactory property="birthdate" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sogender" prefWidth="75.0" text="Gender">
+                              <cellValueFactory>
+									<PropertyValueFactory property="gender" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sojob" prefWidth="75.0" text="Job">
+                              <cellValueFactory>
+									<PropertyValueFactory property="job" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="solastName" prefWidth="75.0" text="LastName">
+                              <cellValueFactory>
+									<PropertyValueFactory property="lastName" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sologin" prefWidth="75.0" text="Login">
+                              <cellValueFactory>
+									<PropertyValueFactory property="login" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="soemail" prefWidth="75.0" text="Email">
+                              <cellValueFactory>
+									<PropertyValueFactory property="mail" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sopassowrd" prefWidth="75.0" text="Password">
+                              <cellValueFactory>
+									<PropertyValueFactory property="password" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sophone" prefWidth="75.0" text="Phone">
+                              <cellValueFactory>
+									<PropertyValueFactory property="phone" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sopictureUrl" prefWidth="75.0" text="PictureUrl">
+                              <cellValueFactory>
+									<PropertyValueFactory property="pictureUrl" />
+							</cellValueFactory>
+								</TableColumn>
+                              <TableColumn fx:id="sofirstName" prefWidth="75.0" text="FirstName">
+                              <cellValueFactory>
+									<PropertyValueFactory property="firstName" />
+							</cellValueFactory>
+								</TableColumn>
+								<TableColumn fx:id="sodateActivation" prefWidth="75.0" text="DateActivation">
+                              <cellValueFactory>
+									<PropertyValueFactory property="dateActivation" />
+							</cellValueFactory>
+								</TableColumn>
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <effect>
+            <InnerShadow color="#0808d7" />
+         </effect>
+      </TabPane>
+      <Button layoutX="31.0" layoutY="299.0" mnemonicParsing="false" onAction="#delete" prefHeight="31.0" prefWidth="63.0">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/deleteCategory.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <TextField fx:id="rechercheTxt" layoutX="224.0" layoutY="24.0" prefHeight="31.0" prefWidth="149.0">
+         <effect>
+            <InnerShadow color="#0808d7" />
+         </effect></TextField>
+      <ChoiceBox fx:id="rechercheElement" layoutX="43.0" layoutY="24.0" prefHeight="31.0" prefWidth="150.0" value="firstName">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+            <String fx:value="FirstName" />
+            <String fx:value="Mail" />
+            <String fx:value="Login" />
+            <String fx:value="Baned" />
+        </FXCollections>
+    </items>
+    </ChoiceBox>
+      <Button layoutX="399.0" layoutY="24.0" mnemonicParsing="false" onAction="#recherche" prefHeight="31.0" prefWidth="47.0">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/search.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="183.0" layoutY="299.0" mnemonicParsing="false" onAction="#banir" prefHeight="31.0" prefWidth="63.0">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/ban1.jpg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <PieChart fx:id="statUsers" layoutY="371.0" prefHeight="252.0" prefWidth="365.0" />
+      <Button layoutX="305.0" layoutY="299.0" mnemonicParsing="false" onAction="#unbanir" prefHeight="31.0" prefWidth="52.0">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/unban.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+</Pane>

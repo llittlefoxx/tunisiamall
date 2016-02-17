@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Entity
 @DiscriminatorValue("shopowner")
-@NamedQuery(name="Shopowner.findAll", query="SELECT s FROM Shopowner s")
+@NamedQuery(name="Shopowner.findAll", query="SELECT s FROM User s")
 public class Shopowner extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
