@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.collections.FXCollections ?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ShopRequestInterfaces.ViewShopRequestAdminController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1234.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ShopRequestInterfaces.ViewShopRequestAdminController">
    <children>
       <TabPane fx:id="shoptab" layoutX="33.0" layoutY="233.0" prefHeight="193.0" prefWidth="689.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -225,8 +225,8 @@
         </tabs>
       </TabPane>
       <Label layoutX="33.0" layoutY="207.0" text="Shop Requests Global View" />
-      <DatePicker fx:id="datepickerid" layoutX="756.0" layoutY="83.0" onAction="#datepickerAction" />
-      <TitledPane animated="false" layoutX="756.0" layoutY="126.0" prefHeight="226.0" prefWidth="450.0" text="Shop Request By Date">
+      <DatePicker fx:id="datepickerid" layoutX="756.0" layoutY="64.0" onAction="#datepickerAction" />
+      <TitledPane animated="false" layoutX="756.0" layoutY="107.0" prefHeight="226.0" prefWidth="450.0" text="Shop Request By Date">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -285,7 +285,7 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <TitledPane animated="false" layoutX="757.0" layoutY="367.0" prefHeight="288.0" prefWidth="201.0" text="Details">
+      <TitledPane animated="false" layoutX="756.0" layoutY="342.0" prefHeight="288.0" prefWidth="201.0" text="Details">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="204.0">
                <children>
@@ -298,7 +298,7 @@
                </children></AnchorPane>
         </content>
       </TitledPane>
-      <TitledPane layoutX="975.0" layoutY="367.0" text="Statistics">
+      <TitledPane layoutX="974.0" layoutY="342.0" text="Statistics">
          <content>
             <PieChart fx:id="piechartid" layoutX="975.0" layoutY="367.0" prefHeight="270.0" prefWidth="231.0" />
          </content>

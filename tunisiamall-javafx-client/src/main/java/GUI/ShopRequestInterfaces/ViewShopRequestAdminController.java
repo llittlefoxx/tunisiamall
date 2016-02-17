@@ -310,6 +310,7 @@ public class ViewShopRequestAdminController implements Initializable{
 			        FXCollections.observableArrayList(lists1);
 		
 			tableView2.setItems(data1);
+			setTableView2(tableView2);
 			
 	
 	
@@ -332,6 +333,7 @@ public class ViewShopRequestAdminController implements Initializable{
 			        FXCollections.observableArrayList(l);
 		
 			tab3.setItems(data1);
+			setTab3(tab3);
 			
 	}
 	
@@ -358,7 +360,7 @@ public class ViewShopRequestAdminController implements Initializable{
 		        @Override
 		        public void handle(MouseEvent event) {
 		        	System.out.println("888888");
-			    	ShopRequest sr = getTableView().getSelectionModel().getSelectedItem();
+			    	ShopRequest sr = getTableView2().getSelectionModel().getSelectedItem();
 			    	System.out.println("fffff" + sr.toString());
 		            System.out.println("mouse click detected! "+event.getSource());
 		            setSr(sr);
@@ -368,7 +370,7 @@ public class ViewShopRequestAdminController implements Initializable{
 		        @Override
 		        public void handle(MouseEvent event) {
 		        	System.out.println("888888");
-			    	ShopRequest sr = getTableView().getSelectionModel().getSelectedItem();
+			    	ShopRequest sr = getTab3().getSelectionModel().getSelectedItem();
 			    	System.out.println("fffff" + sr.toString());
 		            System.out.println("mouse click detected! "+event.getSource());
 		            setSr(sr);
