@@ -25,7 +25,7 @@ import edu.tunisiamall.entities.Store;
  * Session Bean implementation class IndicatorsService
  */
 @Stateless
-public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsServiceLocal {
+public class IndicatorsService implements IndicatorsServiceRemote {
 
 	/**
 	 * Default constructor.
@@ -72,25 +72,19 @@ public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsSer
 		return result;
 	}
 
-
-
 	@Override
 	public Map<String, Double> getMonthlyIncome() {
 
-		// Query query=em.createQuery("select ")
-		// http://stackoverflow.com/questions/3012895/group-by-date-range-on-weeks-months-interval
 		return null;
 	}
 
 	@Override
 	public void CreateReport(String name, String mesure, Date startDate, Date endDate) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void DeleteReport(String name) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -237,43 +231,41 @@ public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsSer
 
 		return res;
 	}
-	
+
 	@Override
-	public HashMap<Store,Double> getTopSellingStores() {
+	public HashMap<Store, Double> getTopSellingStores() {
 
-		HashMap<Store, Double> res=new HashMap<Store,Double>();
-		Query query=em.createNativeQuery("select product.idProduct ,product."
-				+ "Promotion_idPromotion, sum(product.sellPrice), "
-				+ "sum(product.buyPrice), sum(orderline.qte) , product.tax "
-				+ ",product.store_idStroe from product ,orderline where product.idProduct="
-				+ "orderline.idProduct_fk group by product.store_idStroe");
-		
-				List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
+		HashMap<Store, Double> res = new HashMap<Store, Double>();
+		Query query = em.createNativeQuery(
+				"select product.idProduct ,product." + "Promotion_idPromotion, sum(product.sellPrice), "
+						+ "sum(product.buyPrice), sum(orderline.qte) , product.tax "
+						+ ",product.store_idStroe from product ,orderline where product.idProduct="
+						+ "orderline.idProduct_fk group by product.store_idStroe");
 
-				Store store=new Store();
-				
-				double totalbenefProdActuel;
-				
-				for (Object[] objects : itemsList) {
-					store=findStoreById(Integer.parseInt(objects[6].toString()));
-					totalbenefProdActuel = getNetGainPercentage(Double.parseDouble(objects[3].toString()),
-							Double.parseDouble(objects[2].toString()), Double.parseDouble(objects[5].toString()))
-							* Integer.parseInt(objects[4].toString());
-					if (objects[1] != null) {
-						totalbenefProdActuel = totalbenefProdActuel - (totalbenefProdActuel
-								* (findPromotionById(Long.parseLong(objects[1].toString())).getValue()) / 100);
+		List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
 
-						
-					}
-					res.put(store, totalbenefProdActuel);
+		Store store = new Store();
 
-				}
+		double totalbenefProdActuel;
 
-				System.out.println("step final: "+res.size() );
-				return res;
+		for (Object[] objects : itemsList) {
+			store = findStoreById(Integer.parseInt(objects[6].toString()));
+			totalbenefProdActuel = getNetGainPercentage(Double.parseDouble(objects[3].toString()),
+					Double.parseDouble(objects[2].toString()), Double.parseDouble(objects[5].toString()))
+					* Integer.parseInt(objects[4].toString());
+			if (objects[1] != null) {
+				totalbenefProdActuel = totalbenefProdActuel - (totalbenefProdActuel
+						* (findPromotionById(Long.parseLong(objects[1].toString())).getValue()) / 100);
+
+			}
+			res.put(store, totalbenefProdActuel);
+
+		}
+
+		System.out.println("step final: " + res.size());
+		return res;
 	}
-	
-	
+
 	@Override
 	public double getTotalIncome() {
 		Query query = em.createNativeQuery("select product.idProduct ,product.Promotion_idPromotion, "
@@ -303,9 +295,6 @@ public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsSer
 		System.out.println("step 3 : " + totalBenefAllProducts);
 		return totalBenefAllProducts;
 	}
-	
-	
-	
 
 	@Override
 	public double getNetGainPercentage(double buyPrice, double sellPrice, double tax) {
