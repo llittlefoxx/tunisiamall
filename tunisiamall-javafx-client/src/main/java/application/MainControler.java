@@ -11,6 +11,9 @@ import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import Gategories.ManageCategoriesController;
 import GuestBookEntries.ManageGuestBookEntryController;
 import admin.dashboard.DashboardController;
+import fxSoufieneInterfaces.authentificatController;
+import fxSoufieneInterfaces.manageController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -72,6 +75,8 @@ public class MainControler {
 			guestbookPane = FXMLLoader.load(ManageGuestBookEntryController.class.getResource("InterfaceManageEntries.fxml"));
 			eventsPane = FXMLLoader.load(TunisiaMallEventController.class.getResource("TunisiaMallEvents.fxml"));
 			biPane = FXMLLoader.load(DashboardController.class.getResource("DashBoard.fxml"));
+			usersPane = FXMLLoader.load(manageController.class.getResource("manage.fxml"));
+			homePane.getChildren().add(shopPane);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -81,12 +86,16 @@ public class MainControler {
     void shopTab(MouseEvent event) {
     	homePane.getChildren().clear();
     	homePane.getChildren().add(shopPane);
+    	homePane.setTopAnchor(shopPane, 0.0);
+    	homePane.setRightAnchor(shopPane, 0.0);
+    	homePane.setBottomAnchor(shopPane, 0.0);
+    	homePane.setLeftAnchor(shopPane, 0.0);
     }
 
     @FXML
     void usersTab(MouseEvent event) {
     	homePane.getChildren().clear();
-    	homePane.getChildren().add(shopPane);
+    	homePane.getChildren().add(usersPane);
     }
 
     @FXML
@@ -110,13 +119,24 @@ public class MainControler {
     @FXML
     void messagingTab(MouseEvent event) {
     	homePane.getChildren().clear();
+    	InboxControler.refresh();
     	homePane.getChildren().add(messagingPane);
+    	homePane.setTopAnchor(messagingPane, 0.0);
+    	homePane.setRightAnchor(messagingPane, 0.0);
+    	homePane.setBottomAnchor(messagingPane, 0.0);
+    	homePane.setLeftAnchor(messagingPane, 0.0);
     }
 
     @FXML
     void guestbookTab(MouseEvent event) {
     	homePane.getChildren().clear();
     	homePane.getChildren().add(guestbookPane);
+    }
+    
+    @FXML
+    void signOut(ActionEvent acEvent){
+    	authentificatController.s.close();
+    	Main.PrimaryStage.show();
     }
 }
 

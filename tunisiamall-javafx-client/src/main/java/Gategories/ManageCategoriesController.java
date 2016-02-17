@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import Delegates.CategoriesDelegate;
+import application.MainControler;
 import edu.tunisiamall.entities.Category;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +25,7 @@ import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -85,16 +87,16 @@ public class ManageCategoriesController {
 
 	@FXML
 	void OnListOfSubCategoriesViwed(ActionEvent event) throws IOException {
-		//Stage window = new Stage();
-		Stage window = (Stage) SubCategoriesListed.getScene().getWindow();
-		FXMLLoader loader =new FXMLLoader();
-		loader.setLocation(ManageSubCategoriesController.class.getResource("ListSubCategories.fxml"));
-		AnchorPane root = (AnchorPane)loader.load();
-		Scene scene = new Scene(root,600,400);
-		window.setScene(scene);
-		window.show();
-	
-
+		//Category c = tableCat.getSelectionModel().getSelectedItem();
+		try {
+			Stage window = new Stage();
+			AnchorPane root = FXMLLoader.load(ManageSubCategoriesController.class.getResource("ListSubCategories.fxml"));
+			Scene scene = new Scene(root);
+			window.setScene(scene);
+			window.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -102,6 +104,7 @@ public class ManageCategoriesController {
 		Category c = tableCat.getSelectionModel().getSelectedItem();
 		CategoriesDelegate.delete(c);
 		tableCat.getItems().remove(c);
+		labelsize.setText(String.valueOf(Integer.parseInt(labelsize.getText())-1));
 	
 	}
 

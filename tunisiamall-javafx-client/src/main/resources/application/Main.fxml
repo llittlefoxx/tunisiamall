@@ -58,7 +58,7 @@
                      </textFill>
                   </Label>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="32.0" textFill="#c90000">
+                  <Button fx:id="logout" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#signOut" prefHeight="31.0" prefWidth="32.0" textFill="#c90000">
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -172,7 +172,11 @@
                         </AnchorPane>
                      </children>
                   </VBox>
-                  <AnchorPane fx:id="homePane" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 5; -fx-border-style: dashed;" HBox.hgrow="ALWAYS" />
+                  <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <content>
+                        <AnchorPane fx:id="homePane" style="-fx-border-color: black; -fx-border-width: 3; -fx-border-radius: 5; -fx-border-style: dashed;" />
+                     </content>
+                  </ScrollPane>
                </children>
             </HBox>
          </children>

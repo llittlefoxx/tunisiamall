@@ -1,5 +1,6 @@
 package application;
 
+import fxSoufieneInterfaces.authentificatController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -11,12 +12,14 @@ import javafx.scene.layout.HBox;
 
 
 public class Main extends Application {
+	public static Stage PrimaryStage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			PrimaryStage = primaryStage;
 			FXMLLoader loader =new FXMLLoader();
-			loader.setLocation(MainControler.class.getResource("Main.fxml"));
-			BorderPane root = (BorderPane) loader.load();
+			loader.setLocation(authentificatController.class.getResource("authentificate.fxml"));
+			TitledPane root =(TitledPane)loader.load();
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();

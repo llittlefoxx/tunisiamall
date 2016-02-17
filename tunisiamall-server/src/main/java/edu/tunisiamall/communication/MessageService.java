@@ -47,24 +47,18 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 	}
 
 	@Override
-	public boolean setMessageSeen(Message m) {
-		try {
-			m.setSeen((byte) 1);
-			m.setSeenDate(new Date());
-			em.merge(m);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	@Override
 	public List<Message> getMessagesFromTo(User src, User dest) {
 		Query query = em.createQuery("select m from Message m where (m.receiver = :src and m.user = :dest) or (m.receiver = :dest and m.user = :src) order by m.date desc")
 				.setParameter("src", src)
 				.setParameter("dest",dest);
 		List<Message> results = (List<Message>) query.getResultList();
+		for (Message message : results) {
+			if(message.getReceiver().getIdUser() == dest.getIdUser()){
+				message.setSeen((byte)1);
+				message.setSeenDate(new Date());
+				em.merge(message);
+			}
+		}
 		return results;
 	}
 

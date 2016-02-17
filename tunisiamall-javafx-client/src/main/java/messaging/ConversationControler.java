@@ -7,8 +7,10 @@ import com.sun.javafx.application.LauncherImpl;
 
 import Delegates.MessageDelegate;
 import Delegates.UserDelagate;
+import application.MainControler;
 import edu.tunisiamall.entities.Message;
 import edu.tunisiamall.entities.User;
+import fxSoufieneInterfaces.authentificatController;
 import javafx.event.Event;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
@@ -24,6 +26,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -67,12 +70,11 @@ public class ConversationControler {
     @FXML
     private VBox conversationVBox;
     
-    public static User u = UserDelagate.find(2);
-    public static User u2 = UserDelagate.find(1);
+    public static User u;
 
     @FXML
     void initialize() {
-    	List<Message> list = MessageDelegate.getMessagesFromTo(u, u2);
+    	List<Message> list = MessageDelegate.getMessagesFromTo(u, authentificatController.connectedUser);
     	conversationVBox.setPadding(new Insets(5, 5, 5, 5));
     	conversationVBox.setPrefHeight(conversationVBox.USE_COMPUTED_SIZE);
     	conversationVBox.setSpacing(5);
@@ -89,32 +91,28 @@ public class ConversationControler {
     		KeyEvent a = (KeyEvent) event;
     		if(a.getCode().toString() == "ENTER"){
     			if(userInput.getText().trim().length() > 0){
-    	    		MessageDelegate.sendMessage(u, u2, userInput.getText().trim());
-    	    		Message m = new Message();
-    	    		m.setText(userInput.getText().trim());
-    	    		m.setReceiver(u2);
-    	    		m.setUser(u);
+    				Message m = MessageDelegate.sendMessage(authentificatController.connectedUser, u, userInput.getText().trim());
     	    		StackPane container = createMessagePane(m);
     	    		conversationVBox.getChildren().add(container);
-    	    		//conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
+    	    		conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
     	    		userInput.clear();
     	    	}
     		}
     	}
     	else if(userInput.getText().trim().length() > 0){
-	    		Message m = MessageDelegate.sendMessage(u, u2, userInput.getText().trim());
+	    		Message m = MessageDelegate.sendMessage(authentificatController.connectedUser, u, userInput.getText().trim());
 	    		StackPane container = createMessagePane(m);
 	    		conversationVBox.getChildren().add(container);
 	    		conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
 	    		userInput.clear();
     	}
-    	refresh();
+    	conversationScroll.setVvalue(1);
     }
     
-    private void refresh(){
-    	//conversationVBox.resize(conversationVBox.getWidth() + 1,conversationVBox.getHeight() + 1);
-    	//conversationVBox.resize(conversationVBox.getWidth() - 1,conversationVBox.getHeight() - 1);
-    	conversationScroll.setVvalue(1);
+    @FXML
+    void backAction(MouseEvent event) {
+    	MainControler.cadre.getChildren().clear();
+    	MainControler.cadre.getChildren().add(MainControler.messagingPane);
     }
     
     private StackPane createMessagePane(Message m){
@@ -128,7 +126,7 @@ public class ConversationControler {
     	Label date = new Label(m.getDate().toString());
     	date.setMinWidth(120);
     	HBox box = new HBox();
-    	if(m.getUser().getIdUser() == u.getIdUser()){
+    	if(m.getReceiver().getIdUser() == u.getIdUser()){
     		box.getChildren().addAll(text,r,date);
     	}
     	else{

@@ -19,5 +19,6 @@ public interface userServicesRemote {
 	public List<User> findAll();
 	public User find(int id);
 	public User findByLogin(String login);
+	
 
 }

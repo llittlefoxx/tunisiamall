@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Authentificate" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxSoufieneInterfaces.authentificatController">
+   <content>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Tunisia-MALL-2.jpg" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Login" />
+                        <Region prefHeight="25.0" prefWidth="34.0" />
+                        <TextField fx:id="login">
+                           <effect>
+                              <InnerShadow color="#0808d7" />
+                           </effect>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Password" />
+                        <Region prefHeight="25.0" prefWidth="13.0" />
+                        <PasswordField fx:id="password">
+                           <effect>
+                              <InnerShadow color="#0808d7" />
+                           </effect>
+                        </PasswordField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="b1" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#hello" text="Log in">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../main/sign-up-icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </content>
+</TitledPane>
