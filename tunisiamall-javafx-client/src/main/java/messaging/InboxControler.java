@@ -1,11 +1,17 @@
 package messaging;
 
-
-import java.net.URL;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import Delegates.MessageDelegate;
+import Delegates.UserDelagate;
+import application.MainControler;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -20,6 +26,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -29,190 +36,212 @@ import edu.tunisiamall.entities.Message;
 import edu.tunisiamall.entities.User;
 
 public class InboxControler {
-
-    @FXML
+	
+	@FXML
     private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private ScrollPane MessagesScrollPane;
 
-    @FXML
-    private ScrollPane MessagesScrollPane;
+	@FXML
+	private ListView<String> InboxOptionsList;
 
-    @FXML
-    private ListView<String> InboxOptionsList;
+	@FXML
+	private AnchorPane firstAnchorPane;
 
-    @FXML
-    private AnchorPane firstAnchorPane;
+	@FXML
+	private HBox InboxRootHBox;
 
-    @FXML
-    private HBox InboxRootHBox;
+	@FXML
+	private VBox MessagesVBox;
 
-    @FXML
-    private VBox MessagesVBox;
-    
-    @FXML
-    private Pagination pagination;
-    
-    @FXML
-    private VBox SideVBox;
+	@FXML
+	private Pagination pagination;
 
-    @FXML
-    private Button SearchButton;
+	@FXML
+	private VBox SideVBox;
 
-    @FXML
-    private HBox SideHBox;
-    
-    @FXML
-    private TextField SearchField;
-    
-    @FXML
-    private VBox FixedVBox;
+	@FXML
+	private Button SearchButton;
 
-    // Constant
-    private static final Image delete_icon = new Image(InboxControler.class.getResourceAsStream("/messaging/delete.png"));
-    private static final Image search_icon = new Image(InboxControler.class.getResourceAsStream("/messaging/search.png"));
-    private static final int displayCount = 10;
-    
-    // Vars
-    private static List<HBox> AllMessagesList = new ArrayList<>();
-    private static List<HBox> ReadMessagesList = new ArrayList<>();
-    private static List<HBox> UnreadMessagesList = new ArrayList<>();
-    
-    @FXML
-    void initialize() {
-    	AllMessagesList = getAllMessagesList();
-        SearchButton.setGraphic(new ImageView(search_icon));
-        pagination.setPageFactory(new Callback<Integer, Node>() {
-        	
-            @Override
-            public Node call(Integer pageIndex) {          
-                return MessagesScrollPane;
-            }
-            
-        });
-        displayMessages(AllMessagesList);
-        displayPagination(AllMessagesList, 0);
-        InboxOptionsList.getItems().setAll("  All (" +  AllMessagesList.size() + ")","  Unread (" + UnreadMessagesList.size() + ")","  Read (" + ReadMessagesList.size() + ")");
-        InboxOptionsList.getSelectionModel().clearAndSelect(0);
-    }
-    
-    @FXML
-    void selectMessagesFilter(MouseEvent event) {
-    	List<HBox> messagesList;
-    	int index = InboxOptionsList.getSelectionModel().getSelectedIndex();
-    	if(index == 0){
-    		AllMessagesList = getAllMessagesList();
-    		displayMessages(AllMessagesList);
-    		displayPagination(AllMessagesList, 0);
-    	}
-    	else if(index == 1){
-    		UnreadMessagesList = getUnreadMessagesList();
-    		displayMessages(UnreadMessagesList);
-    		displayPagination(UnreadMessagesList, 0);
-    	}
-    	else if(index == 2){
-    		ReadMessagesList = getReadMessagesList();
-    		displayMessages(ReadMessagesList);
-    		displayPagination(ReadMessagesList, 0);
-    	}
-    }
-    
-    @FXML
-    void selectPage(MouseEvent event) {
-    	
-    }
-    
-    private void displayMessages(List<HBox> messages){
-    	MessagesVBox.getChildren().clear();
-    	MessagesVBox.setPrefHeight(100 * messages.size());
-        MessagesVBox.getChildren().addAll(messages);
-        MessagesVBox.setPadding(new Insets(10,10,10,10));
-        MessagesVBox.setSpacing(10);
-    }
-    
-    public void displayPagination(List<HBox> messagesList, int index){
-    	if (messagesList.size() % displayCount == 0){
-    		pagination.setPageCount(messagesList.size() / displayCount);
-    	}
-    	else{
-    		pagination.setPageCount(messagesList.size() / displayCount + 1);
-    	}
-    	pagination.setCurrentPageIndex(index);
-    }
-    
-    private HBox createMessageHBox(Message m){
-    	Text idUser = new Text("" + m.getUser().getIdUser());
-    	idUser.setVisible(false);
-    	VBox container = new VBox();
-    	Label username = new Label(m.getUser().getFirstName() + " " + m.getUser().getLastName());
-    	username.setUnderline(true);
-    	username.setCursor(Cursor.HAND);
-    	username.setFont(Font.font("arial black", 15));
-    	Label text = new Label(m.getText());
-    	text.setWrapText(true);
-    	text.setCursor(Cursor.HAND);
-    	Label date = new Label(m.getDate().toString());
-    	container.getChildren().addAll(username, text, date);
-    	ImageView imageView = new ImageView(delete_icon);
-        Button button = new Button("", imageView);
-    	HBox result = new HBox();
-    	result.getChildren().addAll(idUser, container, button);
-    	result.setHgrow(container, Priority.ALWAYS);
-    	result.setPrefHeight(90);
-    	result.setMargin(container, new Insets(5,0,0,0));
-    	result.setMargin(button, new Insets(30,5,0,0));
-    	result.setStyle("-fx-border-color:red;-fx-border-radius:5");
-    	return result;
-    }
-    
-    private List<HBox> getAllMessagesList(){
-    	List<HBox> messagesList = new ArrayList<>();
-        User u1 = new User();
-        u1.setIdUser(1);
-        u1.setFirstName("Elyes");
-        u1.setLastName("Ben Abdelkader");
-        User u2 = new User();
-        u2.setIdUser(2);
-        u2.setFirstName("Foulen");
-        u2.setLastName("Ben Foulen");
-        Message m = new Message(u1, u2, "Hello world sdkjflksdjflksdj lkfjlskd jflksqdj lkfjqskld flksqd lkfjqsdlk jflksqdj flksqjd flkj lkqjsdf lkjsqdl fjlkqsdjflksqdklf sqdlkj lkqsdjf sdhfihzeiuhfeiuzh iufzehiu fidh fuihsd uifhsdiu hfiuqsdh fiuqhsd iufhqsdiufh iuqsdhf iusqdhfiuh iuhfdsiufh iuqsdh");
-    	messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-    	return messagesList;
-    }
-    
-    private List<HBox> getReadMessagesList(){
-    	List<HBox> messagesList = new ArrayList<>();
-        User u1 = new User();
-        u1.setIdUser(1);
-        u1.setFirstName("Elyes");
-        u1.setLastName("Ben Abdelkader");
-        User u2 = new User();
-        u2.setIdUser(2);
-        u2.setFirstName("Foulen");
-        u2.setLastName("Ben Foulen");
-        Message m = new Message(u1, u2, "Hello world sdkjflksdjflksdj lkfjlskd jflksqdj lkfjqskld flksqd lkfjqsdlk jflksqdj flksqjd flkj lkqjsdf lkjsqdl fjlkqsdjflksqdklf sqdlkj lkqsdjf sdhfihzeiuhfeiuzh iufzehiu fidh fuihsd uifhsdiu hfiuqsdh fiuqhsd iufhqsdiufh iuqsdhf iusqdhfiuh iuhfdsiufh iuqsdh");
-    	messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-        messagesList.add(createMessageHBox(m));
-    	return messagesList;
-    }
-    
-    private List<HBox> getUnreadMessagesList(){
-    	List<HBox> messagesList = new ArrayList<>();
-    	return messagesList;
-    }
-    
+	@FXML
+	private HBox SideHBox;
+
+	@FXML
+	private TextField SearchField;
+
+	@FXML
+	private VBox FixedVBox;
+
+	// Constant
+	private static final Image delete_icon = new Image(
+			InboxControler.class.getResourceAsStream("/messaging/delete.png"));
+	private static final Image search_icon = new Image(
+			InboxControler.class.getResourceAsStream("/messaging/search.png"));
+	private static final int displayCount = 2;
+
+	// Vars
+	private static List<Message> AllMessagesList;
+
+	@FXML
+	void initialize() {
+		User u = UserDelagate.find(1);
+		AllMessagesList = MessageDelegate.getMessagesFor(u);
+		SearchButton.setGraphic(new ImageView(search_icon));
+		pagination.setPageFactory(new Callback<Integer, Node>() {
+
+			@Override
+			public Node call(Integer pageIndex) {
+				int index = InboxOptionsList.getSelectionModel().getSelectedIndex();
+				if (index == 0) {
+					displayMessages(getAllMessagesList(pageIndex));
+				} else if (index == 1) {
+					displayMessages(getUnreadMessagesList(pageIndex));
+				} else if (index == 2) {
+					displayMessages(getReadMessagesList(pageIndex));
+				}
+				displayMessages(getAllMessagesList(pageIndex + 1));
+				return MessagesScrollPane;
+			}
+
+		});
+		displayMessages(getAllMessagesList(1));
+		displayPagination(getAllMessagesList(0));
+		InboxOptionsList.getItems().setAll("  All (" + AllMessagesList.size() + ")",
+				"  Unread (" + getUnreadMessagesList(0).size() + ")", "  Read (" + getReadMessagesList(0).size() + ")");
+		InboxOptionsList.getSelectionModel().clearAndSelect(0);
+	}
+
+	@FXML
+	void selectMessagesFilter(MouseEvent event) {
+		int index = InboxOptionsList.getSelectionModel().getSelectedIndex();
+		if (index == 0) {
+			displayPagination(getAllMessagesList(0));
+			displayMessages(getAllMessagesList(1));
+		} else if (index == 1) {
+			displayPagination(getUnreadMessagesList(0));
+			displayMessages(getUnreadMessagesList(1));
+		} else if (index == 2) {
+			displayPagination(getReadMessagesList(0));
+			displayMessages(getReadMessagesList(1));
+		}
+	}
+
+	@FXML
+	void selectPage(MouseEvent event) {
+		
+	}
+
+	private void displayMessages(List<HBox> messages) {
+		MessagesVBox.getChildren().clear();
+		MessagesVBox.setPrefHeight(100 * messages.size());
+		MessagesVBox.getChildren().addAll(messages);
+		MessagesVBox.setPadding(new Insets(10, 10, 10, 10));
+		MessagesVBox.setSpacing(10);
+	}
+
+	public void displayPagination(List<HBox> messagesList) {
+		if (messagesList.size() % displayCount == 0) {
+			pagination.setPageCount(messagesList.size() / displayCount);
+		} else {
+			pagination.setPageCount(messagesList.size() / displayCount + 1);
+		}
+	}
+
+	private HBox createMessageHBox(Message m) {
+		Text idUser = new Text("" + m.getUser().getIdUser());
+		idUser.setVisible(false);
+		VBox container = new VBox();
+		Label username = new Label(m.getUser().getFirstName() + " " + m.getUser().getLastName());
+		username.setUnderline(true);
+		username.setCursor(Cursor.HAND);
+		username.setFont(Font.font("arial black", 15));
+		Label text = new Label(m.getText());
+		text.setWrapText(true);
+		text.setCursor(Cursor.HAND);
+		username.setOnMouseClicked(new EventHandler<Event>() {
+			@Override
+			public void handle(Event event) {
+				try {
+					MainControler.cadre.getChildren().clear();
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(ConversationControler.class.getResource("Conversation.fxml"));
+					ConversationControler c = (ConversationControler) loader.getController();
+					c.u = UserDelagate.find(3);
+					MainControler.cadre.getChildren().add(loader.load());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		Label date = new Label(m.getDate().toString());
+		container.getChildren().addAll(username, text, date);
+		container.setVgrow(text, Priority.ALWAYS);
+		ImageView imageView = new ImageView(delete_icon);
+		Button button = new Button("", imageView);
+		HBox result = new HBox();
+		result.getChildren().addAll(idUser, container, button);
+		result.setHgrow(container, Priority.ALWAYS);
+		result.setPrefHeight(90);
+		result.setMaxHeight(90);
+		result.setMinHeight(90);
+		result.setMargin(container, new Insets(5, 0, 0, 0));
+		result.setMargin(button, new Insets(30, 5, 0, 0));
+		result.setStyle("-fx-border-color:green;-fx-border-radius:5");
+		if(m.getSeen() == 0){
+			result.setStyle("-fx-border-color:red;-fx-border-radius:5");
+		}
+		return result;
+	}
+
+	private List<HBox> getAllMessagesList(int page) {
+		List<HBox> messagesList = new ArrayList<>();
+		if (page == 0) {
+			for (Message message : AllMessagesList) {
+				messagesList.add(createMessageHBox(message));
+			}
+		} else {
+			for (int i = (page - 1) * displayCount; i < page * displayCount && i < AllMessagesList.size(); i++) {
+				messagesList.add(createMessageHBox(AllMessagesList.get(i)));
+			}
+		}
+		return messagesList;
+	}
+
+	private List<HBox> getUnreadMessagesList(int page) {
+		List<HBox> messagesList = new ArrayList<>();
+		for (Message message : AllMessagesList) {
+			if (message.getSeen() == 0) {
+				messagesList.add(createMessageHBox(message));
+			}
+		}
+		if (page == 0) {
+			return messagesList;
+		} else {
+			List<HBox> result = new ArrayList<>();
+			for (int i = (page - 1) * displayCount; i < page * displayCount && i < messagesList.size(); i++) {
+				result.add(messagesList.get(i));
+			}
+			return result;
+		}
+	}
+
+	private List<HBox> getReadMessagesList(int page) {
+		List<HBox> messagesList = new ArrayList<>();
+		for (Message message : AllMessagesList) {
+			if (message.getSeen() == 1) {
+				messagesList.add(createMessageHBox(message));
+			}
+		}
+		if (page == 0) {
+			return messagesList;
+		} else {
+			List<HBox> result = new ArrayList<>();
+			for (int i = (page - 1) * displayCount; i < page * displayCount && i < messagesList.size(); i++) {
+				result.add(messagesList.get(i));
+			}
+			return result;
+		}
+	}
+
 }

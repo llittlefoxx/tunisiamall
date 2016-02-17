@@ -17,6 +17,7 @@ public interface ManageShopRequestServicesLocal {
 	public List<ShopRequest> findAllShopRequest();
 	public List<ShopRequest> findAllShopRequestByCategory(String caegory);
 	public List<ShopRequest> findAllShopRequestUnchecked();
-	public List<ShopRequest> findAllShopRequestSearchTools(String email, boolean storeimall);
+	public List<ShopRequest> findAllShopRequestByRcptDate(Date date);
+	public List<ShopRequest> findAllShopRequestSearchTools(String email, int storeimall);
 	public List<ShopRequest> findAllShopRequestByWord(String word);
 }

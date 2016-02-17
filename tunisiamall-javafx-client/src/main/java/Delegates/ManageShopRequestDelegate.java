@@ -2,10 +2,9 @@ package Delegates;
 
 import java.util.Date;
 import java.util.List;
-
+import Locator.ServiceLocator;
 import edu.tunisiamall.shopRequestServices.ManageShopRequestServicesRemote;
 import edu.tunisiamall.entities.ShopRequest;
-import Locator.ServiceLocator;
 
 public class ManageShopRequestDelegate {
 	
@@ -41,11 +40,15 @@ public class ManageShopRequestDelegate {
 	public static List<ShopRequest> doFindAllShopRequestUnchecked(){
 		return getProxy().findAllShopRequestUnchecked();
 	}
-	public static List<ShopRequest> doFindAllShopRequestSearchTools(String email, boolean storeimall){
+	public static List<ShopRequest> doFindAllShopRequestSearchTools(String email, int storeimall){
 		return getProxy().findAllShopRequestSearchTools(email, storeimall);
 	}
 	public static List<ShopRequest> doFindAllShopRequestByWord(String word) {
 		return getProxy().findAllShopRequestByWord(word);
+	}
+	
+	public static List<ShopRequest> findAllShopRequestByRcptDate(Date date){
+		return getProxy().findAllShopRequestByRcptDate(date);
 	}
 
 }

@@ -6,10 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * The persistent class for the event database table.
- * 
- */
 @Entity
 @NamedQuery(name="Event.findAll", query="SELECT e FROM Event e")
 public class Event implements Serializable {
@@ -23,6 +19,7 @@ public class Event implements Serializable {
 	private Date dateEvent;
 
 	private String description;
+	private String titleEvent;
 
 	private int periodEvent;
 
@@ -45,6 +42,14 @@ public class Event implements Serializable {
 
 	public void setIdEvent(int idEvent) {
 		this.idEvent = idEvent;
+	}
+
+	public String getTitleEvent() {
+		return titleEvent;
+	}
+
+	public void setTitleEvent(String titleEvent) {
+		this.titleEvent = titleEvent;
 	}
 
 	public Date getDateEvent() {
@@ -123,4 +128,24 @@ public class Event implements Serializable {
 		return subscription;
 	}
 
+	@Override
+	public int hashCode() {
+		return idEvent;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Event other = (Event) obj;
+		if (idEvent != other.idEvent)
+			return false;
+		return true;
+	}
+
+	
 }

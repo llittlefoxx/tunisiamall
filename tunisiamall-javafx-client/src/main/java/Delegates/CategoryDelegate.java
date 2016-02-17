@@ -20,9 +20,9 @@ public class CategoryDelegate {
 			getProxy().addCategory(c);;
 		}
 		
-		public static void doDeleteCategory(int idCategory)
+		public static void doDeleteCategory(Category c)
 		{
-			getProxy().deleteCategory(idCategory);
+			getProxy().deleteCategory (c);
 		}
 		public static void doUpdateCategory(Category c)
 		{

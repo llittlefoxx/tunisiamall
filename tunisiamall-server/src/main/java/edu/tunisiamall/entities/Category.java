@@ -101,4 +101,24 @@ public class Category implements Serializable {
 		return "Category [idCategory=" + idCategory + ", description=" + description + ", libelle=" + libelle
 				 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return idCategory;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Category other = (Category) obj;
+		if (idCategory != other.idCategory)
+			return false;
+		return true;
+	}
+	
 }

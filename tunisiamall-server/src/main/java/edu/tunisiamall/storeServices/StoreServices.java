@@ -51,7 +51,8 @@ public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 
 	@Override
 	public List<Store> findAllSStoreByCategory(Category category) {
-		Query query=em.createQuery("select st from Store st where s.category:="+category.getIdCategory());
+		Query query=em.createQuery("select st from Store st where st.category=:id")
+				.setParameter("id", category);
 		return query.getResultList();
 	}
 
