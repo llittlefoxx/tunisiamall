@@ -32,7 +32,7 @@ public class Test {
 		//admin.setFirstName("ilyes");
 			//	admin.setLogin("ilyes");
 			//	admin.setPassword("ilyes");
-		//UserDelagate.create(admin);
+		UserDelagate.create(admin);
 		//UserDelagate.delete(2);
 		List<User> user;
 		user=UserDelagate.findAll();

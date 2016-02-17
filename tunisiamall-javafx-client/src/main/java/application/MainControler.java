@@ -11,7 +11,9 @@ import GUI.ShopRequestInterfaces.ViewShopRequestAdminController;
 import Gategories.ManageCategoriesController;
 import GuestBookEntries.ManageGuestBookEntryController;
 import admin.dashboard.DashboardController;
+import fxSoufieneInterfaces.authentificatController;
 import fxSoufieneInterfaces.manageController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -119,6 +121,12 @@ public class MainControler {
     void guestbookTab(MouseEvent event) {
     	homePane.getChildren().clear();
     	homePane.getChildren().add(guestbookPane);
+    }
+    
+    @FXML
+    void signOut(ActionEvent acEvent){
+    	authentificatController.s.close();
+    	Main.PrimaryStage.show();
     }
 }
 
