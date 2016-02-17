@@ -43,8 +43,19 @@ public class User implements Serializable {
 	private String phone;
 
 	private String pictureUrl;
+	
+	private Boolean baned;
 
 	
+
+	public Boolean getBaned() {
+		return baned;
+	}
+
+
+	public void setBaned(Boolean baned) {
+		this.baned = baned;
+	}
 
 	//bi-directional many-to-one association to Comment
 	@OneToMany(mappedBy="user")

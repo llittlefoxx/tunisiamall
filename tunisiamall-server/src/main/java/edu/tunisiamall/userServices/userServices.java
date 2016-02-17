@@ -76,4 +76,5 @@ public class userServices implements userServicesRemote, userServicesLocal {
 		q.setParameter("x", login);
 	    return (User) q.getResultList().get(0);
 	}
+
 }

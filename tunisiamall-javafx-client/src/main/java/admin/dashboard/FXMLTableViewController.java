@@ -13,14 +13,14 @@ import javafx.scene.control.TextField;
 public class FXMLTableViewController implements Initializable{
 	@FXML
 	private TableView<Person> tableView;
-	@FXML
-	private TextField firstNameField;
-	@FXML
-	private TextField lastNameField;
-	@FXML
-	private TextField emailField;
-	@FXML
-	private TableColumn<Person, String> firstNameColumn;
+	//@FXML
+	//private TextField firstNameField;
+	//@FXML
+	//private TextField lastNameField;
+	//@FXML
+	//private TextField emailField;
+	//@FXML
+	//private TableColumn<Person, String> firstNameColumn;
 
 	@FXML
 	protected void addPerson() {

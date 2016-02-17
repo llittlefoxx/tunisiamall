@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane fx:controller="fxSoufieneInterfaces.UserManagerController" prefHeight="415.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Customer">
+         <content>
+            <SplitPane dividerPositions="0.6886543535620053" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TableView fx:id=customertable editable="true" layoutX="26.0" layoutY="32.0" prefHeight="263.0" prefWidth="600.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="ID" />
+                            <cellValueFactory>
+									<PropertyValueFactory property="idUser" />
+							</cellValueFactory>
+                            <TableColumn prefWidth="75.0" text="Adresse" />
+                            <cellValueFactory>
+									<PropertyValueFactory property="adresse" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Birthdate" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="birthdate" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="FirstName" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="firstName" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Gender" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="gender" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Job" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="job" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="LastName" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="lastName" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Login" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="login" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Email" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="mail" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Password" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="password" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="Phone" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="phone" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="PictureUrl" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="pictureUrl" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="FacturationAddr" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="facturationAddr" />
+							</cellValueFactory>
+                              <TableColumn prefWidth="75.0" text="ShipementAddr" />
+                              <cellValueFactory>
+									<PropertyValueFactory property="shipmentAddr" />
+							</cellValueFactory>
+                          </columns>
+                          	<items>
+								<FXCollections fx:factory="observableArrayList">
+								</FXCollections>
+							</items>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="46.0" mnemonicParsing="false" text="Delete" onAction="#afficherCos"/>
+                        <Button layoutX="522.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="78.0" text="Statestic" />
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </content>
+      </Tab>
+    <Tab text="Shope Owner">
+         <content>
+            <SplitPane dividerPositions="0.6939313984168866" orientation="VERTICAL">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TreeTableView editable="true" prefHeight="258.0" prefWidth="600.0">
+                           <columnResizePolicy>
+                              <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <columns>
+                              <TreeTableColumn prefWidth="75.0" text="ID" />
+                              <TreeTableColumn prefWidth="75.0" text="Name" />
+                              <TreeTableColumn prefWidth="75.0" text="Last Name" />
+                              <TreeTableColumn prefWidth="75.0" text="Email" />
+                              <TreeTableColumn prefWidth="75.0" text="Phone" />
+                              <TreeTableColumn prefWidth="75.0" text="Adresse" />
+                              <TreeTableColumn prefWidth="75.0" text="Gendre" />
+                              <TreeTableColumn prefWidth="75.0" text="Job" />
+                              <TreeTableColumn prefWidth="75.0" text="Login" />
+                              <TreeTableColumn prefWidth="75.0" text="Passowrd" />
+                              <TreeTableColumn prefWidth="75.0" text="Birthe Date" />
+                              <TreeTableColumn prefWidth="75.0" text="Picture" />
+                           </columns>
+                        </TreeTableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Button layoutX="521.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="118.0" prefWidth="79.0" text="Statestic" />
+                        <Button mnemonicParsing="false" prefHeight="115.0" prefWidth="77.0" text="Delete" />
+                     </children></AnchorPane>
+              </items>
+            </SplitPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

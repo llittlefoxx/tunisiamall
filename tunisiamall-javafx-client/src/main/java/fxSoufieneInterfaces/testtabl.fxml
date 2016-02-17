@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane fx:controller="fxSoufieneInterfaces.UserManagerController" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="untitled" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <TreeTableView fx:id="usertable" editable="true" prefHeight="258.0" prefWidth="600.0" tableMenuButtonVisible="true">
+               <columnResizePolicy>
+                  <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TreeTableColumn prefWidth="75.0" text="ID" />
+                  <TreeTableColumn prefWidth="75.0" text="Name" />
+                  <TreeTableColumn prefWidth="75.0" text="Last Name" />
+                  <TreeTableColumn prefWidth="75.0" text="Email" />
+                  <TreeTableColumn prefWidth="75.0" text="Phone" />
+                  <TreeTableColumn prefWidth="75.0" text="Adresse" />
+                  <TreeTableColumn prefWidth="75.0" text="Gendre" />
+                  <TreeTableColumn prefWidth="75.0" text="Job" />
+                  <TreeTableColumn prefWidth="75.0" text="Login" />
+                  <TreeTableColumn prefWidth="75.0" text="Passowrd" />
+                  <TreeTableColumn prefWidth="75.0" text="Birthe Date" />
+                  <TreeTableColumn prefWidth="75.0" text="Picture" />
+               </columns>
+               <cursor>
+                  <Cursor fx:constant="H_RESIZE" />
+               </cursor>
+            </TreeTableView>
+            <Button layoutX="64.0" layoutY="288.0" mnemonicParsing="false" text="list" onAction="#lister"/ />
+         </children></AnchorPane>
+  </content>
+</TitledPane>
