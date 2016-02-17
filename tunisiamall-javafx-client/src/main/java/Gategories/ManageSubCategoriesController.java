@@ -1,8 +1,5 @@
 package Gategories;
 
-
-
-//import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import edu.tunisiamall.entities.Subcategory;
 import javafx.scene.control.Button;
@@ -11,7 +8,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class ManageSubCategoriesController {
-	
 
     @FXML
     private TableColumn<Subcategory, String> libelle;
@@ -26,10 +22,8 @@ public class ManageSubCategoriesController {
     private TableColumn<Subcategory, Integer> idSubCategory;
     
     @FXML
-    void initialize(){
-    	
-    	
+    void  initialize(){
+    	System.out.println("aa");
     }
-    
-    
+     
 }

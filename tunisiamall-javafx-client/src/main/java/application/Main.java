@@ -14,7 +14,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader =new FXMLLoader();
+			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainControler.class.getResource("Main.fxml"));
 			BorderPane root = (BorderPane) loader.load();
 			Scene scene = new Scene(root);
