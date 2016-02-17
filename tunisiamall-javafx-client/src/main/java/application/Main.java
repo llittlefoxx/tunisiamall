@@ -20,7 +20,6 @@ public class Main extends Application {
 			FXMLLoader loader =new FXMLLoader();
 			loader.setLocation(authentificatController.class.getResource("authentificate.fxml"));
 			TitledPane root =(TitledPane)loader.load();
-			//BorderPane root = (BorderPane) loader.load();
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();

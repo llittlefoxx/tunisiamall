@@ -26,16 +26,15 @@ public class authentificatController {
 	PasswordField password;
 	public static Stage s;
 	
+	public static User connectedUser;
+	
 	@FXML
 	public void hello (ActionEvent acEvent){
-		
-		User user=new User();
-		//Administrator user=new Administrator();
-		user=UserDelagate.authentificate(login.getText(), password.getText());
+		connectedUser = UserDelagate.authentificate(login.getText(), password.getText());
 		login.setText("");
 		password.setText("");
-		System.out.println(user.getLogin());
-		if(user.getIdUser()>0){
+		System.out.println(connectedUser.getLogin());
+		if(connectedUser.getIdUser()>0){
 			Main.PrimaryStage.close();
 			try {
 			Stage primaryStage =new Stage();
