@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Authentificate" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxSoufieneInterfaces.authentificatController">
+  <content>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="142.0" fitWidth="540.0" layoutX="118.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="135.757568359375" AnchorPane.topAnchor="-7.0">
+               <image>
+                  <Image url="@Images/Tunisia-MALL-2.jpg" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="password" layoutX="248.0" layoutY="230.0">
+               <effect>
+                  <InnerShadow color="#0808d7" />
+               </effect></PasswordField>
+            <TextField fx:id="login" layoutX="248.0" layoutY="175.0">
+               <effect>
+                  <InnerShadow color="#0808d7" />
+               </effect></TextField>
+            <Button fx:id="b1" layoutX="291.0" layoutY="277.0" mnemonicParsing="false" onAction="#hello" prefHeight="35.0" prefWidth="64.0" text="Log in" />
+            <Label layoutX="149.0" layoutY="179.0" text="Login" />
+            <Label layoutX="149.0" layoutY="234.0" text="Password" />
+         </children></AnchorPane>
+  </content>
+</TitledPane>

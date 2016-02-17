@@ -1,6 +1,5 @@
 package edu.tunisiamall.biservices;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -221,7 +220,7 @@ public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsSer
 	public HashMap<Store, Promotion> getPromotionByStore() {
 		HashMap<Store, Promotion> res = new HashMap<Store, Promotion>();
 		Query query = em.createNativeQuery(
-				"select promotion.idPromotion , store.idStroe from store, promotion where store.idStroe in (select product.Promotion_idPromotion from product) group by store.idStroe");
+				"select promotion.idPromotion , store.idStroe from store, promotion where promotion.idPromotion in (select product.Promotion_idPromotion from product) group by store.idStroe");
 		List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
 		Promotion p = new Promotion();
 		Store s = new Store();
