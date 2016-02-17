@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Delegates.ManageShopRequestDelegate;
-
+import application.MainControler;
 import edu.tunisiamall.entities.ShopRequest;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -389,10 +389,7 @@ public class ViewShopRequestAdminController implements Initializable{
 	    void ficheFunction(ActionEvent event) {
 		 System.out.println("9999999  "+getSr().toString() );
 	
-		 Stage stage = (Stage) verifyButon.getScene().getWindow();
-		 setPrevStage(stage);
-		 Stage st=new Stage();
-		       stage.setTitle("ficheRequest");
+		 
 		       TitledPane myPane = null;
 		     
 		       
@@ -413,16 +410,15 @@ public class ViewShopRequestAdminController implements Initializable{
 				 System.out.println("000000");
 			
 			
-		       Scene scene = new Scene(myPane);
-		       st.setScene(scene);
+		     
 		   	ficheRequestController controller = fxmlLoader.getController();
 		
 		  	controller.setSr(getSr());
+			MainControler.cadre.getChildren().clear();
+			MainControler.cadre.getChildren().add(myPane);
 		
 			System.out.println("11111111");
-		       stage.close();
-		       
-		       st.show();
+		      
 		    }
 	 
 	 
