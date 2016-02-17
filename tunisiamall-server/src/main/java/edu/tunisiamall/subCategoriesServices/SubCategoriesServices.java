@@ -34,9 +34,7 @@ public class SubCategoriesServices implements SubCategoriesServicesRemote, SubCa
 
 	@Override
 	public List<Subcategory> findAll() {
-		String queryText = "select Sc from Subcategory SSc";
-		Query query = em.createQuery(queryText);
-		// query.getSingleResult();
+		Query query = em.createNamedQuery("Subcategory.findAll");
 		return query.getResultList();
 	}
 
@@ -56,9 +54,9 @@ public class SubCategoriesServices implements SubCategoriesServicesRemote, SubCa
 	@Override
 	public List<Subcategory> findSubCategoryByIdCategory(int idCategory) {
 		
-		String queryText = "Select Sub from Subcategory where idCategory";
-		Query query = em.createQuery(queryText);
-		
+		String queryText = "Select Sub from Subcategory Sub where Sub.idCategory = :xxx";
+		Query query = em.createQuery(queryText)
+				.setParameter("xxx", idCategory);
 		return query.getResultList();
 	}
 
