@@ -16,28 +16,20 @@
 <?import fxmltableview.*?>
 <?import javafx.scene.control.Button?>
 
-<TitledPane animated="false" text="DashBoard"
-	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="admin.dashboard.DashboardController">
+<TitledPane animated="false" text="DashBoard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.dashboard.DashboardController">
 	<content>
 		<AnchorPane prefHeight="697.0">
 			<children>
-				<TabPane layoutX="27.6" layoutY="39.6" tabClosingPolicy="UNAVAILABLE"
-					AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+				<TabPane layoutX="27.6" layoutY="39.6" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
 					<tabs>
 						<Tab text="Indicators">
 							<content>
 								<AnchorPane minHeight="-Infinity" minWidth="-Infinity">
 									<children>
-										<GridPane layoutX="103.0" layoutY="151.0"
-											AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-											AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+										<GridPane layoutX="103.0" layoutY="151.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 											<columnConstraints>
-												<ColumnConstraints hgrow="SOMETIMES"
-													minWidth="10.0" />
-												<ColumnConstraints hgrow="SOMETIMES"
-													minWidth="10.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
 											</columnConstraints>
 											<rowConstraints>
 												<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -45,8 +37,7 @@
 												<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
 											</rowConstraints>
 											<children>
-												<StackedBarChart fx:id="stackedBarchart"
-													prefHeight="207.0" prefWidth="54.0">
+												<StackedBarChart fx:id="stackedBarchart" prefHeight="207.0" prefWidth="54.0">
 													<xAxis>
 														<CategoryAxis side="BOTTOM" fx:id="x" />
 													</xAxis>
@@ -54,20 +45,13 @@
 														<NumberAxis fx:id="y" side="LEFT" />
 													</yAxis>
 												</StackedBarChart>
-												<TitledPane animated="false" text="Hot products"
-													GridPane.columnIndex="1" GridPane.rowIndex="1">
+												<TitledPane animated="false" text="Hot products" GridPane.columnIndex="1" GridPane.rowIndex="1">
 													<content>
-														<AnchorPane minHeight="0.0" minWidth="0.0"
-															prefHeight="180.0" prefWidth="200.0">
+														<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 															<children>
-																<TableView fx:id="tableviewHotProduct"
-																	layoutX="117.0" layoutY="-34.0" prefHeight="180.0"
-																	prefWidth="377.0" AnchorPane.bottomAnchor="0.0"
-																	AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-																	AnchorPane.topAnchor="0.0">
+																<TableView fx:id="tableviewHotProduct" layoutX="117.0" layoutY="-34.0" prefHeight="180.0" prefWidth="377.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 																	<columns>
-																		<TableColumn prefWidth="135.9999634027481"
-																			text="Product">
+																		<TableColumn prefWidth="135.9999634027481" text="Product">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="productlibelle" />
 																			</cellValueFactory>
@@ -83,21 +67,14 @@
 														</AnchorPane>
 													</content>
 												</TitledPane>
-												<TitledPane animated="false" text="Stock status"
-													GridPane.rowIndex="1">
+												<TitledPane animated="false" text="Stock status" GridPane.rowIndex="1">
 													<content>
-														<AnchorPane minHeight="0.0" minWidth="0.0"
-															prefHeight="180.0" prefWidth="200.0">
+														<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 															<children>
-																<TableView fx:id="stockStatusTableView"
-																	layoutX="108.0" layoutY="-10.0" prefHeight="180.0"
-																	prefWidth="376.0" AnchorPane.bottomAnchor="0.0"
-																	AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-																	AnchorPane.topAnchor="0.0">
+																<TableView fx:id="stockStatusTableView" layoutX="108.0" layoutY="-10.0" prefHeight="180.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 																	<columns>
 
-																		<TableColumn prefWidth="130.99998819828033"
-																			text="Product">
+																		<TableColumn prefWidth="130.99998819828033" text="Product">
 
 																			<cellValueFactory>
 																				<PropertyValueFactory property="libelle" />
@@ -130,33 +107,25 @@
 														</AnchorPane>
 													</content>
 												</TitledPane>
-												<TitledPane animated="false" text="Top Selling Stores"
-													GridPane.rowIndex="2">
+												<TitledPane animated="false" text="Top Selling Stores" GridPane.rowIndex="2">
 													<content>
-														<AnchorPane minHeight="0.0" minWidth="0.0"
-															prefHeight="180.0" prefWidth="200.0">
+														<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 															<children>
-																<TableView fx:id="tablevbestSeller" layoutX="88.0"
-																	layoutY="-27.0" prefHeight="180.0" prefWidth="376.0"
-																	AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-																	AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+																<TableView fx:id="tablevbestSeller" layoutX="88.0" layoutY="-27.0" prefHeight="180.0" prefWidth="376.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 																	<columns>
-																		<TableColumn prefWidth="83.0000034570694"
-																			text="Shop">
+																		<TableColumn prefWidth="83.0000034570694" text="Shop">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="shop" />
 																			</cellValueFactory>
 																		</TableColumn>
 
-																		<TableColumn prefWidth="117.99998474121094"
-																			text="Income $">
+																		<TableColumn prefWidth="117.99998474121094" text="Income $">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="income" />
 																			</cellValueFactory>
 																		</TableColumn>
 
-																		<TableColumn prefWidth="147.0"
-																			text="\% from Mall income">
+																		<TableColumn prefWidth="147.0" text="\% from Mall income">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="percent" />
 																			</cellValueFactory>
@@ -173,38 +142,29 @@
 														</AnchorPane>
 													</content>
 												</TitledPane>
-												<TitledPane animated="false" text="Promotions"
-													GridPane.columnIndex="1" GridPane.rowIndex="2">
+												<TitledPane animated="false" text="Promotions" GridPane.columnIndex="1" GridPane.rowIndex="2">
 													<content>
-														<AnchorPane minHeight="0.0" minWidth="0.0"
-															prefHeight="180.0" prefWidth="200.0">
+														<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 															<children>
-																<TableView fx:id="tvPromotionsByStore"
-																	layoutX="44.0" layoutY="-20.0" prefHeight="180.0"
-																	prefWidth="377.0" AnchorPane.bottomAnchor="0.0"
-																	AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-																	AnchorPane.topAnchor="0.0">
+																<TableView fx:id="tvPromotionsByStore" layoutX="44.0" layoutY="-20.0" prefHeight="180.0" prefWidth="377.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 																	<columns>
 																		<TableColumn prefWidth="92.0" text="Shop">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="storeName" />
 																			</cellValueFactory>
 																		</TableColumn>
-																		<TableColumn prefWidth="85.00000154972076"
-																			text="Promotion">
+																		<TableColumn prefWidth="85.00000154972076" text="Promotion">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="peomoName" />
 																			</cellValueFactory>
 																		</TableColumn>
-																		<TableColumn prefWidth="85.00000154972076"
-																			text="Value">
+																		<TableColumn prefWidth="85.00000154972076" text="Value">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="value" />
 																			</cellValueFactory>
 																		</TableColumn>
 
-																		<TableColumn prefWidth="82.99996185302734"
-																			text="Date of start">
+																		<TableColumn prefWidth="82.99996185302734" text="Date of start">
 																			<cellValueFactory>
 																				<PropertyValueFactory property="startDate" />
 																			</cellValueFactory>
@@ -227,90 +187,15 @@
 								</AnchorPane>
 							</content>
 						</Tab>
-						<Tab text="Reporting">
-							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0">
-									<children>
-										<SplitPane dividerPositions="0.34701986754966885"
-											layoutX="8.0" prefHeight="619.0" prefWidth="749.0"
-											AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0"
-											AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-											<items>
-												<AnchorPane minHeight="0.0" minWidth="0.0"
-													prefHeight="617.0" prefWidth="333.0">
-													<children>
-														<VBox layoutX="22.0" layoutY="56.0" prefHeight="561.0"
-															prefWidth="222.0" AnchorPane.bottomAnchor="0.0"
-															AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-															AnchorPane.topAnchor="56.0">
-															<children>
-																<Label />
-																<Label text="Report Name" />
-																<TextField />
-																<Label text="Date" />
-																<Label text="From" />
-																<DatePicker />
-																<Label text="Until" />
-																<DatePicker />
-																<Label text="Mesure" />
-																<Button text="Button" />
-																<TextField layoutX="200.0" layoutY="95.0"
-																	prefWidth="143.0" />
-																<SplitMenuButton mnemonicParsing="false"
-																	text="Report type">
-																	<items>
-																		<MenuItem mnemonicParsing="false" text="Shopper report" />
-																		<MenuItem mnemonicParsing="false" text="Merchant Report" />
-																		<MenuItem mnemonicParsing="false"
-																			text="Best sale merchant report" />
-																	</items>
-																</SplitMenuButton>
-																<Label text="Description" />
-																<TextArea prefHeight="200.0" prefWidth="200.0" />
-															</children>
-														</VBox>
-														<Label layoutX="97.0" layoutY="30.0" text="New Report" />
-													</children>
-												</AnchorPane>
-												<AnchorPane minHeight="0.0" minWidth="0.0"
-													prefHeight="160.0" prefWidth="100.0">
-													<children>
-														<TableView layoutX="-3.0" layoutY="88.0"
-															prefHeight="529.0" prefWidth="488.0"
-															AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0"
-															AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
-															<columns>
-																<TableColumn prefWidth="125.0" text="Name" />
-																<TableColumn prefWidth="103.0" text="Date" />
-																<TableColumn prefWidth="134.00003051757812"
-																	text="Mesure" />
-																<TableColumn prefWidth="128.0" text="Action" />
-															</columns>
-														</TableView>
-														<Label layoutX="211.0" layoutY="30.0" text="Old Reports" />
-													</children>
-												</AnchorPane>
-											</items>
-										</SplitPane>
-									</children>
-								</AnchorPane>
-							</content>
-						</Tab>
 						<Tab text="Promotion suggest">
 							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0">
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 									<children>
-										<HBox layoutX="24.0" layoutY="50.0" prefHeight="619.0"
-											prefWidth="758.0" spacing="20.0" AnchorPane.bottomAnchor="0.0"
-											AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-											AnchorPane.topAnchor="0.0">
+										<HBox layoutX="24.0" layoutY="50.0" prefHeight="619.0" prefWidth="758.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 											<children>
 												<VBox prefHeight="619.0" prefWidth="400.0" spacing="10.0">
 													<children>
-														<Label prefHeight="17.0" prefWidth="204.0"
-															text="Create new promotion suggest" />
+														<Label prefHeight="17.0" prefWidth="204.0" text="Create new promotion suggest" />
 														<Label prefHeight="17.0" prefWidth="204.0" text="Name" />
 														<TextField fx:id="promsugname" />
 														<Label text="Start date" />
@@ -320,35 +205,28 @@
 														<Label text="Value (%)" />
 														<TextField fx:id="promotionsuggestValue" />
 														<Label text="Description" />
-														<TextArea fx:id="promotionsugdescription"
-															prefHeight="200.0" prefWidth="200.0" />
-														<Button mnemonicParsing="false" onAction="#createPromotionSuggest"
-															prefHeight="25.0" prefWidth="80.0" text="Create">
+														<TextArea fx:id="promotionsugdescription" prefHeight="200.0" prefWidth="200.0" />
+														<Button mnemonicParsing="false" onAction="#createPromotionSuggest" prefHeight="25.0" prefWidth="80.0" text="Create">
 															<graphic>
-																<ImageView fitHeight="19.0" fitWidth="19.0"
-																	pickOnBounds="true" preserveRatio="true">
+																<ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
 																	<image>
 																		<Image url="@image/ajouter-en-plus-icone-5801-128.png" />
 																	</image>
 																</ImageView>
 															</graphic>
 														</Button>
-														<Button mnemonicParsing="false" onAction="#updatePromSuggest"
-															prefHeight="25.0" prefWidth="80.0" text="Update">
+														<Button mnemonicParsing="false" onAction="#updatePromSuggest" prefHeight="25.0" prefWidth="80.0" text="Update">
 															<graphic>
-																<ImageView fitHeight="20.0" fitWidth="20.0"
-																	pickOnBounds="true" preserveRatio="true">
+																<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
 																	<image>
 																		<Image url="@image/120px-System-software-update.png" />
 																	</image>
 																</ImageView>
 															</graphic>
 														</Button>
-														<Button mnemonicParsing="false" onAction="#removePromSuggest"
-															prefHeight="25.0" prefWidth="80.0" text="Delete">
+														<Button mnemonicParsing="false" onAction="#removePromSuggest" prefHeight="25.0" prefWidth="80.0" text="Delete">
 															<graphic>
-																<ImageView fitHeight="20.0" fitWidth="20.0"
-																	pickOnBounds="true" preserveRatio="true">
+																<ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
 																	<image>
 																		<Image url="@image/Delete-icon.png" />
 																	</image>
@@ -362,19 +240,16 @@
 														<Label text="Find Product" />
 														<Label text="Key word" />
 														<TextField fx:id="keyword" />
-														<Button mnemonicParsing="false" onAction="#findProductInPromSugg"
-															text="Find">
+														<Button mnemonicParsing="false" onAction="#findProductInPromSugg" text="Find">
 															<graphic>
-																<ImageView fitHeight="25.0" fitWidth="25.0"
-																	pickOnBounds="true" preserveRatio="true">
+																<ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
 																	<image>
 																		<Image url="@image/search.png" />
 																	</image>
 																</ImageView>
 															</graphic>
 														</Button>
-														<TableView fx:id="prodSugtableview" prefHeight="200.0"
-															prefWidth="200.0">
+														<TableView fx:id="prodSugtableview" prefHeight="200.0" prefWidth="200.0">
 															<columns>
 																<TableColumn prefWidth="75.0" text="Product name">
 																	<cellValueFactory>
@@ -413,19 +288,16 @@
 														<Label text="Existing promotion suggests" />
 														<Label text="Key word" />
 														<TextField fx:id="keywordpormotionSuggest" />
-														<Button mnemonicParsing="false" onAction="#findPromotionSuggest"
-															text="Find">
+														<Button mnemonicParsing="false" onAction="#findPromotionSuggest" text="Find">
 															<graphic>
-																<ImageView fitHeight="25.0" fitWidth="25.0"
-																	pickOnBounds="true" preserveRatio="true">
+																<ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
 																	<image>
 																		<Image url="@image/search.png" />
 																	</image>
 																</ImageView>
 															</graphic>
 														</Button>
-														<TableView fx:id="promsuglistfxml" prefHeight="200.0"
-															prefWidth="200.0">
+														<TableView fx:id="promsuglistfxml" prefHeight="200.0" prefWidth="200.0">
 															<columns>
 																<TableColumn prefWidth="75.0" text="Name">
 																	<cellValueFactory>
@@ -459,40 +331,28 @@
 																</TableColumn>
 															</columns>
 														</TableView>
-														<TitledPane animated="false" prefWidth="323.0"
-															text="Suggest promotion on product">
+														<TitledPane animated="false" prefWidth="323.0" text="Suggest promotion on product">
 															<content>
-																<AnchorPane minHeight="0.0" minWidth="0.0"
-																	prefHeight="180.0" prefWidth="200.0">
+																<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 																	<children>
 																		<Label layoutX="24.0" layoutY="14.0" text="Selected Product" />
-																		<TextField fx:id="selectedproductName"
-																			layoutX="161.0" layoutY="10.0" />
-																		<TextField fx:id="selectedPromSug" layoutX="161.0"
-																			layoutY="53.0" />
-																		<Label layoutX="24.0" layoutY="57.0"
-																			text="Selected Promotion" />
+																		<TextField fx:id="selectedproductName" layoutX="161.0" layoutY="10.0" />
+																		<TextField fx:id="selectedPromSug" layoutX="161.0" layoutY="53.0" />
+																		<Label layoutX="24.0" layoutY="57.0" text="Selected Promotion" />
 																		<Label layoutX="54.0" layoutY="98.0" text="Value   %" />
-																		<TextField fx:id="selectedValue" layoutX="161.0"
-																			layoutY="94.0" />
-																		<Button layoutX="79.0" layoutY="130.0"
-																			mnemonicParsing="false" onAction="#affectPromToProd"
-																			prefHeight="30.0" prefWidth="86.0" text="Affect">
+																		<TextField fx:id="selectedValue" layoutX="161.0" layoutY="94.0" />
+																		<Button layoutX="79.0" layoutY="130.0" mnemonicParsing="false" onAction="#affectPromToProd" prefHeight="30.0" prefWidth="86.0" text="Affect">
 																			<graphic>
-																				<ImageView fitHeight="19.0" fitWidth="19.0"
-																					pickOnBounds="true" preserveRatio="true">
+																				<ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
 																					<image>
 																						<Image url="@image/ajouter-en-plus-icone-5801-128.png" />
 																					</image>
 																				</ImageView>
 																			</graphic>
 																		</Button>
-																		<Button layoutX="177.0" layoutY="130.0"
-																			mnemonicParsing="false" onAction="#desafecPromFromProd"
-																			prefHeight="30.0" prefWidth="86.0" text="Desaffect">
+																		<Button layoutX="177.0" layoutY="130.0" mnemonicParsing="false" onAction="#desafecPromFromProd" prefHeight="30.0" prefWidth="86.0" text="Desaffect">
 																			<graphic>
-																				<ImageView fitHeight="15.0" fitWidth="22.0"
-																					pickOnBounds="true" preserveRatio="true">
+																				<ImageView fitHeight="15.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
 																					<image>
 																						<Image url="@image/Delete-icon.png" />
 																					</image>
@@ -511,25 +371,13 @@
 								</AnchorPane>
 							</content>
 						</Tab>
-						<Tab text="OLAP">
-							<content>
-								<AnchorPane minHeight="0.0" minWidth="0.0"
-									prefHeight="180.0" prefWidth="200.0">
-									<children>
-
-									</children>
-								</AnchorPane>
-							</content>
-						</Tab>
 					</tabs>
 				</TabPane>
-				<MenuBar layoutX="10.0" layoutY="8.0" prefHeight="25.0"
-					prefWidth="746.0">
+				<MenuBar layoutX="10.0" layoutY="8.0" prefHeight="25.0" prefWidth="746.0">
 					<menus>
 						<Menu mnemonicParsing="false" text="Chart">
 							<items>
-								<MenuItem mnemonicParsing="false" onAction="#chart"
-									text="Reset chart" />
+								<MenuItem mnemonicParsing="false" onAction="#chart" text="Reset chart" />
 							</items>
 						</Menu>
 					</menus>
