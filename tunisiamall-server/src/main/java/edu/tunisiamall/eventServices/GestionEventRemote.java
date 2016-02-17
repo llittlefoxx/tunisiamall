@@ -8,11 +8,11 @@ import edu.tunisiamall.entities.Event;
 
 @Remote
 public interface GestionEventRemote {
-	Boolean addEvent (Event event);
-	Boolean updateEvent(Event event);
-	Boolean deleteEvent(Event event);
-	Event findEventById(Integer idEvent);
-	List<Event> findAllEvents();
+	public Boolean addEvent (Event event);
+	public Boolean updateEvent(Event event);
+	public Boolean deleteEvent(Event event);
+	public Event findEventById(Integer idEvent);
+	public List<Event> findAllEvents();
 	public List<Event> SearchEvent(String E);
 	
 
