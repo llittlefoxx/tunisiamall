@@ -2,6 +2,7 @@ package EventFX;
 
 import java.time.Instant;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +11,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import Delegates.EventDelegate;
+import Delegates.StoreDelegate;
 import edu.tunisiamall.entities.Event;
+import edu.tunisiamall.entities.Store;
 import edu.tunisiamall.eventServices.GestionEventRemote;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -167,16 +170,31 @@ public class TunisiaMallEventController {
 	
 
 	    }
+	 public void combo(){
+		 List<String> findAllStore = new ArrayList<String>();
+		 ObservableList<String> options = FXCollections.observableArrayList();
+	 	List<Store> lis=new ArrayList<Store>();
+	 	lis=StoreDelegate.findAllStore();
+	 	System.out.println("////// "+lis.size());
+		 for (Store store : lis) {
+	 			
+	 			findAllStore.add(store.getName());
+	 			options.addAll(findAllStore);
+			}
+	 		
+ 		store.setItems(options);
+	 }
 	 @FXML
 	 void initialize(){
-		 ObservableList<String> options = FXCollections.observableArrayList(
+		 combo();
+		/* ObservableList<String> options = FXCollections.observableArrayList(
  		        "Option 1",
  		        "Option 2",
  		        "Option 3"
  		    );
  		
- 		store.setItems(options);
- 		
+ 		store.setItems(options);*/
+		
  		
 		 tabldesc.setCellValueFactory(new PropertyValueFactory("description"));
 		 tabldesc.setCellFactory(TextFieldTableCell.forTableColumn());

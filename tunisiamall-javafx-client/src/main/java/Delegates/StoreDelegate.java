@@ -9,10 +9,11 @@ import edu.tunisiamall.storeServices.GestionStoreRemote;
 
 
 public class StoreDelegate {
-	static String jndiName="tunisiamall-server/GestionStore!edu.tunisiamall.storeServices.GestionStoreLocal";
+	private final static String jndiName="tunisiamall-server/GestionStore!edu.tunisiamall.storeServices.GestionStoreRemote";
 	
 	public static GestionStoreRemote getProxy(){
 	return (GestionStoreRemote) ServiceLocator.getInstance().getProxy(jndiName);
+	
 	}
 	
 	public static List<Store> findAllStore(){
