@@ -87,6 +87,7 @@ public class ManageCategoriesController {
 
 	@FXML
 	void OnListOfSubCategoriesViwed(ActionEvent event) throws IOException {
+		//Category c = tableCat.getSelectionModel().getSelectedItem();
 		try {
 			Stage window = new Stage();
 			AnchorPane root = FXMLLoader.load(ManageSubCategoriesController.class.getResource("ListSubCategories.fxml"));
