@@ -191,7 +191,7 @@
          <effect>
             <InnerShadow color="#0808d7" />
          </effect></TextField>
-      <ChoiceBox fx:id="rechercheElement" layoutX="43.0" layoutY="24.0" prefHeight="31.0" prefWidth="150.0" value="firstName">
+      <ChoiceBox fx:id="rechercheElement" layoutX="43.0" layoutY="24.0" prefHeight="31.0" prefWidth="150.0" value="FirstName">
       <items>
         <FXCollections fx:factory="observableArrayList">
             <String fx:value="FirstName" />
