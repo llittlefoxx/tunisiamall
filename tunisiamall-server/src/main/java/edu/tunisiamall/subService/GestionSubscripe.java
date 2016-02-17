@@ -1,4 +1,4 @@
-package edu.tunisiamall;
+package edu.tunisiamall.subService;
 
 import java.util.List;
 
@@ -6,7 +6,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
 
 import edu.tunisiamall.entities.Subscription;
 
@@ -16,7 +15,7 @@ import edu.tunisiamall.entities.Subscription;
 @Stateless
 public class GestionSubscripe implements GestionSubscripeRemote, GestionSubscripeLocal {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "tunisiamall-server")
 	EntityManager entityManager;
     public GestionSubscripe() {
     	

@@ -84,6 +84,7 @@
                                           <TableColumn fx:id="tabldesc" prefWidth="75.0" text="Description" />
                                           <TableColumn fx:id="tablperiod" prefWidth="97.0" text="Period event" />
                                           <TableColumn fx:id="tbltype" prefWidth="75.0" text="Type event" />
+                                          <TableColumn fx:id="tblsn" prefWidth="75.0" text="Store name" />
                                       </columns>
                                        <BorderPane.margin>
                                           <Insets />
@@ -191,6 +192,7 @@
                                                       <RowConstraints maxHeight="396.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="31.0" vgrow="SOMETIMES" />
                                                       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.5" prefHeight="7.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                    <BorderPane.margin>
                                                       <Insets bottom="300.0" />
