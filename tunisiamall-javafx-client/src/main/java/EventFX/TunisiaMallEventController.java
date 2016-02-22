@@ -182,7 +182,7 @@ public class TunisiaMallEventController {
 			e.setDescription(description.getText());
 			e.setTitleEvent(title.getText());
 			e.setTypeEvent(type.getText());
-			e.setStoreName(store.getSelectionModel().getSelectedItem().toString());
+			//e.setStoreName(store.getSelectionModel().getSelectedItem().toString());
 			e.setPeriodEvent(Integer.parseInt(period.getText()));
 			EventDelegate.addEvent(e);
 			System.out.println(e.getIdEvent());
@@ -203,7 +203,7 @@ public class TunisiaMallEventController {
 		 ObservableList<String> options = FXCollections.observableArrayList();
 	 	List<Store> lis=new ArrayList<Store>();
 	 	lis=StoreDelegate.findAllStore();
-	 	System.out.println("////// "+lis.size());
+	// 	System.out.println("////// "+lis.size());
 		 for (Store store : lis) {
 	 			
 	 			findAllStore.add(store.getName());
@@ -223,7 +223,7 @@ public class TunisiaMallEventController {
  		
  		store.setItems(options);*/
 		
-		 tblsn.setCellValueFactory(new PropertyValueFactory("storeName"));
+		 /*tblsn.setCellValueFactory(new PropertyValueFactory("storeName"));
 		 tblsn.setCellFactory(TextFieldTableCell.forTableColumn());
 		 tblsn.setOnEditCommit(new EventHandler<CellEditEvent<Event, String>>() {
 
@@ -233,7 +233,7 @@ public class TunisiaMallEventController {
 					e.setDescription(event1.getNewValue());
 					EventDelegate.updateEvent(e);
 				}
-			});
+			});*/
 		 tabldesc.setCellValueFactory(new PropertyValueFactory("description"));
 		 tabldesc.setCellFactory(TextFieldTableCell.forTableColumn());
 		 tabldesc.setOnEditCommit(new EventHandler<CellEditEvent<Event, String>>() {

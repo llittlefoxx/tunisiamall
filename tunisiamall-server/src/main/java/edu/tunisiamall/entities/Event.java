@@ -22,7 +22,6 @@ public class Event implements Serializable {
 	private String titleEvent;
 
 	private int periodEvent;
-	private String storeName;
 
 
 	private String typeEvent;
@@ -94,15 +93,6 @@ public class Event implements Serializable {
 		this.storeevents = storeevents;
 	}
 	
-	
-
-	public String getStoreName() {
-		return storeName;
-	}
-
-	public void setStoreName(String storeName) {
-		this.storeName = storeName;
-	}
 
 	public Storeevent addStoreevent(Storeevent storeevent) {
 		getStoreevents().add(storeevent);

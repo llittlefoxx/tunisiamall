@@ -167,8 +167,7 @@ public class ApproveRequestController implements Initializable{
 		    	UserDelagate.create(so1);
 		    	System.out.println("55555 "+ nextSessionId());
 		    
-	             Stage stage = (Stage) cancelbutton.getScene().getWindow();
-	             stage.close();
+	          
 
 	    	} else {
 	    	
@@ -201,12 +200,14 @@ public class ApproveRequestController implements Initializable{
 					}  
 			    	   Parent p =fxmlLoader.getRoot();
 			    	   myPane = (Pane) p; 
-			    	   MainControler.cadre.getChildren().clear();
+			    	   
+			    		MainControler.cadre.getChildren().clear();
 						MainControler.cadre.getChildren().add(myPane);
 	    }
+
 	    @FXML
 	    void backAction(ActionEvent event) {
-
+	    	
 	    	 TitledPane myPane = null;
 			    	   FXMLLoader fxmlLoader= new FXMLLoader();
 			    	   fxmlLoader.setLocation(getClass().getResource("/GUI/ShopRequestInterfaces/ficheRequest.fxml"));     
@@ -222,7 +223,7 @@ public class ApproveRequestController implements Initializable{
 			    	   ficheRequestController controller = fxmlLoader.getController();
 			   		
 					  	controller.setSr(sr);
-					  	MainControler.cadre.getChildren().clear();
+						MainControler.cadre.getChildren().clear();
 						MainControler.cadre.getChildren().add(myPane);
 	    }
 

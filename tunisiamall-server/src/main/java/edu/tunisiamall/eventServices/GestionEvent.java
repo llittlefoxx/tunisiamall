@@ -70,10 +70,8 @@ EntityManager entityManager;
 
 	@Override
 	public List<Event> findAllEvents() {
-		Event e = new Event();
 		Query query=entityManager.createQuery("select e from Event e");
 		return query.getResultList();
-		
 	}
 	
 	@Override

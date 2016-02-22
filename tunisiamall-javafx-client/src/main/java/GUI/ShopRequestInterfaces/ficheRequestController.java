@@ -86,7 +86,7 @@ private Button cancelbutton;
 
 @FXML
 void verifAction(ActionEvent event) {
-	
+	Stage stage = (Stage) verifButton.getScene().getWindow();
 	 TitledPane myPane = null;
 	    	   FXMLLoader fxmlLoader= new FXMLLoader();
 	    	   fxmlLoader.setLocation(getClass().getResource("/GUI/ShopRequestInterfaces/ApproveRequest.fxml"));     
@@ -102,8 +102,7 @@ void verifAction(ActionEvent event) {
 	    	   ApproveRequestController controller = fxmlLoader.getController();
 	   		
 			  	controller.setSr(sr);
-	    	 
-			  	MainControler.cadre.getChildren().clear();
+				MainControler.cadre.getChildren().clear();
 				MainControler.cadre.getChildren().add(myPane);
 }
 
@@ -136,7 +135,7 @@ public void setSr(ShopRequest sr) {
 }
 @FXML
 void cancelAction(ActionEvent event) {
-	 
+	
 	Pane myPane = null;
 	    	   FXMLLoader fxmlLoader= new FXMLLoader();
 	    	   fxmlLoader.setLocation(getClass().getResource("/GUI/ShopRequestInterfaces/ViewShopRequestAdmin.fxml"));     
@@ -149,9 +148,9 @@ void cancelAction(ActionEvent event) {
 			}  
 	    	   Parent p =fxmlLoader.getRoot();
 	    	   myPane = (Pane) p; 
-	    	   MainControler.cadre.getChildren().clear();
+	    	   
+	    		MainControler.cadre.getChildren().clear();
 				MainControler.cadre.getChildren().add(myPane);
-	    	
 
 }
 

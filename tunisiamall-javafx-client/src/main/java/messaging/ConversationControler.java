@@ -94,7 +94,7 @@ public class ConversationControler {
     				Message m = MessageDelegate.sendMessage(authentificatController.connectedUser, u, userInput.getText().trim());
     	    		StackPane container = createMessagePane(m);
     	    		conversationVBox.getChildren().add(container);
-    	    		conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
+    	    		//conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
     	    		userInput.clear();
     	    	}
     		}
@@ -103,7 +103,7 @@ public class ConversationControler {
 	    		Message m = MessageDelegate.sendMessage(authentificatController.connectedUser, u, userInput.getText().trim());
 	    		StackPane container = createMessagePane(m);
 	    		conversationVBox.getChildren().add(container);
-	    		conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
+	    		//conversationVBox.setPrefHeight(conversationVBox.getHeight() + container.getHeight() + 100);
 	    		userInput.clear();
     	}
     	conversationScroll.setVvalue(1);

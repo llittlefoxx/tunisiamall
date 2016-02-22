@@ -14,6 +14,4 @@ public interface GestionEventRemote {
 	public Event findEventById(Integer idEvent);
 	public List<Event> findAllEvents();
 	public List<Event> SearchEvent(String E);
-	
-
 }
