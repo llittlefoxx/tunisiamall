@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import Delegates.ManageShopRequestDelegate;
-
+import application.MainControler;
 import edu.tunisiamall.entities.ShopRequest;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -310,6 +310,7 @@ public class ViewShopRequestAdminController implements Initializable{
 			        FXCollections.observableArrayList(lists1);
 		
 			tableView2.setItems(data1);
+			setTableView2(tableView2);
 			
 	
 	
@@ -332,6 +333,7 @@ public class ViewShopRequestAdminController implements Initializable{
 			        FXCollections.observableArrayList(l);
 		
 			tab3.setItems(data1);
+			setTab3(tab3);
 			
 	}
 	
@@ -358,7 +360,7 @@ public class ViewShopRequestAdminController implements Initializable{
 		        @Override
 		        public void handle(MouseEvent event) {
 		        	System.out.println("888888");
-			    	ShopRequest sr = getTableView().getSelectionModel().getSelectedItem();
+			    	ShopRequest sr = getTableView2().getSelectionModel().getSelectedItem();
 			    	System.out.println("fffff" + sr.toString());
 		            System.out.println("mouse click detected! "+event.getSource());
 		            setSr(sr);
@@ -368,7 +370,7 @@ public class ViewShopRequestAdminController implements Initializable{
 		        @Override
 		        public void handle(MouseEvent event) {
 		        	System.out.println("888888");
-			    	ShopRequest sr = getTableView().getSelectionModel().getSelectedItem();
+			    	ShopRequest sr = getTab3().getSelectionModel().getSelectedItem();
 			    	System.out.println("fffff" + sr.toString());
 		            System.out.println("mouse click detected! "+event.getSource());
 		            setSr(sr);
@@ -388,12 +390,12 @@ public class ViewShopRequestAdminController implements Initializable{
 	 @FXML
 	    void ficheFunction(ActionEvent event) {
 		 System.out.println("9999999  "+getSr().toString() );
-	
-		 Stage stage = (Stage) verifyButon.getScene().getWindow();
+		 TitledPane myPane = null;
+		/* Stage stage = (Stage) verifyButon.getScene().getWindow();
 		 setPrevStage(stage);
 		 Stage st=new Stage();
 		       stage.setTitle("ficheRequest");
-		       TitledPane myPane = null;
+		      
 		     
 		       
 		    	   FXMLLoader fxmlLoader= new FXMLLoader();
@@ -414,15 +416,28 @@ public class ViewShopRequestAdminController implements Initializable{
 			
 			
 		       Scene scene = new Scene(myPane);
-		       st.setScene(scene);
-		   	ficheRequestController controller = fxmlLoader.getController();
-		
+		       st.setScene(scene);*/
+		 FXMLLoader fxmlLoader= new FXMLLoader();
+		fxmlLoader.setLocation(ficheRequestController.class.getResource("ficheRequest.fxml"));     
+			
+		   
+		  	 try {
+		  		fxmlLoader.load();
+		  		
+		  	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 	ficheRequestController controller = fxmlLoader.getController();
+			
 		  	controller.setSr(getSr());
-		
+		  	 Parent p =fxmlLoader.getRoot();
+	    	   myPane = (TitledPane) p; 
+			MainControler.cadre.getChildren().clear();
+			MainControler.cadre.getChildren().add(myPane);
 			System.out.println("11111111");
-		       stage.close();
 		       
-		       st.show();
 		    }
 	 
 	 

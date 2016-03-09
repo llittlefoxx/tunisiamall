@@ -79,7 +79,7 @@ public class InboxControler {
 	// Constant
 	private static final Image delete_icon = new Image(
 			InboxControler.class.getResourceAsStream("/messaging/delete.png"));
-	private static final int displayCount = 10;
+	private static final int displayCount = 3;
 
 	// Vars
 	private static List<Message> AllMessagesList;

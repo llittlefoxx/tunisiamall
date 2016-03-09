@@ -15,7 +15,7 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.esprit.pidev</groupId>
-  			<artifactId>tunisiamall-server</artifactId>
+  			<artifactId>tunisiamall.server-ejb</artifactId>
   			<version>0.0.1-SNAPSHOT</version>
   			<type>ejb</type>
 		</dependency>
