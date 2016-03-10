@@ -131,7 +131,7 @@
                     <configuration>
                         <filename>${project.artifactId}.jar</filename>
 					<hostname>localhost</hostname>
-					<username>test</username>
+					<username>testaaaaa</username>
 					<password>testtest</password>
 					<port>19990</port>
                     </configuration>
