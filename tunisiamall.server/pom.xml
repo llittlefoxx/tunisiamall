@@ -130,8 +130,8 @@
                     <inherited>true</inherited>
                     <configuration>
                         <filename>${project.artifactId}.jar</filename>
-					<hostname>localhost</hostname>
-					<username>testaaaaa</username>
+					<hostname>locaaaaaaaalhost</hostname>
+					<username>test</username>
 					<password>testtest</password>
 					<port>19990</port>
                     </configuration>
