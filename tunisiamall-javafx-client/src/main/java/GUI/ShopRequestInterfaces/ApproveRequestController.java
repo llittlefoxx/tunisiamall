@@ -16,6 +16,7 @@ import Delegates.CategoryDelegate;
 import Delegates.ManageShopRequestDelegate;
 import Delegates.StoreServicesDelegate;
 import Delegates.UserDelagate;
+import application.MainControler;
 import edu.tunisiamall.entities.Category;
 import edu.tunisiamall.entities.ShopRequest;
 import edu.tunisiamall.entities.Shopowner;
@@ -166,8 +167,7 @@ public class ApproveRequestController implements Initializable{
 		    	UserDelagate.create(so1);
 		    	System.out.println("55555 "+ nextSessionId());
 		    
-	             Stage stage = (Stage) cancelbutton.getScene().getWindow();
-	             stage.close();
+	          
 
 	    	} else {
 	    	
@@ -187,7 +187,7 @@ public class ApproveRequestController implements Initializable{
 	    
 	    @FXML
 	    void CancelAction(ActionEvent event) {
-	    	 Stage stage = (Stage) cancelbutton.getScene().getWindow();
+	    	
 	    	 Pane myPane = null;
 			    	   FXMLLoader fxmlLoader= new FXMLLoader();
 			    	   fxmlLoader.setLocation(getClass().getResource("/GUI/ShopRequestInterfaces/ViewShopRequestAdmin.fxml"));     
@@ -201,17 +201,13 @@ public class ApproveRequestController implements Initializable{
 			    	   Parent p =fxmlLoader.getRoot();
 			    	   myPane = (Pane) p; 
 			    	   
-			    	   Stage st=new Stage();
-			    	   Scene scene = new Scene(myPane);
-			    	   st.setScene(scene);
-			    	   stage.close();
-				       
-				       st.show();
+			    		MainControler.cadre.getChildren().clear();
+						MainControler.cadre.getChildren().add(myPane);
 	    }
 
 	    @FXML
 	    void backAction(ActionEvent event) {
-	    	 Stage stage = (Stage) cancelbutton.getScene().getWindow();
+	    	
 	    	 TitledPane myPane = null;
 			    	   FXMLLoader fxmlLoader= new FXMLLoader();
 			    	   fxmlLoader.setLocation(getClass().getResource("/GUI/ShopRequestInterfaces/ficheRequest.fxml"));     
@@ -227,13 +223,8 @@ public class ApproveRequestController implements Initializable{
 			    	   ficheRequestController controller = fxmlLoader.getController();
 			   		
 					  	controller.setSr(sr);
-			    	   Stage st=new Stage();
-			    	   Scene scene = new Scene(myPane);
-			    	   st.setScene(scene);
-			    	   stage.close();
-				       
-				       st.show();
-
+						MainControler.cadre.getChildren().clear();
+						MainControler.cadre.getChildren().add(myPane);
 	    }
 
 

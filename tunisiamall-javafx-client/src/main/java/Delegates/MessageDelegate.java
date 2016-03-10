@@ -30,7 +30,4 @@ public class MessageDelegate {
 		return getProxy().deleteMessage(m);
 	}
 	
-	public static boolean setMessageSeen(Message m){
-		return getProxy().setMessageSeen(m);
-	}
 }

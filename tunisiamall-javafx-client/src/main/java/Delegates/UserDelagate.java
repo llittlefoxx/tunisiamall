@@ -9,7 +9,7 @@ import edu.tunisiamall.userServices.*;
 public class UserDelagate {
 	
 	private static userServicesRemote remote;
-	private final static String jndiName="tunisiamall-server/userServices!edu.tunisiamall.userServices.userServicesRemote"; 
+	private final static String jndiName="tunisiamall.server-ear/tunisiamall.server-ejb/userServices!edu.tunisiamall.userServices.userServicesRemote"; 
 	
 	private static userServicesRemote getProxy() {
 		return (userServicesRemote) Locator.ServiceLocator.getInstance().getProxy(

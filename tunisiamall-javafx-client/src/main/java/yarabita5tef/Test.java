@@ -32,7 +32,7 @@ public class Test {
 		//admin.setFirstName("ilyes");
 			//	admin.setLogin("ilyes");
 			//	admin.setPassword("ilyes");
-		UserDelagate.create(admin);
+		//UserDelagate.create(admin);
 		//UserDelagate.delete(2);
 		List<User> user;
 		user=UserDelagate.findAll();
@@ -46,8 +46,8 @@ public class Test {
 		salah.setLastName("ghabri");
 		ShopeOwnerDelegate.create(salah);
 		Customer sel3a=new Customer();
-		sel3a.setFirstName("5arya");
-		sel3a.setLastName("ka3loussa");
+		sel3a.setFirstName("User First Name");
+		sel3a.setLastName("User Last Name");
 		List<Customer> cust;
 		CustomerDelegate.create(sel3a);
 		cust=CustomerDelegate.findAllCos();
