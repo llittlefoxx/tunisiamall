@@ -129,7 +129,11 @@
                     <version>${version.wildfly.maven.plugin}</version>
                     <inherited>true</inherited>
                     <configuration>
-                        <skip>true</skip>
+                        <filename>${project.artifactId}.jar</filename>
+					<hostname>localhost</hostname>
+					<username>test</username>
+					<password>testtest</password>
+					<port>19990</port>
                     </configuration>
                 </plugin>
             </plugins>
