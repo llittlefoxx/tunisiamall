@@ -15,7 +15,7 @@ import edu.tunisiamall.entities.User;
 @Stateless
 public class MessageService implements MessageServiceRemote, MessageServiceLocal {
 
-	@PersistenceContext(unitName = "tunisiamall-server")
+	@PersistenceContext
 	EntityManager em;
 
 	public MessageService() {
@@ -24,8 +24,8 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 	@Override
 	public Message sendMessage(User src, User dest, String text) {
 		try {
-			if (text.trim().length() == 0) {
-				throw new Exception("Empty message");
+			if (text.trim().length() == 0 || src == null || dest == null) {
+				throw new Exception("Empty message or one of the users is null");
 			}
 			Message m = new Message(src, dest, text);
 			em.persist(m);
@@ -39,7 +39,7 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 	@Override
 	public boolean deleteMessage(Message m) {
 		try {
-			em.remove(m);
+			em.remove(em.find(Message.class, m.getIdMessage()));
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -52,13 +52,6 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 				.setParameter("src", src)
 				.setParameter("dest",dest);
 		List<Message> results = (List<Message>) query.getResultList();
-		for (Message message : results) {
-			if(message.getReceiver().getIdUser() == dest.getIdUser()){
-				message.setSeen((byte)1);
-				message.setSeenDate(new Date());
-				em.merge(message);
-			}
-		}
 		return results;
 	}
 
@@ -71,9 +64,8 @@ public class MessageService implements MessageServiceRemote, MessageServiceLocal
 						.setParameter("receiver", u)
 						.setMaxResults(1);
 		try{
-			List<Object> results = query.getResultList();
-			for (Object result : results) {
-				User user = (User) result;
+			List<User> results = query.getResultList();
+			for (User user : results) {
 				query2.setParameter("user", user);
 				List<Message> messages = (List<Message>) query2.getResultList();
 				if(messages.size() > 0){

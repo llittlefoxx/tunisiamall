@@ -4,43 +4,35 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 
-
 @Entity
 public class Message implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idMessage;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 
-	private byte seen;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date seenDate;
-
 	private String text;
 
 	@ManyToOne
-	@JoinColumn(name="idUserSender_FK")
+	@JoinColumn(name = "idUserSender_FK")
 	private User user;
 
 	@ManyToOne
-	@JoinColumn(name="idUserReciver_fk")
+	@JoinColumn(name = "idUserReciver_fk")
 	private User receiver;
-	
-	
+
 	public Message() {
 	}
-	
+
 	public Message(User src, User dest, String text) {
 		this.user = src;
 		this.receiver = dest;
 		this.text = text;
 		this.date = new Date();
-		this.seen = 0;
 	}
 
 	public int getIdMessage() {
@@ -65,22 +57,6 @@ public class Message implements Serializable {
 
 	public void setReceiver(User reciver) {
 		this.receiver = reciver;
-	}
-
-	public byte getSeen() {
-		return this.seen;
-	}
-
-	public void setSeen(byte seen) {
-		this.seen = seen;
-	}
-
-	public Date getSeenDate() {
-		return this.seenDate;
-	}
-
-	public void setSeenDate(Date seenDate) {
-		this.seenDate = seenDate;
 	}
 
 	public String getText() {
@@ -118,5 +94,4 @@ public class Message implements Serializable {
 		return true;
 	}
 
-	
 }
