@@ -2,6 +2,10 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import edu.tunisiamall.entities.ShopRequest;
 
 import java.util.List;
@@ -22,13 +26,16 @@ public class Category implements Serializable {
 	private String libelle;
 	
 	@OneToMany(mappedBy="category")
+	@JsonBackReference
 	private List<ShopRequest> requests;
 	
 	@OneToMany(mappedBy="category")
+	@JsonBackReference
 	private List<Store> stores;
 	
 	//bi-directional many-to-one association to Subcategory
 	@OneToMany(mappedBy="category")
+	@JsonIgnore
 	private List<Subcategory> subcategories;
 
 	public Category() {

@@ -2,21 +2,25 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.Date;
 import java.util.List;
-
 
 /**
  * The persistent class for the product database table.
  * 
  */
 @Entity
-@NamedQuery(name="Product.findAll", query="SELECT p FROM Product p")
+@NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p")
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idProduct;
 
 	private double buyPrice;
@@ -27,9 +31,8 @@ public class Product implements Serializable {
 	private String libelle;
 
 	private int qte;
-
 	private int criticalZone;
-	
+
 	private double sellPrice;
 
 	private String state;
@@ -37,33 +40,31 @@ public class Product implements Serializable {
 	private String tag;
 
 	private double tax;
-	
 
-	
 	@ManyToOne
 	private Promotion Promotion;
 	
+	// bideric manytoone with store
 	@ManyToOne
-	@JoinColumn(name="IdPromotionSuggest_fk")
+	private Store store;
+
+	@ManyToOne
+	@JoinColumn(name = "IdPromotionSuggest_fk")
 	private PromotionSuggest promotionSuggest;
-	
-	//bi-directional many-to-one association to Image
-	@OneToMany(mappedBy="product")
+
+	// bi-directional many-to-one association to Image
+	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
 	private List<Image> images;
 
-	//bi-directional many-to-one association to Mvtstock
-	@OneToMany(mappedBy="product")
+	// bi-directional many-to-one association to Mvtstock
+	@OneToMany(mappedBy = "product")
 	private List<Mvtstock> mvtstocks;
 
-	//bi-directional many-to-one association to Orerline
-	
-	@OneToMany(mappedBy="product")
+	// bi-directional many-to-one association to Orerline
+
+	@OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
 	private List<OrderLine> orderline;
-	
-	//bideric manytoone with store
-	@ManyToOne(fetch=FetchType.LAZY)
-	private Store store;
-	
+
 	public List<OrderLine> getOrderline() {
 		return orderline;
 	}
@@ -72,9 +73,9 @@ public class Product implements Serializable {
 		this.orderline = orderline;
 	}
 
-	//bi-directional many-to-one association to Subcategory
+	// bi-directional many-to-one association to Subcategory
 	@ManyToOne
-	@JoinColumn(name="IdSubCategory")
+	@JoinColumn(name = "IdSubCategory")
 	private Subcategory subcategory;
 
 	public Product() {
@@ -196,7 +197,6 @@ public class Product implements Serializable {
 		return mvtstock;
 	}
 
-
 	public Subcategory getSubcategory() {
 		return this.subcategory;
 	}
@@ -213,8 +213,6 @@ public class Product implements Serializable {
 		Promotion = promotion;
 	}
 
-	
-	
 	public int getCriticalZone() {
 		return criticalZone;
 	}
@@ -231,5 +229,4 @@ public class Product implements Serializable {
 		this.promotionSuggest = promotionSuggest;
 	}
 
-	
 }

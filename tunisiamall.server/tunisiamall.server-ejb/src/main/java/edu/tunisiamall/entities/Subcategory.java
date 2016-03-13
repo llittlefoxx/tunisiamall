@@ -2,6 +2,10 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -24,10 +28,12 @@ public class Subcategory implements Serializable {
 
 	//bi-directional many-to-many association to Store
 	@ManyToMany(mappedBy="subcategories")
+	@JsonBackReference
 	private List<Store> stores;
 
 	//bi-directional many-to-one association to Product
 	@OneToMany(mappedBy="subcategory")
+    @JsonBackReference
 	private List<Product> products;
 
 	//bi-directional many-to-one association to Category

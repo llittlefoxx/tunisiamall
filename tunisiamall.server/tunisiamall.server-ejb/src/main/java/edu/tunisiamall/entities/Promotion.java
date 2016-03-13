@@ -7,6 +7,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Entity implementation class for Entity: Promotion
  *
@@ -24,6 +27,7 @@ public class Promotion implements Serializable {
 	private Date endDate;
 
 	@OneToMany(mappedBy = "Promotion")
+	@JsonBackReference
 	private List<Product> produits;
 
 	private static final long serialVersionUID = 1L;

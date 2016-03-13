@@ -25,7 +25,7 @@ import edu.tunisiamall.entities.Store;
  * Session Bean implementation class IndicatorsService
  */
 @Stateless
-public class IndicatorsService implements IndicatorsServiceRemote {
+public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServiceLocal {
 
 	/**
 	 * Default constructor.
