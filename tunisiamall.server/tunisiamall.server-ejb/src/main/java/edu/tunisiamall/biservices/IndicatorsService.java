@@ -140,12 +140,9 @@ public class IndicatorsService implements IndicatorsServiceRemote {
 
 	@Override
 	public List<Product> getProductsByPromotionSugg(int idSugP) {
-		// Query query = em.createQuery("select p from Product p where
-		// p.promotionSuggest.idPromotionSuggest = :idSugP")
-		// .setParameter("idSugP", idSugP);
-
-		// query.getResultList();
-		return findPromotionSuggestById(idSugP).getProducts();
+		 Query query = em.createQuery("select p from Product p where p.promotionSuggest.idPromotionSuggest = :idSugP")
+		 .setParameter("idSugP", idSugP);
+		return query.getResultList();
 	}
 
 	@Override

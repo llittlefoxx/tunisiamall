@@ -9,30 +9,21 @@ import javax.persistence.*;
 
 import edu.tunisiamall.entities.Category;
 
-/**
- * Entity implementation class for Entity: Request
- *
- */
 @Entity
-@Table(name="request")
 public class ShopRequest implements Serializable {
 
-	   
-	
 	private Integer idRequest;
 	private String description;
-	
+
 	private Date rcptDate;
 	private boolean status;
-	
-	
-	
+
 	private Date plannedOpeningDate;
 	private Integer rentPeriod;
 	private boolean storeInMall;
-	
+
 	private Category category;
-	
+
 	private String firstName;
 	private String lastName;
 	private Date birthdate;
@@ -40,31 +31,31 @@ public class ShopRequest implements Serializable {
 	private String address;
 	private String phone;
 	private String job;
-	
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public ShopRequest() {
 		super();
-	} 
-	
+	}
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdRequest() {
 		return this.idRequest;
 	}
 
 	public void setIdRequest(Integer idRequest) {
 		this.idRequest = idRequest;
-	}   
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
-	}  
-	
+	}
+
 	@Temporal(TemporalType.DATE)
 	public Date getRcptDate() {
 		return this.rcptDate;
@@ -72,7 +63,8 @@ public class ShopRequest implements Serializable {
 
 	public void setRcptDate(Date rcptDate) {
 		this.rcptDate = rcptDate;
-	}   
+	}
+
 	public boolean getStatus() {
 		return this.status;
 	}
@@ -80,9 +72,6 @@ public class ShopRequest implements Serializable {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
-
 
 	@Override
 	public int hashCode() {
@@ -101,7 +90,7 @@ public class ShopRequest implements Serializable {
 		result = prime * result + ((plannedOpeningDate == null) ? 0 : plannedOpeningDate.hashCode());
 		result = prime * result + ((rcptDate == null) ? 0 : rcptDate.hashCode());
 		result = prime * result + ((rentPeriod == null) ? 0 : rentPeriod.hashCode());
-	
+
 		result = prime * result + (storeInMall ? 1231 : 1237);
 		return result;
 	}
@@ -180,7 +169,7 @@ public class ShopRequest implements Serializable {
 				return false;
 		} else if (!rentPeriod.equals(other.rentPeriod))
 			return false;
-		
+
 		if (storeInMall != other.storeInMall)
 			return false;
 		return true;
@@ -252,7 +241,7 @@ public class ShopRequest implements Serializable {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="category_fk")
+	@JoinColumn(name = "category_fk")
 	public Category getCategory() {
 		return category;
 	}
@@ -286,11 +275,4 @@ public class ShopRequest implements Serializable {
 		this.storeInMall = storeInMall;
 	}
 
-	
-
-	
-	
-	
-	
-   
 }

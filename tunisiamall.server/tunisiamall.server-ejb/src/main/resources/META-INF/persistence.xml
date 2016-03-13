@@ -8,13 +8,14 @@
 		<class>edu.tunisiamall.entities.Complaint</class>
 		<class>edu.tunisiamall.entities.Customer</class>
 		<class>edu.tunisiamall.entities.Event</class>
+		<class>edu.tunisiamall.entities.Friendship</class>
 		<class>edu.tunisiamall.entities.Gestbookentry</class>
 		<class>edu.tunisiamall.entities.Image</class>
 		<class>edu.tunisiamall.entities.Message</class>
 		<class>edu.tunisiamall.entities.Mvtstock</class>
 		<class>edu.tunisiamall.entities.Order</class>
 		<class>edu.tunisiamall.entities.OrderLine</class>
-		<class>edu.tunisiamall.entities.OrerlinePK</class>
+
 		<class>edu.tunisiamall.entities.Post</class>
 		<class>edu.tunisiamall.entities.Product</class>
 		<class>edu.tunisiamall.entities.Promotion</class>

@@ -2,30 +2,19 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
-
-import edu.tunisiamall.entities.ShopRequest;
-
-import java.util.List;
-
 
 @Entity
-@Table(name="category")
-@NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
-@XmlRootElement
+@NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c")
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCategory;
 
 	private String description;
 
 	private String libelle;
-	
-
-
 
 	public Category() {
 	}
@@ -46,8 +35,6 @@ public class Category implements Serializable {
 		this.description = description;
 	}
 
-	
-	
 	public String getLibelle() {
 		return this.libelle;
 	}
@@ -56,26 +43,14 @@ public class Category implements Serializable {
 		this.libelle = libelle;
 	}
 
-	
-	
-
-	
-
-
 	@Override
 	public String toString() {
-		return "Category [idCategory=" + idCategory + ", description=" + description + ", libelle=" + libelle
-				 + "]";
+		return "Category [idCategory=" + idCategory + ", description=" + description + ", libelle=" + libelle + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + idCategory;
-		result = prime * result + ((libelle == null) ? 0 : libelle.hashCode());
-		return result;
+		return idCategory;
 	}
 
 	@Override
@@ -87,21 +62,9 @@ public class Category implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
 		if (idCategory != other.idCategory)
-			return false;
-		if (libelle == null) {
-			if (other.libelle != null)
-				return false;
-		} else if (!libelle.equals(other.libelle))
 			return false;
 		return true;
 	}
 
-	
-	
 }
