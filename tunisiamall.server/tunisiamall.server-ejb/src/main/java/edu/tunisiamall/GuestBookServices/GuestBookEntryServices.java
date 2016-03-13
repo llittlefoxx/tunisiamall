@@ -25,8 +25,8 @@ public class GuestBookEntryServices implements GuestBookEntryServicesRemote, Gue
 	}
 
 	@Override
-	public void deleteEntries(Gestbookentry g) {
-		em.remove(em.find(Gestbookentry.class, g.getIdEntries()));
+	public void deleteEntries(int id) {
+		em.remove(em.find(Gestbookentry.class, id));
 	}
 
 	@Override

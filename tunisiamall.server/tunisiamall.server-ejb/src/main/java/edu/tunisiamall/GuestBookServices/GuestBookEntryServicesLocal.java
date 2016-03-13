@@ -7,7 +7,7 @@ import edu.tunisiamall.entities.User;
 
 @Local
 public interface GuestBookEntryServicesLocal {
-	public void deleteEntries(Gestbookentry g);
+	public void deleteEntries(int id);
 
 	public Gestbookentry findEntryById(int idEtries);
 
