@@ -4,12 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
-/**
- * The persistent class for the user database table.
- * 
- */
 @Entity
 @DiscriminatorColumn(name = "USER_TYPE")
 @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")

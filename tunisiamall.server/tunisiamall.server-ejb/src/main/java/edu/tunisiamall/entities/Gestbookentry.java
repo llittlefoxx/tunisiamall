@@ -5,7 +5,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "gestbookentries")
 @NamedQuery(name = "Gestbookentry.findAll", query = "SELECT g FROM Gestbookentry g")
 public class Gestbookentry implements Serializable {
 	private static final long serialVersionUID = 1L;

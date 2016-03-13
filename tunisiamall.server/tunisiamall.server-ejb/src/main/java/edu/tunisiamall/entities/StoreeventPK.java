@@ -3,54 +3,57 @@ package edu.tunisiamall.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- * The primary key class for the storeevent database table.
- * 
- */
 @Embeddable
 public class StoreeventPK implements Serializable {
-	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(insertable=false, updatable=false)
+	@Column(name = "idEvent")
 	private int idEvent;
-
-	private int idStoreEvent;
+	@Column(name = "idStore")
+	private int idStore;
 
 	public StoreeventPK() {
 	}
+
 	public int getIdEvent() {
-		return this.idEvent;
+		return idEvent;
 	}
+
 	public void setIdEvent(int idEvent) {
 		this.idEvent = idEvent;
 	}
-	public int getIdStoreEvent() {
-		return this.idStoreEvent;
-	}
-	public void setIdStoreEvent(int idStoreEvent) {
-		this.idStoreEvent = idStoreEvent;
+
+	public int getIdStore() {
+		return idStore;
 	}
 
-	public boolean equals(Object other) {
-		if (this == other) {
-			return true;
-		}
-		if (!(other instanceof StoreeventPK)) {
-			return false;
-		}
-		StoreeventPK castOther = (StoreeventPK)other;
-		return 
-			(this.idEvent == castOther.idEvent)
-			&& (this.idStoreEvent == castOther.idStoreEvent);
+	public void setIdStore(int idStore) {
+		this.idStore = idStore;
 	}
 
+	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int hash = 17;
-		hash = hash * prime + this.idEvent;
-		hash = hash * prime + this.idStoreEvent;
-		
-		return hash;
+		int result = 1;
+		result = prime * result + idEvent;
+		result = prime * result + idStore;
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StoreeventPK other = (StoreeventPK) obj;
+		if (idEvent != other.idEvent)
+			return false;
+		if (idStore != other.idStore)
+			return false;
+		return true;
+	}
+
 }

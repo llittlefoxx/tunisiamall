@@ -19,7 +19,7 @@ public class Message implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "idUserSender_FK")
-	private User user;
+	private User sender;
 
 	@ManyToOne
 	@JoinColumn(name = "idUserReciver_fk")
@@ -29,7 +29,7 @@ public class Message implements Serializable {
 	}
 
 	public Message(User src, User dest, String text) {
-		this.user = src;
+		this.sender = src;
 		this.receiver = dest;
 		this.text = text;
 		this.date = new Date();
@@ -67,12 +67,12 @@ public class Message implements Serializable {
 		this.text = text;
 	}
 
-	public User getUser() {
-		return this.user;
+	public User getSender() {
+		return this.sender;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setSender(User sender) {
+		this.sender = sender;
 	}
 
 	@Override

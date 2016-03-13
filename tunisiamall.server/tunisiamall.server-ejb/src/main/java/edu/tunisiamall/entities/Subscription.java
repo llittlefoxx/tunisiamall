@@ -3,11 +3,6 @@ package edu.tunisiamall.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the subscriptions database table.
- * 
- */
 @Entity
 @Table(name="subscriptions")
 @NamedQuery(name="Subscription.findAll", query="SELECT s FROM Subscription s")
@@ -17,14 +12,12 @@ public class Subscription implements Serializable {
 	@EmbeddedId
 	private SubscriptionPK id;
 
-	//bi-directional many-to-one association to Customer
 	@ManyToOne
-	@JoinColumn(name="idUser_fk")
+	@JoinColumn(name="idUser", insertable = false, updatable = false)
 	private Customer customer;
 
-	//bi-directional many-to-one association to Event
 	@ManyToOne
-	@JoinColumn(name="IdEvent")
+	@JoinColumn(name="idEvent", insertable = false, updatable = false)
 	private Event event;
 
 	public Subscription() {
