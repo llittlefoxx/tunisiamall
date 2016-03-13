@@ -54,10 +54,9 @@ public class MessageServices {
 	}
 
 	@DELETE
-	@Path("delete")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("delete/{id}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public boolean deleteMessage(Message m) {
-		return ejb.deleteMessage(m);
+	public boolean deleteMessage(@PathParam("id") int id) {
+		return ejb.deleteMessage(id);
 	}
 }
