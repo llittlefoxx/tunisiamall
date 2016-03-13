@@ -2,6 +2,8 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import java.util.List;
  * 
  */
 @Entity
+@XmlRootElement
 @NamedQuery(name="Store.findAll", query="SELECT s FROM Store s")
 public class Store implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -155,6 +158,64 @@ public class Store implements Serializable {
 		storeevent.setStore(null);
 
 		return storeevent;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((category == null) ? 0 : category.hashCode());
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + idStroe;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((openingDay == null) ? 0 : openingDay.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
+		result = prime * result + ((tel == null) ? 0 : tel.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Store other = (Store) obj;
+		if (category == null) {
+			if (other.category != null)
+				return false;
+		} else if (!category.equals(other.category))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (idStroe != other.idStroe)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (openingDay == null) {
+			if (other.openingDay != null)
+				return false;
+		} else if (!openingDay.equals(other.openingDay))
+			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
+			return false;
+		if (tel == null) {
+			if (other.tel != null)
+				return false;
+		} else if (!tel.equals(other.tel))
+			return false;
+		return true;
 	}
 
 	

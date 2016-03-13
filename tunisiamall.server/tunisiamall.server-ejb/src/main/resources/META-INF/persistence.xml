@@ -28,5 +28,9 @@
 		<class>edu.tunisiamall.entities.Subscription</class>
 		<class>edu.tunisiamall.entities.SubscriptionPK</class>
 		<class>edu.tunisiamall.entities.User</class>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action" value="none"/>
+		</properties>
+	
 	</persistence-unit>
 </persistence>

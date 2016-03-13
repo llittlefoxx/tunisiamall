@@ -2,6 +2,8 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import edu.tunisiamall.entities.ShopRequest;
 
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name="category")
 @NamedQuery(name="Category.findAll", query="SELECT c FROM Category c")
+@XmlRootElement
 public class Category implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -21,15 +24,8 @@ public class Category implements Serializable {
 
 	private String libelle;
 	
-	@OneToMany(mappedBy="category")
-	private List<ShopRequest> requests;
-	
-	@OneToMany(mappedBy="category")
-	private List<Store> stores;
-	
-	//bi-directional many-to-one association to Subcategory
-	@OneToMany(mappedBy="category")
-	private List<Subcategory> subcategories;
+
+
 
 	public Category() {
 	}
@@ -50,13 +46,7 @@ public class Category implements Serializable {
 		this.description = description;
 	}
 
-	public List<Store> getStores() {
-		return stores;
-	}
-
-	public void setStores(List<Store> stores) {
-		this.stores = stores;
-	}
+	
 	
 	public String getLibelle() {
 		return this.libelle;
@@ -66,36 +56,12 @@ public class Category implements Serializable {
 		this.libelle = libelle;
 	}
 
-	public List<Subcategory> getSubcategories() {
-		return this.subcategories;
-	}
-
-	public void setSubcategories(List<Subcategory> subcategories) {
-		this.subcategories = subcategories;
-	}
-
-	public List<ShopRequest> getRequests() {
-		return requests;
-	}
-
-	public void setRequests(List<ShopRequest> requests) {
-		this.requests = requests;
-	}
-
-	public Subcategory addSubcategory(Subcategory subcategory) {
-		getSubcategories().add(subcategory);
-		subcategory.setCategory(this);
-
-		return subcategory;
-	}
-
-	public Subcategory removeSubcategory(Subcategory subcategory) {
-		getSubcategories().remove(subcategory);
-		subcategory.setCategory(null);
-
-		return subcategory;
-	}
 	
+	
+
+	
+
+
 	@Override
 	public String toString() {
 		return "Category [idCategory=" + idCategory + ", description=" + description + ", libelle=" + libelle
@@ -104,7 +70,12 @@ public class Category implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return idCategory;
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + idCategory;
+		result = prime * result + ((libelle == null) ? 0 : libelle.hashCode());
+		return result;
 	}
 
 	@Override
@@ -116,9 +87,21 @@ public class Category implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
 		if (idCategory != other.idCategory)
+			return false;
+		if (libelle == null) {
+			if (other.libelle != null)
+				return false;
+		} else if (!libelle.equals(other.libelle))
 			return false;
 		return true;
 	}
+
+	
 	
 }
