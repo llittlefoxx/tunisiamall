@@ -21,21 +21,20 @@ public class GuestbookServices {
 	GuestBookEntryServicesLocal ejb;
 
 	@DELETE
-	@Path("delete")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void deleteEntries(Gestbookentry g) {
-		ejb.deleteEntries(g);
+	@Path("delete/{id}")
+	public void deleteEntries(@PathParam("id") int id) {
+		ejb.deleteEntries(id);
 	}
 
 	@GET
-	@Path("{id}")
+	@Path("find/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Gestbookentry findEntryById(@PathParam("id") int idEtries) {
 		return ejb.findEntryById(idEtries);
 	}
 
 	@GET
-	@Path("list")
+	@Path("findAll")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Gestbookentry> findAll() {
 		return ejb.findAll();

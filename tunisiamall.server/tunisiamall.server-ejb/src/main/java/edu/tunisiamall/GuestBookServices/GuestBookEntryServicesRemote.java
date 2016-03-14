@@ -10,7 +10,7 @@ import edu.tunisiamall.entities.User;;
 
 @Remote
 public interface GuestBookEntryServicesRemote {
-	public void deleteEntries(Gestbookentry g);
+	public void deleteEntries(int id);
 
 	public Gestbookentry findEntryById(int idEtries);
 
