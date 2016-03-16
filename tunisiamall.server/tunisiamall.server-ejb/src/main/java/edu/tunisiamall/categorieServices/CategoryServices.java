@@ -3,6 +3,8 @@ package edu.tunisiamall.categorieServices;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionManagement;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -52,18 +54,16 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 		return em.find(Category.class, idCategory);
 	}
 
+
 	@Override
 	public List<Category> findAll() {
-		// TODO Auto-generated method stub
-		String queryText = "select c from Category c";
-		Query query = em.createQuery(queryText);
-		// query.getSingleResult();
+		Query query = em.createQuery("select c from Category c");
 		return query.getResultList();
 	}
 
 	@Override
 	public List<Category> SearchCategory(String L) {
-		// String queryText =
+		
 		Query query = em.createQuery("select c from Category c where c.libelle like :Name").setParameter("Name","%" + L + "%");
 		return query.getResultList();
 
