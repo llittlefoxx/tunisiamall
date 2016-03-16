@@ -2,18 +2,9 @@ package edu.tunisiamall.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import java.util.Date;
 import java.util.List;
 
-/**
- * The persistent class for the product database table.
- * 
- */
 @Entity
 @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p")
 public class Product implements Serializable {
@@ -31,6 +22,7 @@ public class Product implements Serializable {
 	private String libelle;
 
 	private int qte;
+
 	private int criticalZone;
 
 	private double sellPrice;
@@ -43,37 +35,15 @@ public class Product implements Serializable {
 
 	@ManyToOne
 	private Promotion Promotion;
-	
-	// bideric manytoone with store
-	@ManyToOne
-	private Store store;
 
 	@ManyToOne
 	@JoinColumn(name = "IdPromotionSuggest_fk")
 	private PromotionSuggest promotionSuggest;
 
-	// bi-directional many-to-one association to Image
-	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-	private List<Image> images;
+	@ManyToOne
+	@JoinColumn(name = "IdStore")
+	private Store store;
 
-	// bi-directional many-to-one association to Mvtstock
-	@OneToMany(mappedBy = "product")
-	private List<Mvtstock> mvtstocks;
-
-	// bi-directional many-to-one association to Orerline
-
-	@OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-	private List<OrderLine> orderline;
-
-	public List<OrderLine> getOrderline() {
-		return orderline;
-	}
-
-	public void setOrderline(List<OrderLine> orderline) {
-		this.orderline = orderline;
-	}
-
-	// bi-directional many-to-one association to Subcategory
 	@ManyToOne
 	@JoinColumn(name = "IdSubCategory")
 	private Subcategory subcategory;
@@ -151,50 +121,6 @@ public class Product implements Serializable {
 
 	public void setTax(double tax) {
 		this.tax = tax;
-	}
-
-	public List<Image> getImages() {
-		return this.images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
-	public Image addImage(Image image) {
-		getImages().add(image);
-		image.setProduct(this);
-
-		return image;
-	}
-
-	public Image removeImage(Image image) {
-		getImages().remove(image);
-		image.setProduct(null);
-
-		return image;
-	}
-
-	public List<Mvtstock> getMvtstocks() {
-		return this.mvtstocks;
-	}
-
-	public void setMvtstocks(List<Mvtstock> mvtstocks) {
-		this.mvtstocks = mvtstocks;
-	}
-
-	public Mvtstock addMvtstock(Mvtstock mvtstock) {
-		getMvtstocks().add(mvtstock);
-		mvtstock.setProduct(this);
-
-		return mvtstock;
-	}
-
-	public Mvtstock removeMvtstock(Mvtstock mvtstock) {
-		getMvtstocks().remove(mvtstock);
-		mvtstock.setProduct(null);
-
-		return mvtstock;
 	}
 
 	public Subcategory getSubcategory() {

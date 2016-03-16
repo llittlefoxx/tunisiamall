@@ -15,6 +15,8 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder.In;
 
 import edu.tunisiamall.categorieServices.CategoryServicesLocal;
+import edu.tunisiamall.entities.AnonimousRating;
+import edu.tunisiamall.entities.Image;
 import edu.tunisiamall.entities.Order;
 import edu.tunisiamall.entities.Product;
 import edu.tunisiamall.entities.Promotion;
@@ -140,12 +142,9 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 
 	@Override
 	public List<Product> getProductsByPromotionSugg(int idSugP) {
-		// Query query = em.createQuery("select p from Product p where
-		// p.promotionSuggest.idPromotionSuggest = :idSugP")
-		// .setParameter("idSugP", idSugP);
-
-		// query.getResultList();
-		return findPromotionSuggestById(idSugP).getProducts();
+		 Query query = em.createQuery("select p from Product p where p.promotionSuggest.idPromotionSuggest = :idSugP")
+		 .setParameter("idSugP", idSugP);
+		return query.getResultList();
 	}
 
 	@Override
@@ -307,4 +306,16 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 		return net;
 	}
 
+	@Override
+	public List<Image> getImagesByProduct(int id) {
+		Query query=em.createQuery("select i from Image i where i.product.idProduct=:id").setParameter("id", id);
+		
+		return query.getResultList();
+	}
+@Override
+public void rateProduct(AnonimousRating an){
+	Date date=new Date();
+	an.setDate(date);
+	em.persist(an);
+}
 }

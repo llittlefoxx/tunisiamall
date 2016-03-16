@@ -4,16 +4,8 @@ import java.io.Serializable;
 import java.lang.Long;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-/**
- * Entity implementation class for Entity: Promotion
- *
- */
 @Entity
 
 public class Promotion implements Serializable {
@@ -25,10 +17,6 @@ public class Promotion implements Serializable {
 	private boolean state;
 	private Date startDate;
 	private Date endDate;
-
-	@OneToMany(mappedBy = "Promotion")
-	@JsonBackReference
-	private List<Product> produits;
 
 	private static final long serialVersionUID = 1L;
 
@@ -51,7 +39,6 @@ public class Promotion implements Serializable {
 	public void setValue(double value) {
 		this.value = value;
 	}
-	
 
 	public String getName() {
 		return name;
@@ -67,14 +54,6 @@ public class Promotion implements Serializable {
 
 	public void setState(boolean state) {
 		this.state = state;
-	}
-
-	public List<Product> getProduits() {
-		return produits;
-	}
-
-	public void setProduits(List<Product> produits) {
-		this.produits = produits;
 	}
 
 	public Date getStartDate() {

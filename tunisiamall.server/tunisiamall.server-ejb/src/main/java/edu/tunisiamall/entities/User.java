@@ -4,21 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
-
-/**
- * The persistent class for the user database table.
- * 
- */
 @Entity
-@DiscriminatorColumn(name="USER_TYPE")
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+@DiscriminatorColumn(name = "USER_TYPE")
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUser;
 
 	private String address;
@@ -43,59 +37,20 @@ public class User implements Serializable {
 	private String phone;
 
 	private String pictureUrl;
-	
-	private Boolean baned;
 
-	
+	private Boolean baned;
 
 	public Boolean getBaned() {
 		return baned;
 	}
 
-
 	public void setBaned(Boolean baned) {
 		this.baned = baned;
 	}
 
-	//bi-directional many-to-one association to Comment
-	@OneToMany(mappedBy="user")
-	private List<Comment> comments;
-
-	//bi-directional many-to-one association to Complaint
-	@OneToMany(mappedBy="user")
-	private List<Complaint> complaints;
-
-
-	//bi-directional many-to-many association to User
-	@ManyToMany
-	@JoinTable(
-		name="frindship"
-		, joinColumns={
-			@JoinColumn(name="Use_idUser")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="idUser")
-			}
-		)
-	private List<User> users1;
-
-
-	//bi-directional many-to-one association to Message
-	@OneToMany(mappedBy="user")
-	private List<Message> messages;
-
-	//bi-directional many-to-one association to Post
-	@OneToMany(mappedBy="user")
-	private List<Post> posts;
-	
-	
-	
-	
-
 	public User() {
 		super();
 	}
-	
 
 	public int getIdUser() {
 		return idUser;
@@ -193,58 +148,14 @@ public class User implements Serializable {
 		this.pictureUrl = pictureUrl;
 	}
 
-
-
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-
-	public List<Complaint> getComplaints() {
-		return complaints;
-	}
-
-	public void setComplaints(List<Complaint> complaints) {
-		this.complaints = complaints;
-	}
-
-	public List<User> getUsers1() {
-		return users1;
-	}
-
-	public void setUsers1(List<User> users1) {
-		this.users1 = users1;
-	}
-
-	public List<Message> getMessages() {
-		return messages;
-	}
-
-	public void setMessages(List<Message> messages) {
-		this.messages = messages;
-	}
-
-	public List<Post> getPosts() {
-		return posts;
-	}
-
-	public void setPosts(List<Post> posts) {
-		this.posts = posts;
-	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
 
 	@Override
 	public int hashCode() {
 		return idUser;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -259,7 +170,6 @@ public class User implements Serializable {
 			return false;
 		return true;
 	}
-
 
 	@Override
 	public String toString() {
