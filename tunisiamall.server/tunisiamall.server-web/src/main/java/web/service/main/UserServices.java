@@ -18,6 +18,7 @@ public class UserServices {
 		return ejb.authentificate(login, password);
 	}
 
+	
 	public void delete(int id) {
 		ejb.delete(id);
 	}
