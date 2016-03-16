@@ -51,6 +51,18 @@ public class Product implements Serializable {
 	public Product() {
 	}
 
+	
+	
+	public Product(int idProduct, String libelle, int qte, Store store) {
+		super();
+		this.idProduct = idProduct;
+		this.libelle = libelle;
+		this.qte = qte;
+		this.store = store;
+	}
+
+
+
 	public int getIdProduct() {
 		return this.idProduct;
 	}
@@ -153,6 +165,18 @@ public class Product implements Serializable {
 
 	public void setPromotionSuggest(PromotionSuggest promotionSuggest) {
 		this.promotionSuggest = promotionSuggest;
+	}
+
+
+
+	public Store getStore() {
+		return store;
+	}
+
+
+
+	public void setStore(Store store) {
+		this.store = store;
 	}
 
 }

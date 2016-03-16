@@ -86,5 +86,7 @@ public class Mvtstock implements Serializable {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+	
+	
 
 }
