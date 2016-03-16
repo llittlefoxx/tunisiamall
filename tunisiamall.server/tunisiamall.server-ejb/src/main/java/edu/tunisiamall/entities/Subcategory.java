@@ -23,6 +23,13 @@ public class Subcategory implements Serializable {
 	public Subcategory() {
 	}
 
+	public Subcategory(String description, String libelle, Category category) {
+		super();
+		this.description = description;
+		this.libelle = libelle;
+		this.category = category;
+	}
+
 	public int getIdSubCategory() {
 		return this.idSubCategory;
 	}

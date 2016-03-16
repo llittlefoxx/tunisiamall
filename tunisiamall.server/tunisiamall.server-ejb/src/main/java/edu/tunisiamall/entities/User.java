@@ -44,6 +44,22 @@ public class User implements Serializable {
 		return baned;
 	}
 
+	public User(String address, Date birthdate, String firstName, String gender, String job, String lastName,
+			String login, String mail, String password, String phone, String pictureUrl) {
+		super();
+		this.address = address;
+		this.birthdate = birthdate;
+		this.firstName = firstName;
+		this.gender = gender;
+		this.job = job;
+		this.lastName = lastName;
+		this.login = login;
+		this.mail = mail;
+		this.password = password;
+		this.phone = phone;
+		this.pictureUrl = pictureUrl;
+	}
+
 	public void setBaned(Boolean baned) {
 		this.baned = baned;
 	}

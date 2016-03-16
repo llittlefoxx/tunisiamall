@@ -19,6 +19,12 @@ public class Category implements Serializable {
 	public Category() {
 	}
 
+	public Category(String description, String libelle) {
+		super();
+		this.description = description;
+		this.libelle = libelle;
+	}
+
 	public int getIdCategory() {
 		return this.idCategory;
 	}

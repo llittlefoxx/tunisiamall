@@ -72,4 +72,13 @@ public class Promotion implements Serializable {
 		this.endDate = endDate;
 	}
 
+	public Promotion(String name, double value, boolean state, Date startDate, Date endDate) {
+		super();
+		this.name = name;
+		this.value = value;
+		this.state = state;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+
 }

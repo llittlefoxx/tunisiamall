@@ -28,6 +28,18 @@ public class Store implements Serializable {
 
 	private String tel;
 
+	public Store(String description, Category category, String name, Date openingDay, String status, String tel,
+			Shopowner shopowner) {
+		super();
+		this.description = description;
+		this.category = category;
+		this.name = name;
+		this.openingDay = openingDay;
+		this.status = status;
+		this.tel = tel;
+		this.shopowner = shopowner;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "idUser")
 	private Shopowner shopowner;

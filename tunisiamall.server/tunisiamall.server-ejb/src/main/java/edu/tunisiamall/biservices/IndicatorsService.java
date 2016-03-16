@@ -318,4 +318,10 @@ public void rateProduct(AnonimousRating an){
 	an.setDate(date);
 	em.persist(an);
 }
+
+@Override
+public void createPromotion(Promotion promotion) {
+	em.persist(promotion);
+	
+}
 }

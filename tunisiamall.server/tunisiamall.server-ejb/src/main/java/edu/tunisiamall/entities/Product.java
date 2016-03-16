@@ -48,6 +48,25 @@ public class Product implements Serializable {
 	@JoinColumn(name = "IdSubCategory")
 	private Subcategory subcategory;
 
+	public Product(double buyPrice, Date expDate, String libelle, int qte, int criticalZone, double sellPrice,
+			String state, String tag, double tax, edu.tunisiamall.entities.Promotion promotion,
+			PromotionSuggest promotionSuggest, Store store, Subcategory subcategory) {
+		super();
+		this.buyPrice = buyPrice;
+		this.expDate = expDate;
+		this.libelle = libelle;
+		this.qte = qte;
+		this.criticalZone = criticalZone;
+		this.sellPrice = sellPrice;
+		this.state = state;
+		this.tag = tag;
+		this.tax = tax;
+		Promotion = promotion;
+		this.promotionSuggest = promotionSuggest;
+		this.store = store;
+		this.subcategory = subcategory;
+	}
+
 	public Product() {
 	}
 
