@@ -3,27 +3,20 @@ package edu.tunisiamall.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the storeevent database table.
- * 
- */
 @Entity
-@NamedQuery(name="Storeevent.findAll", query="SELECT s FROM Storeevent s")
+@NamedQuery(name = "Storeevent.findAll", query = "SELECT s FROM Storeevent s")
 public class Storeevent implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
 	private StoreeventPK id;
 
-	//bi-directional many-to-one association to Store
 	@ManyToOne
-	@JoinColumn(name="IdStroe")
+	@JoinColumn(name = "idStore", insertable = false, updatable = false)
 	private Store store;
 
-	//bi-directional many-to-one association to Event
 	@ManyToOne
-	@JoinColumn(name="IdEvent")
+	@JoinColumn(name = "idEvent", insertable = false, updatable = false)
 	private Event event;
 
 	public Storeevent() {

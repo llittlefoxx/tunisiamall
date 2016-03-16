@@ -4,14 +4,9 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
-/**
- * The persistent class for the orders database table.
- * 
- */
 @Entity
-@Table(name = "orders")
+@Table(name="Orders")
 @NamedQuery(name = "Order.findAll", query = "SELECT o FROM Order o")
 public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -34,20 +29,15 @@ public class Order implements Serializable {
 
 	private String statusPayment;
 
-	// bi-directional many-to-one association to Customer
 	@ManyToOne
 	@JoinColumn(name = "idUser")
 	private Customer customer;
-
-
-	@OneToMany(mappedBy = "order")
-	private List<OrderLine> orderLines;
 
 	public Order() {
 	}
 
 	public int getIdOrder() {
-		return this.idOrder;
+		return idOrder;
 	}
 
 	public void setIdOrder(int idOrder) {
@@ -55,7 +45,7 @@ public class Order implements Serializable {
 	}
 
 	public BigDecimal getAmountPayed() {
-		return this.amountPayed;
+		return amountPayed;
 	}
 
 	public void setAmountPayed(BigDecimal amountPayed) {
@@ -63,7 +53,7 @@ public class Order implements Serializable {
 	}
 
 	public String getCardHolder() {
-		return this.cardHolder;
+		return cardHolder;
 	}
 
 	public void setCardHolder(String cardHolder) {
@@ -71,7 +61,7 @@ public class Order implements Serializable {
 	}
 
 	public Date getDate() {
-		return this.date;
+		return date;
 	}
 
 	public void setDate(Date date) {
@@ -79,7 +69,7 @@ public class Order implements Serializable {
 	}
 
 	public Date getDatePay() {
-		return this.datePay;
+		return datePay;
 	}
 
 	public void setDatePay(Date datePay) {
@@ -87,7 +77,7 @@ public class Order implements Serializable {
 	}
 
 	public String getOrderStatus() {
-		return this.orderStatus;
+		return orderStatus;
 	}
 
 	public void setOrderStatus(String orderStatus) {
@@ -95,7 +85,7 @@ public class Order implements Serializable {
 	}
 
 	public String getStatusPayment() {
-		return this.statusPayment;
+		return statusPayment;
 	}
 
 	public void setStatusPayment(String statusPayment) {
@@ -103,21 +93,11 @@ public class Order implements Serializable {
 	}
 
 	public Customer getCustomer() {
-		return this.customer;
+		return customer;
 	}
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
-	public List<OrderLine> getOrderLines() {
-		return orderLines;
-	}
-
-	public void setOrderLines(List<OrderLine> orderLines) {
-		this.orderLines = orderLines;
-	}
-
-
 
 }
