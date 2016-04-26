@@ -9,7 +9,7 @@
 
 <h:head>
 	<title><ui:insert name="pageTitle" /></title>
-
+<h:outputStylesheet  library="css" name="#{request.contextPath}/resources/styles/main.css" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Ottavio Html Template - One Page Layout</title>
@@ -19,29 +19,30 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
 	<link rel="stylesheet"
 		href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700" />
-	<link rel="stylesheet" href="/resources/styles/font-awesome.css" />
-	<link rel="stylesheet" href="/resources/styles/owl.carousel.css" />
-	<link rel="stylesheet" href="/resources/styles/owl.theme.css" />
-	<link rel="stylesheet" href="/resources/styles/slit-slider-style.css" />
-	<link rel="stylesheet" href="/resources/styles/slit-slider-custom.css" />
-	<link rel="stylesheet" href="/resources/styles/idangerous.swiper.css" />
-	<link rel="stylesheet" href="/resources/styles/yamm.css" />
-	<link rel="stylesheet" href="/resources/styles/animate.css" />
-	<link rel="stylesheet" href="/resources/styles/prettyPhoto.css" />
-	<link rel="stylesheet" href="/resources/styles/bootstrap-slider.css" />
-	<link rel="stylesheet" href="/resources/styles/device-mockups2.css" />
-	<link rel="stylesheet" href="/resources/styles/bootstrap.min.css" />
-	<link rel="stylesheet" href="/resources/styles/main.css" />
-	<link rel="stylesheet" href="/resources/styles/main-responsive.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/font-awesome.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/owl.carousel.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/owl.theme.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/slit-slider-style.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/slit-slider-custom.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/idangerous.swiper.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/yamm.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/animate.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/prettyPhoto.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/bootstrap-slider.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/device-mockups2.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/bootstrap.min.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/main.css" />
+	<link rel="stylesheet" href="#{request.contextPath}/resources/styles/main-responsive.css" />
 	<link id="primary_color_scheme" rel="stylesheet"
-		href="/resources/styles/theme_meadow.css" />
-	<script src="/resources/scripts/vendor/modernizr.js"></script>
+		href="#{request.contextPath}/resources/styles/theme_meadow.css" />
+	<script src="#{request.contextPath}/resources/scripts/vendor/modernizr.js"></script>
 	<noscript>
-		<link rel="stylesheet" href="/resources/styles/styleNoJs.css" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/styles/styleNoJs.css" />
 	</noscript>
 </h:head>
 
 <body>
+
 	<div id="load"></div>
 	<!--[if lt IE 9]>
     <p class="browsehappy">You are using an strong outdated browser. <br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -68,6 +69,7 @@
 						<a href="#"><i class="fa fa-times"></i></a>
 					</div>
 				</div>
+				<ui:insert name="pageContent" />
 			</div>
 		</form>
 		<div class="container">
@@ -76,8 +78,8 @@
 					<i class="fa fa-align-justify fa-lg"></i>
 				</button>
 				<a href="#" class="navbar-brand"><img
-					src="/resources/img/logo-white.png" alt="" class="logo-white" /><img
-					src="/resources/img/logo-dark.png" alt="" class="logo-dark" /></a>
+					src="#{request.contextPath}/resources/img/logo-white.png" alt="" class="logo-white" /><img
+					src="#{request.contextPath}/resources/img/logo-dark.png" alt="" class="logo-dark" /></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right service-nav">
@@ -115,11 +117,11 @@
 							<div class="shopping_cart_dropdown">
 								<ul class="cart_list product_list_widget">
 									<li><a href="#" class="delete"><i class="fa fa-close"></i></a><a
-										href="#"><img alt="" src="/resources/img/products/3.jpg" /><span>New
+										href="#"><img alt="" src="#{request.contextPath}/resources/img/products/3.jpg" /><span>New
 												Peace Baja</span></a>
 										<h5 class="quantity">45.00</h5></li>
 									<li><a href="#" class="delete"><i class="fa fa-close"></i></a><a
-										href="#"><img alt="" src="/resources/img/products/5.jpg" /><span>Sunny
+										href="#"><img alt="" src="#{request.contextPath}/resources/img/products/5.jpg" /><span>Sunny
 												Tank Selected</span></a>
 										<h5 class="quantity">25.00</h5></li>
 								</ul>
@@ -170,7 +172,7 @@
 						class="sl-slide-inner">
 						<div class="slide-container">
 							<div class="slide-content text-center">
-								<img src="/resources/img/themes/meadow/logo-intro.png"
+								<img src="#{request.contextPath}/resources/img/themes/meadow/logo-intro.png"
 									alt="Ottavio" class="deco" />
 								<h2 class="main-title">
 									Clean, fla polished&nbsp;<span class="text-primary">Design</span>
@@ -218,7 +220,7 @@
 						class="sl-slide-inner">
 						<div class="slide-container">
 							<div class="slide-content text-center">
-								<img src="/resources/img/themes/meadow/logo-intro.png"
+								<img src="#{request.contextPath}/resources/img/themes/meadow/logo-intro.png"
 									alt="Ottavio" class="deco" />
 								<h2 class="main-title">
 									Fully responsive <span class="text-primary">Retina ready</span>
@@ -276,7 +278,7 @@
 						data-color="black" class="device-mockup">
 						<div class="device">
 							<div class="screen">
-								<img src="/resources/img/portfolio/wr4c5.jpg" alt="" width="577"
+								<img src="#{request.contextPath}/resources/img/portfolio/wr4c5.jpg" alt="" width="577"
 									height="433" class="img-responsive" />
 							</div>
 						</div>
@@ -389,15 +391,15 @@
 										class="owl-carousel owl-theme">
 										<!-- Start Item Slide-->
 										<div class="item">
-											<img src="/resources/img/ipad_slide_1.jpg" alt=""
+											<img src="#{request.contextPath}/resources/img/ipad_slide_1.jpg" alt=""
 												class="img-responsive" />
 										</div>
 										<div class="item">
-											<img src="/resources/img/ipad_slide_2.jpg" alt=""
+											<img src="#{request.contextPath}/resources/img/ipad_slide_2.jpg" alt=""
 												class="img-responsive" />
 										</div>
 										<div class="item">
-											<img src="/resources/img/ipad_slide.jpg" alt=""
+											<img src="#{request.contextPath}/resources/img/ipad_slide.jpg" alt=""
 												class="img-responsive" />
 										</div>
 										<!-- End Item Slide-->
@@ -454,7 +456,7 @@
 		<ul id="isotope" class="portfolio isotope">
 			<li class="item videography">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/05.jpg" alt="Extreme Freestyle"
+				<img src="#{request.contextPath}/resources/img/portfolio/05.jpg" alt="Extreme Freestyle"
 				class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -471,7 +473,7 @@
 			</li>
 			<li class="item photography width2x height2x">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/11asw5.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/11asw5.jpg"
 				alt="Looking at The Horizon" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -489,7 +491,7 @@
 			</li>
 			<li class="item photography design">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/wr4c5.jpg" alt="Design Studio"
+				<img src="#{request.contextPath}/resources/img/portfolio/wr4c5.jpg" alt="Design Studio"
 				class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -507,7 +509,7 @@
 			</li>
 			<li class="item design">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/mac.jpg" alt="Minimalist Design"
+				<img src="#{request.contextPath}/resources/img/portfolio/mac.jpg" alt="Minimalist Design"
 				class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -524,7 +526,7 @@
 			</li>
 			<li class="item branding width2x">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/2048asxsax.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/2048asxsax.jpg"
 				alt="Business Card" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -542,7 +544,7 @@
 			</li>
 			<li class="item branding">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/20aaaaa48.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/20aaaaa48.jpg"
 				alt="Horst brand identity" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -560,7 +562,7 @@
 			</li>
 			<li class="item design photography">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/20sshsh48.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/20sshsh48.jpg"
 				alt="Infinity Mirror" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -578,7 +580,7 @@
 			</li>
 			<li class="item design">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/247610222_460fa350b6_o.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/247610222_460fa350b6_o.jpg"
 				alt="Simple Desk Design" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -596,7 +598,7 @@
 			</li>
 			<li class="item videography">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/351609423_0595d6fc0e_o.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/351609423_0595d6fc0e_o.jpg"
 				alt="Artist collection" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -614,7 +616,7 @@
 			</li>
 			<li class="item photography height2x">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/5.jpg" alt="Business airport"
+				<img src="#{request.contextPath}/resources/img/portfolio/5.jpg" alt="Business airport"
 				class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -631,7 +633,7 @@
 			</li>
 			<li class="item photography">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/5a.jpg" alt="Spring Up"
+				<img src="#{request.contextPath}/resources/img/portfolio/5a.jpg" alt="Spring Up"
 				class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -648,7 +650,7 @@
 			</li>
 			<li class="item branding">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/erger20481.jpg" alt="System One"
+				<img src="#{request.contextPath}/resources/img/portfolio/erger20481.jpg" alt="System One"
 				class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -666,7 +668,7 @@
 			</li>
 			<li class="item branding">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/12233432048.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/12233432048.jpg"
 				alt="Authentisch Mann" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -684,7 +686,7 @@
 			</li>
 			<li class="item photography">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/erger2048.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/erger2048.jpg"
 				alt="Manhattan Street" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -702,7 +704,7 @@
 			</li>
 			<li class="item branding">
 				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
-				<img src="/resources/img/portfolio/wr4c51.jpg"
+				<img src="#{request.contextPath}/resources/img/portfolio/wr4c51.jpg"
 				alt="Simple Frame Mockup" class="img-responsive" />
 				<div class="mask">
 					<div class="mask-content">
@@ -750,7 +752,7 @@
 		<div class="container sep-top-lg">
 			<div class="row">
 				<div class="col-md-12">
-					<img src="/resources/img/eshop-intro-img.png" alt=""
+					<img src="#{request.contextPath}/resources/img/eshop-intro-img.png" alt=""
 						class="img-responsive shop-intro-img" />
 				</div>
 			</div>
@@ -793,7 +795,7 @@
 				<div class="row">
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/4.jpg" alt="Only You"
+							src="#{request.contextPath}/resources/img/products/4.jpg" alt="Only You"
 							class="img-responsive" /></a>
 						<div class="product-title">
 							<span class="upper">woman</span>
@@ -815,7 +817,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/2.jpg" alt="Osaka Men's Shirt"
+							src="#{request.contextPath}/resources/img/products/2.jpg" alt="Osaka Men's Shirt"
 							class="img-responsive" /></a>
 						<div class="product-title">
 							<span class="upper">man</span>
@@ -837,7 +839,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/8.jpg" alt="Woman's Purse"
+							src="#{request.contextPath}/resources/img/products/8.jpg" alt="Woman's Purse"
 							class="img-responsive" /></a>
 						<div class="product-title">
 							<span class="upper">woman</span>
@@ -859,7 +861,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/3.jpg" alt="Heaven White Shirt"
+							src="#{request.contextPath}/resources/img/products/3.jpg" alt="Heaven White Shirt"
 							class="img-responsive" /><span class="bullet">Sale</span></a>
 						<div class="product-title">
 							<span class="upper">woman</span>
@@ -881,7 +883,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/1.jpg"
+							src="#{request.contextPath}/resources/img/products/1.jpg"
 							alt="Sunny Tank Selected Femme" class="img-responsive" /><span
 							class="bullet">Sale</span></a>
 						<div class="product-title">
@@ -904,7 +906,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/5.jpg" alt="Dublin Blue Shirt"
+							src="#{request.contextPath}/resources/img/products/5.jpg" alt="Dublin Blue Shirt"
 							class="img-responsive" /><span class="bullet out">Out of
 								Stock</span></a>
 						<div class="product-title">
@@ -927,7 +929,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/7.jpg" alt="Woman's Jeans"
+							src="#{request.contextPath}/resources/img/products/7.jpg" alt="Woman's Jeans"
 							class="img-responsive" /></a>
 						<div class="product-title">
 							<span class="upper">woman</span>
@@ -949,7 +951,7 @@
 					</div>
 					<div class="col-md-3 sep-bottom-lg">
 						<a href="shop-product.html" class="product-image outline-outward"><img
-							src="/resources/img/products/6.jpg" alt="Robert jacket"
+							src="#{request.contextPath}/resources/img/products/6.jpg" alt="Robert jacket"
 							class="img-responsive" /></a>
 						<div class="product-title">
 							<span class="upper">man</span>
@@ -989,7 +991,7 @@
 									<div class="twitter-post">
 										<i class="fa fa-twitter fa-4x primary"></i>
 										<div class="sep-top-xs">
-											<a href="#"><img src="/resources/img/team/square/5.jpg"
+											<a href="#"><img src="#{request.contextPath}/resources/img/team/square/5.jpg"
 												alt="Anna Larkins" width="113" height="113"
 												class="img-circle user-thumb" /></a>
 											<h5 class="light">Anna Larkins</h5>
@@ -1007,7 +1009,7 @@
 									<div class="twitter-post">
 										<i class="fa fa-twitter fa-4x primary"></i>
 										<div class="sep-top-xs">
-											<a href="#"><img src="/resources/img/team/square/3.jpg"
+											<a href="#"><img src="#{request.contextPath}/resources/img/team/square/3.jpg"
 												alt="Scott Sanchez" width="113" height="113"
 												class="img-circle user-thumb" /></a>
 											<h5 class="light">Scott Sanchez</h5>
@@ -1025,7 +1027,7 @@
 									<div class="twitter-post">
 										<i class="fa fa-twitter fa-4x primary"></i>
 										<div class="sep-top-xs">
-											<a href="#"><img src="/resources/img/team/square/4.jpg"
+											<a href="#"><img src="#{request.contextPath}/resources/img/team/square/4.jpg"
 												alt="Michelle White" width="113" height="113"
 												class="img-circle user-thumb" /></a>
 											<h5 class="light">Michelle White</h5>
@@ -1055,25 +1057,25 @@
 						<div class="row">
 							<div class="col-sm-3">
 								<div class="sep-top-lg">
-									<img src="/resources/img/clients/1.png" alt=""
+									<img src="#{request.contextPath}/resources/img/clients/1.png" alt=""
 										class="img-responsive" />
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="sep-top-lg">
-									<img src="/resources/img/clients/2.png" alt=""
+									<img src="#{request.contextPath}/resources/img/clients/2.png" alt=""
 										class="img-responsive" />
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="sep-top-lg">
-									<img src="/resources/img/clients/3.png" alt=""
+									<img src="#{request.contextPath}/resources/img/clients/3.png" alt=""
 										class="img-responsive" />
 								</div>
 							</div>
 							<div class="col-sm-3">
 								<div class="sep-top-lg">
-									<img src="/resources/img/clients/4.png" alt=""
+									<img src="#{request.contextPath}/resources/img/clients/4.png" alt=""
 										class="img-responsive" />
 								</div>
 							</div>
@@ -1110,13 +1112,13 @@
 				<div class="post-info text-center">
 					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
 						href="blog-detail-single.html"><img
-						src="/resources/img/team/square/4.jpg" alt="Michelle White"
+						src="#{request.contextPath}/resources/img/team/square/4.jpg" alt="Michelle White"
 						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
 						class="info-text pull-right text-left">Michelle White<small><a
 							href="blog-detail-single.html">0 Comment</a></small></span>
 				</div>
 				<a href="blog-detail-single.html"><img
-					src="/resources/img/blog1.jpg"
+					src="#{request.contextPath}/resources/img/blog1.jpg"
 					alt="Saepe Eveniet Voluptates Repudiandae" class="img-responsive" /></a>
 				<div class="post-content">
 					<h5>
@@ -1135,7 +1137,7 @@
 				<div class="post-info text-center">
 					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
 						href="blog-detail-single.html"><img
-						src="/resources/img/team/square/2.jpg" alt="Henry Kolms"
+						src="#{request.contextPath}/resources/img/team/square/2.jpg" alt="Henry Kolms"
 						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
 						class="info-text pull-right text-left">Henry Kolms<small><a
 							href="blog-detail-single.html">0 Comment</a></small></span>
@@ -1159,7 +1161,7 @@
 				<div class="post-info text-center">
 					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
 						href="blog-detail-single.html"><img
-						src="/resources/img/team/square/1.jpg" alt="Marc Crow"
+						src="#{request.contextPath}/resources/img/team/square/1.jpg" alt="Marc Crow"
 						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
 						class="info-text pull-right text-left">Marc Crow<small><a
 							href="blog-detail-single.html">0 Comment</a></small></span>
@@ -1170,15 +1172,15 @@
 					class="owl-carousel owl-theme">
 					<div class="item">
 						<a href="blog-detail-single.html"><img
-							src="/resources/img/blog2.jpg" alt="" class="img-responsive" /></a>
+							src="#{request.contextPath}/resources/img/blog2.jpg" alt="" class="img-responsive" /></a>
 					</div>
 					<div class="item">
 						<a href="blog-detail-single.html"><img
-							src="/resources/img/blog3.jpg" alt="" class="img-responsive" /></a>
+							src="#{request.contextPath}/resources/img/blog3.jpg" alt="" class="img-responsive" /></a>
 					</div>
 					<div class="item">
 						<a href="blog-detail-single.html"><img
-							src="/resources/img/blog4.jpg" alt="" class="img-responsive" /></a>
+							src="#{request.contextPath}/resources/img/blog4.jpg" alt="" class="img-responsive" /></a>
 					</div>
 				</div>
 				<div class="post-content">
@@ -1198,13 +1200,13 @@
 				<div class="post-info text-center">
 					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
 						href="blog-detail-single.html"><img
-						src="/resources/img/team/square/3.jpg" alt="Scott Sanchez"
+						src="#{request.contextPath}/resources/img/team/square/3.jpg" alt="Scott Sanchez"
 						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
 						class="info-text pull-right text-left">Scott Sanchez<small><a
 							href="blog-detail-single.html">0 Comment</a></small></span>
 				</div>
 				<a href="blog-detail-single.html"><img
-					src="/resources/img/blog5.jpg"
+					src="#{request.contextPath}/resources/img/blog5.jpg"
 					alt="Facilisis tincidunt justo eget urna leo"
 					class="img-responsive" /></a>
 				<div class="post-content">
@@ -1224,13 +1226,13 @@
 				<div class="post-info text-center">
 					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
 						href="blog-detail-single.html"><img
-						src="/resources/img/team/square/4.jpg" alt="Michelle White"
+						src="#{request.contextPath}/resources/img/team/square/4.jpg" alt="Michelle White"
 						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
 						class="info-text pull-right text-left">Michelle White<small><a
 							href="blog-detail-single.html">0 Comment</a></small></span>
 				</div>
 				<a href="blog-detail-single.html"><img
-					src="/resources/img/blog4.jpg"
+					src="#{request.contextPath}/resources/img/blog4.jpg"
 					alt="Facilisis tincidunt justo eget urna leo"
 					class="img-responsive" /></a>
 				<div class="post-content">
@@ -1445,7 +1447,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="team-photo">
-								<img src="/resources/img/team/portrait/5.jpg" alt="Anna Larkins"
+								<img src="#{request.contextPath}/resources/img/team/portrait/5.jpg" alt="Anna Larkins"
 									class="img-responsive" />
 								<div class="team-connection">
 									<div class="team-connection-list text-center">
@@ -1493,7 +1495,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="team-photo">
-								<img src="/resources/img/team/portrait/1.jpg" alt="Marc Crow"
+								<img src="#{request.contextPath}/resources/img/team/portrait/1.jpg" alt="Marc Crow"
 									class="img-responsive" />
 								<div class="team-connection">
 									<div class="team-connection-list text-center">
@@ -1541,7 +1543,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="team-photo">
-								<img src="/resources/img/team/portrait/3.jpg"
+								<img src="#{request.contextPath}/resources/img/team/portrait/3.jpg"
 									alt="Scott Sanchez" class="img-responsive" />
 								<div class="team-connection">
 									<div class="team-connection-list text-center">
@@ -1589,7 +1591,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="team-photo">
-								<img src="/resources/img/team/portrait/2.jpg" alt="Henry Kolms"
+								<img src="#{request.contextPath}/resources/img/team/portrait/2.jpg" alt="Henry Kolms"
 									class="img-responsive" />
 								<div class="team-connection">
 									<div class="team-connection-list text-center">
@@ -2001,7 +2003,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-6">
 						<div class="widget sep-top-lg">
-							<img src="/resources/img/logo-white.png" alt="" class="logo" /><small
+							<img src="#{request.contextPath}/resources/img/logo-white.png" alt="" class="logo" /><small
 								class="sep-top-xs sep-bottom-md">Dolor church-key
 								veniam, fap Bushwick mumblecore irure Vice consectetur 3 wolf
 								moon sapiente literally quinoa.</small>
@@ -2121,37 +2123,37 @@
 			<a href="#" class="fa fa-arrow-up fa-lg"></a>
 		</div>
 	</div>
-	<script src="/resources/scripts/vendor/jquery.js"></script>
-	<script src="/resources/scripts/vendor/queryloader2.min.js"></script>
-	<script src="/resources/scripts/vendor/owl.carousel.js"></script>
-	<script src="/resources/scripts/vendor/jquery.ba-cond.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.slitslider.js"></script>
-	<script src="/resources/scripts/vendor/idangerous.swiper.js"></script>
-	<script src="/resources/scripts/vendor/jquery.fitvids.js"></script>
-	<script src="/resources/scripts/vendor/jquery.countTo.js"></script>
-	<script src="/resources/scripts/vendor/TweenMax.min.js"></script>
-	<script src="/resources/scripts/vendor/ScrollToPlugin.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.scrollmagic.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.easypiechart.js"></script>
-	<script src="/resources/scripts/vendor/jquery.validate.js"></script>
-	<script src="/resources/scripts/vendor/wow.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.placeholder.js"></script>
-	<script src="/resources/scripts/vendor/jquery.easing.1.3.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.waitforimages.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.prettyPhoto.js"></script>
-	<script src="/resources/scripts/vendor/imagesloaded.pkgd.min.js"></script>
-	<script src="/resources/scripts/vendor/isotope.pkgd.min.js"></script>
-	<script src="/resources/scripts/vendor/jquery.fillparent.min.js"></script>
-	<script src="/resources/scripts/vendor/raphael-min.js"></script>
-	<script src="/resources/scripts/vendor/bootstrap.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/queryloader2.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/owl.carousel.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.ba-cond.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.slitslider.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/idangerous.swiper.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.fitvids.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.countTo.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/TweenMax.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/ScrollToPlugin.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.scrollmagic.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.easypiechart.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.validate.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/wow.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.placeholder.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.easing.1.3.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.waitforimages.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.prettyPhoto.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/imagesloaded.pkgd.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/isotope.pkgd.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/jquery.fillparent.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/raphael-min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/bootstrap.js"></script>
 	<script
-		src="/resources/scripts/vendor/jquery.bootstrap-touchspin.min.js"></script>
-	<script src="/resources/scripts/vendor/bootstrap-slider.js"></script>
-	<script src="/resources/scripts/vendor/bootstrap-rating-input.js"></script>
-	<script src="/resources/scripts/vendor/bootstrap-hover-dropdown.min.js"></script>
-	<script src="/resources/scripts/jquery.gmap.min.js"></script>
-	<script src="/resources/scripts/circle_diagram.js"></script>
-	<script src="/resources/scripts/main.js"></script>
+		src="#{request.contextPath}/resources/scripts/vendor/jquery.bootstrap-touchspin.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/bootstrap-slider.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/bootstrap-rating-input.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/vendor/bootstrap-hover-dropdown.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/jquery.gmap.min.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/circle_diagram.js"></script>
+	<script src="#{request.contextPath}/resources/scripts/main.js"></script>
 	<script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
