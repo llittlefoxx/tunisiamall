@@ -56,6 +56,6 @@ public class UserServices {
 	@Path("customers")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Customer> findAllCustomer(){
-		return ejb.findAllCustomer();
+		return null;
 	}
 }

@@ -1,0 +1,2164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="pageTitle" /></title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Ottavio Html Template - One Page Layout</title>
+	<meta name="description" content="One Page Layout" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+	<link rel="stylesheet"
+		href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700" />
+	<link rel="stylesheet" href="/resources/styles/font-awesome.css" />
+	<link rel="stylesheet" href="/resources/styles/owl.carousel.css" />
+	<link rel="stylesheet" href="/resources/styles/owl.theme.css" />
+	<link rel="stylesheet" href="/resources/styles/slit-slider-style.css" />
+	<link rel="stylesheet" href="/resources/styles/slit-slider-custom.css" />
+	<link rel="stylesheet" href="/resources/styles/idangerous.swiper.css" />
+	<link rel="stylesheet" href="/resources/styles/yamm.css" />
+	<link rel="stylesheet" href="/resources/styles/animate.css" />
+	<link rel="stylesheet" href="/resources/styles/prettyPhoto.css" />
+	<link rel="stylesheet" href="/resources/styles/bootstrap-slider.css" />
+	<link rel="stylesheet" href="/resources/styles/device-mockups2.css" />
+	<link rel="stylesheet" href="/resources/styles/bootstrap.min.css" />
+	<link rel="stylesheet" href="/resources/styles/main.css" />
+	<link rel="stylesheet" href="/resources/styles/main-responsive.css" />
+	<link id="primary_color_scheme" rel="stylesheet"
+		href="/resources/styles/theme_meadow.css" />
+	<script src="/resources/scripts/vendor/modernizr.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="/resources/styles/styleNoJs.css" />
+	</noscript>
+</h:head>
+
+<body>
+	<div id="load"></div>
+	<!--[if lt IE 9]>
+    <p class="browsehappy">You are using an strong outdated browser. <br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+	<div class="page">
+		<!-- Start Nav Section-->
+		<nav id="main-navigation" role="navigation"
+			class="navbar navbar-fixed-top navbar-standard">
+		<a href="javascript:void(0)" class="search_button"><i
+			class="fa fa-search"></i></a>
+		<form action="search.html" method="get" role="search"
+			class="h_search_form">
+			<div class="container">
+				<div class="h_search_form_wrapper">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-sm">
+								<i class="fa fa-search fa-lg"></i>
+							</button>
+						</span> <input type="text" placeholder="Search on site"
+							class="form-control" />
+					</div>
+					<div class="h_search_close">
+						<a href="#"><i class="fa fa-times"></i></a>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle">
+					<i class="fa fa-align-justify fa-lg"></i>
+				</button>
+				<a href="#" class="navbar-brand"><img
+					src="/resources/img/logo-white.png" alt="" class="logo-white" /><img
+					src="/resources/img/logo-dark.png" alt="" class="logo-dark" /></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right service-nav">
+					<li><a id="dropdownMenuLogin" href="#" data-toggle="dropdown"
+						class="upper dropdown-toggle">Login</a>
+						<div aria-labelledby="dropdownMenuLogin"
+							class="dropdown-menu widget-box">
+							<form>
+								<div class="form-group">
+									<label class="sr-only">Username or Email</label> <input
+										type="text" value="" placeholder="Username or Email" name=""
+										class="form-control input-lg" />
+								</div>
+								<div class="form-group">
+									<label class="sr-only">Password</label> <input type="password"
+										value="" placeholder="Password" name=""
+										class="form-control input-lg" />
+								</div>
+								<div class="form-inline form-group">
+									<button type="button" class="btn btn-primary btn-xs">Login</button>
+									<div class="checkbox">
+										<label> <input type="checkbox" /><small>
+												Remember me</small>
+										</label>
+									</div>
+								</div>
+								<a href="#"><small>Lost your Password?</small></a>
+							</form>
+						</div></li>
+					<li><a id="dropdownMenuCart" href="#" data-toggle="dropdown"
+						class="dropdown-toggle"><i class="fa fa-shopping-cart fa-lg"></i>&nbsp;<span
+							class="badge">2</span></a>
+						<div aria-labelledby="dropdownMenuCart"
+							class="dropdown-menu widget-box">
+							<div class="shopping_cart_dropdown">
+								<ul class="cart_list product_list_widget">
+									<li><a href="#" class="delete"><i class="fa fa-close"></i></a><a
+										href="#"><img alt="" src="/resources/img/products/3.jpg" /><span>New
+												Peace Baja</span></a>
+										<h5 class="quantity">45.00</h5></li>
+									<li><a href="#" class="delete"><i class="fa fa-close"></i></a><a
+										href="#"><img alt="" src="/resources/img/products/5.jpg" /><span>Sunny
+												Tank Selected</span></a>
+										<h5 class="quantity">25.00</h5></li>
+								</ul>
+								<div class="total">
+									<h6>Subtotal</h6>
+									<span>$70.00</span>
+								</div>
+								<div class="action-button">
+									<a href="shop-cart.html"
+										class="btn btn-dark btn-bordered btn-xs upper">View Cart</a><a
+										href="shop-checkout.html" class="btn btn-primary btn-xs upper">Checkout</a>
+								</div>
+							</div>
+						</div></li>
+				</ul>
+				<button type="button" class="navbar-toggle">
+					<i class="fa fa-close fa-lg"></i>
+				</button>
+				<ul id="one-page-menu" role="menu"
+					class="nav navbar-nav navbar-left">
+					<li><a href="#home" title="Home" data-ref="home">Home</a></li>
+					<li><a href="#about" title="About us" data-ref="about">About
+							us</a></li>
+					<li><a href="#portfolio" title="Portfolio"
+						data-ref="portfolio">Portfolio</a></li>
+					<li><a href="#shop" title="Shop" data-ref="shop">Shop</a></li>
+					<li><a href="#blog" title="Blog" data-ref="blog">Blog</a></li>
+					<li><a href="#pricing" title="Pricing" data-ref="pricing">Pricing</a>
+					</li>
+					<li><a href="#team" title="Team" data-ref="team">Team</a></li>
+					<li><a href="#services" title="Services" data-ref="services">Services</a>
+					</li>
+					<li><a href="#contacts" title="Contacts" data-ref="contacts">Contacts</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</nav>
+		<!-- Start Home Section-->
+		<section id="home" class="demo-1"> <!--     Codrops top bar-->
+		<div id="slider" class="sl-slider-wrapper">
+			<div class="sl-slider">
+				<!-- start slide-->
+				<div data-orientation="horizontal" data-slice1-rotation="-25"
+					data-slice2-rotation="-25" data-slice1-scale="2"
+					data-slice2-scale="2" class="sl-slide">
+					<div style="background-image: url(img/intro-home9.jpg);"
+						class="sl-slide-inner">
+						<div class="slide-container">
+							<div class="slide-content text-center">
+								<img src="/resources/img/themes/meadow/logo-intro.png"
+									alt="Ottavio" class="deco" />
+								<h2 class="main-title">
+									Clean, fla polished&nbsp;<span class="text-primary">Design</span>
+								</h2>
+								<blockquote>
+									<p>Using best web solutions with html5/css3</p>
+									<a class="btn btn-light btn-bordered btn-lg">Our Works</a><a
+										href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis"
+										target="_blank" class="btn btn-primary btn-lg">Buy the
+										theme</a>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end slide-->
+				<!-- start slide-->
+				<div data-orientation="horizontal" data-slice1-rotation="10"
+					data-slice2-rotation="-15" data-slice1-scale="1.5"
+					data-slice2-scale="1.5" class="sl-slide">
+					<div style="background-image: url(img/intro-home1.jpg);"
+						class="sl-slide-inner">
+						<div class="slide-container">
+							<div class="slide-content text-center">
+								<h2 class="main-title">
+									Multi-purpose html&nbsp;<span class="text-primary">Template</span>
+								</h2>
+								<blockquote>
+									<p>Unique and modern design</p>
+									<a class="btn btn-light btn-bordered btn-lg">Our Works</a><a
+										href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis"
+										target="_blank" class="btn btn-primary btn-lg">Buy the
+										theme</a>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end slide-->
+				<!-- start slide-->
+				<div data-orientation="horizontal" data-slice1-rotation="3"
+					data-slice2-rotation="3" data-slice1-scale="2"
+					data-slice2-scale="1" class="sl-slide">
+					<div style="background-image: url(img/intro-home7.jpg);"
+						class="sl-slide-inner">
+						<div class="slide-container">
+							<div class="slide-content text-center">
+								<img src="/resources/img/themes/meadow/logo-intro.png"
+									alt="Ottavio" class="deco" />
+								<h2 class="main-title">
+									Fully responsive <span class="text-primary">Retina ready</span>
+								</h2>
+								<blockquote>
+									<p>Based on twitter bootstrap</p>
+									<a class="btn btn-light btn-bordered btn-lg">Our Works</a><a
+										href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis"
+										target="_blank" class="btn btn-primary btn-lg">Buy the
+										theme</a>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end slide-->
+			</div>
+			<!--       /sl-slider-->
+			<nav id="nav-arrows" class="nav-arrows">
+			<span class="nav-arrow-prev">Previous</span>
+			<span class="nav-arrow-next">Next</span></nav>
+			<nav id="nav-dots" class="nav-dots">
+			<span class="nav-dot-current"></span>
+			<span></span>
+			<span></span></nav>
+		</div>
+		<!--     /slider-wrapper--> </section>
+		<!-- End Home Section-->
+		<!-- Start About section-->
+		<section id="about" class="sep-top-2x sep-bottom-3x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 text-right">
+					<div class="sep-top-md sep-bottom-sm">
+						<div class="bordered-right section-title">
+							<h2 class="upper">
+								Want to say Hey or find<span class="label-colored">out
+									more?</span>
+							</h2>
+						</div>
+						<p class="lead">Lorem Ipsum has been the industry's standard
+							dummy text ever since the 1500s, when an unknown printer took a
+							galley of type and scrambled it to make a type.</p>
+						<div class="sep-top-xs">
+							<a
+								href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis"
+								target="_blank" data-wow-delay=".5s"
+								class="btn btn-primary btn-lg wow bounceInLeft">Learn about
+								us</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div data-device="macbook" data-orientation="landscape"
+						data-color="black" class="device-mockup">
+						<div class="device">
+							<div class="screen">
+								<img src="/resources/img/portfolio/wr4c5.jpg" alt="" width="577"
+									height="433" class="img-responsive" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 sep-top-2x icon-gradient">
+					<div class="icon-box icon-horizontal icon-lg">
+						<div data-wow-delay=".5s"
+							class="icon-content img-circle wow bounceInUp">
+							<i class="fa fa-lightbulb-o"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5 class="upper">Strategy Solutions</h5>
+							<p>Lorem Ipsum has been the industry's standard dummy text
+								ever since the 1500s, when an unknown printer took</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 sep-top-2x icon-gradient">
+					<div class="icon-box icon-horizontal icon-lg">
+						<div data-wow-delay=".5s"
+							class="icon-content img-circle wow bounceInUp">
+							<i class="fa fa-gamepad"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5 class="upper">Digital Design</h5>
+							<p>Lorem Ipsum has been the industry's standard dummy text
+								ever since the 1500s, when an unknown printer took</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 sep-top-2x icon-gradient">
+					<div class="icon-box icon-horizontal icon-lg">
+						<div data-wow-delay=".5s"
+							class="icon-content img-circle wow bounceInUp">
+							<i class="fa fa-code-fork"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5 class="upper">Web Development</h5>
+							<p>Lorem Ipsum has been the industry's standard dummy text
+								ever since the 1500s, when an unknown printer took</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 sep-top-2x icon-gradient">
+					<div class="icon-box icon-horizontal icon-lg">
+						<div data-wow-delay=".5s"
+							class="icon-content img-circle wow bounceInUp">
+							<i class="fa fa-android"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5 class="upper">App Development</h5>
+							<p>Lorem Ipsum has been the industry's standard dummy text
+								ever since the 1500s, when an unknown printer took</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End About section-->
+		<!-- Start Parallax section-->
+		<section id="parallax0"
+			style="background-image: url(img/parallax1.jpg);" class="parallax">
+		<div class="section-shade sep-top-5x sep-bottom-5x">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 text-right">
+						<div class="section-title">
+							<div class="bordered-right light">
+								<h2 class="upper small-space">
+									Powerfully responsive<span> design</span>
+								</h2>
+								<p class="lead x2">Multi-Purpose html Theme</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Parallax section-->
+		<!-- Start Portfolio section-->
+		<section id="portfolio" class="sep-top-3x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="section-title">
+						<h2 class="bordered-left upper wow flipInX">
+							Our<br />Work
+						</h2>
+						<p class="lead wow flipInX">Lorem Ipsum has been the
+							industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a
+							type specimen book. It has survived not only five centuries, but
+							also the leap into electronic typesetting, remaining essentially</p>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="device-content">
+						<div data-device="ipad" data-orientation="landscape"
+							data-color="white" class="device-mockup">
+							<div class="device">
+								<div class="screen">
+									<div data-navitagion="false" data-slide-speed="300"
+										data-pagination-speed="400" data-single-item="true"
+										data-auto-height="true" data-auto-play="true"
+										class="owl-carousel owl-theme">
+										<!-- Start Item Slide-->
+										<div class="item">
+											<img src="/resources/img/ipad_slide_1.jpg" alt=""
+												class="img-responsive" />
+										</div>
+										<div class="item">
+											<img src="/resources/img/ipad_slide_2.jpg" alt=""
+												class="img-responsive" />
+										</div>
+										<div class="item">
+											<img src="/resources/img/ipad_slide.jpg" alt=""
+												class="img-responsive" />
+										</div>
+										<!-- End Item Slide-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-primary sep-top-md sep-bottom-md">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<p class="lead x2 light wow bounceInLeft">We have put together
+							the best of our experience</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section id="portfolio-gallery" data-folder="/portfolio"
+			class="sep-top-md">
+		<div class="container">
+			<div id="filters" class="sep-bottom-lg">
+				<button data-filter="*" class="btn btn-sm btn-primary upper">show
+					all</button>
+				<button data-filter=".branding" class="btn btn-sm upper">branding</button>
+				<button data-filter=".design" class="btn btn-sm upper">design</button>
+				<button data-filter=".photography" class="btn btn-sm upper">photography</button>
+				<button data-filter=".videography" class="btn btn-sm upper">videography</button>
+			</div>
+		</div>
+		<!-- Start Ajax Section-->
+		<div style="position: relative;" class="ajax-section section-gray">
+			<div class="closeProject">
+				<a href="#loader"><i class="fa fa-times"></i></a>
+			</div>
+			<div class="loader">
+				<i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+			</div>
+			<div class="container">
+				<div class="status-message"></div>
+				<div class="ajax-content-outer">
+					<div class="ajax-content-inner"></div>
+					<div class="project-navigation nav-arrows">
+						<a href="#" class="nextProject"><span class="nav-arrow-next"></span></a><a
+							href="#" class="prevProject"><span class="nav-arrow-prev"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Ajax Section-->
+		<ul id="isotope" class="portfolio isotope">
+			<li class="item videography">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/05.jpg" alt="Extreme Freestyle"
+				class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=0" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a href="img/portfolio/05.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Extreme Freestyle"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Extreme Freestyle</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item photography width2x height2x">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/11asw5.jpg"
+				alt="Looking at The Horizon" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=1" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/11asw5.jpg" data-rel="prettyPhoto[pp_gal]"
+								title="Looking at The Horizon" class="info"><i
+								class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Looking at The Horizon</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item photography design">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/wr4c5.jpg" alt="Design Studio"
+				class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=2" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/wr4c5.jpg" data-rel="prettyPhoto[pp_gal]"
+								title="Design Studio" class="info"><i
+								class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Design Studio</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item design">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/mac.jpg" alt="Minimalist Design"
+				class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=3" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a href="img/portfolio/mac.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Minimalist Design"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Minimalist Design</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item branding width2x">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/2048asxsax.jpg"
+				alt="Business Card" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=4" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/2048asxsax.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Business Card"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Business Card</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item branding">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/20aaaaa48.jpg"
+				alt="Horst brand identity" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=5" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/20aaaaa48.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Horst brand identity"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Horst brand identity</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item design photography">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/20sshsh48.jpg"
+				alt="Infinity Mirror" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=6" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/20sshsh48.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Infinity Mirror"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Infinity Mirror</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item design">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/247610222_460fa350b6_o.jpg"
+				alt="Simple Desk Design" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=7" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/247610222_460fa350b6_o.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Simple Desk Design"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Simple Desk Design</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item videography">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/351609423_0595d6fc0e_o.jpg"
+				alt="Artist collection" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=8" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/351609423_0595d6fc0e_o.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Artist collection"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Artist collection</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item photography height2x">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/5.jpg" alt="Business airport"
+				class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=9" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a href="img/portfolio/5.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Business airport"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Business airport</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item photography">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/5a.jpg" alt="Spring Up"
+				class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=10" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a href="img/portfolio/5a.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Spring Up" class="info"><i
+								class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Spring Up</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item branding">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/erger20481.jpg" alt="System One"
+				class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=11" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/erger20481.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="System One" class="info"><i
+								class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">System One</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item branding">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/12233432048.jpg"
+				alt="Authentisch Mann" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=12" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/12233432048.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Authentisch Mann"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Authentisch Mann</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item photography">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/erger2048.jpg"
+				alt="Manhattan Street" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=13" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/erger2048.jpg"
+								data-rel="prettyPhoto[pp_gal]" title="Manhattan Street"
+								class="info"><i class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Manhattan Street</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="item branding">
+				<!-- images should be in 1:1 format or multiples (2:1. 1:2, ...)-->
+				<img src="/resources/img/portfolio/wr4c51.jpg"
+				alt="Simple Frame Mockup" class="img-responsive" />
+				<div class="mask">
+					<div class="mask-content">
+						<div class="mask-wrapper text-center">
+							<a href="#!/portfolio/project.html?i=14" class="info ajax_load"><i
+								class="fa fa-link fa-border"></i></a><a
+								href="img/portfolio/wr4c51.jpg" data-rel="prettyPhoto[pp_gal]"
+								title="Simple Frame Mockup" class="info"><i
+								class="fa fa-expand fa-border"></i></a>
+							<h4 class="upper">Simple Frame Mockup</h4>
+							<span>Lorem Ipsum is simply dummy text of the printing</span>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		</section> </section>
+		<!-- End Portfolio section-->
+		<!-- Start Intro Shop preview section-->
+		<section id="shop" class="sep-top-3x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="section-title text-center">
+						<div class="row">
+							<div data-wow-delay=".5s"
+								class="col-md-10 col-md-offset-1 wow bounceInDown">
+								<div class="icon-box icon-horizontal icon-md">
+									<div class="icon-content img-circle">
+										<i class="fa fa-shopping-cart"></i>
+									</div>
+								</div>
+								<h2 class="upper">
+									Design integration for<span> E-commerce</span>
+								</h2>
+							</div>
+						</div>
+						<p class="lead">Lorem Ipsum has been the industry's standard
+							dummy text ever since the 1500s, when an unknown printer took a
+							galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container sep-top-lg">
+			<div class="row">
+				<div class="col-md-12">
+					<img src="/resources/img/eshop-intro-img.png" alt=""
+						class="img-responsive shop-intro-img" />
+				</div>
+			</div>
+		</div>
+		<div class="bg-primary">
+			<div class="container sep-top-2x">
+				<div class="row">
+					<div class="col-md-4 text-center sep-top-md sep-bottom-md">
+						<div data-wow-delay=".5s" class="light wow bounceInUp">
+							<h5>Free Shipping on all ordres</h5>
+							<p class="lighter">Get Free Shipping on all orders over $75
+								and free returns to our UK returns centre! Items are dispatched
+								from the US and will arrive in 5-8 days.</p>
+						</div>
+					</div>
+					<div class="col-md-4 text-center sep-top-md sep-bottom-md">
+						<div data-wow-delay=".5s" class="light wow bounceInUp">
+							<h5>Amazing customer service</h5>
+							<p class="lighter">Get Free Shipping on all orders over $75
+								and free returns to our UK returns centre! Items are dispatched
+								from the US and will arrive in 5-8 days.</p>
+						</div>
+					</div>
+					<div class="col-md-4 text-center sep-top-md sep-bottom-md">
+						<div data-wow-delay=".5s" class="light wow bounceInUp">
+							<h5>No Customs or Duty Fees!</h5>
+							<p class="lighter">Get Free Shipping on all orders over $75
+								and free returns to our UK returns centre! Items are dispatched
+								from the US and will arrive in 5-8 days.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Intro Shop preview section-->
+		<!-- Start Shop preview section-->
+		<div class="sep-top-2x sep-bottom-md">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/4.jpg" alt="Only You"
+							class="img-responsive" /></a>
+						<div class="product-title">
+							<span class="upper">woman</span>
+							<p>Only You</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$22.00</del>
+								<ins>$19.00</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="3" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">8 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/2.jpg" alt="Osaka Men's Shirt"
+							class="img-responsive" /></a>
+						<div class="product-title">
+							<span class="upper">man</span>
+							<p>Osaka Men's Shirt</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$18.50</del>
+								<ins>$14.00</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="4" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">6 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/8.jpg" alt="Woman's Purse"
+							class="img-responsive" /></a>
+						<div class="product-title">
+							<span class="upper">woman</span>
+							<p>Woman's Purse</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$35.00</del>
+								<ins>$30.00</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="5" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">24 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/3.jpg" alt="Heaven White Shirt"
+							class="img-responsive" /><span class="bullet">Sale</span></a>
+						<div class="product-title">
+							<span class="upper">woman</span>
+							<p>Heaven White Shirt</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$25.00</del>
+								<ins>$18.50</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="4" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">12 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/1.jpg"
+							alt="Sunny Tank Selected Femme" class="img-responsive" /><span
+							class="bullet">Sale</span></a>
+						<div class="product-title">
+							<span class="upper">woman</span>
+							<p>Sunny Tank Selected Femme</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$19.00</del>
+								<ins>$15.00</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="5" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">3 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/5.jpg" alt="Dublin Blue Shirt"
+							class="img-responsive" /><span class="bullet out">Out of
+								Stock</span></a>
+						<div class="product-title">
+							<span class="upper">man</span>
+							<p>Dublin Blue Shirt</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$32.00</del>
+								<ins>$30.00</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="4" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">18 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/7.jpg" alt="Woman's Jeans"
+							class="img-responsive" /></a>
+						<div class="product-title">
+							<span class="upper">woman</span>
+							<p>Woman's Jeans</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$64.00</del>
+								<ins>$58.00</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="4" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">13 customer reviews</a>
+						</div>
+					</div>
+					<div class="col-md-3 sep-bottom-lg">
+						<a href="shop-product.html" class="product-image outline-outward"><img
+							src="/resources/img/products/6.jpg" alt="Robert jacket"
+							class="img-responsive" /></a>
+						<div class="product-title">
+							<span class="upper">man</span>
+							<p>Robert jacket</p>
+						</div>
+						<div class="product-detail">
+							<div class="pull-right price-shop text-right">
+								<del>$49.00</del>
+								<ins>$39.90</ins>
+							</div>
+							<div class="rate">
+								<input type="number" name="" value="5" data-clearable="remove"
+									data-max="5" data-min="1" data-icon-lib="fa"
+									data-active-icon="fa-star" data-inactive-icon="fa-star-o"
+									data-clearable-icon="fa-times" class="rating" />
+							</div>
+							<a href="#">7 customer reviews</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Shop preview section-->
+		<!-- Start Parallax section-->
+		<div id="parallax2" style="background-image: url(img/parallax2.jpg);"
+			class="parallax">
+			<div class="section-shade sep-top-2x sep-bottom-2x">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<div data-navitagion="false" data-slide-speed="300"
+								data-pagination-speed="400" data-single-item="true"
+								data-auto-height="true" data-auto-play="true"
+								class="owl-carousel owl-theme pagination-light">
+								<!-- Start Twitter element-->
+								<div class="item">
+									<div class="twitter-post">
+										<i class="fa fa-twitter fa-4x primary"></i>
+										<div class="sep-top-xs">
+											<a href="#"><img src="/resources/img/team/square/5.jpg"
+												alt="Anna Larkins" width="113" height="113"
+												class="img-circle user-thumb" /></a>
+											<h5 class="light">Anna Larkins</h5>
+											<div class="post">
+												<p class="lead light">
+													<a href="#" class="primary">Ottavio</a> is the most
+													comprehensive and versatile theme I've ever used.
+													#themeoftheyear
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="twitter-post">
+										<i class="fa fa-twitter fa-4x primary"></i>
+										<div class="sep-top-xs">
+											<a href="#"><img src="/resources/img/team/square/3.jpg"
+												alt="Scott Sanchez" width="113" height="113"
+												class="img-circle user-thumb" /></a>
+											<h5 class="light">Scott Sanchez</h5>
+											<div class="post">
+												<p class="lead light">
+													<a href="#" class="primary">Ottavio</a> stand out among
+													modern themes! I warmly recommend it to everyone. #ottavio
+													#multi-purpose #template
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="twitter-post">
+										<i class="fa fa-twitter fa-4x primary"></i>
+										<div class="sep-top-xs">
+											<a href="#"><img src="/resources/img/team/square/4.jpg"
+												alt="Michelle White" width="113" height="113"
+												class="img-circle user-thumb" /></a>
+											<h5 class="light">Michelle White</h5>
+											<div class="post">
+												<p class="lead light">
+													Few times I've stumbled upon a theme as complete, elegant
+													and well-thought as <a href="#" class="primary">Ottavio</a>.
+													#html #web-design
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- End Twitter element-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Parallax section-->
+		<!-- Start Client section-->
+		<div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="sep-top-lg">
+									<img src="/resources/img/clients/1.png" alt=""
+										class="img-responsive" />
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="sep-top-lg">
+									<img src="/resources/img/clients/2.png" alt=""
+										class="img-responsive" />
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="sep-top-lg">
+									<img src="/resources/img/clients/3.png" alt=""
+										class="img-responsive" />
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="sep-top-lg">
+									<img src="/resources/img/clients/4.png" alt=""
+										class="img-responsive" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Client section-->
+		<!-- Start Blog preview Section-->
+		<section id="blog" class="sep-top-2x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="section-title text-center">
+						<div data-wow-delay=".5s"
+							class="icon-box icon-horizontal icon-md wow bounceInDown">
+							<div class="icon-content img-circle">
+								<i class="fa fa-cloud"></i>
+							</div>
+						</div>
+						<h2 class="upper">From the blog</h2>
+						<p class="lead">Lorem Ipsum has been the industry's standard
+							dummy text ever since the 1500s, when an unknown printer took a
+							galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="blog-preview swiper-container">
+			<div class="swiper-wrapper sep-top-2x">
+				<!--       Article-->
+				<article class="swiper-slide">
+				<div class="post-info text-center">
+					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
+						href="blog-detail-single.html"><img
+						src="/resources/img/team/square/4.jpg" alt="Michelle White"
+						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
+						class="info-text pull-right text-left">Michelle White<small><a
+							href="blog-detail-single.html">0 Comment</a></small></span>
+				</div>
+				<a href="blog-detail-single.html"><img
+					src="/resources/img/blog1.jpg"
+					alt="Saepe Eveniet Voluptates Repudiandae" class="img-responsive" /></a>
+				<div class="post-content">
+					<h5>
+						<a href="blog-detail-single.html">Saepe Eveniet Voluptates
+							Repudiandae</a>
+					</h5>
+					<p>Nunc blandit tincidunt consequat. Duis diam metus, suscipit
+						in pulvinar eget, egestas id arcu. Duis a enim vel mauris
+						ultrices. Nullam aliquet velit ac velit tempus in semper neque
+						auctor.</p>
+				</div>
+				</article>
+				<!--       Article end-->
+				<!--       Article-->
+				<article class="swiper-slide">
+				<div class="post-info text-center">
+					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
+						href="blog-detail-single.html"><img
+						src="/resources/img/team/square/2.jpg" alt="Henry Kolms"
+						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
+						class="info-text pull-right text-left">Henry Kolms<small><a
+							href="blog-detail-single.html">0 Comment</a></small></span>
+				</div>
+				<iframe src="http://player.vimeo.com/video/80547152" width="500"
+					height="281" allowfullscreen="allowfullscreen"></iframe>
+				<div class="post-content">
+					<h5>
+						<a href="blog-detail-single.html">How Videos can help promote
+							your business</a>
+					</h5>
+					<p>Nunc blandit tincidunt consequat. Duis diam metus, suscipit
+						in pulvinar eget, egestas id arcu. Duis a enim vel mauris
+						ultrices. Nullam aliquet velit ac velit tempus in semper neque
+						auctor.</p>
+				</div>
+				</article>
+				<!--       Article end-->
+				<!--       Article-->
+				<article class="swiper-slide">
+				<div class="post-info text-center">
+					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
+						href="blog-detail-single.html"><img
+						src="/resources/img/team/square/1.jpg" alt="Marc Crow"
+						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
+						class="info-text pull-right text-left">Marc Crow<small><a
+							href="blog-detail-single.html">0 Comment</a></small></span>
+				</div>
+				<div data-navitagion="false" data-slide-speed="300"
+					data-pagination-speed="400" data-single-item="true"
+					data-auto-height="true" data-auto-play="true"
+					class="owl-carousel owl-theme">
+					<div class="item">
+						<a href="blog-detail-single.html"><img
+							src="/resources/img/blog2.jpg" alt="" class="img-responsive" /></a>
+					</div>
+					<div class="item">
+						<a href="blog-detail-single.html"><img
+							src="/resources/img/blog3.jpg" alt="" class="img-responsive" /></a>
+					</div>
+					<div class="item">
+						<a href="blog-detail-single.html"><img
+							src="/resources/img/blog4.jpg" alt="" class="img-responsive" /></a>
+					</div>
+				</div>
+				<div class="post-content">
+					<h5>
+						<a href="blog-detail-single.html">Saepe Eveniet Voluptates
+							Repudiandae</a>
+					</h5>
+					<p>Nunc blandit tincidunt consequat. Duis diam metus, suscipit
+						in pulvinar eget, egestas id arcu. Duis a enim vel mauris
+						ultrices. Nullam aliquet velit ac velit tempus in semper neque
+						auctor.</p>
+				</div>
+				</article>
+				<!--       Article end-->
+				<!--       Article-->
+				<article class="swiper-slide">
+				<div class="post-info text-center">
+					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
+						href="blog-detail-single.html"><img
+						src="/resources/img/team/square/3.jpg" alt="Scott Sanchez"
+						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
+						class="info-text pull-right text-left">Scott Sanchez<small><a
+							href="blog-detail-single.html">0 Comment</a></small></span>
+				</div>
+				<a href="blog-detail-single.html"><img
+					src="/resources/img/blog5.jpg"
+					alt="Facilisis tincidunt justo eget urna leo"
+					class="img-responsive" /></a>
+				<div class="post-content">
+					<h5>
+						<a href="blog-detail-single.html">Facilisis tincidunt justo
+							eget urna leo</a>
+					</h5>
+					<p>Nunc blandit tincidunt consequat. Duis diam metus, suscipit
+						in pulvinar eget, egestas id arcu. Duis a enim vel mauris
+						ultrices. Nullam aliquet velit ac velit tempus in semper neque
+						auctor.</p>
+				</div>
+				</article>
+				<!--       Article end-->
+				<!--       Article-->
+				<article class="swiper-slide">
+				<div class="post-info text-center">
+					<span class="info-text pull-left text-right">4 April 2014<small>8:36</small></span><a
+						href="blog-detail-single.html"><img
+						src="/resources/img/team/square/4.jpg" alt="Michelle White"
+						style="width: 99px; height: 99px;" class="img-circle user-thumb" /></a><span
+						class="info-text pull-right text-left">Michelle White<small><a
+							href="blog-detail-single.html">0 Comment</a></small></span>
+				</div>
+				<a href="blog-detail-single.html"><img
+					src="/resources/img/blog4.jpg"
+					alt="Facilisis tincidunt justo eget urna leo"
+					class="img-responsive" /></a>
+				<div class="post-content">
+					<h5>
+						<a href="blog-detail-single.html">Saepe Eveniet Voluptates
+							Repudiandae</a>
+					</h5>
+					<p>Nunc blandit tincidunt consequat. Duis diam metus, suscipit
+						in pulvinar eget, egestas id arcu. Duis a enim vel mauris
+						ultrices. Nullam aliquet velit ac velit tempus in semper neque
+						auctor.</p>
+				</div>
+				</article>
+				<!--       Article end-->
+			</div>
+		</div>
+		</section>
+		<!-- End Blog preview Section-->
+		<!-- Start Parallax section-->
+		<section id="pricing"
+			style="background-image: url(img/intro-home7.jpg);" class="parallax">
+		<div class="section-shade sep-top-5x sep-bottom-4x">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<div data-wow-delay="1s"
+							class="section-title sep-bottom-lg wow bounceInUp">
+							<div class="icon-box icon-md">
+								<div class="icon-content img-circle">
+									<i class="fa fa-check"></i>
+								</div>
+							</div>
+							<div class="light">
+								<h2>Pricing table</h2>
+								<p class="lead">Nunc blandit tincidunt consequat. Duis diam
+									metus, suscipit in pulvinar eget, egestas id arcu. Duis a enim
+									vel mauris ultrices. Nullam aliquet velit ac velit tempus in
+									semper neque auctor.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<!--         Start Price Table-->
+						<div class="pricing-table-3 pull-left">
+							<div class="pricing-box">
+								<ul>
+									<li class="title-row">
+										<h5>Basic</h5>
+									</li>
+									<li class="price-row"><span class="currency">$</span><span
+										class="price">29</span><span class="price-cent">,00</span><span
+										class="plane">Monthly</span></li>
+									<li class="option">2 Core Processor</li>
+									<li class="option">Hardisk 10GB</li>
+									<li class="option">Ram 8GB</li>
+									<li class="option">24/7 Free Support</li>
+									<li>
+										<div class="rate">
+											<i class="fa fa-star active"></i><i class="fa fa-star active"></i><i
+												class="fa fa-star active"></i><i class="fa fa-star"></i><i
+												class="fa fa-star"></i>
+										</div>
+										<a class="btn btn-primary btn">Call to actions</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--         End Price Table-->
+						<!--         Start Price Table-->
+						<div class="pricing-table-3 pull-left">
+							<div class="pricing-box pricing-featured">
+								<ul>
+									<li class="title-row">
+										<h5>Silver</h5>
+									</li>
+									<li class="price-row"><span class="currency">$</span><span
+										class="price">59</span><span class="price-cent">,00</span><span
+										class="plane">Monthly</span></li>
+									<li class="option">4 Core Processor</li>
+									<li class="option">Hardisk 50GB</li>
+									<li class="option">Ram 12GB</li>
+									<li class="option">24/7 Free Support</li>
+									<li>
+										<div class="rate">
+											<i class="fa fa-star"></i><i class="fa fa-star"></i><i
+												class="fa fa-star"></i><i class="fa fa-star"></i><i
+												class="fa fa-star"></i>
+										</div>
+										<a class="btn btn-primary btn">Call to actions</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--         End Price Table-->
+						<!--         Start Price Table-->
+						<div class="pricing-table-3 pull-left">
+							<div class="pricing-box">
+								<ul>
+									<li class="title-row">
+										<h5>Platinum</h5>
+									</li>
+									<li class="price-row"><span class="currency">$</span><span
+										class="price">99</span><span class="price-cent">,00</span><span
+										class="plane">Monthly</span></li>
+									<li class="option">8 Core Processor</li>
+									<li class="option">Hardisk 100GB</li>
+									<li class="option">Ram 16GB</li>
+									<li class="option">24/7 Free Support</li>
+									<li>
+										<div class="rate">
+											<i class="fa fa-star"></i><i class="fa fa-star"></i><i
+												class="fa fa-star"></i><i class="fa fa-star"></i><i
+												class="fa fa-star"></i>
+										</div>
+										<a class="btn btn-primary btn">Call to actions</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--         End Price Table-->
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Parallax section-->
+		<!-- Start Social-link section-->
+		<section id="social-link" class="bg-primary sep-top-lg sep-bottom-lg">
+		<div class="container">
+			<!--     Start icon box-->
+			<div class="icon-box icon-md fixed-section">
+				<div class="icon-content img-circle">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<!--     End icon box-->
+			<div class="row">
+				<div class="col-md-7">
+					<div class="section-title">
+						<div class="light">
+							<h3 class="upper small-space">Keep in touch</h3>
+							<p class="lead lighter">Lorem Ipsum has been the industry's
+								standard dummy text ever since the 1500s, when an unknown
+								printer took a galley of type and scrambled it to make a type
+								specimen book.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<!--           Start icon box-->
+						<div class="col-md-3 sep-top-sm">
+							<div data-wow-delay="0.5s"
+								class="icon-box icon-horizontal icon-sm wow bounceInRight">
+								<a href="" class="icon-content inverter img-circle"><i
+									class="fa fa-dribbble"></i></a>
+							</div>
+						</div>
+						<!--           End icon box-->
+						<!--           Start icon box-->
+						<div class="col-md-3 sep-top-sm">
+							<div data-wow-delay="0.7s"
+								class="icon-box icon-horizontal icon-sm wow bounceInRight">
+								<a href="" class="icon-content inverter img-circle"><i
+									class="fa fa-github"></i></a>
+							</div>
+						</div>
+						<!--           End icon box-->
+						<!--           Start icon box-->
+						<div class="col-md-3 sep-top-sm">
+							<div data-wow-delay="0.9s"
+								class="icon-box icon-horizontal icon-sm wow bounceInRight">
+								<a href="" class="icon-content inverter img-circle"><i
+									class="fa fa-bitbucket"></i></a>
+							</div>
+						</div>
+						<!--           End icon box-->
+						<!--           Start icon box-->
+						<div class="col-md-3 sep-top-sm">
+							<div data-wow-delay="1.1s"
+								class="icon-box icon-horizontal icon-sm wow bounceInRight">
+								<a href="" class="icon-content inverter img-circle"><i
+									class="fa fa-stack-overflow"></i></a>
+							</div>
+						</div>
+						<!--           End icon box-->
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Social-link section-->
+		<!-- Start Team section-->
+		<section id="team" class="sep-top-3x sep-bottom-3x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="section-title">
+						<h2 class="bordered-left upper wow bounceInLeft">
+							Our<br />team
+						</h2>
+						<p class="lead wow bounceInRight">Lorem Ipsum has been the
+							industry's standard dummy text ever since the 1500s, when an
+							unknown printer took a galley of type and scrambled it to make a
+							type specimen book. It has survived not only five centuries, but
+							also the leap into electronic</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 sep-top-2x">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="team-photo">
+								<img src="/resources/img/team/portrait/5.jpg" alt="Anna Larkins"
+									class="img-responsive" />
+								<div class="team-connection">
+									<div class="team-connection-list text-center">
+										<ul>
+											<li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-pinterest fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="team-name">
+								<h5 class="upper">Anna Larkins</h5>
+								<span>Web Designer</span>
+							</div>
+							<p>Pellentesque pellentesque pharetra lacus, eget aliquet mi
+								mattis eu. Cum sociis natoque penatibus et magnis.</p>
+							<div class="sep-top-sm">
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="85" aria-valuemin="0"
+										aria-valuemax="100" style="width: 85%;" class="progress-bar">Photoshop</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="33" aria-valuemin="0"
+										aria-valuemax="100" style="width: 33%;" class="progress-bar">Php
+										&amp; MySql</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="60" aria-valuemin="0"
+										aria-valuemax="100" style="width: 60%;" class="progress-bar">Html
+										&amp; Css</div>
+								</div>
+								<div class="indicator">
+									<span class="indicator-line"></span><span class="pull-left">0</span><span
+										class="middle">50</span><span class="pull-right">100</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 sep-top-2x">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="team-photo">
+								<img src="/resources/img/team/portrait/1.jpg" alt="Marc Crow"
+									class="img-responsive" />
+								<div class="team-connection">
+									<div class="team-connection-list text-center">
+										<ul>
+											<li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-pinterest fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="team-name">
+								<h5 class="upper">Marc Crow</h5>
+								<span>Founder</span>
+							</div>
+							<p>Pellentesque pellentesque pharetra lacus, eget aliquet mi
+								mattis eu. Cum sociis natoque penatibus et magnis.</p>
+							<div class="sep-top-sm">
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="35" aria-valuemin="0"
+										aria-valuemax="100" style="width: 35%;" class="progress-bar">Photoshop</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="35" aria-valuemin="0"
+										aria-valuemax="100" style="width: 35%;" class="progress-bar">Php
+										&amp; MySql</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="45" aria-valuemin="0"
+										aria-valuemax="100" style="width: 45%;" class="progress-bar">Html
+										&amp; Css</div>
+								</div>
+								<div class="indicator">
+									<span class="indicator-line"></span><span class="pull-left">0</span><span
+										class="middle">50</span><span class="pull-right">100</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 sep-top-2x">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="team-photo">
+								<img src="/resources/img/team/portrait/3.jpg"
+									alt="Scott Sanchez" class="img-responsive" />
+								<div class="team-connection">
+									<div class="team-connection-list text-center">
+										<ul>
+											<li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-pinterest fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="team-name">
+								<h5 class="upper">Scott Sanchez</h5>
+								<span>Web Developer</span>
+							</div>
+							<p>Pellentesque pellentesque pharetra lacus, eget aliquet mi
+								mattis eu. Cum sociis natoque penatibus et magnis.</p>
+							<div class="sep-top-sm">
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="30" aria-valuemin="0"
+										aria-valuemax="100" style="width: 30%;" class="progress-bar">Photoshop</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="95" aria-valuemin="0"
+										aria-valuemax="100" style="width: 95%;" class="progress-bar">Php
+										&amp; MySql</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="70" aria-valuemin="0"
+										aria-valuemax="100" style="width: 70%;" class="progress-bar">Html
+										&amp; Css</div>
+								</div>
+								<div class="indicator">
+									<span class="indicator-line"></span><span class="pull-left">0</span><span
+										class="middle">50</span><span class="pull-right">100</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 sep-top-2x">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="team-photo">
+								<img src="/resources/img/team/portrait/2.jpg" alt="Henry Kolms"
+									class="img-responsive" />
+								<div class="team-connection">
+									<div class="team-connection-list text-center">
+										<ul>
+											<li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-pinterest fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="team-name">
+								<h5 class="upper">Henry Kolms</h5>
+								<span>CEO</span>
+							</div>
+							<p>Pellentesque pellentesque pharetra lacus, eget aliquet mi
+								mattis eu. Cum sociis natoque penatibus et magnis.</p>
+							<div class="sep-top-sm">
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="30" aria-valuemin="0"
+										aria-valuemax="100" style="width: 30%;" class="progress-bar">Photoshop</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="70" aria-valuemin="0"
+										aria-valuemax="100" style="width: 70%;" class="progress-bar">Php
+										&amp; MySql</div>
+								</div>
+								<div class="progress minimal">
+									<div role="progressbar" aria-valuenow="50" aria-valuemin="0"
+										aria-valuemax="100" style="width: 50%;" class="progress-bar">Html
+										&amp; Css</div>
+								</div>
+								<div class="indicator">
+									<span class="indicator-line"></span><span class="pull-left">0</span><span
+										class="middle">50</span><span class="pull-right">100</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Team section-->
+		<!-- Start Parallax section-->
+		<section id="parallax3"
+			style="background-image: url(img/parallax3.jpg);" class="parallax">
+		<div class="section-shade sep-top-3x sep-bottom-3x">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<div class="section-title">
+							<h3 class="upper light small-space">Ready for an
+								irreversibletimate experience?</h3>
+							<p class="lead light lighter">Pellentesque pellentesque
+								pharetra lacus, eget aliquet mi mattis eu. Cum sociis natoque
+								penatibus et magnis.</p>
+						</div>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 sep-top-md">
+								<form role="form">
+									<label for="nlEmail" class="sr-only">Email address</label>
+									<div class="newsletter-form">
+										<input id="nlEmail" type="email" placeholder="Email address"
+											class="text-center form-control input-lg primary" />
+										<button type="submit" class="fa fa-paper-plane fa-2x light"></button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Parallax section-->
+		<!-- Start Service section-->
+		<section id="services" class="sep-top-3x sep-bottom-3x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="section-title">
+						<h2 class="bordered-left upper">
+							Our<br />service
+						</h2>
+						<p class="lead">A tutorial on how to create a fullscreen
+							slideshow with a twist: the idea is to slice open the current
+							slide when navigating to the next or previous one. Using jQuery
+							and CSS animations we can create unique slide transitions for the
+							content elements.</p>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div data-wow-delay="1s"
+						class="icon-box icon-lg sep-top-md icon-gradient wow bounceInRight">
+						<div class="icon-content img-circle">
+							<i class="fa fa-random"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5>Amazing Development</h5>
+							<p>Perfect. By far the best theme on ThemeForest. You will
+								never need another theme as it has everything and more. Perfect.
+								By far the best theme on ThemeForest. You will never need
+								another theme as it has everything and more.</p>
+						</div>
+					</div>
+					<div data-wow-delay="1s"
+						class="icon-box icon-lg sep-top-md icon-gradient wow bounceInRight">
+						<div class="icon-content img-circle">
+							<i class="fa fa-lightbulb-o"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5>Strategy Solutions</h5>
+							<p>Perfect. By far the best theme on ThemeForest. You will
+								never need another theme as it has everything and more. Perfect.
+								By far the best theme on ThemeForest. You will never need
+								another theme as it has everything and more.</p>
+						</div>
+					</div>
+					<div data-wow-delay="1s"
+						class="icon-box icon-lg sep-top-md icon-gradient wow bounceInRight">
+						<div class="icon-content img-circle">
+							<i class="fa fa-gamepad"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5>Digital Design</h5>
+							<p>Perfect. By far the best theme on ThemeForest. You will
+								never need another theme as it has everything and more. Perfect.
+								By far the best theme on ThemeForest. You will never need
+								another theme as it has everything and more.</p>
+						</div>
+					</div>
+					<div data-wow-delay="1s"
+						class="icon-box icon-lg sep-top-md icon-gradient wow bounceInRight">
+						<div class="icon-content img-circle">
+							<i class="fa fa-stethoscope"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5>24/24 Free Support</h5>
+							<p>Perfect. By far the best theme on ThemeForest. You will
+								never need another theme as it has everything and more. Perfect.
+								By far the best theme on ThemeForest. You will never need
+								another theme as it has everything and more.</p>
+						</div>
+					</div>
+					<div data-wow-delay="1s"
+						class="icon-box icon-lg sep-top-md icon-gradient wow bounceInRight">
+						<div class="icon-content img-circle">
+							<i class="fa fa-comment"></i>
+						</div>
+						<div class="icon-box-content">
+							<h5>Consultation</h5>
+							<p>Perfect. By far the best theme on ThemeForest. You will
+								never need another theme as it has everything and more. Perfect.
+								By far the best theme on ThemeForest. You will never need
+								another theme as it has everything and more.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Service section-->
+		<!-- Start Parallax section-->
+		<section id="parallax4"
+			style="background-image: url(img/parallax4.jpg);" class="parallax">
+		<div class="section-shade sep-top-3x sep-bottom-2x">
+			<div class="container">
+				<div data-wow-delay="1s"
+					class="section-title text-center wow bounceInDown">
+					<h3 class="upper light small-space">Creativity, innovation and
+						knowledge</h3>
+					<p class="lead light lighter">Pellentesque pellentesque
+						pharetra lacus, eget aliquet mi mattis eu. Cum sociis natoque
+						penatibus et magnis.</p>
+				</div>
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div id="charts-wrapper" class="row">
+							<!-- Start Chart item-->
+							<div data-wow-delay="1s"
+								class="col-md-4 text-center sep-top-lg light wow fadeInUp">
+								<div data-percent='72' class="chart">
+									<span><b data-from="0" data-to='72' class="counter">0</b><em>%</em></span>
+								</div>
+								<p class="lead x2">HTML &amp; CSS</p>
+								<p class="light lighter">Pellentesque pellentesque pharetra
+									lacus, eget aliquet mi mattis eu.</p>
+							</div>
+							<!-- End Chart item-->
+							<!-- Start Chart item-->
+							<div data-wow-delay="1s"
+								class="col-md-4 text-center sep-top-lg light wow fadeInUp">
+								<div data-percent='56' class="chart">
+									<span><b data-from="0" data-to='56' class="counter">0</b><em>%</em></span>
+								</div>
+								<p class="lead x2">Javascript</p>
+								<p class="light lighter">Pellentesque pellentesque pharetra
+									lacus, eget aliquet mi mattis eu.</p>
+							</div>
+							<!-- End Chart item-->
+							<!-- Start Chart item-->
+							<div data-wow-delay="1s"
+								class="col-md-4 text-center sep-top-lg light wow fadeInUp">
+								<div data-percent='84' class="chart">
+									<span><b data-from="0" data-to='84' class="counter">0</b><em>%</em></span>
+								</div>
+								<p class="lead x2">Php &amp; MySql</p>
+								<p class="light lighter">Pellentesque pellentesque pharetra
+									lacus, eget aliquet mi mattis eu.</p>
+							</div>
+							<!-- End Chart item-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Parallax section-->
+		<!-- Start Counter section-->
+		<div class="bg-primary">
+			<div class="container">
+				<div id="timer-wrapper" class="row">
+					<div class="col-md-3 text-center sep-top-md sep-bottom-md">
+						<span data-from="0" data-to="987" data-speed="2500"
+							data-refresh-interval="50" class="timer light">0</span>
+						<p class="lead x2 light upper timer-title">Coffee Cups</p>
+						<p class="light lighter">orci magna rhoncus neque</p>
+					</div>
+					<div class="col-md-3 text-center sep-top-md sep-bottom-md">
+						<span data-from="0" data-to="40" data-speed="2500"
+							data-refresh-interval="50" class="timer light">0</span>
+						<p class="lead x2 light upper timer-title">Broken Monitors</p>
+						<p class="light lighter">orci magna rhoncus neque</p>
+					</div>
+					<div class="col-md-3 text-center sep-top-md sep-bottom-md">
+						<span data-from="0" data-to="4326" data-speed="2500"
+							data-refresh-interval="50" class="timer light">0</span>
+						<p class="lead x2 light upper timer-title">Photos Taken</p>
+						<p class="light lighter">orci magna rhoncus neque</p>
+					</div>
+					<div class="col-md-3 text-center sep-top-md sep-bottom-md">
+						<span data-from="0" data-to="375224" data-speed="2500"
+							data-refresh-interval="50" class="timer light">0</span>
+						<p class="lead x2 light upper timer-title">Mouse Clicks</p>
+						<p class="light lighter">orci magna rhoncus neque</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Counter section-->
+		<!-- Start Contact section-->
+		<section id="contacts" class="sep-top-3x sep-bottom-3x">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="section-title text-center">
+						<div class="icon-box icon-horizontal icon-md">
+							<div class="icon-content img-circle">
+								<i class="fa fa-pencil"></i>
+							</div>
+						</div>
+						<h2 class="upper">Contact Us</h2>
+						<p class="lead">Do you have any idea in mind? Contact us, we
+							will give you the answer you expect.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 sep-top-lg">
+					<!--Start icon box-->
+					<div class="icon-box icon-xs sep-bottom-xs icon-gradient">
+						<div data-wow-delay=".5s"
+							class="icon-content img-circle wow flipInX">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<div class="icon-box-content">
+							<h6 class="upper info-title">Address</h6>
+							<p>Elizabeth St, Melbourne, Victoria 3000, Australia</p>
+						</div>
+					</div>
+					<!--End icon box-->
+					<!--Start icon box-->
+					<div class="icon-box icon-xs sep-bottom-xs icon-gradient">
+						<div data-wow-delay=".7s"
+							class="icon-content img-circle wow flipInX">
+							<i class="fa fa-phone"></i>
+						</div>
+						<div class="icon-box-content">
+							<h6 class="upper info-title">Phone / Fax</h6>
+							<p>(+39) 123-456-789 / (+39) 123-456-789</p>
+						</div>
+					</div>
+					<!--End icon box-->
+					<!--Start icon box-->
+					<div class="icon-box icon-xs sep-bottom-xs icon-gradient">
+						<div data-wow-delay=".9s"
+							class="icon-content img-circle wow flipInX">
+							<i class="fa fa-envelope"></i>
+						</div>
+						<div class="icon-box-content">
+							<h6 class="upper info-title">Email</h6>
+							<p>info@ottaviostudios.com / support@ottaviostudios.com</p>
+						</div>
+					</div>
+					<!--End icon box-->
+					<!--Start icon box-->
+					<div class="icon-box icon-xs sep-bottom-xs icon-gradient">
+						<div data-wow-delay="1.1s"
+							class="icon-content img-circle wow flipInX">
+							<i class="fa fa-clock-o"></i>
+						</div>
+						<div class="icon-box-content">
+							<h6 class="upper info-title">Office Hours</h6>
+							<p>Mon / Friday 09:00 - 13.00 / 14:00 - 18:00</p>
+						</div>
+					</div>
+					<!--End icon box-->
+				</div>
+				<div class="col-md-6 sep-top-lg">
+					<div class="contact-form">
+						<div id="successMessage" style="display: none"
+							class="alert alert-success text-center">
+							<p>
+								<i class="fa fa-check-circle fa-2x"></i>
+							</p>
+							<p>Thanks for sending your message! We'll get back to you
+								shortly.</p>
+						</div>
+						<div id="failureMessage" style="display: none"
+							class="alert alert-danger text-center">
+							<p>
+								<i class="fa fa-times-circle fa-2x"></i>
+							</p>
+							<p>There was a problem sending your message. Please, try
+								again.</p>
+						</div>
+						<div id="incompleteMessage" style="display: none"
+							class="alert alert-warning text-center">
+							<p>
+								<i class="fa fa-exclamation-triangle fa-2x"></i>
+							</p>
+							<p>Please complete all the fields in the form before sending.</p>
+						</div>
+						<form id="contactForm" action="php/contact.php" method="post"
+							class="validate">
+							<div class="form-group sep-top-xs">
+								<label for="contactFormName" class="upper">Your Name</label> <input
+									id="contactFormName" type="text" placeholder="Enter name"
+									name="name" class="form-control input-lg required" />
+							</div>
+							<div class="form-group sep-top-xs">
+								<label for="contactFormPhone" class="upper">Your Phone</label> <input
+									id="contactFormPhone" type="text" placeholder="Enter phone"
+									name="phone" class="form-control input-lg required" />
+							</div>
+							<div class="form-group sep-top-xs">
+								<label for="contactFormEmail" class="upper">Your Email</label> <input
+									id="contactFormEmail" type="email" placeholder="Enter email"
+									name="email" class="form-control input-lg required email" />
+							</div>
+							<div class="form-group sep-top-xs">
+								<label for="contactFormComment" class="upper">Your
+									comment</label>
+								<textarea id="contactFormComment" placeholder="Enter comment"
+									rows="9" name="comment" class="form-control input-lg required"></textarea>
+							</div>
+							<div class="form-group sep-top-xs">
+								<button type="submit" data-wow-delay=".5s"
+									class="btn btn-primary btn-lg wow bounceInRight">
+									<i class="fa fa-paper-plane"></i> Send message
+								</button>
+							</div>
+							<!--input#subject.form-control.input-lg.required(type='text', placeholder='Subject of your message', name='subject')
+                  -->
+						</form>
+						<div class="hidden"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End Contact section-->
+		<!-- Start map section-->
+		<section> <!--include _partial/gmap--> </section>
+		<!-- Start call to action section-->
+		<section class="call-to-action bg-primary sep-top-md sep-bottom-md">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<h5 class="action-title upper light">HAVE AN IDEA? WE’RE HERE
+						TO HELP YOU MANAGE YOUR WORK</h5>
+				</div>
+				<div class="col-md-3 text-right">
+					<a href="contact-us.html" class="btn btn-light btn-bordered btn-lg">Contact
+						us</a>
+				</div>
+			</div>
+		</div>
+		</section>
+		<!-- End call to action section-->
+		<!-- Start Footer section-->
+		<footer id="footer">
+		<div class="inner sep-bottom-md">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="widget sep-top-lg">
+							<img src="/resources/img/logo-white.png" alt="" class="logo" /><small
+								class="sep-top-xs sep-bottom-md">Dolor church-key
+								veniam, fap Bushwick mumblecore irure Vice consectetur 3 wolf
+								moon sapiente literally quinoa.</small>
+							<h6 class="upper widget-title">Stay connected</h6>
+							<ul class="social-icon sep-top-xs">
+								<li><a href="#" class="fa fa-github fa-lg"></a></li>
+								<li><a href="#" class="fa fa-twitter fa-lg"></a></li>
+								<li><a href="#" class="fa fa-facebook fa-lg"></a></li>
+								<li><a href="#" class="fa fa-google-plus fa-lg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="widget sep-top-lg">
+							<h6 class="upper widget-title">Latest blog post</h6>
+							<ul class="widget-post sep-top-xs">
+								<li><span class="date-post">17<small class="upper">apr</small></span><a
+									href="blog-detail-single.html" class="title-post">Jheni and
+										Alessandra on the road</a><small><a
+										href="blog-detail-single.html#comments">5 comment</a></small></li>
+								<li><span class="date-post">17<small class="upper">apr</small></span><a
+									href="blog-detail-single.html" class="title-post">Donec
+										Suscipit Dim Euismods</a><small><a
+										href="blog-detail-single.html#comments">5 comment</a></small></li>
+								<li><span class="date-post">17<small class="upper">apr</small></span><a
+									href="blog-detail-single.html" class="title-post">How
+										Videos can help promote your business</a><small><a
+										href="blog-detail-single.html#comments">5 comment</a></small></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="widget sep-top-lg">
+							<h6 class="upper widget-title">Visit Us</h6>
+							<ul class="widget-address sep-top-xs">
+								<li><i class="fa fa-map-marker fa-lg"></i><small>Elizabeth
+										St, Melbourne, Victoria<br />3000, Australia
+								</small></li>
+								<li><i class="fa fa-phone fa-lg"></i><small>(+39)
+										123-456-789 /<br />(+39) 123-456-789
+								</small></li>
+								<li><i class="fa fa-envelope fa-lg"></i><small><a
+										href="#">info@ottaviostudios.com /</a><br />
+									<a href="#">support@ottaviostudios.com</a></small></li>
+								<li><i class="fa fa-clock-o fa-lg"></i><small>Mon /
+										Friday<br />09:00 - 13.00 / 14:00 - 18:00
+								</small></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="widget sep-top-lg">
+							<h6 class="upper widget-title">Flickr Photostream</h6>
+							<div class="flickr_container sep-top-xs">
+								<div id="flickr_badge_image1" class="flickr_badge_image">
+									<a
+										href="http://www.flickr.com/photos/we-are-envato/14983708011/"><img
+										width="75" height="75"
+										title="Collis does the ice bucket challenge"
+										alt="Una foto su Flickr"
+										src="http://farm4.staticflickr.com/3923/14983708011_6bcbba0e2c_s.jpg" /></a>
+								</div>
+								<div id="flickr_badge_image2" class="flickr_badge_image">
+									<a
+										href="http://www.flickr.com/photos/we-are-envato/14596923138/"><img
+										width="75" height="75" title="Justin 05"
+										alt="Una foto su Flickr"
+										src="http://farm6.staticflickr.com/5555/14596923138_d4d46d271c_s.jpg" /></a>
+								</div>
+								<div id="flickr_badge_image3" class="flickr_badge_image">
+									<a
+										href="http://www.flickr.com/photos/we-are-envato/14760569666/"><img
+										width="75" height="75" title="Justin 04"
+										alt="Una foto su Flickr"
+										src="http://farm4.staticflickr.com/3909/14760569666_7c6c02da27_s.jpg" /></a>
+								</div>
+								<div id="flickr_badge_image4" class="flickr_badge_image">
+									<a
+										href="http://www.flickr.com/photos/we-are-envato/14783568265/"><img
+										width="75" height="75" title="Justin 03"
+										alt="Una foto su Flickr"
+										src="http://farm6.staticflickr.com/5590/14783568265_90657d440f_s.jpg" /></a>
+								</div>
+								<div id="flickr_badge_image5" class="flickr_badge_image">
+									<a
+										href="http://www.flickr.com/photos/we-are-envato/14781214704/"><img
+										width="75" height="75" title="Justin 01"
+										alt="Una foto su Flickr"
+										src="http://farm3.staticflickr.com/2925/14781214704_955df76638_s.jpg" /></a>
+								</div>
+								<div id="flickr_badge_image6" class="flickr_badge_image">
+									<a
+										href="http://www.flickr.com/photos/we-are-envato/14471910420/"><img
+										width="75" height="75" title="Envato Live"
+										alt="Una foto su Flickr"
+										src="http://farm6.staticflickr.com/5548/14471910420_cf12dd0a16_s.jpg" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright sep-top-xs sep-bottom-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<small>Copyright 2014 © Kleis Communication Technologies
+							srl. All rights reserved.</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		</footer>
+		<!-- End Footer section-->
+		<div id="back_to_top">
+			<a href="#" class="fa fa-arrow-up fa-lg"></a>
+		</div>
+	</div>
+	<script src="/resources/scripts/vendor/jquery.js"></script>
+	<script src="/resources/scripts/vendor/queryloader2.min.js"></script>
+	<script src="/resources/scripts/vendor/owl.carousel.js"></script>
+	<script src="/resources/scripts/vendor/jquery.ba-cond.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.slitslider.js"></script>
+	<script src="/resources/scripts/vendor/idangerous.swiper.js"></script>
+	<script src="/resources/scripts/vendor/jquery.fitvids.js"></script>
+	<script src="/resources/scripts/vendor/jquery.countTo.js"></script>
+	<script src="/resources/scripts/vendor/TweenMax.min.js"></script>
+	<script src="/resources/scripts/vendor/ScrollToPlugin.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.scrollmagic.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.easypiechart.js"></script>
+	<script src="/resources/scripts/vendor/jquery.validate.js"></script>
+	<script src="/resources/scripts/vendor/wow.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.placeholder.js"></script>
+	<script src="/resources/scripts/vendor/jquery.easing.1.3.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.waitforimages.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.prettyPhoto.js"></script>
+	<script src="/resources/scripts/vendor/imagesloaded.pkgd.min.js"></script>
+	<script src="/resources/scripts/vendor/isotope.pkgd.min.js"></script>
+	<script src="/resources/scripts/vendor/jquery.fillparent.min.js"></script>
+	<script src="/resources/scripts/vendor/raphael-min.js"></script>
+	<script src="/resources/scripts/vendor/bootstrap.js"></script>
+	<script
+		src="/resources/scripts/vendor/jquery.bootstrap-touchspin.min.js"></script>
+	<script src="/resources/scripts/vendor/bootstrap-slider.js"></script>
+	<script src="/resources/scripts/vendor/bootstrap-rating-input.js"></script>
+	<script src="/resources/scripts/vendor/bootstrap-hover-dropdown.min.js"></script>
+	<script src="/resources/scripts/jquery.gmap.min.js"></script>
+	<script src="/resources/scripts/circle_diagram.js"></script>
+	<script src="/resources/scripts/main.js"></script>
+	<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'XX-XXXXXXXX-XX', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>
