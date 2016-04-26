@@ -3,6 +3,8 @@ package edu.tunisiamall.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 /**
  * The persistent class for the images database table.
@@ -23,6 +25,7 @@ public class Image implements Serializable {
 	//bi-directional many-to-one association to Product
 	@ManyToOne
 	@JoinColumn(name="idProduct")
+	@JsonBackReference
 	private Product product;
 
 	public Image() {

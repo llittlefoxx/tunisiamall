@@ -27,12 +27,12 @@ public class Event implements Serializable {
 	private String typeEvent;
 
 	//bi-directional many-to-one association to Storeevent
-	@OneToMany(mappedBy="event")
-	private List<Storeevent> storeevents;
+	//@OneToMany(mappedBy="event")
+	//private List<Storeevent> storeevents;
 
 	//bi-directional many-to-one association to Subscription
-	@OneToMany(mappedBy="event")
-	private List<Subscription> subscriptions;
+	//@OneToMany(mappedBy="event")
+	//private List<Subscription> subscriptions;
 
 	public Event() {
 	}
@@ -85,7 +85,7 @@ public class Event implements Serializable {
 		this.typeEvent = typeEvent;
 	}
 
-	public List<Storeevent> getStoreevents() {
+	/*public List<Storeevent> getStoreevents() {
 		return this.storeevents;
 	}
 
@@ -106,9 +106,9 @@ public class Event implements Serializable {
 		storeevent.setEvent(null);
 
 		return storeevent;
-	}
+	}*/
 
-	public List<Subscription> getSubscriptions() {
+	/*public List<Subscription> getSubscriptions() {
 		return this.subscriptions;
 	}
 
@@ -129,7 +129,7 @@ public class Event implements Serializable {
 
 		return subscription;
 	}
-
+*/
 	@Override
 	public int hashCode() {
 		return idEvent;

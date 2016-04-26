@@ -4,11 +4,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 
-
-/**
- * The persistent class for the mvtstock database table.
- * 
- */
 @Entity
 @NamedQuery(name="Mvtstock.findAll", query="SELECT m FROM Mvtstock m")
 public class Mvtstock implements Serializable {
@@ -29,7 +24,6 @@ public class Mvtstock implements Serializable {
 
 	private int supplier;
 
-	//bi-directional many-to-one association to Product
 	@ManyToOne
 	@JoinColumn(name="idProduct")
 	private Product product;
@@ -92,5 +86,7 @@ public class Mvtstock implements Serializable {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+	
+	
 
 }
