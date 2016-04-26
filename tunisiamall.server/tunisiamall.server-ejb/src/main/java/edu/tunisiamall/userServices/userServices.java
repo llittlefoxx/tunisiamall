@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-
+import edu.tunisiamall.entities.Shopowner;
 import edu.tunisiamall.entities.User;
 
 @Stateless
@@ -67,6 +67,13 @@ public class userServices implements userServicesRemote, userServicesLocal {
 		Query q= em.createQuery("select u from User u where u.login=:x");
 		q.setParameter("x", login);
 	    return (User) q.getResultList().get(0);
+	}
+
+	@Override
+	public Shopowner findShopOwnerById(int idShopowner) {
+		Query q= em.createQuery("select u from Shopowner u where u.idUser=:x");
+		q.setParameter("x", idShopowner);
+		return (Shopowner) q.getResultList().get(0) ;
 	}
 
 }

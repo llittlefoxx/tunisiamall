@@ -6,12 +6,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
-/**
- * Entity implementation class for Entity: PromotionSuggest
- *
- */
 @Entity
-@NamedQuery(name="PromotionSuggest.findAll", query="SELECT p FROM PromotionSuggest p")
+@NamedQuery(name = "PromotionSuggest.findAll", query = "SELECT p FROM PromotionSuggest p")
 public class PromotionSuggest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -19,9 +15,9 @@ public class PromotionSuggest implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPromotionSuggest;
-	
+
 	private String name;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
 
@@ -30,13 +26,10 @@ public class PromotionSuggest implements Serializable {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date suggestionDate;
-	
-	@OneToMany(mappedBy="promotionSuggest",fetch=FetchType.EAGER)
-	private List<Product> products;
-	
+
 	private String desccription;
 	private double value;
-	
+
 	public PromotionSuggest() {
 		super();
 	}
@@ -71,14 +64,6 @@ public class PromotionSuggest implements Serializable {
 
 	public void setSuggestionDate(Date suggestionDate) {
 		this.suggestionDate = suggestionDate;
-	}
-
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
 	}
 
 	public String getDesccription() {

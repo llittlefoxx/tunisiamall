@@ -44,16 +44,7 @@ EntityManager entityManager;
 		}
 	}
 
-	@Override
-	public Boolean deleteEvent(Event event) {
-		try {
-			entityManager.remove(entityManager.merge(event));
-			return true;
-		} catch (Exception e) {
-			return false;
-			
-		}
-	}
+
 
 	@Override
 	public Event findEventById(Integer idEvent) {
@@ -82,4 +73,14 @@ EntityManager entityManager;
 
 	}
 
-}
+	@Override
+	public Boolean deleteEvent(Event event) {
+		try {
+			entityManager.remove(entityManager.merge(event));
+			return true;
+		} catch (Exception e) {
+			return false;
+			
+		}
+
+}}

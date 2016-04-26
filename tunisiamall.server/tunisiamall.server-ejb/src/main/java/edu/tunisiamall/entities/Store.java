@@ -5,25 +5,19 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-
-/**
- * The persistent class for the store database table.
- * 
- */
 @Entity
-@NamedQuery(name="Store.findAll", query="SELECT s FROM Store s")
+@NamedQuery(name = "Store.findAll", query = "SELECT s FROM Store s")
 public class Store implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idStroe;
 
 	private String description;
-	
-	
+
 	@ManyToOne
-	@JoinColumn(name="category_fk")
+	@JoinColumn(name = "category_fk")
 	private Category category;
 	private String name;
 
@@ -34,31 +28,21 @@ public class Store implements Serializable {
 
 	private String tel;
 
-	//bi-directional many-to-many association to Subcategory
-	@ManyToMany
-	@JoinTable(
-		name="assstoresubcategorie"
-		, joinColumns={
-			@JoinColumn(name="IdStroe")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="IdSubCategory")
-			}
-		)
-	private List<Subcategory> subcategories;
+	public Store(String description, Category category, String name, Date openingDay, String status, String tel,
+			Shopowner shopowner) {
+		super();
+		this.description = description;
+		this.category = category;
+		this.name = name;
+		this.openingDay = openingDay;
+		this.status = status;
+		this.tel = tel;
+		this.shopowner = shopowner;
+	}
 
-	//bi-directional many-to-one association to Shopowner
 	@ManyToOne
-	@JoinColumn(name="idUser")
+	@JoinColumn(name = "idUser")
 	private Shopowner shopowner;
-
-	//bi-directional many-to-one association to Storeevent
-	@OneToMany(mappedBy="store")
-	private List<Storeevent> storeevents;
-	
-	//bi-derictional onetomany with product
-	@OneToMany(mappedBy="store",fetch=FetchType.EAGER)
-	private List<Product> products;
 
 	public Store() {
 	}
@@ -71,7 +55,6 @@ public class Store implements Serializable {
 		this.idStroe = idStroe;
 	}
 
-	
 	public Category getCategory() {
 		return category;
 	}
@@ -79,6 +62,7 @@ public class Store implements Serializable {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -119,14 +103,6 @@ public class Store implements Serializable {
 		this.tel = tel;
 	}
 
-	public List<Subcategory> getSubcategories() {
-		return this.subcategories;
-	}
-
-	public void setSubcategories(List<Subcategory> subcategories) {
-		this.subcategories = subcategories;
-	}
-
 	public Shopowner getShopowner() {
 		return this.shopowner;
 	}
@@ -134,30 +110,5 @@ public class Store implements Serializable {
 	public void setShopowner(Shopowner shopowner) {
 		this.shopowner = shopowner;
 	}
-
-	public List<Storeevent> getStoreevents() {
-		return this.storeevents;
-	}
-
-	public void setStoreevents(List<Storeevent> storeevents) {
-		this.storeevents = storeevents;
-	}
-
-	public Storeevent addStoreevent(Storeevent storeevent) {
-		getStoreevents().add(storeevent);
-		storeevent.setStore(this);
-
-		return storeevent;
-	}
-
-	public Storeevent removeStoreevent(Storeevent storeevent) {
-		getStoreevents().remove(storeevent);
-		storeevent.setStore(null);
-
-		return storeevent;
-	}
-
-	
-	
 
 }
