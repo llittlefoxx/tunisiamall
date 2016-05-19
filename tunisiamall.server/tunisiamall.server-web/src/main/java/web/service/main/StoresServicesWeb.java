@@ -77,7 +77,7 @@ public class StoresServicesWeb {
 				.created(
 						UriBuilder
 							.fromResource(StoresServicesWeb.class)
-							.path(String.valueOf(s.getIdStroe()))
+							.path(String.valueOf(s.getIdStore()))
 							.build()
 						)
 							
@@ -101,7 +101,7 @@ public class StoresServicesWeb {
 				.created(
 						UriBuilder
 							.fromResource(StoresServicesWeb.class)
-							.path(String.valueOf(s.getIdStroe()))
+							.path(String.valueOf(s.getIdStore()))
 							.build()
 						)
 							
