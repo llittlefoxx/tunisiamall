@@ -12,7 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import edu.tunisiamall.GuestBookServices.GuestBookEntryServicesLocal;
-import edu.tunisiamall.entities.Gestbookentry;
+import edu.tunisiamall.entities.Guestbookentry;
 import virtual.entities.AddGuestbook;
 
 @Path("guestbook")
@@ -29,14 +29,14 @@ public class GuestbookServices {
 	@GET
 	@Path("find/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Gestbookentry findEntryById(@PathParam("id") int idEtries) {
+	public Guestbookentry findEntryById(@PathParam("id") int idEtries) {
 		return ejb.findEntryById(idEtries);
 	}
 
 	@GET
 	@Path("findAll")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Gestbookentry> findAll() {
+	public List<Guestbookentry> findAll() {
 		return ejb.findAll();
 	}
 	
