@@ -36,7 +36,14 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="DeleteButton" layoutX="272.0" layoutY="296.0" mnemonicParsing="false" onAction="#DeleteCategory" prefHeight="58.0" prefWidth="67.0" />
+                  <Button fx:id="DeleteButton" layoutX="272.0" layoutY="296.0" mnemonicParsing="false" onAction="#DeleteCategory" prefHeight="58.0" prefWidth="67.0">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/deleteCategory.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                   <Button fx:id="SubCategoriesListed" layoutX="14.0" layoutY="313.0" mnemonicParsing="false" onAction="#OnListOfSubCategoriesViwed" prefHeight="25.0" prefWidth="167.0" text="View list of subgategories">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -44,11 +51,6 @@
                      <effect>
                         <DropShadow color="#0808d7" />
                      </effect></Button>
-                  <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="281.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/deleteCategory.png" />
-                     </image>
-                  </ImageView>
                   <Button fx:id="refresh" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#RefrechTab" prefHeight="29.0" prefWidth="38.0">
                      <graphic>
                         <ImageView fitHeight="21.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">

@@ -7,17 +7,22 @@ import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
+import edu.tunisiamall.GuestBookServices.GuestBookEntryServicesLocal;
 import edu.tunisiamall.biservices.IndicatorsServiceRemote;
 import edu.tunisiamall.categorieServices.CategoryServicesRemote;
 import edu.tunisiamall.entities.Administrator;
 import edu.tunisiamall.entities.Category;
 import edu.tunisiamall.entities.Customer;
+import edu.tunisiamall.entities.Event;
+import edu.tunisiamall.entities.Guestbookentry;
 import edu.tunisiamall.entities.Product;
 import edu.tunisiamall.entities.Promotion;
 import edu.tunisiamall.entities.Shopowner;
 import edu.tunisiamall.entities.Store;
 import edu.tunisiamall.entities.Subcategory;
 import edu.tunisiamall.entities.User;
+import edu.tunisiamall.eventServices.GestionEventLocal;
+import edu.tunisiamall.eventServices.GestionEventRemote;
 import edu.tunisiamall.storeServices.StoreServicesLocal;
 import edu.tunisiamall.userServices.userServicesLocal;
 import edu.tunisiamall.userServices.userServicesRemote;
@@ -32,9 +37,12 @@ public class DBpopulator {
 	CategoryServicesRemote categoryServicesRemote;
 	@EJB
 	userServicesRemote userServicesRemote;
-
 	@EJB
 	StoreServicesLocal storeServicesLocal;
+	@EJB
+	GestionEventLocal gestionEventLocal;
+	@EJB
+	GuestBookEntryServicesLocal guestBookEntryServicesLocal;
 
 	public DBpopulator() {
 
@@ -134,6 +142,68 @@ public class DBpopulator {
 		categoryServicesRemote.addProduct(product2);
 		categoryServicesRemote.addProduct(product3);
 
+		// ########################### Events ###########################
+		Event e1 = new Event();
+		e1.setTitleEvent("zara Events");
+		e1.setDescription("Here you will find the latest pictures from new collections, Lookbook, ZaraPictures, Brothers and Sisters and other general news."); 
+		e1.setPeriodEvent(3);
+		e1.setDateEvent(new Date());
+		e1.setTypeEvent("Opening Zara in Tunisia Mall");
+		Event e2 = new Event();
+		e2.setTitleEvent("Bershka Events");
+		e2.setDescription("This is a place where you can meet other fashionable people and fans of the Bershka brand to have an engaging and fun experience. ");
+		e2.setPeriodEvent(5);
+		e2.setDateEvent(new Date());
+		e2.setTypeEvent("Bershka's birthday");
+		Event e3 = new Event();
+		e3.setTitleEvent("Pull & Bear");
+		e3.setDescription("Pull&Bear was founded in 1991 with a clear international vocation and the intention to sell clothes to young people committed to their environment who live in the community and interact together.");
+		e3.setPeriodEvent(4);
+		e3.setDateEvent(new Date());
+		e3.setTypeEvent("new Arrivals");
+		Event e4 = new Event();
+		e4.setTitleEvent("Ralphe lauren");
+		e4.setDescription("raplphe lauren was founded in 1991 with a clear international vocation and the intention to sell clothes to young people committed to their environment who live in the community and interact together.");
+		e4.setPeriodEvent(6);
+		e4.setDateEvent(new Date());
+		e4.setTypeEvent("opening Store");
+		Event e5 = new Event();
+		e5.setTitleEvent("Starce");
+		e5.setDescription("Strace was founded in 1991 with a clear international vocation and the intention to sell clothes to young people committed to their environment who live in the community and interact together.");
+		e5.setPeriodEvent(4);
+		e5.setDateEvent(new Date());
+		e5.setTypeEvent("New Collection");
+		Event e6 = new Event();
+		e6.setTitleEvent("Guess");
+		e6.setDescription(" Thanks for visiting us on Facebook — we’re happy you’re here! This page was designed for you to share your comments with us.");
+		e6.setPeriodEvent(6);
+		e6.setDateEvent(new Date());
+		e6.setTypeEvent("2 end boutique in tunisia");
+		Event e7 = new Event();
+		e7.setTitleEvent("Celio");
+		e7.setDescription(" Celio brand and to live a full experience To make sure you have a good time on our page , we have established some rules .");
+		e7.setPeriodEvent(3);
+		e7.setDateEvent(new Date());
+		e7.setTypeEvent("2 end boutique in tunisia");
+		Event e8 = new Event();
+		e8.setTitleEvent("Tommy");
+		e8.setDescription("Tommy established some rules . All we ask is that you stick to the topic and to respect the opinions of other users Thank you");
+		e8.setPeriodEvent(2);
+		e8.setDateEvent(new Date());
+		e8.setTypeEvent("New Collection in Tommy");
+		gestionEventLocal.addEvent(e1);
+		gestionEventLocal.addEvent(e2);
+		gestionEventLocal.addEvent(e3);
+		gestionEventLocal.addEvent(e4);
+		gestionEventLocal.addEvent(e5);
+		gestionEventLocal.addEvent(e6);
+		gestionEventLocal.addEvent(e7);
+		gestionEventLocal.addEvent(e8);
+		
+		// ########################### Guestbook ###########################
+
+		guestBookEntryServicesLocal.addGuestbookEntry(c1.getIdUser(), "Great website");
+		guestBookEntryServicesLocal.addGuestbookEntry(c2.getIdUser(), "Not bad, a good site");
 	}
 
 }

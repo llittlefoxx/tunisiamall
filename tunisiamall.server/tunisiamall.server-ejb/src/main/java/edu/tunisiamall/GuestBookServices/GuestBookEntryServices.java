@@ -50,7 +50,7 @@ public class GuestBookEntryServices implements GuestBookEntryServicesRemote, Gue
 			if (result == 0) {
 				Guestbookentry g = new Guestbookentry();
 				g.setDateEntrie(new Date());
-				g.setRating(-1);
+				g.setRating(0);
 				g.setText(text);
 				g.setUser(u);
 				em.persist(g);

@@ -8,6 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -29,8 +31,8 @@ public class authentificatController {
 		connectedUser = UserDelagate.authentificate(login.getText(), password.getText());
 		login.setText("");
 		password.setText("");
-		System.out.println(connectedUser.getLogin());
-		if (connectedUser.getIdUser() > 0) {
+		if (connectedUser != null && connectedUser.getIdUser() > 0) {
+			System.out.println(connectedUser.getLogin());
 			Main.PrimaryStage.close();
 			try {
 				Stage primaryStage = new Stage();
@@ -46,8 +48,13 @@ public class authentificatController {
 				e.printStackTrace();
 			}
 
+		} else {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Authentitication Failed");
+			alert.setHeaderText(null);
+			alert.setContentText("Username or password incorrect !");
+			alert.showAndWait();
 		}
-
 	}
 
 }

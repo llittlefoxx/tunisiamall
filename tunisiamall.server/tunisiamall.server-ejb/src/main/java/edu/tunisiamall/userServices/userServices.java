@@ -49,7 +49,6 @@ public class userServices implements userServicesRemote, userServicesLocal {
 	@Override
 	public void delete(int id) {
 		em.remove(em.find(User.class, id));
-
 	}
 
 	@Override
