@@ -17,9 +17,6 @@ import edu.tunisiamall.entities.Shopowner;
 import edu.tunisiamall.entities.Store;
 import edu.tunisiamall.userServices.userServicesLocal;
 
-/**
- * Session Bean implementation class StoreServices
- */
 @Stateless
 public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 
@@ -64,7 +61,7 @@ public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 		return em.find(Store.class, id);
 	}
 	@Override
-	public List<Store> findAllSStoreByCategory(String libelle) {
+	public List<Store> findAllStoreByCategory(String libelle) {
 		Category cat= catlocal.SearchCategory2(libelle);
 		Query query=em.createQuery("select st from Store st where st.category=:id")
 				.setParameter("id", cat);
@@ -72,7 +69,7 @@ public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 	}
 	
 	@Override
-	public List<Store> findAllSStore() {
+	public List<Store> findAllStore() {
 		Query query=em.createQuery("select st from Store st ");
 		return query.getResultList();
 	}

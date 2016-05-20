@@ -9,7 +9,7 @@ import java.util.List;
 import Delegates.SubCategoriesDelegate;
 import edu.tunisiamall.entities.Subcategory;
 import edu.tunisiamall.entities.Category;
-import edu.tunisiamall.entities.Gestbookentry;
+import edu.tunisiamall.entities.Guestbookentry;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;

@@ -4,15 +4,15 @@ import java.util.List;
 
 import Locator.ServiceLocator;
 import edu.tunisiamall.entities.Store;
-import edu.tunisiamall.storeServices.GestionStoreRemote;
+import edu.tunisiamall.storeServices.StoreServicesRemote;;
 
 
 
 public class StoreDelegate {
 	private final static String jndiName="tunisiamall-server/GestionStore!edu.tunisiamall.storeServices.GestionStoreRemote";
 	
-	public static GestionStoreRemote getProxy(){
-	return (GestionStoreRemote) ServiceLocator.getInstance().getProxy(jndiName);
+	public static StoreServicesRemote getProxy(){
+	return (StoreServicesRemote) ServiceLocator.getInstance().getProxy(jndiName);
 	
 	}
 	

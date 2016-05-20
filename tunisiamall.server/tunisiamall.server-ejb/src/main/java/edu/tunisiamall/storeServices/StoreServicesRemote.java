@@ -16,13 +16,12 @@ public interface StoreServicesRemote {
 	public void deleteStore(int idStore);
 	public Store updateStore(int idStore);
 	public Store findStoreById(Integer id);
-	public List<Store> findAllSStoreByCategory(String libelle);
-	public List<Store> findAllSStore();
+	public List<Store> findAllStoreByCategory(String libelle);
+	public List<Store> findAllStore();
 	public List<Store> findStoreByShopOwner(int shopownerId);
 	public List<Product> findStockProdByIdStore(int idStore);
 	public Mvtstock addMvtStock(Mvtstock stock);
 	public List<Mvtstock> getAllMvtStock();
 	public Mvtstock findMvtstockById(int id);
 
-	
 }

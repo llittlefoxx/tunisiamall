@@ -156,10 +156,10 @@ public class InboxControler {
 	}
 
 	private HBox createMessageHBox(Message m) {
-		Text idUser = new Text("" + m.getUser().getIdUser());
+		Text idUser = new Text("" + m.getSender().getIdUser());
 		idUser.setVisible(false);
 		VBox container = new VBox();
-		Label username = new Label(m.getUser().getFirstName() + " " + m.getUser().getLastName());
+		Label username = new Label(m.getSender().getFirstName() + " " + m.getSender().getLastName());
 		username.setUnderline(true);
 		username.setCursor(Cursor.HAND);
 		username.setFont(Font.font("arial black", 15));
@@ -192,10 +192,6 @@ public class InboxControler {
 		result.setMargin(container, new Insets(5, 0, 0, 0));
 		result.setMargin(button, new Insets(30, 5, 0, 0));
 		result.setStyle("-fx-border-color:green;-fx-border-radius:5");
-		if (m.getSeen() == 0) {
-			result.setStyle("-fx-border-color:red;-fx-border-radius:5");
-		}
-		System.out.println("333");
 		return result;
 	}
 
@@ -216,9 +212,7 @@ public class InboxControler {
 	private List<HBox> getUnreadMessagesList(int page) {
 		List<HBox> messagesList = new ArrayList<>();
 		for (Message message : AllMessagesList) {
-			if (message.getSeen() == 0) {
-				messagesList.add(createMessageHBox(message));
-			}
+			messagesList.add(createMessageHBox(message));
 		}
 		if (page == 0) {
 			return messagesList;
@@ -234,9 +228,7 @@ public class InboxControler {
 	private List<HBox> getReadMessagesList(int page) {
 		List<HBox> messagesList = new ArrayList<>();
 		for (Message message : AllMessagesList) {
-			if (message.getSeen() == 1) {
-				messagesList.add(createMessageHBox(message));
-			}
+			messagesList.add(createMessageHBox(message));
 		}
 		if (page == 0) {
 			return messagesList;
@@ -255,7 +247,7 @@ public class InboxControler {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(ConversationControler.class.getResource("Conversation.fxml"));
 			ConversationControler c = (ConversationControler) loader.getController();
-			c.u = m.getUser();
+			c.u = m.getSender();
 			MainControler.cadre.getChildren().add(loader.load());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -267,7 +259,7 @@ public class InboxControler {
 		newMessageStage.show();
 	}
 
-	public static void refresh(){
+	public static void refresh() {
 		AllMessagesList = MessageDelegate.getMessagesFor(authentificatController.connectedUser);
 	}
 }

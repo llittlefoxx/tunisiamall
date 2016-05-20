@@ -17,16 +17,16 @@ public class StoreServicesDelegate {
 		getProxy().addStore(store);
 	}
 	public static void deleteStore(Store store){
-		getProxy().deleteStore(store);
+		getProxy().deleteStore(store.getIdStore());
 	}
 	public static void updateStore(Store store){
-		getProxy().updateStore(store);
+		getProxy().updateStore(store.getIdStore());
 	}
 	public static Store findStoreById(Integer id){
 		return getProxy().findStoreById(id);
 	}
 	public static List<Store> findAllSStoreByCategory(Category category){
-		return getProxy().findAllSStoreByCategory(category);
+		return getProxy().findAllStoreByCategory(category.getLibelle());
 	}
 
 }

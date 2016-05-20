@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import edu.tunisiamall.entities.Category;
 import edu.tunisiamall.entities.Mvtstock;
 import edu.tunisiamall.entities.Product;
 import edu.tunisiamall.entities.Store;
@@ -15,8 +14,8 @@ public interface StoreServicesLocal {
 	public void deleteStore(int idStore);
 	public Store updateStore(int idStore);
 	public Store findStoreById(Integer id);
-	public List<Store> findAllSStoreByCategory(String libelle);
-	public List<Store> findAllSStore();
+	public List<Store> findAllStoreByCategory(String libelle);
+	public List<Store> findAllStore();
 	public List<Store> findStoreByShopOwner(int shopownerId);
 	public List<Product> findStockProdByIdStore(int idStore);
 	public Mvtstock addMvtStock(Mvtstock stock);

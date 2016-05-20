@@ -3,7 +3,7 @@ package Delegates;
 import java.util.List;
 
 import edu.tunisiamall.GuestBookServices.GuestBookEntryServicesRemote;
-import edu.tunisiamall.entities.Gestbookentry;
+import edu.tunisiamall.entities.Guestbookentry;
 
 public class GuestBookEntryDelegate {
 	
@@ -13,10 +13,10 @@ public class GuestBookEntryDelegate {
 		return (GuestBookEntryServicesRemote) Locator.ServiceLocator.getInstance().getProxy(
 				jndiName);
 	}
-	public static void deleteEntry(Gestbookentry g){
-		getProxy().deleteEntries(g);
+	public static void deleteEntry(Guestbookentry g){
+		getProxy().deleteEntries(g.getIdEntries());
 	}
-	public static List<Gestbookentry> ListOfEntries(){
+	public static List<Guestbookentry> ListOfEntries(){
 		 return getProxy().findAll();
 	}
 }

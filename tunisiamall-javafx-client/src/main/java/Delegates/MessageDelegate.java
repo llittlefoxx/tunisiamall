@@ -27,7 +27,7 @@ public class MessageDelegate {
 	}
 	
 	public static boolean deleteMessage(Message m){
-		return getProxy().deleteMessage(m);
+		return getProxy().deleteMessage(m.getIdMessage());
 	}
 	
 }
