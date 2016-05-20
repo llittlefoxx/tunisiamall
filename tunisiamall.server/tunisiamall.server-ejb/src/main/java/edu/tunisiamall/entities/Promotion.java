@@ -10,6 +10,7 @@ import javax.persistence.*;
 public class Promotion implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPromotion;
 	private String name;
 	private double value;

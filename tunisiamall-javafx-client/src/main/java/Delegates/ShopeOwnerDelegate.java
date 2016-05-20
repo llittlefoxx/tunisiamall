@@ -13,7 +13,7 @@ import edu.tunisiamall.shopOwnerServices.shopOwnerServiceRemote;
 public class ShopeOwnerDelegate {
 	
 	private static shopOwnerServiceRemote remote;
-	private final static String jndiName="tunisiamall-server/shopOwnerService!edu.tunisiamall.shopOwnerServices.shopOwnerServiceRemote"; 
+	private final static String jndiName="tunisiamall.server-ear/tunisiamall.server-ejb/shopOwnerService!edu.tunisiamall.shopOwnerServices.shopOwnerServiceRemote"; 
 	
 	private static shopOwnerServiceRemote getProxy() {
 		return (shopOwnerServiceRemote) Locator.ServiceLocator.getInstance().getProxy(

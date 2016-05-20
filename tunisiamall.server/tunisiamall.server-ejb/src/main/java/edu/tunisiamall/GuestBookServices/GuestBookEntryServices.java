@@ -31,7 +31,7 @@ public class GuestBookEntryServices implements GuestBookEntryServicesRemote, Gue
 
 	@Override
 	public List<Guestbookentry> findAll() {
-		Query query = em.createNamedQuery("Gestbookentry.findAll");
+		Query query = em.createNamedQuery("Guestbookentry.findAll");
 		return query.getResultList();
 	}
 
@@ -44,7 +44,7 @@ public class GuestBookEntryServices implements GuestBookEntryServicesRemote, Gue
 	public boolean addGuestbookEntry(int idUser, String text) {
 		try {
 			User u = userEJB.find(idUser);
-			Query q = em.createQuery("select count(g.idEntries) from Gestbookentry g where g.user = :user")
+			Query q = em.createQuery("select count(g.idEntries) from Guestbookentry g where g.user = :user")
 					.setParameter("user",u);
 			Long result = (Long) q.getSingleResult();
 			if (result == 0) {

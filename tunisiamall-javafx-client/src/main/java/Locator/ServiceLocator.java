@@ -9,7 +9,7 @@ import javax.naming.NamingException;
 public class ServiceLocator {
 	private Context context;
 	private Map<String, Object> cache;
-	private static ServiceLocator instance;
+	private static ServiceLocator instance = null;
 
 	private ServiceLocator() {
 		cache = new HashMap<>();
@@ -36,7 +36,7 @@ public class ServiceLocator {
 				proxy = context.lookup(jndiName);
 
 			} catch (NamingException e) {
-				
+				e.printStackTrace();
 			}
 			cache.put(jndiName, proxy);
 		}

@@ -1,13 +1,8 @@
 package fxSoufieneInterfaces;
 
-import java.io.IOException;
-
-import javax.xml.crypto.URIReference;
-
 import Delegates.UserDelagate;
 import application.Main;
 import application.MainControler;
-import edu.tunisiamall.entities.Administrator;
 import edu.tunisiamall.entities.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,37 +19,35 @@ public class authentificatController {
 	TextField login;
 	@FXML
 	PasswordField password;
+
 	public static Stage s;
-	
+
 	public static User connectedUser;
-	
+
 	@FXML
-	public void hello (ActionEvent acEvent){
+	public void hello(ActionEvent acEvent) {
 		connectedUser = UserDelagate.authentificate(login.getText(), password.getText());
 		login.setText("");
 		password.setText("");
 		System.out.println(connectedUser.getLogin());
-		if(connectedUser.getIdUser()>0){
+		if (connectedUser.getIdUser() > 0) {
 			Main.PrimaryStage.close();
 			try {
-			Stage primaryStage =new Stage();
-		
-			FXMLLoader loader =new FXMLLoader();
-			loader.setLocation(MainControler.class.getResource("Main.fxml"));
-			//TitledPane root =(TitledPane)loader.load();
-			BorderPane root = (BorderPane) loader.load();
-			Scene scene = new Scene(root);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			s=primaryStage;
-			} catch(Exception e) {
+				Stage primaryStage = new Stage();
+
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(MainControler.class.getResource("Main.fxml"));
+				BorderPane root = (BorderPane) loader.load();
+				Scene scene = new Scene(root);
+				primaryStage.setScene(scene);
+				primaryStage.show();
+				s = primaryStage;
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			
-			
+
 		}
-		
+
 	}
 
 }

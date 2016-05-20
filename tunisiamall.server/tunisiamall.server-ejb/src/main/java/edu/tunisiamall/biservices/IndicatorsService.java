@@ -23,15 +23,9 @@ import edu.tunisiamall.entities.Promotion;
 import edu.tunisiamall.entities.PromotionSuggest;
 import edu.tunisiamall.entities.Store;
 
-/**
- * Session Bean implementation class IndicatorsService
- */
 @Stateless
-public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServiceLocal {
+public class IndicatorsService implements IndicatorsServiceRemote, IndicatorsServiceLocal {
 
-	/**
-	 * Default constructor.
-	 */
 	@EJB
 	private CategoryServicesLocal categoryServicesLocal;
 
@@ -142,8 +136,8 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 
 	@Override
 	public List<Product> getProductsByPromotionSugg(int idSugP) {
-		 Query query = em.createQuery("select p from Product p where p.promotionSuggest.idPromotionSuggest = :idSugP")
-		 .setParameter("idSugP", idSugP);
+		Query query = em.createQuery("select p from Product p where p.promotionSuggest.idPromotionSuggest = :idSugP")
+				.setParameter("idSugP", idSugP);
 		return query.getResultList();
 	}
 
@@ -213,7 +207,7 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 	public HashMap<Store, Promotion> getPromotionByStore() {
 		HashMap<Store, Promotion> res = new HashMap<Store, Promotion>();
 		Query query = em.createNativeQuery(
-				"select promotion.idPromotion , store.idStroe from store, promotion where promotion.idPromotion in (select product.Promotion_idPromotion from product) group by store.idStroe");
+				"select promotion.idPromotion , store.idStore from store, promotion where promotion.idPromotion in (select product.idPromotion from product) group by store.idStore");
 		List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
 		Promotion p = new Promotion();
 		Store s = new Store();
@@ -236,10 +230,10 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 
 		HashMap<Store, Double> res = new HashMap<Store, Double>();
 		Query query = em.createNativeQuery(
-				"select product.idProduct ,product." + "Promotion_idPromotion, sum(product.sellPrice), "
+				"select product.idProduct ,product." + "idPromotion, sum(product.sellPrice), "
 						+ "sum(product.buyPrice), sum(orderline.qte) , product.tax "
-						+ ",product.store_idStroe from product ,orderline where product.idProduct="
-						+ "orderline.idProduct_fk group by product.store_idStroe");
+						+ ",product.IdStore from product ,orderline where product.idProduct="
+						+ "orderline.idProduct_fk group by product.IdStore");
 
 		List<Object[]> itemsList = (ArrayList<Object[]>) query.getResultList();
 
@@ -267,7 +261,7 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 
 	@Override
 	public double getTotalIncome() {
-		Query query = em.createNativeQuery("select product.idProduct ,product.Promotion_idPromotion, "
+		Query query = em.createNativeQuery("select product.idProduct ,product.idPromotion, "
 				+ "sum(product.sellPrice), sum(product.buyPrice), sum(orderline.qte) , product."
 				+ "tax from product ,orderline " + "where product.idProduct=orderline."
 				+ "idProduct_fk group by orderline.idProduct_fk");
@@ -308,20 +302,22 @@ public class IndicatorsService implements IndicatorsServiceRemote,IndicatorsServ
 
 	@Override
 	public List<Image> getImagesByProduct(int id) {
-		Query query=em.createQuery("select i from Image i where i.product.idProduct=:id").setParameter("id", id);
-		
+		Query query = em.createQuery("select i from Image i where i.product.idProduct=:id").setParameter("id", id);
+
 		return query.getResultList();
 	}
-@Override
-public void rateProduct(AnonimousRating an){
-	Date date=new Date();
-	an.setDate(date);
-	em.persist(an);
-}
 
-@Override
-public void createPromotion(Promotion promotion) {
-	em.persist(promotion);
-	
-}
+	@Override
+	public void rateProduct(AnonimousRating an) {
+		Date date = new Date();
+		an.setDate(date);
+		em.persist(an);
+	}
+
+	@Override
+	public Promotion createPromotion(Promotion promotion) {
+		em.persist(promotion);
+		em.flush();
+		return promotion;
+	}
 }

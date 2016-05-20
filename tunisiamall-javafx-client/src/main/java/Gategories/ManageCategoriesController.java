@@ -51,12 +51,12 @@ public class ManageCategoriesController {
 
 	@FXML
 	private Button DeleteButton;
-	
-	  @FXML
-	    private Button SearchButton;
-	  
-	  @FXML
-	    private TextField textSearch;
+
+	@FXML
+	private Button SearchButton;
+
+	@FXML
+	private TextField textSearch;
 
 	@FXML
 	private TableView<Category> tableCat;
@@ -70,16 +70,15 @@ public class ManageCategoriesController {
 	@FXML
 	private TableColumn<Category, String> Libelle;
 
-    @FXML
-    private Label labelsize;
-    
+	@FXML
+	private Label labelsize;
+
 	@FXML
 	void AddCategory(ActionEvent event) {
 		Category c = new Category();
 		c.setLibelle(TextLibelle.getText());
 		c.setDescription(TextDescription.getText());
 		CategoriesDelegate.create(c);
-		//System.out.println(c.getIdCategory());
 		TextLibelle.clear();
 		TextDescription.clear();
 		afficherTable();
@@ -87,10 +86,10 @@ public class ManageCategoriesController {
 
 	@FXML
 	void OnListOfSubCategoriesViwed(ActionEvent event) throws IOException {
-		//Category c = tableCat.getSelectionModel().getSelectedItem();
 		try {
 			Stage window = new Stage();
-			AnchorPane root = FXMLLoader.load(ManageSubCategoriesController.class.getResource("ListSubCategories.fxml"));
+			AnchorPane root = FXMLLoader
+					.load(ManageSubCategoriesController.class.getResource("ListSubCategories.fxml"));
 			Scene scene = new Scene(root);
 			window.setScene(scene);
 			window.show();
@@ -104,8 +103,8 @@ public class ManageCategoriesController {
 		Category c = tableCat.getSelectionModel().getSelectedItem();
 		CategoriesDelegate.delete(c);
 		tableCat.getItems().remove(c);
-		labelsize.setText(String.valueOf(Integer.parseInt(labelsize.getText())-1));
-	
+		labelsize.setText(String.valueOf(Integer.parseInt(labelsize.getText()) - 1));
+
 	}
 
 	@FXML
@@ -116,69 +115,60 @@ public class ManageCategoriesController {
 
 	@FXML
 	void initialize() {
-		IdCategory.setCellValueFactory(new PropertyValueFactory("idCategory"));
-		Libelle.setCellValueFactory(new PropertyValueFactory("libelle"));
-		Libelle.setCellFactory(TextFieldTableCell.forTableColumn());
-		Libelle.setOnEditCommit(new EventHandler<CellEditEvent<Category, String>>() {
+		try {
+			System.out.println("categories interface controller");
+			IdCategory.setCellValueFactory(new PropertyValueFactory("idCategory"));
+			Libelle.setCellValueFactory(new PropertyValueFactory("libelle"));
+			Libelle.setCellFactory(TextFieldTableCell.forTableColumn());
+			Libelle.setOnEditCommit(new EventHandler<CellEditEvent<Category, String>>() {
 
-			@Override
-			public void handle(CellEditEvent<Category, String> event) {
-				Category c = event.getTableView().getItems().get(event.getTablePosition().getRow());
-				c.setLibelle(event.getNewValue());
-				CategoriesDelegate.update(c);
-			}
-		});
-		Description.setCellValueFactory(new PropertyValueFactory("description"));
-		Description.setCellFactory(TextFieldTableCell.forTableColumn());
-		Description.setOnEditCommit(new EventHandler<CellEditEvent<Category, String>>() {
+				@Override
+				public void handle(CellEditEvent<Category, String> event) {
+					Category c = event.getTableView().getItems().get(event.getTablePosition().getRow());
+					c.setLibelle(event.getNewValue());
+					CategoriesDelegate.update(c);
+				}
+			});
+			Description.setCellValueFactory(new PropertyValueFactory("description"));
+			Description.setCellFactory(TextFieldTableCell.forTableColumn());
+			Description.setOnEditCommit(new EventHandler<CellEditEvent<Category, String>>() {
 
-			@Override
-			public void handle(CellEditEvent<Category, String> event) {
-				Category c = (Category) event.getTableView().getItems().get(event.getTablePosition().getRow());
-				c.setDescription(event.getNewValue());
-				CategoriesDelegate.update(c);
-			}
-		});
+				@Override
+				public void handle(CellEditEvent<Category, String> event) {
+					Category c = (Category) event.getTableView().getItems().get(event.getTablePosition().getRow());
+					c.setDescription(event.getNewValue());
+					CategoriesDelegate.update(c);
+				}
+			});
 
-		// CategoriesDelegate.update(c);
-		tableCat.setEditable(true);
-		// Description.edita
-		// get data
-		afficherTable();
+			tableCat.setEditable(true);
+			afficherTable();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void afficherTable(){
+	public void afficherTable() {
 		tableCat.getItems().clear();
 		List<Category> categoriesList = CategoriesDelegate.findAll();
 		ObservableList<Category> lesDonnees = FXCollections.observableArrayList(categoriesList);
 		tableCat.setItems(lesDonnees);
 		labelsize.setText(String.valueOf(lesDonnees.size()));
 	}
-	/*public void size(){
-		List<Category> categoriesList = CategoriesDelegate.findAll();
-		ObservableList<Category> lesDonnees = FXCollections.observableArrayList(categoriesList);
-		tableCat.setItems(lesDonnees);
-		System.out.println(lesDonnees.size());
-	}*/
 
-    @FXML
-    void SearchCategory(ActionEvent event) {
-    	String query = textSearch.getText();
-    	List<Category> resultat = CategoriesDelegate.SearchCategory(query);
-    	System.out.println("size: " + resultat.size());
-    	tableCat.getItems().clear();
-    	tableCat.setItems(FXCollections.observableArrayList(resultat));
-    }
-    
+	@FXML
+	void SearchCategory(ActionEvent event) {
+		String query = textSearch.getText();
+		List<Category> resultat = CategoriesDelegate.SearchCategory(query);
+		System.out.println("size: " + resultat.size());
+		tableCat.getItems().clear();
+		tableCat.setItems(FXCollections.observableArrayList(resultat));
+	}
 
-    @FXML
-    void RefrechTab(ActionEvent event) {
-    	afficherTable();
+	@FXML
+	void RefrechTab(ActionEvent event) {
+		afficherTable();
 
-    }
-   /* @FXML
-    void size(ActionEvent event) {
-    	size();
-    }*/
-    
+	}
+
 }

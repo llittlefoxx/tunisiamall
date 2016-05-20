@@ -14,7 +14,7 @@ import edu.tunisiamall.entities.Store;
 public class DashBoardDelegate {
 
 	private static IndicatorsServiceRemote indicatorsServiceRemote;
-	private final static String jndiName = "tunisiamall-server/IndicatorsService!edu.tunisiamall.biservices.IndicatorsServiceRemote";
+	private final static String jndiName = "tunisiamall.server-ear/tunisiamall.server-ejb/IndicatorsService!edu.tunisiamall.biservices.IndicatorsServiceRemote";
 
 	private static IndicatorsServiceRemote getProxy() {
 		return (IndicatorsServiceRemote) Locator.ServiceLocator.getInstance().getProxy(jndiName);

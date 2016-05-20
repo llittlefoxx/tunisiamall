@@ -8,7 +8,7 @@ import edu.tunisiamall.entities.Category;
 public class CategoriesDelegate {
 
 	private static CategoryServicesRemote remote;
-	private static String jndiName = "/tunisiamall-server/CategoryServices!edu.tunisiamall.categorieServices.CategoryServicesRemote";
+	private static String jndiName = "tunisiamall.server-ear/tunisiamall.server-ejb/CategoryServices!edu.tunisiamall.categorieServices.CategoryServicesRemote";
 	
 	private static CategoryServicesRemote getProxy() {
 		return (CategoryServicesRemote) Locator.ServiceLocator.getInstance().getProxy(

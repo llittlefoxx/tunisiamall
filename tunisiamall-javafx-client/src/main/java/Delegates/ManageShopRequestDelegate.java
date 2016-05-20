@@ -11,7 +11,7 @@ public class ManageShopRequestDelegate {
 	private static ManageShopRequestServicesRemote remote;
 	
 	private static ManageShopRequestServicesRemote getProxy(){
-		return (ManageShopRequestServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall-server/ManageShopRequestServices!edu.tunisiamall.shopRequestServices.ManageShopRequestServicesRemote");
+		return (ManageShopRequestServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall.server-ear/tunisiamall.server-ejb/ManageShopRequestServices!edu.tunisiamall.shopRequestServices.ManageShopRequestServicesRemote");
 	}
 	public static void doAddShopRequest(ShopRequest srequest)
 	{

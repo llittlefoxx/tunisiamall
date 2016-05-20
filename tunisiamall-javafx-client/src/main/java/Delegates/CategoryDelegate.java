@@ -13,7 +13,7 @@ public class CategoryDelegate {
 		private static CategoryServicesRemote remote;
 		
 		private static CategoryServicesRemote getProxy(){
-			return (CategoryServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall-server/CategoryServices!edu.tunisiamall.categorieServices.CategoryServicesRemote");
+			return (CategoryServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall.server-ear/tunisiamall.server-ejb/CategoryServices!edu.tunisiamall.categorieServices.CategoryServicesRemote");
 		}
 		public static void doAddCategory(Category c)
 		{

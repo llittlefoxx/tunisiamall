@@ -13,27 +13,21 @@ import edu.tunisiamall.entities.Category;
 import edu.tunisiamall.entities.Product;
 import edu.tunisiamall.entities.Subcategory;
 
-/**
- * Session Bean implementation class CategoryServices
- */
 @Stateless
 public class CategoryServices implements CategoryServicesRemote, CategoryServicesLocal {
 
 	@PersistenceContext
 	EntityManager em;
 
-	/**
-	 * Default constructor.
-	 */
 	public CategoryServices() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void addCategory(Category category) {
+	public Category addCategory(Category category) {
 
 		em.persist(category);
-		System.out.println(category.getIdCategory());
+		em.flush();
+		return category;
 	}
 
 	@Override
@@ -54,7 +48,6 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 		return em.find(Category.class, idCategory);
 	}
 
-
 	@Override
 	public List<Category> findAll() {
 		Query query = em.createQuery("select c from Category c");
@@ -63,8 +56,9 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 
 	@Override
 	public List<Category> SearchCategory(String L) {
-		
-		Query query = em.createQuery("select c from Category c where c.libelle like :Name").setParameter("Name","%" + L + "%");
+
+		Query query = em.createQuery("select c from Category c where c.libelle like :Name").setParameter("Name",
+				"%" + L + "%");
 		return query.getResultList();
 
 	}
@@ -77,10 +71,10 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	}
 
 	@Override
-	public void addSubCategory(Subcategory subcategory) {
-
+	public Subcategory addSubCategory(Subcategory subcategory) {
 		em.persist(subcategory);
-
+		em.flush();
+		return subcategory;
 	}
 
 	@Override
@@ -111,12 +105,10 @@ public class CategoryServices implements CategoryServicesRemote, CategoryService
 	@Override
 	public Category SearchCategory2(String L) {
 		// TODO Auto-generated method stub
-		//String queryText = 
-		Query query = em.createQuery("select c from Category c where c.libelle=:name")
-				.setParameter("name",L);
+		// String queryText =
+		Query query = em.createQuery("select c from Category c where c.libelle=:name").setParameter("name", L);
 		return (Category) query.getSingleResult();
-		
-	}
 
+	}
 
 }

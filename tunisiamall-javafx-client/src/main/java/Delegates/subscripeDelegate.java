@@ -8,7 +8,7 @@ import edu.tunisiamall.entities.Subscription;
 import edu.tunisiamall.subService.GestionSubscripeRemote;
 
 public class subscripeDelegate {
-private final static String jndiName="tunisiamall-server/GestionSubscripe!edu.tunisiamall.GestionSubscripeRemote";
+private final static String jndiName="tunisiamall.server-ear/tunisiamall.server-ejb/GestionSubscripe!edu.tunisiamall.GestionSubscripeRemote";
 	
 	public static GestionSubscripeRemote getProxy(){
 	return (GestionSubscripeRemote) ServiceLocator.getInstance().getProxy(jndiName);

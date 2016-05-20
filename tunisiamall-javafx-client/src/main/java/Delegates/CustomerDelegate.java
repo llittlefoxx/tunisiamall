@@ -9,7 +9,7 @@ import edu.tunisiamall.entities.Customer;
 
 public class CustomerDelegate {
 	private static customerServicesRemote remote;
-	private final static String jndiName="tunisiamall-server/customerServices!edu.tunisiamall.customerServices.customerServicesRemote"; 
+	private final static String jndiName="tunisiamall.server-ear/tunisiamall.server-ejb/customerServices!edu.tunisiamall.customerServices.customerServicesRemote"; 
 	
 	private static customerServicesRemote getProxy() {
 		return (customerServicesRemote) Locator.ServiceLocator.getInstance().getProxy(

@@ -11,7 +11,7 @@ public class StoreServicesDelegate {
 
 	private static StoreServicesRemote remote;
 	private static StoreServicesRemote getProxy(){
-		return (StoreServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall-server/StoreServices!edu.tunisiamall.storeServices.StoreServicesRemote");
+		return (StoreServicesRemote) ServiceLocator.getInstance().getProxy("tunisiamall.server-ear/tunisiamall.server-ejb/StoreServices!edu.tunisiamall.storeServices.StoreServicesRemote");
 	}	
 	public static void addStore(Store store){
 		getProxy().addStore(store);

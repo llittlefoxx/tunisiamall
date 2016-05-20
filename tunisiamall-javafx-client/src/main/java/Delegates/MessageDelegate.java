@@ -8,7 +8,7 @@ import edu.tunisiamall.entities.User;
 import edu.tunisiamall.communication.MessageServiceRemote;;
 
 public class MessageDelegate {
-	private final static String jndiName="tunisiamall-server/MessageService!edu.tunisiamall.communication.MessageServiceRemote"; 
+	private final static String jndiName="tunisiamall.server-ear/tunisiamall.server-ejb/MessageService!edu.tunisiamall.communication.MessageServiceRemote"; 
 	
 	private static MessageServiceRemote getProxy() {
 		return (MessageServiceRemote) Locator.ServiceLocator.getInstance().getProxy(jndiName);

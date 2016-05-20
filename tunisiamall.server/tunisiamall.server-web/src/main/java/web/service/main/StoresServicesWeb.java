@@ -38,7 +38,7 @@ public class StoresServicesWeb {
 	@Path("category/{lib}")
 	public List<Store> findStoreByCategory(@PathParam(value="lib")String libelle)
 	{
-		return storeLocal.findAllSStoreByCategory(libelle);
+		return storeLocal.findAllStoreByCategory(libelle);
 	}
 	
 	
@@ -47,7 +47,7 @@ public class StoresServicesWeb {
 	@Path("allstore")
 	public List<Store> findAllStore()
 	{
-		return storeLocal.findAllSStore();
+		return storeLocal.findAllStore();
 	}
 
 	

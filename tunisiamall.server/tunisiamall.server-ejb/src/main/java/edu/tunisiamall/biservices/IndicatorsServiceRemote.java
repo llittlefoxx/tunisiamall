@@ -68,5 +68,5 @@ public interface IndicatorsServiceRemote {
 
 	public PromotionSuggest findPromotionSuggestByIdProd(int idProd);
 	
-	public void createPromotion(Promotion promotion);
+	public Promotion createPromotion(Promotion promotion);
 }

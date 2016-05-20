@@ -8,7 +8,7 @@ import edu.tunisiamall.entities.Event;
 import edu.tunisiamall.eventServices.GestionEventRemote;
 
 public class EventDelegate {
-	private final static String jndiName="tunisiamall-server/GestionEvent!edu.tunisiamall.eventServices.GestionEventRemote";
+	private final static String jndiName="tunisiamall.server-ear/tunisiamall.server-ejb/GestionEvent!edu.tunisiamall.eventServices.GestionEventRemote";
 	
 	private static GestionEventRemote getProxy(){
 		return (GestionEventRemote) ServiceLocator.getInstance().getProxy(jndiName);	

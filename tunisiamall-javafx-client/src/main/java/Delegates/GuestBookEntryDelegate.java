@@ -8,7 +8,7 @@ import edu.tunisiamall.entities.Guestbookentry;
 public class GuestBookEntryDelegate {
 	
 	public static GuestBookEntryServicesRemote remote;
-	private static String jndiName = "/tunisiamall-server/GuestBookEntryServices!edu.tunisiamall.GuestBookServices.GuestBookEntryServicesRemote";
+	private static String jndiName = "tunisiamall.server-ear/tunisiamall.server-ejb/GuestBookEntryServices!edu.tunisiamall.GuestBookServices.GuestBookEntryServicesRemote";
 	private static GuestBookEntryServicesRemote getProxy(){
 		return (GuestBookEntryServicesRemote) Locator.ServiceLocator.getInstance().getProxy(
 				jndiName);

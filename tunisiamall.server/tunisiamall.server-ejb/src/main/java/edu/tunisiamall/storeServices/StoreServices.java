@@ -20,81 +20,74 @@ import edu.tunisiamall.userServices.userServicesLocal;
 @Stateless
 public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 
-    /**
-     * Default constructor. 
-     */
 	@PersistenceContext
 	EntityManager em;
-	
+
 	@EJB
 	CategoryServicesLocal catlocal;
-	
 
 	@EJB
 	userServicesLocal userlocal;
-    public StoreServices() {
-        // TODO Auto-generated constructor stub
-    }
+
+	public StoreServices() {
+	}
 
 	@Override
 	public Store addStore(Store store) {
-		 em.persist(store);
-		 return store;
+		em.persist(store);
+		em.flush();
+		return store;
 	}
 
 	@Override
 	public void deleteStore(int idStore) {
 		Store s = findStoreById(idStore);
 		em.remove(s);
-		
+
 	}
 
 	@Override
 	public Store updateStore(int idStore) {
-		Store s =em.find(Store.class, idStore);
+		Store s = em.find(Store.class, idStore);
 		return em.merge(s);
-		
+
 	}
 
 	@Override
 	public Store findStoreById(Integer id) {
 		return em.find(Store.class, id);
 	}
+
 	@Override
 	public List<Store> findAllStoreByCategory(String libelle) {
-		Category cat= catlocal.SearchCategory2(libelle);
-		Query query=em.createQuery("select st from Store st where st.category=:id")
-				.setParameter("id", cat);
+		Category cat = catlocal.SearchCategory2(libelle);
+		Query query = em.createQuery("select st from Store st where st.category=:id").setParameter("id", cat);
 		return query.getResultList();
 	}
-	
+
 	@Override
 	public List<Store> findAllStore() {
-		Query query=em.createQuery("select st from Store st ");
+		Query query = em.createQuery("select st from Store st ");
 		return query.getResultList();
 	}
+
 	@Override
 	public List<Store> findStoreByShopOwner(int shopownerId) {
 		Shopowner sh = (Shopowner) userlocal.findShopOwnerById(shopownerId);
-		System.out.println("hhhhh "+ sh.getIdUser());
-		Query query=em.createQuery("select st from Store st where st.shopowner=:id")
-				.setParameter("id", sh);
+		System.out.println("hhhhh " + sh.getIdUser());
+		Query query = em.createQuery("select st from Store st where st.shopowner=:id").setParameter("id", sh);
 		return query.getResultList();
-		
-		
-	
+
 	}
 
 	@Override
 	public List<Product> findStockProdByIdStore(int idStore) {
 		Store s = findStoreById(idStore);
-		
-		Query query=em.createQuery("select p from Product p where p.store=:id")
-				.setParameter("id", s);
-		List<Product> l =query.getResultList();
-		List<Product> l2=new ArrayList<Product>();
-		for (Product p :l )
-		{
+
+		Query query = em.createQuery("select p from Product p where p.store=:id").setParameter("id", s);
+		List<Product> l = query.getResultList();
+		List<Product> l2 = new ArrayList<Product>();
+		for (Product p : l) {
 			Product p1 = new Product(p.getIdProduct(), p.getLibelle(), p.getQte(), p.getStore());
 			l2.add(p1);
 		}
@@ -103,16 +96,16 @@ public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 
 	@Override
 	public Mvtstock addMvtStock(Mvtstock stock) {
-		
+
 		em.persist(stock);
 		return stock;
 	}
 
 	@Override
 	public List<Mvtstock> getAllMvtStock() {
-	
-		Query query=em.createQuery("select mvt from Mvtstock mvt");
-			
+
+		Query query = em.createQuery("select mvt from Mvtstock mvt");
+
 		return query.getResultList();
 	}
 
@@ -120,7 +113,5 @@ public class StoreServices implements StoreServicesRemote, StoreServicesLocal {
 	public Mvtstock findMvtstockById(int id) {
 		return em.find(Mvtstock.class, id);
 	}
-
-	
 
 }
